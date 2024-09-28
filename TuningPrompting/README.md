@@ -1,3 +1,29 @@
+
+
+
+```
+.\.venv\Scripts\Activate.ps1
+```
+--------------------
+README
+
+1. Set up your OpenAI API key:
+   - Open PromptEng.py
+   - Uncomment the line # openai.api_key = ''
+   - Replace the empty string with your actual OpenAI API key
+
+## Usage
+
+2. Prepare your input Excel file:
+   - The file should be named `input_data.xlsx`
+   - The sheet name should be named `Prompting`
+   - It should contain columns: 'order', 'prompt', and 'user_input'
+   - Place it in the same directory as the script
+
+3. Run the script:
+
+-----------------
+
 Prompting HandleTuning
 
 
@@ -47,3 +73,11 @@ The output file (`processed_data.xlsx`) will contain the extracted questions and
 | Question 2 | Answer 2   |
 
 
+- **Hướng 4** : JSON FORMAT:
+{"Question": "", "Answer": ""},
+{"Question": "", "Answer": ""}, 
+{"Question": "<Question 1>", "Answer": ""}, 
+{"Question": "<Question 2>", "Answer": ""}, 
+...
+{"Question": "<Question 16>", "Answer": ""},
+]
