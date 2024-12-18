@@ -1,0 +1,192 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: '[Mentor] Personalized Listening - Tạo audio finetune'
+  use_icon_as_answer_icon: false
+kind: app
+version: 0.1.2
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+    opening_statement: ''
+    retriever_resource:
+      enabled: false
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: tool
+      id: 1728826844335-source-1734345852436-target
+      source: '1728826844335'
+      sourceHandle: source
+      target: '1734345852436'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: code
+      id: 1734345852436-source-1734515997063-target
+      source: '1734345852436'
+      sourceHandle: source
+      target: '1734515997063'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: end
+      id: 1734515997063-source-1728827099740-target
+      source: '1734515997063'
+      sourceHandle: source
+      target: '1728827099740'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: Start
+        type: start
+        variables:
+        - label: transcript
+          max_length: null
+          options: []
+          required: true
+          type: paragraph
+          variable: transcript
+      height: 89
+      id: '1728826844335'
+      position:
+        x: 34.542183683224835
+        y: 248.28259198297775
+      positionAbsolute:
+        x: 34.542183683224835
+        y: 248.28259198297775
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1734515997063'
+          - result
+          variable: text
+        selected: false
+        title: End
+        type: end
+      height: 89
+      id: '1728827099740'
+      position:
+        x: 851.5003229376491
+        y: -45.95775929000197
+      positionAbsolute:
+        x: 851.5003229376491
+        y: -45.95775929000197
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        provider_id: 55904a1c-6d05-4c87-a93c-b17f3ac7dabc
+        provider_name: TTS - Finetune
+        provider_type: api
+        selected: false
+        title: tofu-opengeneratetext-to-speech_post
+        tool_configurations: {}
+        tool_label: tofu-opengeneratetext-to-speech_post
+        tool_name: tofu-opengeneratetext-to-speech_post
+        tool_parameters:
+          souce:
+            type: mixed
+            value: AI
+          text:
+            type: mixed
+            value: '{{#1728826844335.transcript#}}'
+          voice:
+            type: mixed
+            value: ha_v3
+        type: tool
+      height: 53
+      id: '1734345852436'
+      position:
+        x: 445.4336718704694
+        y: 248.28259198297775
+      positionAbsolute:
+        x: 445.4336718704694
+        y: 248.28259198297775
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "def main(arg1: str) -> dict:\n    \"\"\"\n    Trích xuất 'audio_url'\
+          \ từ dữ liệu JSON phức tạp.\n\n    Parameters:\n    - arg1 (str): Chuỗi\
+          \ JSON đầu vào chứa các lớp lồng nhau.\n\n    Returns:\n    - dict: Một\
+          \ từ điển chứa khóa 'result' với giá trị là 'audio_url'.\n    \"\"\"\n \
+          \   # Bước 1: Phân tích cú pháp JSON\n    data_dict = json.loads(arg1)\n\
+          \    \n    # Bước 2: Trích xuất 'audio_url' từ lớp trong cùng\n    audio_url\
+          \ = data_dict['data']['audio_url']\n    \n    return {\n        \"result\"\
+          : audio_url\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: true
+        title: Code
+        type: code
+        variables:
+        - value_selector:
+          - '1734345852436'
+          - text
+          variable: arg1
+      height: 53
+      id: '1734515997063'
+      position:
+        x: 568.3461445754151
+        y: 19.17941770935998
+      positionAbsolute:
+        x: 568.3461445754151
+        y: 19.17941770935998
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: -325.83245009123993
+      y: 436.79803044459453
+      zoom: 0.8904285182725706
