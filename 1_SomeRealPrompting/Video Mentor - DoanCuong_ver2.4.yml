@@ -1,0 +1,1489 @@
+app:
+  description: 'Chấm điểm Video Mentor '
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: Video Mentor - DoanCuong
+  use_icon_as_answer_icon: false
+kind: app
+version: 0.1.2
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: llm
+      id: 1731584610374-source-17317821586970-target
+      selected: false
+      source: '1731584610374'
+      sourceHandle: source
+      target: '17317821586970'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: end
+      id: 1731811708184-source-1731666634316-target
+      selected: false
+      source: '1731811708184'
+      sourceHandle: source
+      target: '1731666634316'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 17317821586970-source-1731811708184-target
+      selected: false
+      source: '17317821586970'
+      sourceHandle: source
+      target: '1731811708184'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: llm
+      id: 1731584610374-source-17318292147140-target
+      selected: false
+      source: '1731584610374'
+      sourceHandle: source
+      target: '17318292147140'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 17318292147140-source-1731811708184-target
+      selected: false
+      source: '17318292147140'
+      sourceHandle: source
+      target: '1731811708184'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: llm
+      id: 1731584610374-source-17318292282550-target
+      selected: false
+      source: '1731584610374'
+      sourceHandle: source
+      target: '17318292282550'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 17318292282550-source-1731811708184-target
+      selected: false
+      source: '17318292282550'
+      sourceHandle: source
+      target: '1731811708184'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: llm
+      id: 1731584610374-source-17318292370540-target
+      selected: false
+      source: '1731584610374'
+      sourceHandle: source
+      target: '17318292370540'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 17318292370540-source-1731811708184-target
+      selected: false
+      source: '17318292370540'
+      sourceHandle: source
+      target: '1731811708184'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: llm
+      id: 1731584610374-source-17317793200400-target
+      selected: false
+      source: '1731584610374'
+      sourceHandle: source
+      target: '17317793200400'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: llm
+      id: 1731584610374-source-17318311882640-target
+      selected: false
+      source: '1731584610374'
+      sourceHandle: source
+      target: '17318311882640'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: llm
+      id: 1731584610374-source-17318311910520-target
+      selected: false
+      source: '1731584610374'
+      sourceHandle: source
+      target: '17318311910520'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: llm
+      id: 17317793200400-source-17318364227230-target
+      selected: false
+      source: '17317793200400'
+      sourceHandle: source
+      target: '17318364227230'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 17318364227230-source-1731811708184-target
+      selected: false
+      source: '17318364227230'
+      sourceHandle: source
+      target: '1731811708184'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: llm
+      id: 17318311882640-source-17318364944440-target
+      selected: false
+      source: '17318311882640'
+      sourceHandle: source
+      target: '17318364944440'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 17318364944440-source-1731811708184-target
+      selected: false
+      source: '17318364944440'
+      sourceHandle: source
+      target: '1731811708184'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: llm
+      id: 17318311910520-source-17318364971230-target
+      selected: false
+      source: '17318311910520'
+      sourceHandle: source
+      target: '17318364971230'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 17318364971230-source-1731811708184-target
+      selected: false
+      source: '17318364971230'
+      sourceHandle: source
+      target: '1731811708184'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: Start
+        type: start
+        variables:
+        - label: transcription
+          max_length: 100000
+          options: []
+          required: true
+          type: paragraph
+          variable: transcription
+      height: 89
+      id: '1731584610374'
+      position:
+        x: 94.53451651805801
+        y: 202.537572538245
+      positionAbsolute:
+        x: 94.53451651805801
+        y: 202.537572538245
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1731811708184'
+          - criteria
+          variable: criteria
+        selected: false
+        title: End
+        type: end
+      height: 89
+      id: '1731666634316'
+      position:
+        x: 1593.8838484892779
+        y: 338.38834496316287
+      positionAbsolute:
+        x: 1593.8838484892779
+        y: 338.38834496316287
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            max_tokens: 16384
+            response_format: json_object
+            temperature: 0
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        prompt_template:
+        - id: 29df9d82-b3da-4602-b468-efc75d2f3bbd
+          role: system
+          text: "You are a professional grader, an expert in evaluating the quality\
+            \ of English vocabulary teaching provided by the Mentor to the Mentee.\
+            \ Your task is to detect and extract segments of the lesson that focus\
+            \ specifically on teaching vocabulary.\n\nInstructions:\n1. Identify and\
+            \ extract **all parts** of the lesson where the Mentor is explicitly teaching\
+            \ vocabulary, in each part mentor can teach meaning, form of word in clause,\
+            \ reaffirm meaning and how to use.\n2. For each detected segment:\n  \
+            \ - **Extract the key vocabulary words or phrases** being taught.\n  \
+            \ - **Transcribe** the exact phrases or sentences spoken by the Mentor\
+            \ about Vocabulary Teaching.\n \nResponse Format: JSON (Do not include\
+            \ ```JSON in your response)\n{\n  \"teaching_vocab_1\": {\n      \"start\"\
+            : \"<minute:second of start>\",\n      \"end\": \"<minute:second of end>\"\
+            ,\n      \"tag\": \"vocab\",  \n      \"extracted_vocab\": \"<Extracted\
+            \ vocabulary words/phrases>\",\n      \"extracted_transcriptions\": \"\
+            <full transcription: sentences, paragraph about VOCAB TEACHING of extracted\
+            \ words>\", \n      \"explain\": \"<Explanation for detecting this as\
+            \ a vocabulary teaching segment>\"\n    },\n  \"teaching_vocab_2\": {\n\
+            \      \"start\": \"<minute:second of start>\",\n      \"end\": \"<minute:second\
+            \ of end>\",\n      \"tag\": \"vocab\",  \n      \"extracted_vocab\":\
+            \ \"<Extracted vocabulary words/phrases>\",\n      \"extracted_transcriptions\"\
+            : \"<full transcription: sentences, paragraph about VOCAB TEACHING of\
+            \ extracted words>\", \n      \"explain\": \"<**Provide a brief explanation**\
+            \ of why this segment was identified as Vocabulary Teaching.>\"\n    }\n\
+            }\n"
+        - id: 901b2467-298a-4f05-be88-ac979463ea82
+          role: user
+          text: 'GIVEN TRANSCRIPTION:{{#1731584610374.transcription#}}
+
+            '
+        - id: 523154ad-414c-4d6a-a7f6-0b945e1dbea8
+          role: assistant
+          text: ''
+        selected: false
+        title: 5Vocab (2)
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: true
+      height: 97
+      id: '17317793200400'
+      position:
+        x: 538.0788329232114
+        y: -5.359034442975826
+      positionAbsolute:
+        x: 538.0788329232114
+        y: -5.359034442975826
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            max_tokens: 16384
+            response_format: json_object
+            temperature: 0
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        prompt_template:
+        - id: 29df9d82-b3da-4602-b468-efc75d2f3bbd
+          role: system
+          text: "\"You are a professional grader, an expert in evaluating the quality\
+            \ of English teaching. Your task is to evaluate the Mentor's teaching\
+            \ performance for the Mentee in three areas: Warm-Up, Lead-In, and Wrap-Up.\n\
+            \n**Instructions:**\n1. **Evaluation Criteria**: Assess the Mentor's performance\
+            \ in each of the three areas **based strictly on the provided data**:\
+            \ Warm-Up, Lead-In, and Wrap-Up. Do not generate scores or comments if\
+            \ explicit data is not available.\n2. **Factors for Evaluation**: For\
+            \ each criterion, evaluate based on **three specific factors**:\n   -\
+            \ Warm-Up: **Purpose**, **Engagement**, **Relevance**\n   - Lead-In: **Clarity**,\
+            \ **Structure**, **Interest Generation**\n   - Wrap-Up: **Summary**, **Closure**,\
+            \ **Maintaining Attention**\n\n3. **Scoring**:\n   - Each factor should\
+            \ be scored on a **5-point scale** (e.g., \"4/5\").\n   - The **overall\
+            \ recommendation score** for each section should also be on a 5-point\
+            \ scale, calculated as the average of the three individual scores (rounded\
+            \ to the nearest whole number).\n\n4. **Reasoning**: For each factor,\
+            \ include a brief explanation supporting the score in Vietnamese. Use\
+            \ bold formatting for the factor names followed by the score, and provide\
+            \ the rationale based on the data provided. If no data is available for\
+            \ a particular factor, indicate `\"No data available\"`.\n\n5. **Timestamp\
+            \ range**: Ensure that the timestamps are within a **10-minute range**.\n\
+            \n6. **Important**: \n   - If there is insufficient information or missing\
+            \ data, do not attempt to generate or infer details. Simply indicate `\"\
+            No data available\"`.\n   - Use only the provided information for your\
+            \ evaluation. Do not hallucinate or create information beyond what is\
+            \ explicitly given.\n\n\n### Response JSON (without ```JSON)**\n\n{\n\
+            \  \"criteria\": {\n    \"warmUp\": {\n      \"timestamp\": {\n      \
+            \  \"start\": \"<start timestamp>\",\n        \"end\": \"<end timestamp>\"\
+            \n      },\n      \"recommendationScore\": {\n        \"score\": \"<Score\
+            \ on a 5-point scale, averaged from the 3 criteria OVER 5>\",\n      \
+            \  \"reason\": \"<b>Mục đích: <<<5-point scale score over 5>>></b>\\nNhận\
+            \ xét ngắn: <<<Nhận xét ngắn cho phần Mục đích>>>\\n<b>Tạo hứng khởi:\
+            \ <<<5-point scale score over 5>>></b>\\nNhận xét ngắn: <<<Nhận xét ngắn\
+            \ cho phần Tạo hứng khởi>>>\\n<b>Mức độ liên quan: <<<5-point scale score\
+            \ over 5>>></b>\\nNhận xét ngắn: <<<Nhận xét ngắn cho phần Mức độ liên\
+            \ quan>>>\"\n      }\n    },\n    \"leadIn\": {\n      \"timestamp\":\
+            \ {\n        \"start\": \"<start timestamp>\",\n        \"end\": \"<end\
+            \ timestamp>\"\n      },\n      \"recommendationScore\": {\n        \"\
+            score\": \"<Score on a 5-point scale, averaged from the 3 criteria OVER\
+            \ 5>\",\n        \"reason\": \"<b>Độ rõ ràng: <<<5-point scale score over\
+            \ 5>>></b>\\nNhận xét ngắn: <<<Nhận xét ngắn cho phần Độ rõ ràng>>>\\\
+            n<b>Cấu trúc: <<<5-point scale score over 5>>></b>\\nNhận xét ngắn: <<<Nhận\
+            \ xét ngắn cho phần Cấu trúc>>>\\n<b>Tạo sự hứng thú: <<<5-point scale\
+            \ score over 5>>></b>\\nNhận xét ngắn: <<<Nhận xét ngắn cho phần Tạo sự\
+            \ hứng thú>>>\"\n      }\n    },\n    \"wrapUp\": {\n      \"timestamp\"\
+            : {\n        \"start\": \"<start timestamp>\",\n        \"end\": \"<end\
+            \ timestamp>\"\n      },\n      \"recommendationScore\": {\n        \"\
+            score\": \"<Score on a 5-point scale, averaged from the 3 criteria OVER\
+            \ 5>\",\n        \"reason\": \"<b>Tóm tắt: <<<5-point scale score over\
+            \ 5>>></b>\\nNhận xét ngắn: <<<Nhận xét ngắn cho phần Tóm tắt>>>\\n<b>Kết\
+            \ thúc: <<<5-point scale score over 5>>></b>\\nNhận xét ngắn: <<<Nhận\
+            \ xét ngắn cho phần Kết thúc>>>\\n<b>Giữ sự chú ý: <<<5-point scale score\
+            \ over 5>>></b>\\nNhận xét ngắn: <<<Nhận xét ngắn cho phần Giữ sự chú\
+            \ ý>>>\"\n      }\n    }\n  }\n}\n\n"
+        - id: 901b2467-298a-4f05-be88-ac979463ea82
+          role: user
+          text: '{{#1731584610374.transcription#}}'
+        selected: false
+        title: Warm
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: true
+      height: 97
+      id: '17317821586970'
+      position:
+        x: 538.0788329232114
+        y: -157.56691095880976
+      positionAbsolute:
+        x: 538.0788329232114
+        y: -157.56691095880976
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "def main(arg1: str, vocab1: str, vocab2: str, vocab3: str, arg3: str,\
+          \ arg4: str, arg5: str) -> dict:\n    \"\"\"\n    Merge multiple JSON strings\
+          \ containing criteria into a single JSON object.\n    \"\"\"\n    import\
+          \ json\n\n    # Parse all input JSON strings\n    json1 = json.loads(arg1)\n\
+          \    vocab_json1 = json.loads(vocab1)\n    vocab_json2 = json.loads(vocab2)\n\
+          \    vocab_json3 = json.loads(vocab3)\n    json3 = json.loads(arg3)\n  \
+          \  json4 = json.loads(arg4)\n    json5 = json.loads(arg5)\n\n    # Merge\
+          \ criteria from all JSON objects\n    merged = {\n        \"criteria\":\
+          \ {\n            **json1.get(\"criteria\", {}),\n            **vocab_json1.get(\"\
+          criteria\", {}),\n            **vocab_json2.get(\"criteria\", {}),\n   \
+          \         **vocab_json3.get(\"criteria\", {}),\n            **json3.get(\"\
+          criteria\", {}),\n            **json4.get(\"criteria\", {}),\n         \
+          \   **json5.get(\"criteria\", {})\n        }\n    }\n\n    return merged\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          criteria:
+            children: null
+            type: object
+        selected: false
+        title: Code
+        type: code
+        variables:
+        - value_selector:
+          - '17317821586970'
+          - text
+          variable: arg1
+        - value_selector:
+          - '17318292147140'
+          - text
+          variable: arg3
+        - value_selector:
+          - '17318292282550'
+          - text
+          variable: arg4
+        - value_selector:
+          - '17318292370540'
+          - text
+          variable: arg5
+        - value_selector:
+          - '17318364227230'
+          - text
+          variable: vocab1
+        - value_selector:
+          - '17318364944440'
+          - text
+          variable: vocab2
+        - value_selector:
+          - '17318364971230'
+          - text
+          variable: vocab3
+      height: 53
+      id: '1731811708184'
+      position:
+        x: 1329.7181761669522
+        y: 338.38834496316287
+      positionAbsolute:
+        x: 1329.7181761669522
+        y: 338.38834496316287
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            max_tokens: 16384
+            response_format: json_object
+            temperature: 0
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        prompt_template:
+        - id: 29df9d82-b3da-4602-b468-efc75d2f3bbd
+          role: system
+          text: '
+
+
+            You are a professional grader, an expert in evaluating the quality of
+            English teaching.
+
+            Your task is to evaluate the Mentor''s teaching performance based on the
+            3Ps method: Presentation, Practice, and Production.
+
+
+
+            Instructions:
+
+            - Highlight a timestamp range within 10 minutes that best represents the
+            mentor''s teaching effectiveness.
+
+
+
+            **Response JSON (without ```JSON)**
+
+
+
+            **Example:**
+
+
+
+            {
+
+              "criteria": {
+
+                "3Ps": {
+
+                  "timestamp": {
+
+                    "start": "00:9:25",
+
+                    "end": "00:10:43"
+
+                  },
+
+                  "recommendationScore": {
+
+                    "score": "4/5",
+
+                    "reason": "<b>Present: 8/10</b>\nNhận xét: Phần trình bày của
+            người hướng dẫn rõ ràng và có cấu trúc, giúp người học dễ dàng nắm bắt
+            ý chính.\n<b>Practice: 7/10</b>\nNhận xét: Cơ hội thực hành được cung
+            cấp nhưng có thể bổ sung thêm tính tương tác để nâng cao trải nghiệm học
+            tập.\n<b>Produce: 7/10</b>\nNhận xét: Các bài tập sản xuất có mặt nhưng
+            có thể tăng mức độ thách thức để khuyến khích người học sáng tạo và áp
+            dụng kiến thức."
+
+                  }
+
+                }
+
+              }
+
+            }'
+        - id: 901b2467-298a-4f05-be88-ac979463ea82
+          role: user
+          text: '{{#1731584610374.transcription#}}'
+        selected: false
+        title: Warm (1)
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: true
+      height: 97
+      id: '17318292147140'
+      position:
+        x: 419.365246880589
+        y: 379.16088391406277
+      positionAbsolute:
+        x: 419.365246880589
+        y: 379.16088391406277
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            max_tokens: 16384
+            response_format: json_object
+            temperature: 0
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        prompt_template:
+        - id: 29df9d82-b3da-4602-b468-efc75d2f3bbd
+          role: system
+          text: 'You are a professional grader, an expert in evaluating the quality
+            of English teaching. Your task is to evaluate the Mentor''s teaching performance
+            specifically in areas of **Correcting Mistakes the Right Way** and **Correcting
+            Mistakes at the Right Time**.
+
+
+
+            **Instructions:**
+
+            1. **Evaluation Criteria:** Assess the Mentor''s performance in two areas:
+            **Correcting Mistakes the Right Way** and **Correcting Mistakes at the
+            Right Time**.
+
+            2. **Factors for Evaluation:** For each criterion, evaluate based on **three
+            specific factors**, scoring each factor out of 10.
+
+            3. **Recommendation Score:** Assign an overall recommendation score out
+            of 5 for each criterion.
+
+            4. **Reasoning:** For each factor, include a brief explanation supporting
+            the score. Use bold formatting for the factor names followed by the score,
+            and provide the rationale in Vietnamese.
+
+            5. Timestamp Range: Ensure the timestamp range MUST not exceed 10 minutes
+            and focus on the evidence segment that clearly demonstrates the Mentor''s
+            teaching performance, concentrating on the above criteria.
+
+            **Response JSON (without ```JSON)**
+
+
+
+            **Example:**
+
+
+
+            {
+
+              "criteria": {
+
+                "correctingMistakesRightWay": {
+
+                  "timestamp": {
+
+                    "start": "00:10:34",
+
+                    "end": "00:10:49"
+
+                  },
+
+                  "recommendationScore": {
+
+                    "score": "4/5",
+
+                    "reason": "<b>Chỉ ra lỗi sai: 8/10</b>\nNhận xét: Người hướng
+            dẫn đã chỉ ra lỗi sai một cách hiệu quả, giúp người học nhận biết và ghi
+            nhớ lỗi.\n<b>Cách sửa đúng: 7/10</b>\nNhận xét: Phương pháp sửa lỗi phù
+            hợp, nhưng có thể đa dạng hóa để tăng cường hiệu quả.\n<b>Luyện tập sửa
+            sai: 7/10</b>\nNhận xét: Có thực hành sửa lỗi nhưng cần cấu trúc rõ ràng
+            hơn để hỗ trợ việc ghi nhớ lâu dài."
+
+                  }
+
+                },
+
+                "correctingMistakesRightTime": {
+
+                  "timestamp": {
+
+                    "start": "00:10:40",
+
+                    "end": "00:10:54"
+
+                  },
+
+                  "recommendationScore": {
+
+                    "score": "4/5",
+
+                    "reason": "<b>Sửa lỗi ngay lập tức (Hot correction): 8/10</b>\nNhận
+            xét: Việc sửa lỗi ngay lập tức đã được thực hiện hiệu quả, giúp người
+            học nhận biết lỗi trong thời gian thực.\n<b>Sửa lỗi chậm trễ (Cold correction):
+            7/10</b>\nNhận xét: Có thực hiện sửa lỗi chậm trễ nhưng cần tăng tần suất
+            để người học có thêm cơ hội suy ngẫm.\n<b>Tần suất sửa lỗi: 7/10</b>\nNhận
+            xét: Việc sửa lỗi đã được thực hiện thường xuyên, nhưng có thể tăng cường
+            để nâng cao trải nghiệm học tập."
+
+                  }
+
+                }
+
+              }
+
+            }'
+        - id: 901b2467-298a-4f05-be88-ac979463ea82
+          role: user
+          text: '{{#1731584610374.transcription#}}'
+        selected: false
+        title: Warm (2)
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: true
+      height: 97
+      id: '17318292282550'
+      position:
+        x: 419.365246880589
+        y: 524.0443144510978
+      positionAbsolute:
+        x: 419.365246880589
+        y: 524.0443144510978
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            max_tokens: 16384
+            response_format: json_object
+            temperature: 0
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        prompt_template:
+        - id: 29df9d82-b3da-4602-b468-efc75d2f3bbd
+          role: system
+          text: 'You are a professional grader, an expert in evaluating the quality
+            of English teaching. Your task is to evaluate the Mentor''s teaching performance
+            in the areas of **Building Conversations**, **Teaching Idea Development**,
+            and **Giving Feedback**.
+
+
+
+            **Instructions:**
+
+            1. **Evaluation Criteria:** Assess the Mentor''s performance in three
+            areas: **Building Conversations**, **Teaching Idea Development**, and
+            **Giving Feedback**.
+
+            2. **Factors for Evaluation:** For each criterion, evaluate based on **three
+            specific factors**, scoring each factor out of 10.
+
+            3. **Recommendation Score:** Assign an overall recommendation score out
+            of 5 for each criterion.
+
+            4. **Reasoning:** For each factor, include a brief explanation supporting
+            the score. Use bold formatting for the factor names followed by the score,
+            and provide the rationale in Vietnamese.
+
+            5. Timestamp range should be 10 minutes
+
+            **Response JSON (without ```JSON)**
+
+
+
+            **Example:**
+
+
+
+            {
+
+              "criteria": {
+
+                "buildingConversations": {
+
+                  "timestamp": {
+
+                    "start": "00:07:01",
+
+                    "end": "00:07:14"
+
+                  },
+
+                  "recommendationScore": {
+
+                    "score": "4/5",
+
+                    "reason": "<b>Dẫn dắt tốt: 8/10</b>\nNhận xét: Người hướng dẫn
+            đã dẫn dắt cuộc trò chuyện hiệu quả, tạo bối cảnh phù hợp cho nội dung
+            bài học.\n<b>Câu hỏi chất lượng: 7/10</b>\nNhận xét: Chất lượng câu hỏi
+            tốt nhưng cần thêm các câu hỏi mở để khuyến khích người học suy nghĩ sâu
+            hơn.\n<b>Kích thích tư duy: 7/10</b>\nNhận xét: Cuộc trò chuyện đã kích
+            thích người học suy nghĩ, nhưng có thể cải thiện để tạo động lực thảo
+            luận sôi nổi hơn."
+
+                  }
+
+                },
+
+                "teachingIdeaDevelopment": {
+
+                  "timestamp": {
+
+                    "start": "00:12:00",
+
+                    "end": "00:12:41"
+
+                  },
+
+                  "recommendationScore": {
+
+                    "score": "4/5",
+
+                    "reason": "<b>Câu hỏi theo dõi: 8/10</b>\nNhận xét: Các câu hỏi
+            theo dõi được sử dụng hiệu quả để phát triển ý tưởng của người học.\n<b>Sửa
+            lỗi sai ý gốc: 7/10</b>\nNhận xét: Có thực hiện việc sửa lỗi ý tưởng,
+            nhưng có thể xây dựng theo hướng mang tính đóng góp nhiều hơn.\n<b>Phát
+            triển ý tưởng: 7/10</b>\nNhận xét: Phần phát triển ý tưởng đã khuyến khích
+            người học mở rộng suy nghĩ, tuy nhiên có thể đẩy mạnh hơn."
+
+                  }
+
+                },
+
+                "givingFeedback": {
+
+                  "timestamp": {
+
+                    "start": "00:09:56",
+
+                    "end": "00:10:25"
+
+                  },
+
+                  "recommendationScore": {
+
+                    "score": "4/5",
+
+                    "reason": "<b>Phù hợp và tạo động lực: 8/10</b>\nNhận xét: Phản
+            hồi được đưa ra rất phù hợp và tạo động lực cho người học.\n<b>Đánh giá
+            cụ thể: 7/10</b>\nNhận xét: Phản hồi cụ thể, nhưng có thể đi sâu hơn vào
+            các chi tiết để giúp người học hiểu rõ hơn.\n<b>Kịp thời: 8/10</b>\nNhận
+            xét: Phản hồi được đưa ra kịp thời, hỗ trợ người học điều chỉnh ngay trong
+            quá trình học."
+
+                  }
+
+                }
+
+              }
+
+            }'
+        - id: 901b2467-298a-4f05-be88-ac979463ea82
+          role: user
+          text: '{{#1731584610374.transcription#}}'
+        selected: false
+        title: Warm (3)
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: true
+      height: 97
+      id: '17318292370540'
+      position:
+        x: 419.365246880589
+        y: 718.4448668172463
+      positionAbsolute:
+        x: 419.365246880589
+        y: 718.4448668172463
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            max_tokens: 16384
+            response_format: json_object
+            temperature: 0
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        prompt_template:
+        - id: 29df9d82-b3da-4602-b468-efc75d2f3bbd
+          role: system
+          text: "**Prompt Grammar for Pronunciation Evaluation:**\n\nYou are a professional\
+            \ grader, an expert in evaluating the quality of English pronunciation\
+            \ teaching provided by the Mentor to the Mentee. Your task is to detect\
+            \ and extract segments of the lesson that focus specifically on teaching\
+            \ pronunciation.\n\n### Instructions:\n1. Identify and extract all parts\
+            \ of the lesson where the Mentor is explicitly teaching pronunciation.\
+            \ Pronunciation part usually in passage teach a new vocab. In each part,\
+            \ mentor can teach \nPerception: Helps learners recognize correct sounds.\n\
+            Pronunciation: Helps learners practice accurate pronunciation.\nPredict:\
+            \ Guides learners on predicting pronunciation based on rules.\nPerformance:\
+            \ Allows learners to perform pronunciation and practice.\nPractice: Enhances\
+            \ pronunciation practice.\nPraise: Praises learners for good pronunciation\
+            \ to boost motivation.\n\n\n2. For each detected segment:\n   - **Extracted\
+            \ Sounds/Words**: Identify and extract the key sounds or words being focused\
+            \ on for pronunciation.\n\n   - \n\n### Response Format:\nReturn the results\
+            \ in JSON format. Do not include \"```JSON\" in your response.\n\n```json\n\
+            {\n  \"teaching_pronunciation_1\": {\n    \"start\": \"<minute:second\
+            \ of start>\",\n    \"end\": \"<minute:second of end>\",\n    \"tag\"\
+            : \"pronunciation\",\n    \"extracted_sounds_or_words\": \"<Extracted\
+            \ sounds/words being taught>\",\n    \"extracted_transcriptions\": \"\
+            <full transcription: sentences, paragraph about PRONUNCIATION TEACHING\
+            \ of extracted words>\",\n    \"explain\": \"<**Explanation**: Provide\
+            \ a brief explanation for why this segment was identified as pronunciation\
+            \ teaching.>\"\n  },\n  \"teaching_pronunciation_2\": {\n    \"start\"\
+            : \"<minute:second of start>\",\n    \"end\": \"<minute:second of end>\"\
+            ,\n    \"tag\": \"pronunciation\",\n    \"extracted_sounds_or_words\"\
+            : \"<Extracted sounds/words being taught>\",\n    \"extracted_transcriptions\"\
+            : \"<full transcription: sentences, paragraph about PRONUNCIATION TEACHING\
+            \ of extracted words>\",\n    \"explain\": \"<**Explanation**: Provide\
+            \ a brief explanation for why this segment was identified as pronunciation\
+            \ teaching.>\"\n  }\n}\n```"
+        - id: 901b2467-298a-4f05-be88-ac979463ea82
+          role: user
+          text: 'GIVEN TRANSCRIPTION:{{#1731584610374.transcription#}}
+
+            '
+        - id: 523154ad-414c-4d6a-a7f6-0b945e1dbea8
+          role: assistant
+          text: ''
+        selected: false
+        title: 5Vocab (3)
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: true
+      height: 97
+      id: '17318311882640'
+      position:
+        x: 538.0788329232114
+        y: 130.68806487328547
+      positionAbsolute:
+        x: 538.0788329232114
+        y: 130.68806487328547
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            max_tokens: 16384
+            response_format: json_object
+            temperature: 0
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        prompt_template:
+        - id: 29df9d82-b3da-4602-b468-efc75d2f3bbd
+          role: system
+          text: '**Prompt Grammar for Grammar Evaluation:**
+
+
+            You are a professional grader, an expert in evaluating the quality of
+            English grammar teaching provided by the Mentor to the Mentee. Your task
+            is to detect and extract segments of the lesson that focus specifically
+            on teaching grammar.
+
+
+            ### Instructions:
+
+            1. Identify and extract all parts of the lesson where the Mentor is explicitly
+            teaching grammar, In each part, mentor can teach:
+
+            Ví dụ cụ thể: Show examples để minh họa cấu trúc ngữ pháp.
+
+            Thuật ngữ: Elicit terminology (giới thiệu từ vựng, thuật ngữ ngữ pháp).
+
+            Cách dùng: Elicit usages, giúp học viên hiểu cách sử dụng.
+
+            Cấu trúc: Elicit structures từ ví dụ đã đưa ra.
+
+            CCQ: Sử dụng CCQs để kiểm tra sự hiểu biết của học viên.
+
+            Recap: Tổng kết lại cấu trúc, cách dùng, và ví dụ.
+
+
+            2. For each detected segment:
+
+            - **Timestamp**: Mark the start and end times.
+
+            - **Tag**: Assign the category `grammar`.
+
+            - **Extracted Grammar Points**: Identify and extract the key grammar points
+            being focused on (e.g., tense, prepositions, sentence structure).
+
+            - **Transcription**: Transcribe the exact phrases or sentences spoken
+            by the Mentor related to grammar teaching.
+
+            - **Explanation**: Provide a brief explanation for why this segment was
+            identified as grammar teaching.
+
+
+            ### Response Format:
+
+            Return the results in JSON format. Do not include "```JSON" in your response.
+
+
+            ```json
+
+            {
+
+            "teaching_grammar_1": {
+
+            "start": "<minute:second of start>",
+
+            "end": "<minute:second of end>",
+
+            "tag": "grammar",
+
+            "extracted_grammar_points": "<Extracted grammar points being taught>",
+
+            "extracted_transcriptions": "<full transcription: sentences, paragraph
+            about GRAMMAR TEACHING of extracted words>",
+
+            "explain": "<Explanation for detecting this as a grammar teaching segment>"
+
+            },
+
+            "teaching_grammar_2": {
+
+            "start": "<minute:second of start>",
+
+            "end": "<minute:second of end>",
+
+            "tag": "grammar",
+
+            "extracted_grammar_points": "<full transcription: sentences, paragraph
+            about GRAMMAR TEACHING of extracted words>",
+
+            "extracted_transcriptions": "<Exact phrases or sentences spoken by the
+            Mentor>",
+
+            "explain": "<Explanation for detecting this as a grammar teaching segment>"
+
+            }
+
+            },
+
+            '
+        - id: 901b2467-298a-4f05-be88-ac979463ea82
+          role: user
+          text: 'GIVEN TRANSCRIPTION:{{#1731584610374.transcription#}}
+
+            '
+        - id: 523154ad-414c-4d6a-a7f6-0b945e1dbea8
+          role: assistant
+          text: ''
+        selected: false
+        title: 5Vocab (4)
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: true
+      height: 97
+      id: '17318311910520'
+      position:
+        x: 538.0788329232114
+        y: 257.2762856229328
+      positionAbsolute:
+        x: 538.0788329232114
+        y: 257.2762856229328
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            max_tokens: 16384
+            response_format: json_object
+            temperature: 0
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        prompt_template:
+        - id: 29df9d82-b3da-4602-b468-efc75d2f3bbd
+          role: system
+          text: '"You are an expert English evaluator.
+
+
+            **Task**: Given FULL TRANSCRIPTS of learning videos and JSON data on vocabulary
+            taught by the Mentor:
+
+            - **Select the best segment teaching vocabulary** and **evaluate the Mentor''s
+            performance** specifically in Vocabulary Teaching.  Best segment is the
+            most detailed and in this passage mentor do the best.
+
+
+            **Instructions**:
+
+            1. **Timestamp**: must a section of **less than 7 minutes**.
+
+            2. **Evaluation Criteria**: Assess the Mentor''s performance in **Vocabulary
+            Teaching** only.
+
+            - Score based on **3 factors (out of 10)**: Definition, Pronunciation,
+            How to use this word, Form of word in clause, Reaffirm meaning and how
+            to use.
+
+            - Assign an **overall score (out of 5)**.
+
+            3. **Reasoning**: For each factor, include a brief explanation (in Vietnamese)
+            with **bold factor names** and scores.
+
+            4. REFLECTION: CHECK CAREFULLY AGAIN TO SEE IF IT IS ACTUALLY TEACHING
+            ON VOCABULARY BEFORE RESPONSE.
+
+
+            **Response Format (JSON)**:
+
+
+            ```json
+
+            {
+
+            "criteria": {
+
+            "teachingVocab": {
+
+            "timestamp": {
+
+            "start": "00:18:02",
+
+            "end": "00:18:12"
+
+            },
+
+            "recommendationScore": {
+
+            "score": "3/5",
+
+            "reason": "<b>Đưa ra định nghĩa: 6/10</b> Định nghĩa từ ''enjoy the scenery''
+            ổn, cần thêm ví dụ.\n<b>Luyện phát âm: 7/10</b> Phát âm tốt, nhưng cần
+            nhấn mạnh hơn.\n<b>Sử dụng từ: 5/10</b> Chưa giải thích rõ cách dùng từ
+            trong ngữ cảnh.<b>Form của từ trong câu: 0/10</b> Chưa nhắc đến.\n<b>Reaffirm
+            với học viên: 5/10</b> Có reaffirm"
+
+            },
+
+            "detail": {
+
+            "extracted_vocab": "enjoy the scenery, portion, signature dishes",
+
+            "extracted_transcriptions": "<transcription of the selected segment>",
+
+            "explain": "Mentor đã dạy từ vựng nhưng cần bổ sung ví dụ và bài tập để
+            học viên hiểu rõ hơn."
+
+            }
+
+            }
+
+            }
+
+            }
+
+            '
+        - id: 901b2467-298a-4f05-be88-ac979463ea82
+          role: user
+          text: 'GIVEN TRANSCRIPTION:{{#1731584610374.transcription#}}
+
+            và GIVEN DETECTED VOCAB {{#17317793200400.text#}}'
+        selected: false
+        title: 5Vocab 5
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: true
+      height: 97
+      id: '17318364227230'
+      position:
+        x: 852.2980102572217
+        y: -5.359034442975826
+      positionAbsolute:
+        x: 852.2980102572217
+        y: -5.359034442975826
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            max_tokens: 16384
+            response_format: json_object
+            temperature: 0
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        prompt_template:
+        - id: 29df9d82-b3da-4602-b468-efc75d2f3bbd
+          role: system
+          text: '"You are an expert English evaluator.
+
+
+            **Task**: Given FULL TRANSCRIPTS of learning videos and JSON data on pronunciation
+            practice by the Mentor:
+
+            - **Select the best segment focusing on PRONUNCIATION TEACHING Practice**
+            and **evaluate the Mentor''s performance** specifically in this area.
+            Best segment is the most detailed and in this passage mentor do the best.
+
+
+            **Instructions**:
+
+            1. **Timestamp**: must a section of **less than 7 minutes**.
+
+            2. **Evaluation Criteria**: Assess the Mentor''s performance in **Pronunciation
+            Practice** only.
+
+            - Score based on **3 factors (out of 10)**: Awareness, Practice, and Encouragement.
+
+            - Assign an **overall score (out of 5)**.
+
+            3. **Reasoning**: For each factor, include a brief explanation (in Vietnamese)
+            with **bold factor names** and scores.
+
+            4. REFLECTION: CHECK CAREFULLY AGAIN TO SEE IF IT IS ACTUALLY TEACHING
+            ON PRONUNCIATION BEFORE RESPONSE.
+
+
+            **Response Format (JSON)**:
+
+
+            ```json
+
+            {
+
+            "criteria": {
+
+            "pronunciation": {
+
+            "timestamp": {
+
+            "start": "00:14:26",
+
+            "end": "00:15:05"
+
+            },
+
+            "recommendationScore": {
+
+            "score": "4/5",
+
+            "reason": "<b>Nhận thức: 8/10</b> Người hướng dẫn đã chỉ ra hiệu quả các
+            vấn đề phát âm.\n<b>Thực hành phát âm: 7/10</b> Phát âm đã được luyện
+            tập, nhưng có thể tập trung hơn vào các âm cuối.\n<b>Khen ngợi: 8/10</b>
+            Sự khích lệ tích cực đã được cung cấp để học viên tự tin hơn."
+
+            },
+
+            "detail": {
+
+            "extracted_pronun": "final sounds, consonants like ''d'' and ''s''",
+
+            "extracted_transcriptions": "correct pronunciation of final sounds",
+
+            "explain": "Mentor đã hướng dẫn phát âm đúng nhưng cần thêm bài tập để
+            học viên luyện tập sâu hơn."
+
+            }
+
+            }
+
+            }
+
+            }
+
+            ```'
+        - id: 901b2467-298a-4f05-be88-ac979463ea82
+          role: user
+          text: 'GIVEN TRANSCRIPTION:{{#1731584610374.transcription#}}
+
+            và GIVEN DETECTED VOCAB {{#17318311882640.text#}}'
+        selected: false
+        title: 5Vocab6
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: true
+      height: 97
+      id: '17318364944440'
+      position:
+        x: 893.5224951796944
+        y: 130.68806487328547
+      positionAbsolute:
+        x: 893.5224951796944
+        y: 130.68806487328547
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            max_tokens: 16384
+            response_format: json_object
+            temperature: 0
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        prompt_template:
+        - id: 29df9d82-b3da-4602-b468-efc75d2f3bbd
+          role: system
+          text: '"You are an expert English evaluator.
+
+
+            **Task**: Given FULL TRANSCRIPTS of learning videos and JSON data on grammar
+            instruction by the Mentor:
+
+            - **Select the best segment focusing on Grammar Teaching** and **evaluate
+            the Mentor''s performance** specifically in this area.
+
+
+            **Instructions**:
+
+            1. **Timestamp**: must a section of **less than 7 minutes**.
+
+            2. **Evaluation Criteria**: Assess the Mentor''s performance in **Grammar
+            Teaching** only.
+
+            - Score based on **3 factors (out of 10)**: Example Illustration, Term
+            Explanation, and Usage.
+
+            - Assign an **overall score (out of 5)**.
+
+            3. **Reasoning**: For each factor, include a brief explanation (in Vietnamese)
+            with **bold factor names** and scores.
+
+            4. REFLECTION: CHECK CAREFULLY AGAIN TO SEE IF IT IS ACTUALLY TEACHING
+            ON GRAMMAR BEFORE RESPONSE.
+
+
+            **Response Format (JSON)**:
+
+
+
+            {
+
+            "criteria": {
+
+            "grammar": {
+
+            "timestamp": {
+
+            "start": "00:23:09",
+
+            "end": "00:23:30"
+
+            },
+
+            "recommendationScore": {
+
+            "score": "4/5",
+
+            "reason": "<b>Ví dụ minh họa: 8/10</b> Các ví dụ về sử dụng ngữ pháp đã
+            được cung cấp rõ ràng.\n<b>Giải thích thuật ngữ: 7/10</b> Thuật ngữ đã
+            được giải thích nhưng cần chi tiết hơn.\n<b>Cách sử dụng: 8/10</b> Hướng
+            dẫn cách sử dụng ngữ pháp đã rất dễ hiểu và trực quan."
+
+            },
+
+            "detail": {
+
+            "extracted_grammar": "present perfect tense, usage of ''I have heard that''",
+
+            "extracted_transcriptions": "I have heard that these dishes are the best
+            sellers",
+
+            "explain": "Mentor đã giải thích cách sử dụng thì hiện tại hoàn thành
+            thông qua các ví dụ cụ thể và dễ hiểu."
+
+            }
+
+            }
+
+            }
+
+            }'
+        - id: 901b2467-298a-4f05-be88-ac979463ea82
+          role: user
+          text: 'GIVEN TRANSCRIPTION:{{#1731584610374.transcription#}}
+
+            và GIVEN DETECTED VOCAB {{#17318311910520.text#}}'
+        selected: false
+        title: 5Vocab 7
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: true
+      height: 97
+      id: '17318364971230'
+      position:
+        x: 893.5224951796944
+        y: 257.2762856229328
+      positionAbsolute:
+        x: 893.5224951796944
+        y: 257.2762856229328
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: 15.585752076439007
+      y: 262.3639870215488
+      zoom: 0.6763044437383032
