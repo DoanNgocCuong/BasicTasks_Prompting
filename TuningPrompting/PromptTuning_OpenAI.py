@@ -6,9 +6,10 @@ import pandas as pd
 import time
 import openai
 from openai import OpenAIError
-
 from dotenv import load_dotenv
 import os
+from pathlib import Path
+
 load_dotenv()
 
 # Replace 'your_api_key_here' with your actual OpenAI API key
@@ -19,6 +20,7 @@ def process_conversation(order, base_prompt, inputs):
     responses = []
     response_times = []
     # Initialize the message history with the system message (prompt)
+    
     message_history = [{"role": "system", "content": base_prompt}]
 
 
@@ -31,7 +33,7 @@ def process_conversation(order, base_prompt, inputs):
         while try_count < 3:
             try:
                 completion = openai.chat.completions.create(
-                    model="gpt-4o-mini",
+                    model="gpt-4o",
                     messages=message_history,   
                     temperature=0,
                     max_tokens=6000,
@@ -62,10 +64,13 @@ def process_conversation(order, base_prompt, inputs):
     # Reset the message history for the next order
     return  responses, response_times, message_history
 
-sheet_name = 'prompting'
+sheet_name = 'TestingPromptOnDataset'
+
+# Define the base paths
+SCRIPTS_FOLDER = Path(__file__).parent
 
 # Load the input Excel file
-df_input = pd.read_excel(r'D:\OneDrive - Hanoi University of Science and Technology\ITE10-DS&AI-HUST\Learn&Task\PRODUCT_THECOACH\Đã đẩy lên GITHUB\BasicTasks_Prompting\TuningPrompting\input_data.xlsx', sheet_name=sheet_name)
+df_input = pd.read_excel(SCRIPTS_FOLDER / 'input_data.xlsx', sheet_name=sheet_name)
 
 # Set the number of rows to process
 num_rows_to_process = int(input("Enter the number of rows to process: "))
@@ -75,7 +80,7 @@ output_rows = []
 
 for index, row in df_input.head(num_rows_to_process).iterrows():
     order = row['order']
-    prompt = row['prompt']
+    prompt = row['system_prompt']
     inputs = [row['user_input']]
 
     responses, response_times, message_history = process_conversation(order, prompt, inputs)
