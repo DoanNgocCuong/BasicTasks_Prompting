@@ -14,26 +14,59 @@ load_dotenv()
 
 # Replace 'your_api_key_here' with your actual OpenAI API key
 openai.api_key = os.getenv('OPENAI_API_KEY')
-
+print(openai.api_key[:10])
 # @title OPENAI KO CÓ MESSAGE HISTORY
-def process_conversation(order, base_prompt, inputs):
+def process_conversation(order, base_prompt, inputs, conversation_history=None):
+    print(f"\n=== Processing Conversation ===")
+    print(f"Order: {order}")
+    print(f"Base Prompt: {base_prompt[:100]}...")
+    
     responses = []
     response_times = []
-    # Initialize the message history with the system message (prompt)
-    message_history = [{"role": "system", "content": base_prompt}]
-
-
+    chat_messages = []
+    
+    # 1. System message
+    chat_messages.append({"role": "system", "content": base_prompt})
+    print("\nSau khi thêm system message:")
+    print(chat_messages)
+    
+    # 2. History handling
+    if conversation_history and not pd.isna(conversation_history):
+        try:
+            # Parse conversation history from JSON string
+            history_messages = json.loads(conversation_history)
+            
+            # Validate format of history messages
+            if isinstance(history_messages, list):
+                for msg in history_messages:
+                    if isinstance(msg, dict) and 'role' in msg and 'content' in msg:
+                        chat_messages.append(msg)
+                    else:
+                        print(f"Warning: Skipping invalid message format in history: {msg}")
+            else:
+                print(f"Warning: conversation_history is not a list: {history_messages}")
+            
+            print("\nSau khi thêm history:")
+            print(json.dumps(chat_messages, indent=2, ensure_ascii=False))
+            
+        except json.JSONDecodeError as e:
+            print(f"Error parsing conversation history: {e}")
+            print(f"Raw conversation history: {conversation_history}")
+    
+    # 3. New input
     for user_input in inputs:
-        # Add the current user input to the message history
-        message_history.append({"role": "user", "content": user_input})
-
+        chat_messages.append({"role": "user", "content": user_input})
+        print("\nTrước khi gọi API:")
+        print(json.dumps(chat_messages, indent=2, ensure_ascii=False))
+        
         start_time = time.time()
         try_count = 0
         while try_count < 3:
             try:
+                print(f"DEBUG - Attempt {try_count + 1} to call OpenAI API")
                 completion = openai.chat.completions.create(
                     model="gpt-4o-mini",
-                    messages=message_history,   
+                    messages=chat_messages,   
                     temperature=0,
                     max_tokens=6000,
                     top_p=1,
@@ -43,25 +76,28 @@ def process_conversation(order, base_prompt, inputs):
                 end_time = time.time()
                 response_content = completion.choices[0].message.content
                 # Add the assistant's response to the message history
-                message_history.append({"role": "assistant", "content": response_content})
+                chat_messages.append({"role": "assistant", "content": response_content})
 
                 responses.append(response_content)
                 response_times.append(end_time - start_time)
 
                 # Print the completion output here
                 print(f"Order {order}, Input: '{user_input}', Response: '{response_content}', Time: {end_time - start_time:.2f}s\n====")
+                print(f"DEBUG - Chat messages after AI response: {chat_messages}")
                 break
-            except OpenAIError:
+            except OpenAIError as e:
                 try_count += 1
+                print(f"DEBUG - API Error on attempt {try_count}: {str(e)}")
                 if try_count >= 3:
                     responses.append("Request failed after 2 retries.")
                     response_times.append("-")
                     print(f"Order {order}, Input: '{user_input}', Response: 'Request failed after 2 retries.', Time: -")
                 else:
-                    time.sleep(3)  # Wait for 10 seconds before retrying
+                    print(f"DEBUG - Waiting 3 seconds before retry...")
+                    time.sleep(3)
 
     # Reset the message history for the next order
-    return  responses, response_times, message_history
+    return  responses, response_times, chat_messages
 
 sheet_name = 'TestingPromptOnDataset'
 
@@ -77,12 +113,24 @@ num_rows_to_process = int(input("Enter the number of rows to process: "))
 # List to store rows before appending them to the DataFrame
 output_rows = []
 
+print("\nAvailable columns in DataFrame:")
+print(df_input.columns.tolist())
+
 for index, row in df_input.head(num_rows_to_process).iterrows():
+    print(f"\n=== Processing Row {index} ===")
     order = row['order']
     prompt = row['system_prompt']
+    conversation_history = row['conversation_history']
     inputs = [row['user_input']]
-
-    responses, response_times, message_history = process_conversation(order, prompt, inputs)
+    
+    print(f"Row data:")
+    print(f"- Order: {order}")
+    print(f"- Prompt: {prompt[:100]}...")
+    print(f"- User Input: {inputs[0]}")
+    
+    responses, response_times, chat_messages = process_conversation(
+        order, prompt, inputs, conversation_history
+    )
 
     for i, user_input in enumerate(inputs):
         output_rows.append({
@@ -99,9 +147,6 @@ df_output = pd.DataFrame(output_rows, columns=['order', 'prompt', 'user_input', 
 # Save the results to an Excel file
 try:
     df_output.to_excel('output_data.xlsx', index=False)  # Added .xlsx extension
-# If empty, it is the same domain.
-# Example: https://api.dify.ai
     print("Data has been successfully saved to 'output_data.xlsx'")
 except PermissionError:
     print("File is open. Please close the file and try again.")
-# ... existing code ...
