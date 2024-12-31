@@ -49,39 +49,41 @@ def simulate_conversation(row):
     response_times = []
     response_count = 0
 
-    # Extract prompts and settings
-    person_A_context = row['question_prompt']
-    person_B_context = row['answer_prompt']
-    current_question = row['first_question']
-    max_response = row['max_response']
+    # Extract settings from Excel row
+    createUserQuestion_prompt = row['createUserQuestion_prompt']  
+    AIAssistantResponse_prompt = row['AIAssistantResponse_prompt']
+    initialUserQuestion = row['initialUserQuestion']
+    maxConversationTurns = row['maxConversationTurns']
 
     # Person A starts the conversation
-    message_history.append(current_question)
+    message_history.append({"role": "Person A", "content": initialUserQuestion})
     response_times.append(0)  # No response time for the first question
-    print(f"---\nPerson A: {current_question}")
+    print(f"---\nPerson A: {initialUserQuestion}")
 
-    while response_count < max_response:
+    conversationTurnCount = 0  # Đếm số lượt hội thoại
+
+    while conversationTurnCount < maxConversationTurns:
         # Person B responds
         person_B_response, response_time = generate_response(
-            person_B_context, 
-            message_history
+            AIAssistantResponse_prompt, 
+            [msg["content"] for msg in message_history]  # Extract only content for API
         )
-        message_history.append(person_B_response)
+        message_history.append({"role": "Person B", "content": person_B_response})
         response_times.append(response_time)
         print(f"---\nPerson B: {person_B_response} (Response time: {response_time:.2f}s)")
-        response_count += 1
+        conversationTurnCount += 1
         time.sleep(1)
 
-        if response_count >= max_response:
+        if conversationTurnCount >= maxConversationTurns:
             break
 
         # Person A responds
         current_question, response_time = generate_response(
-            person_A_context, 
-            message_history, 
+            createUserQuestion_prompt, 
+            [msg["content"] for msg in message_history],  # Extract only content for API
             temperature=0.3
         )
-        message_history.append(current_question)
+        message_history.append({"role": "Person A", "content": current_question})
         response_times.append(response_time)
         print(f"---\nPerson A: {current_question} (Response time: {response_time:.2f}s)")
         time.sleep(1)
@@ -91,7 +93,7 @@ def simulate_conversation(row):
 def export_conversations_to_excel(all_messages, output_path):
     """Export all conversations and response times to an Excel file."""
     try:
-        df_export = pd.DataFrame(all_messages, columns=['Conversation', 'Response_Time'])
+        df_export = pd.DataFrame(all_messages, columns=['Role', 'Conversation', 'Response_Time'])
         df_export.to_excel(output_path, index=False)
         print(f"Conversations exported to {output_path}")
     except PermissionError:
@@ -112,8 +114,12 @@ def main():
 
             # Add conversation and response times to all messages
             for i in range(len(message_history)):
-                all_messages.append([message_history[i], response_times[i]])
-            all_messages.append(['---------------------------', 0])
+                all_messages.append([
+                    message_history[i]["role"],           # Role
+                    message_history[i]["content"],        # Conversation
+                    response_times[i]                     # Response_Time
+                ])
+            all_messages.append(['Separator', '---------------------------', 0])
 
         # Export results
         export_conversations_to_excel(all_messages, output_file)

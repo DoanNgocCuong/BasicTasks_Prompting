@@ -1,0 +1,358 @@
+{
+  "panelChats": [],
+  "inlineChats": [],
+  "schemaVersion": "1.0",
+  "deletedChats": {
+    "deletedMessageIDs": [],
+    "deletedPanelChatIDs": []
+  },
+  "kv_store": {
+    "unique_matched_lines_count": 0,
+    "total_repo_line_count": 112945,
+    "best_prompt_response": null,
+    "file_statistics": [
+      {
+        "file": "1_DeepDefine_Scoring_Benchmark_ver1.ipynb",
+        "total_lines": 931,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_DeepDefine_Scoring_Benchmark_ver2_SUMMARY.ipynb",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/Audio_VideoMentor.xlsx",
+        "total_lines": 3792,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/ContentAppTheCoach.md",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/IELTS Coach - Prompt order (main).xlsx",
+        "total_lines": 11590,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/IELTS.xlsx",
+        "total_lines": 13633,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/Import_TheCoach.md",
+        "total_lines": 11,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/MentorVideoScoring.md",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/NB_Prompting_GenSituationEnglish/genTinhHuongAppTheCoach_cTrang/10SituationsAppTheCoach.xlsx",
+        "total_lines": 1511,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/NB_Prompting_GenSituationEnglish/genTinhHuongAppTheCoach_cTrang/TOFU_ AI_COACH.xlsx",
+        "total_lines": 18072,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/NB_Prompting_GenSituationEnglish/situation_CustomizeJobSituations_CodeBuild/Log_Version.md",
+        "total_lines": 48,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/NB_Prompting_GenSituationEnglish/situation_CustomizeJobSituations_CodeBuild/README.md",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/NB_Prompting_GenSituationEnglish/situation_CustomizeJobSituations_CodeBuild/Ver1_BuildFlow_[BUT_Should_Stepbystep]_.ipynb",
+        "total_lines": 776,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/NB_Prompting_GenSituationEnglish/situation_CustomizeJobSituations_CodeBuild/Ver2_Update_STEPBYSTEP.ipynb",
+        "total_lines": 2439,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/NB_Prompting_GenSituationEnglish/situation_CustomizeJobSituations_CodeBuild/Ver2_[Test_ver]_MiniSituation.ipynb",
+        "total_lines": 543,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/NB_Prompting_GenSituationEnglish/situation_CustomizeJobSituations_CodeBuild/Ver3_[RUN_ver]_FullSituation.ipynb",
+        "total_lines": 1564,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/NB_Prompting_GenSituationEnglish/situation_CustomizeJobSituations_CodeBuild/Ver4_Output_19Jobs_merged_file.xlsx",
+        "total_lines": 336,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/NB_Prompting_GenSituationEnglish/situation_CustomizeJobSituations_CodeBuild/Ver4_[RUN_ver]_Excep_Freelancer.ipynb",
+        "total_lines": 1246,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/NB_Prompting_GenSituationEnglish/situation_CustomizeJobSituations_CodeBuild/Ver4_[RUN_ver]_Excep_Student.ipynb",
+        "total_lines": 476,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/NB_Prompting_GenSituationEnglish/situation_CustomizeJobSituations_CodeBuild/Ver4_[RUN_ver]_delta_Requirements.ipynb",
+        "total_lines": 16305,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/NB_Prompting_GenSituationEnglish/situation_CustomizeJobSituations_CodeBuild/VerCode3_Output1_3_jobs_situations_17min14s.xlsx",
+        "total_lines": 309,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/TOFU_ AI_COACH_DEV.xlsx",
+        "total_lines": 17208,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/Video Mentor - DoanCuong_ver2.4.yml",
+        "total_lines": 1490,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/crawlMoxie_auto90%.xlsx",
+        "total_lines": 994,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.2_Workflow/1_Video-Mentor-DoanCuong.yml",
+        "total_lines": 1490,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.2_Workflow/HowToCode_inWorkflow_Dify.md",
+        "total_lines": 58,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "2_PromptCreateTesting/1. PromptCreateTestingRAG_CSKH_TheCoach/lark_TestEssayTestingRAG.md",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "2_PromptCreateTesting/1. PromptCreateTestingRAG_CSKH_TheCoach/output_TestSuite/16LoaiQuestionHitRateRAG.xlsx",
+        "total_lines": 8572,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "2_PromptCreateTesting/2. PromptCreateTestingLLM_Robot_StepUpEducation/4. Personalize AI Coach - Testing Dataset.xlsx",
+        "total_lines": 3177,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "2_PromptCreateTesting/2. PromptCreateTestingLLM_Robot_StepUpEducation/5. Testing LLM Evaluation.xlsx",
+        "total_lines": 698,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "2_PromptCreateTesting/2. PromptCreateTestingLLM_Robot_StepUpEducation/CHANGLOG.MD",
+        "total_lines": 23,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "2_PromptCreateTesting/2. PromptCreateTestingLLM_Robot_StepUpEducation/testConversation.md",
+        "total_lines": 7,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "2_PromptCreateTesting/HowToBuild.md",
+        "total_lines": 37,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "2_Prompting&MetricsDefinition.ipynb",
+        "total_lines": 1527,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "3_Prompting_Chatbot.ipynb",
+        "total_lines": 270,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "4_SimulationConversationChatbot/Motivation.md",
+        "total_lines": 22,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "4_SimulationConversationChatbot/agent_evaluation.py",
+        "total_lines": 29,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "4_SimulationConversationChatbot/ai_generator.py",
+        "total_lines": 16,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "4_SimulationConversationChatbot/api_responder.py",
+        "total_lines": 21,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "4_SimulationConversationChatbot/main.py",
+        "total_lines": 55,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "4_SimulationConversationChatbot/note1.1_.ipynb",
+        "total_lines": 373,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/NOTE.txt",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/PromptTuning_OpenAI_v1.py",
+        "total_lines": 113,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/PromptTuning_OpenAI_v2_addMessageHistory.py",
+        "total_lines": 153,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/PromptTuning_Owen2.5.py",
+        "total_lines": 95,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/PromptingTuning_AppsScript_Packing",
+        "total_lines": 4,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/README.md",
+        "total_lines": 84,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/UI_DuKien.txt",
+        "total_lines": 3,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/code_aTruc.ipynb",
+        "total_lines": 2584,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/input_data.xlsx",
+        "total_lines": 29,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/requirements.txt",
+        "total_lines": 6,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/2PromptingTuning.xlsx",
+        "total_lines": 42,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/CKP/GIA LAP 1106.ipynb",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/Motivation.md",
+        "total_lines": 22,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/main.py",
+        "total_lines": 130,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "README.md",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "result.xlsx",
+        "total_lines": 23,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      }
+    ]
+  }
+}
