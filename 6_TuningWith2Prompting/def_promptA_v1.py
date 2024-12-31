@@ -21,6 +21,10 @@ def generate_roleA_response(client, roleA_prompt, message_history):
         model="gpt-4o-mini",
         messages=api_messages,
         temperature=0,
+        max_completion_tokens=2048,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0
     )
     end_time = time.time()
     
