@@ -14,7 +14,6 @@ def load_data(file_path):
     return pd.read_excel(file_path)
 
 def parse_conversation_history(history_str):
-    """Parse conversation history from JSON string."""
     if pd.isna(history_str) or not history_str:
         return []
     try:
@@ -33,6 +32,32 @@ def parse_conversation_history(history_str):
         print(f"Error parsing conversation history: {e}")
         return []
 
+def convert_roles_for_api(messages, is_roleA_turn=True):
+    """
+    Chuyển đổi roleA/roleB thành user/assistant cho OpenAI API
+    is_roleA_turn: True nếu đang là lượt của roleA, False nếu là lượt của roleB
+    """
+    converted_messages = []
+    for msg in messages:
+        if is_roleA_turn:
+            # Khi là lượt của roleA
+            if msg["role"] == "roleA":
+                role = "assistant"  # roleA's own messages become assistant
+            else:
+                role = "user"       # roleB's messages become user
+        else:
+            # Khi là lượt của roleB
+            if msg["role"] == "roleB":
+                role = "assistant"  # roleB's own messages become assistant
+            else:
+                role = "user"       # roleA's messages become user
+        
+        converted_messages.append({
+            "role": role,
+            "content": msg["content"]
+        })
+    return converted_messages
+
 def simulate_conversation(row):
     """Simulate a conversation based on the row of data."""
     message_history = []
@@ -40,55 +65,91 @@ def simulate_conversation(row):
     conversationTurnCount = 0
 
     # Extract settings from Excel row
-    roleA_prompt = row['roleA_prompt']           # Prompt cho roleA
-    roleB_prompt = row['roleB_prompt']           # Prompt cho roleB
-    initialConversationHistory = row['initialConversationHistory']  # JSON string chứa lịch sử hội thoại ban đầu
-    maxTurns = row['maxTurns']                   # Số lượt tối đa cho cuộc hội thoại
+    roleA_prompt = str(row['roleA_prompt']) if not pd.isna(row['roleA_prompt']) else ""
+    roleB_prompt = str(row['roleB_prompt']) if not pd.isna(row['roleB_prompt']) else ""
+    initialConversationHistory = row['initialConversationHistory']
+    
+    # Handle NaN in maxTurns with default value
+    maxTurns = row['maxTurns']
+    if pd.isna(maxTurns):
+        maxTurns = 3  # Default value if NaN
+    else:
+        maxTurns = int(maxTurns)
+    
+    print("\n=== Initial Settings ===")
+    print(f"RoleA Prompt: {roleA_prompt[:100]}..." if roleA_prompt else "RoleA Prompt: None")
+    print(f"RoleB Prompt: {roleB_prompt[:100]}..." if roleB_prompt else "RoleB Prompt: None")
+    print(f"Max Turns: {maxTurns}")
 
     # Parse and add conversation history if exists
-    history = parse_conversation_history(initialConversationHistory)
-    if history:
-        message_history.extend(history)
-        print("\n=== Initial Conversation History ===")
-        for msg in history:
-            print(f"{msg['role']}: {msg['content']}")
+    if pd.isna(initialConversationHistory):
+        print("\nNo initial conversation history")
+    else:
+        history = parse_conversation_history(initialConversationHistory)
+        if history:
+            message_history.extend(history)
+            print("\n=== Initial Conversation History ===")
+            print(json.dumps(message_history, indent=2, ensure_ascii=False))
     
     # Start conversation loop
     while conversationTurnCount < maxTurns:
         try:
             # Generate roleA message
+            print("\n=== RoleA Turn ===")
+            print("Original message history:")
+            print(json.dumps(message_history, indent=2, ensure_ascii=False))
+            
+            api_messages = [{"role": "system", "content": roleA_prompt}]
+            if message_history:
+                converted_history = convert_roles_for_api(message_history, is_roleA_turn=True)
+                api_messages.extend(converted_history)
+                print("\nConverted history for RoleA:")
+                print(json.dumps(api_messages, indent=2, ensure_ascii=False))
+            
             start_time = time.time()
             response = client.chat.completions.create(
-                model="gpt-3.5-turbo",
-                messages=[{"role": "system", "content": roleA_prompt}] + 
-                        [{"role": "user", "content": json.dumps(message_history)}],
-                temperature=0.3
+                model="gpt-4o-mini",
+                messages=api_messages,
+                temperature=0
             )
             end_time = time.time()
             roleA_message = response.choices[0].message.content
             message_history.append({"role": "roleA", "content": roleA_message})
             response_times.append(end_time - start_time)
-            print(f"\nRoleA: {roleA_message}")
+            print(f"\nRoleA Response: {roleA_message}")
+            print(f"Response Time: {end_time - start_time:.2f}s")
             
             # Generate roleB response
+            print("\n=== RoleB Turn ===")
+            print("Original message history:")
+            print(json.dumps(message_history, indent=2, ensure_ascii=False))
+            
+            api_messages = [{"role": "system", "content": roleB_prompt}]
+            if message_history:
+                converted_history = convert_roles_for_api(message_history, is_roleA_turn=False)
+                api_messages.extend(converted_history)
+                print("\nConverted history for RoleB:")
+                print(json.dumps(api_messages, indent=2, ensure_ascii=False))
+            
             start_time = time.time()
             response = client.chat.completions.create(
-                model="gpt-3.5-turbo",
-                messages=[{"role": "system", "content": roleB_prompt}] + 
-                        [{"role": "user", "content": json.dumps(message_history)}],
+                model="gpt-4o-mini",
+                messages=api_messages,
                 temperature=0
             )
             end_time = time.time()
             roleB_message = response.choices[0].message.content
             message_history.append({"role": "roleB", "content": roleB_message})
             response_times.append(end_time - start_time)
-            print(f"RoleB: {roleB_message}")
+            print(f"\nRoleB Response: {roleB_message}")
+            print(f"Response Time: {end_time - start_time:.2f}s")
             
             conversationTurnCount += 1
+            print(f"\n=== End of Turn {conversationTurnCount}/{maxTurns} ===")
             time.sleep(1)
 
         except Exception as e:
-            print(f"Error during conversation: {str(e)}")
+            print(f"\nError during conversation: {str(e)}")
             break
 
     return message_history, response_times
