@@ -52,22 +52,23 @@ def simulate_conversation(row, openai_client, api_client, use_api_for_roleB=Fals
     # Conversation loop
     while conversationTurnCount < maxTurns:
         try:
-            # RoleA's turn (always using OpenAI)
-            message_history, roleA_time = generate_roleA_response(openai_client, roleA_prompt, message_history)
+            # RoleA's turn
+            roleA_message, roleA_time = generate_roleA_response(openai_client, roleA_prompt, message_history)
+            message_history.append({"role": "roleA", "content": roleA_message})
             response_times.append(roleA_time)
 
-            # RoleB's turn (using either OpenAI or AICoachAPI)
+            # RoleB's turn
             client = api_client if use_api_for_roleB else openai_client
-            message_history, roleB_time = generate_roleB_response(
+            roleB_message, roleB_time = generate_roleB_response(
                 client, 
                 roleB_prompt, 
                 message_history,
                 use_api=use_api_for_roleB
             )
+            message_history.append({"role": "roleB", "content": roleB_message})
             response_times.append(roleB_time)
 
             conversationTurnCount += 1
-            print(f"\n=== End of Turn {conversationTurnCount}/{maxTurns} ===")
 
         except Exception as e:
             print(f"Error during conversation: {str(e)}")

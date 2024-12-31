@@ -28,5 +28,4 @@ def generate_roleA_response(client, roleA_prompt, message_history):
     print(f"\nRoleA Response: {roleA_message}")
     print(f"Response Time: {end_time - start_time:.2f}s")
     
-    message_history.append({"role": "roleA", "content": roleA_message})
-    return message_history, end_time - start_time 
+    return roleA_message, end_time - start_time 

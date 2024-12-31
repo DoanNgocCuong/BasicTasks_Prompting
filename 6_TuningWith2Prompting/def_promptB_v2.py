@@ -127,12 +127,11 @@ def generate_roleB_response(client, roleB_prompt, message_history, use_api=False
         print(f"\nRoleB Response: {roleB_message}")
         print(f"Response Time: {response_time:.2f}s")
         
-        message_history.append({"role": "roleB", "content": roleB_message})
-        return message_history, response_time
+        return roleB_message, response_time
         
     except Exception as e:
         print(f"\nError in generate_roleB_response: {str(e)}")
-        return message_history, 0
+        return None, 0
 
 def create_client(use_api=False):
     """Create appropriate client based on use_api flag"""

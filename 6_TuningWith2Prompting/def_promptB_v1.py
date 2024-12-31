@@ -20,7 +20,7 @@ def generate_roleB_response(client, roleB_prompt, message_history):
     response = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=api_messages,
-        temperature=0
+        temperature=0, 
     )
     end_time = time.time()
     
