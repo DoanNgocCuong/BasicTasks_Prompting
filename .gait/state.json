@@ -8,7 +8,7 @@
   },
   "kv_store": {
     "unique_matched_lines_count": 0,
-    "total_repo_line_count": 114961,
+    "total_repo_line_count": 116838,
     "best_prompt_response": null,
     "file_statistics": [
       {
@@ -319,7 +319,7 @@
       },
       {
         "file": "6_TuningWith2Prompting/2PromptingTuning.xlsx",
-        "total_lines": 155,
+        "total_lines": 1994,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -367,7 +367,7 @@
       },
       {
         "file": "6_TuningWith2Prompting/example/example_input.xlsx",
-        "total_lines": 153,
+        "total_lines": 85,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -438,8 +438,20 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "6_TuningWith2Prompting/promptA.md",
+        "total_lines": 6,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "6_TuningWith2Prompting/result.xlsx",
-        "total_lines": 26,
+        "total_lines": 69,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/somePromptCreate.md",
+        "total_lines": 57,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
