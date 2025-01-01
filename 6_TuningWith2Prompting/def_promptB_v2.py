@@ -100,10 +100,16 @@ def generate_roleB_response(client, roleB_prompt, message_history, use_api=False
         if use_api:
             # Using AI Coach API
             last_message = message_history[-1]['content'] if message_history else "sẵn sàng"
-            roleB_message = client.send_message(last_message)
+            response_data = client.send_message(last_message)
             
-            if roleB_message is None:
+            if response_data is None:
                 raise Exception("Failed to get response from AI Coach API")
+            
+            # Extract text from response
+            if isinstance(response_data, dict) and 'text' in response_data:
+                roleB_message = response_data['text'][0] if response_data['text'] else ""
+            else:
+                roleB_message = response_data
                 
         else:
             # Using OpenAI
@@ -117,7 +123,11 @@ def generate_roleB_response(client, roleB_prompt, message_history, use_api=False
             response = client.chat.completions.create(
                 model="gpt-4o-mini",
                 messages=api_messages,
-                temperature=0
+                temperature=0,
+                max_completion_tokens=2048,
+                top_p=1,
+                frequency_penalty=0,
+                presence_penalty=0
             )
             roleB_message = response.choices[0].message.content
         

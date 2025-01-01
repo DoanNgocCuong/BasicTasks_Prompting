@@ -32,3 +32,10 @@ roleB	Thank you for the clarification, Cuong! I appreciate your willingness to a
 Separator	-------------------	0		
 
 ```
+
+
+
+Run V2: 
+```
+python main_v2.py --use-api --rows 2
+```
