@@ -7,7 +7,7 @@ from utils_convert_roles_for_api import convert_roles_for_api
 
 
 class AICoachAPI:
-    def __init__(self, base_url="http://103.253.20.13:9400"):
+    def __init__(self, base_url="http://103.253.20.13:9400", timeout=30):
         """Khởi tạo với base URL của API"""
         self.base_url = base_url
         self.init_endpoint = f"{base_url}/personalized-ai-coach/api/v1/bot/initConversation"

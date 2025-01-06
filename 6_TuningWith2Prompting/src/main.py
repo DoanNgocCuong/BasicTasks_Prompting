@@ -6,7 +6,7 @@ import os
 from pathlib import Path
 import argparse
 from def_roleA import generate_roleA_message, create_roleA_client
-from def_roleB import generate_roleB_message, create_roleB_client
+from def_roleB import generate_roleB_response, create_roleB_client
 from export_conversations_to_excel import export_conversations_to_excel
 
 # Load environment variables
@@ -63,7 +63,7 @@ def simulate_conversation(row, openai_client, api_client, use_api_for_roleB=Fals
 
             # RoleB's turn
             client = api_client if use_api_for_roleB else openai_client
-            roleB_message, roleB_time = generate_roleB_message(
+            roleB_message, roleB_time = generate_roleB_response(
                 client,
                 roleB_prompt,
                 message_history,
@@ -105,7 +105,10 @@ def main(num_rows=None, input_file='2PromptingTuning.xlsx', output_file='result.
 
         # Create clients
         openai_client = create_roleA_client()
-        api_client = create_roleB_client(use_api=True) if use_api_for_roleB else None
+        if use_api_for_roleB:
+            api_client = create_roleB_client(use_api=True)
+        else:
+            api_client = None
 
         # Load and process data
         df = pd.read_excel(input_path)
@@ -117,6 +120,10 @@ def main(num_rows=None, input_file='2PromptingTuning.xlsx', output_file='result.
         all_messages = []
         for index, row in df.head(rows_to_process).iterrows():
             print(f"\n=== Processing Row {index + 1}/{rows_to_process} ===")
+            
+            # Tạo mới API client cho mỗi dòng
+            if use_api_for_roleB:
+                api_client = create_roleB_client(use_api=True)
             
             message_history, response_times = simulate_conversation(
                 row, 
