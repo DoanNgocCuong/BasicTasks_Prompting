@@ -1,0 +1,2 @@
+- v1: Chỉ có promptA và promptB
+- v2: Update thêm phần call API cho roleB
