@@ -46,3 +46,15 @@ Output
     "task_idx": 0
 }
 ```
+
+
+3. Chú ý: 
+- Khi xài trên giao diện UI, bản chất là call 2 API trên. 
++, Với init_message là: 'sẵn sàng' (được truyền trong API đó)
++, sau đó AI Assistant sẽ trả về 1 câu là câu được fix cứng. 
++, User nói thêm 1 câu. 
++, AI Assistant sẽ trả về 1 câu là câu được gen. 
+
+TUY NHIÊN: CÂU AI ASSISTANT GEN ĐẦU TIÊN NÀY ĐÚNG RA LÀ KO TÍNH CÂU: 'sẵn sàng' (init_message) cơ. 
+
+Thế mà qua test mình thấy: INIT_MESSAGE PHẢI TRÙNG NHAU THÌ VỚI first_message_user MỚI CHO KẾT QUẢ TRÙNG NHAU. 
