@@ -80,11 +80,12 @@ def simulate_conversation(row, openai_client, api_client, use_api_for_roleB=Fals
 
     return message_history, response_times
 
-def main(num_rows=None, input_file='2PromptingTuning.xlsx', output_file='result.xlsx', use_api_for_roleB=False):
+def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', output_file='result.xlsx', use_api_for_roleB=False):
     """
     Main function to process conversations
     Args:
-        num_rows: Số dòng cần xử lý (None để xử lý tất cả)
+        start_row: Dòng bắt đầu xử lý (index bắt đầu từ 0)
+        num_rows: Số dòng cần xử lý
         input_file: Tên file Excel input
         output_file: Tên file Excel output
         use_api_for_roleB: Nếu True, sử dụng AICoachAPI cho roleB
@@ -113,13 +114,21 @@ def main(num_rows=None, input_file='2PromptingTuning.xlsx', output_file='result.
         # Load and process data
         df = pd.read_excel(input_path)
         total_rows = len(df)
-        rows_to_process = min(num_rows or total_rows, total_rows)
+        
+        # Calculate start and end rows
+        start_idx = start_row if start_row is not None else 0
+        if num_rows:
+            end_idx = min(start_idx + num_rows, total_rows)
+        else:
+            end_idx = total_rows
+            
+        rows_to_process = end_idx - start_idx
         print(f"Total rows in file: {total_rows}")
-        print(f"Rows to process: {rows_to_process}")
+        print(f"Processing rows {start_idx + 1} to {end_idx}")
         
         all_messages = []
-        for index, row in df.head(rows_to_process).iterrows():
-            print(f"\n=== Processing Row {index + 1}/{rows_to_process} ===")
+        for index, row in df.iloc[start_idx:end_idx].iterrows():
+            print(f"\n=== Processing Row {index + 1} ===")
             
             # Tạo mới API client cho mỗi dòng
             if use_api_for_roleB:
@@ -156,7 +165,8 @@ def main(num_rows=None, input_file='2PromptingTuning.xlsx', output_file='result.
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process conversations from Excel file')
-    parser.add_argument('--rows', type=int, help='Number of rows to process (default: all rows)')
+    parser.add_argument('--start-row', type=int, help='Start row index (0-based)')
+    parser.add_argument('--rows', type=int, help='Number of rows to process')
     parser.add_argument('--input', type=str, default='2PromptingTuning.xlsx',
                         help='Input Excel file name (should be in the same directory as the script)')
     parser.add_argument('--output', type=str, default='result.xlsx',
@@ -165,4 +175,4 @@ if __name__ == "__main__":
                         help='Use AICoachAPI for RoleB instead of OpenAI')
     
     args = parser.parse_args()
-    main(args.rows, args.input, args.output, args.use_api) 
+    main(args.start_row, args.rows, args.input, args.output, args.use_api) 
