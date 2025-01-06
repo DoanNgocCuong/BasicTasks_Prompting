@@ -5,9 +5,10 @@ from dotenv import load_dotenv
 import os
 from pathlib import Path
 import argparse
-from def_roleA import generate_roleA_message, create_roleA_client
-from def_roleB import generate_roleB_response, create_roleB_client
+from def_ApiClientB import AICoachAPI
 from export_conversations_to_excel import export_conversations_to_excel
+from def_simulate_with_openai import simulate_with_openai
+from def_simulate_with_api import simulate_with_api
 
 # Load environment variables
 load_dotenv()
@@ -15,81 +16,23 @@ load_dotenv()
 # Get the directory containing the script
 SCRIPT_DIR = Path(__file__).parent
 
-def simulate_conversation(row, openai_client, api_client, use_api_for_roleB=False):
-    """
-    Simulate a conversation based on the row of data
-    Args:
-        row: DataFrame row containing conversation settings
-        openai_client: OpenAI client for roleA
-        api_client: AICoachAPI client for roleB
-        use_api_for_roleB: If True, use AICoachAPI for roleB, else use OpenAI
-    """
-    message_history = []
-    response_times = []
-    conversationTurnCount = 0
-
-    # Extract and validate settings
-    roleA_prompt = str(row['roleA_prompt']) if not pd.isna(row['roleA_prompt']) else ""
-    roleB_prompt = str(row['roleB_prompt']) if not pd.isna(row['roleB_prompt']) else ""
-    initialConversationHistory = row['initialConversationHistory']
-    maxTurns = int(row['maxTurns']) if not pd.isna(row['maxTurns']) else 3
-
-    print("\n=== Initial Settings ===")
-    print(f"RoleA Prompt: {roleA_prompt[:100]}..." if roleA_prompt else "RoleA Prompt: None")
-    print(f"RoleB Prompt: {roleB_prompt[:100]}..." if roleB_prompt else "RoleB Prompt: None")
-    print(f"Max Turns: {maxTurns}")
-    print(f"Using API for RoleB: {use_api_for_roleB}")
-
-    # Process conversation history
-    if not pd.isna(initialConversationHistory):
-        try:
-            history = json.loads(initialConversationHistory)
-            message_history.extend(history)
-            print("\nInitial conversation history loaded")
-        except json.JSONDecodeError as e:
-            print(f"Error parsing conversation history: {e}")
-
-    # Conversation loop
-    while conversationTurnCount < maxTurns:
-        try:
-            # RoleA's turn
-            roleA_message, roleA_time = generate_roleA_message(
-                openai_client, 
-                roleA_prompt, 
-                message_history
-            )
-            message_history.append({"role": "roleA", "content": roleA_message})
-            response_times.append(roleA_time)
-
-            # RoleB's turn
-            client = api_client if use_api_for_roleB else openai_client
-            roleB_message, roleB_time = generate_roleB_response(
-                client,
-                roleB_prompt,
-                message_history,
-                use_api=use_api_for_roleB
-            )
-            message_history.append({"role": "roleB", "content": roleB_message})
-            response_times.append(roleB_time)
-
-            conversationTurnCount += 1
-
-        except Exception as e:
-            print(f"Error during conversation: {str(e)}")
-            break
-
-    return message_history, response_times
+def init_new_conversation(use_api_for_roleB=False):
+    """Khởi tạo mới hoàn toàn các clients và conversation cho mỗi dòng"""
+    # Tạo mới OpenAI client
+    openai_client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+    
+    # Tạo mới API client nếu dùng API
+    api_client = None
+    if use_api_for_roleB:
+        api_client = AICoachAPI()
+        # Khởi tạo conversation mới
+        if not api_client.init_conversation():
+            print("[ERROR] Failed to initialize API conversation")
+            return None, None
+        
+    return openai_client, api_client
 
 def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', output_file='result.xlsx', use_api_for_roleB=False):
-    """
-    Main function to process conversations
-    Args:
-        start_row: Dòng bắt đầu xử lý (index bắt đầu từ 0)
-        num_rows: Số dòng cần xử lý
-        input_file: Tên file Excel input
-        output_file: Tên file Excel output
-        use_api_for_roleB: Nếu True, sử dụng AICoachAPI cho roleB
-    """
     try:
         # Convert input and output paths to absolute paths
         input_path = SCRIPT_DIR / input_file
@@ -104,58 +47,54 @@ def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', outp
         if not input_path.exists():
             raise FileNotFoundError(f"Input file not found: {input_path}")
 
-        # Create clients
-        openai_client = create_roleA_client()
-        if use_api_for_roleB:
-            api_client = create_roleB_client(use_api=True)
-        else:
-            api_client = None
-
-        # Load and process data
+        # Load data
         df = pd.read_excel(input_path)
         total_rows = len(df)
         
-        # Calculate start and end rows
+        # Calculate rows to process
         start_idx = start_row if start_row is not None else 0
-        if num_rows:
-            end_idx = min(start_idx + num_rows, total_rows)
-        else:
-            end_idx = total_rows
-            
-        rows_to_process = end_idx - start_idx
-        print(f"Total rows in file: {total_rows}")
-        print(f"Processing rows {start_idx + 1} to {end_idx}")
+        end_idx = min(start_idx + num_rows, total_rows) if num_rows else total_rows
         
         all_messages = []
         for index, row in df.iloc[start_idx:end_idx].iterrows():
             print(f"\n=== Processing Row {index + 1} ===")
             
-            # Tạo mới API client cho mỗi dòng
-            if use_api_for_roleB:
-                api_client = create_roleB_client(use_api=True)
+            # Khởi tạo mới hoàn toàn cho mỗi dòng
+            openai_client, api_client = init_new_conversation(use_api_for_roleB)
+            if use_api_for_roleB and api_client is None:
+                print(f"Skipping row {index + 1} due to API initialization failure")
+                continue
             
-            message_history, response_times = simulate_conversation(
-                row, 
-                openai_client, 
-                api_client, 
-                use_api_for_roleB
-            )
-            
-            # Prepare export data
-            for i, msg in enumerate(message_history):
-                all_messages.append([
-                    msg['role'],
-                    msg['content'],
-                    response_times[i] if i < len(response_times) else 0,
-                    row['roleA_prompt'],
-                    row['roleB_prompt']
-                ])
-            all_messages.append(['Separator', '-------------------', 0, '', ''])
+            # Simulate conversation
+            try:
+                if use_api_for_roleB:
+                    message_history, response_times = simulate_with_api(row, openai_client, api_client)
+                else:
+                    message_history, response_times = simulate_with_openai(row, openai_client)
+                
+                # Prepare export data
+                initial_message_count = len(json.loads(row['initialConversationHistory'])) if not pd.isna(row['initialConversationHistory']) else 0
+
+                for i, msg in enumerate(message_history):
+                    response_time = 0
+                    if i >= initial_message_count:  # Chỉ tính response time cho new messages
+                        response_idx = i - initial_message_count
+                        response_time = response_times[response_idx] if response_idx < len(response_times) else 0
+                        
+                    all_messages.append([
+                        msg['role'],
+                        msg['content'],
+                        response_time,  # 0 cho initial messages, thời gian thực cho new messages
+                        row['roleA_prompt'],
+                        row['roleB_prompt'] if not use_api_for_roleB else "Using API"
+                    ])
+                all_messages.append(['Separator', '-------------------', 0, '', ''])
+                
+            except Exception as e:
+                print(f"Error processing row {index + 1}: {str(e)}")
+                continue
         
         # Export results
-        # roleB_times = [msg[2] for msg in all_messages if msg[0] == 'RoleB']
-        # time_str = ', '.join([f'{t:.2f}' for t in roleB_times])
-        # all_messages.append(['Separator', f'------------------- RoleB Times: {time_str}', 0, '', ''])
         export_conversations_to_excel(all_messages, output_path)
         
     except FileNotFoundError as e:
@@ -166,7 +105,7 @@ def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', outp
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process conversations from Excel file')
     parser.add_argument('--start-row', type=int, help='Start row index (0-based)')
-    parser.add_argument('--rows', type=int, help='Number of rows to process')
+    parser.add_argument('--num-rows', type=int, help='Number of rows to process')
     parser.add_argument('--input', type=str, default='2PromptingTuning.xlsx',
                         help='Input Excel file name (should be in the same directory as the script)')
     parser.add_argument('--output', type=str, default='result.xlsx',
@@ -175,4 +114,4 @@ if __name__ == "__main__":
                         help='Use AICoachAPI for RoleB instead of OpenAI')
     
     args = parser.parse_args()
-    main(args.start_row, args.rows, args.input, args.output, args.use_api) 
+    main(args.start_row, args.num_rows, args.input, args.output, args.use_api) 

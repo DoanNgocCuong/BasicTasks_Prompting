@@ -8,7 +8,7 @@
   },
   "kv_store": {
     "unique_matched_lines_count": 0,
-    "total_repo_line_count": 116838,
+    "total_repo_line_count": 115720,
     "best_prompt_response": null,
     "file_statistics": [
       {
@@ -318,50 +318,8 @@
         "ai_generated_percentage": 0
       },
       {
-        "file": "6_TuningWith2Prompting/2PromptingTuning.xlsx",
-        "total_lines": 1994,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
         "file": "6_TuningWith2Prompting/CKP/GIA LAP 1106.ipynb",
         "total_lines": 1,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "6_TuningWith2Prompting/HowRun.md",
-        "total_lines": 41,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "6_TuningWith2Prompting/Motivation.md",
-        "total_lines": 22,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "6_TuningWith2Prompting/def_promptA_v1.py",
-        "total_lines": 35,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "6_TuningWith2Prompting/def_promptA_v2.py",
-        "total_lines": 35,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "6_TuningWith2Prompting/def_promptB_v1.py",
-        "total_lines": 35,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "6_TuningWith2Prompting/def_promptB_v2.py",
-        "total_lines": 157,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -396,30 +354,6 @@
         "ai_generated_percentage": 0
       },
       {
-        "file": "6_TuningWith2Prompting/export_conversations_to_excel.py",
-        "total_lines": 23,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "6_TuningWith2Prompting/format.md",
-        "total_lines": 20,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "6_TuningWith2Prompting/main_v1.py",
-        "total_lines": 122,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "6_TuningWith2Prompting/main_v2.py",
-        "total_lines": 154,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
         "file": "6_TuningWith2Prompting/note_DoanCuong/note1.1_.ipynb",
         "total_lines": 139,
         "ai_generated_lines": 0,
@@ -438,31 +372,145 @@
         "ai_generated_percentage": 0
       },
       {
-        "file": "6_TuningWith2Prompting/promptA.md",
+        "file": "6_TuningWith2Prompting/src/2PromptingTuning.xlsx",
+        "total_lines": 918,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/APIpromptB.md",
+        "total_lines": 18,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/CHANGELOG.md",
+        "total_lines": 3,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/HowRun.md",
+        "total_lines": 60,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/Motivation.md",
+        "total_lines": 22,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/__pycache__/def_ApiClientB.cpython-312.pyc",
+        "total_lines": 18,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/__pycache__/def_promptA.cpython-312.pyc",
+        "total_lines": 16,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/__pycache__/def_promptB.cpython-312.pyc",
+        "total_lines": 18,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/__pycache__/def_roleA.cpython-312.pyc",
+        "total_lines": 4,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/__pycache__/def_roleB.cpython-312.pyc",
+        "total_lines": 4,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/__pycache__/export_conversations_to_excel.cpython-312.pyc",
+        "total_lines": 2,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/__pycache__/utils_convert_roles_for_api.cpython-312.pyc",
+        "total_lines": 8,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/__pycache__/utils_export_conversations_to_excel.cpython-312.pyc",
         "total_lines": 6,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
       {
-        "file": "6_TuningWith2Prompting/result.xlsx",
+        "file": "6_TuningWith2Prompting/src/def_ApiClientB.py",
+        "total_lines": 86,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/def_promptA.py",
+        "total_lines": 35,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/def_promptB.py",
         "total_lines": 69,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
       {
-        "file": "6_TuningWith2Prompting/somePromptCreate.md",
-        "total_lines": 57,
+        "file": "6_TuningWith2Prompting/src/def_roleA.py",
+        "total_lines": 14,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
       {
-        "file": "6_TuningWith2Prompting/utils_convert_roles_for_api.py",
+        "file": "6_TuningWith2Prompting/src/def_roleB.py",
+        "total_lines": 21,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/export_conversations_to_excel.py",
         "total_lines": 23,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
       {
-        "file": "6_TuningWith2Prompting/utils_export_conversations_to_excel.py",
+        "file": "6_TuningWith2Prompting/src/format.md",
+        "total_lines": 20,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/main.py",
+        "total_lines": 178,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/somePromptCreate_roleA.md",
+        "total_lines": 93,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/utils_convert_roles_for_api.py",
+        "total_lines": 23,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/utils_export_conversations_to_excel.py",
         "total_lines": 18,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
@@ -470,6 +518,12 @@
       {
         "file": "README.md",
         "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "src/utils_export_conversations_to_excel.py",
+        "total_lines": 16,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       }

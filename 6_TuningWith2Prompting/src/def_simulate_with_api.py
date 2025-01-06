@@ -1,0 +1,66 @@
+import json
+import pandas as pd
+import time
+from def_promptA import generate_roleA_response
+
+def simulate_with_api(row, openai_client, api_client):
+    """Simulate conversation using OpenAI for RoleA and API for RoleB"""
+    message_history = []
+    response_times = []
+    conversationTurnCount = 0
+
+    # Extract settings
+    roleA_prompt = str(row['roleA_prompt']) if not pd.isna(row['roleA_prompt']) else ""
+    maxTurns = int(row['maxTurns']) if not pd.isna(row['maxTurns']) else 3
+
+    print("\n=== Initial Settings ===")
+    print(f"RoleA Prompt: {roleA_prompt[:100]}..." if roleA_prompt else "RoleA Prompt: None")
+    print(f"Max Turns: {maxTurns}")
+
+    # Start with RoleB first (API always starts first with "sẵn sàng")
+    start_time = time.time()
+    api_response = api_client.send_message("sẵn sàng")
+    end_time = time.time()
+
+    if api_response and "text" in api_response:
+        roleB_message = api_response["text"][0]
+        message_history.append({"role": "roleB", "content": roleB_message})
+        response_times.append(end_time - start_time)
+    else:
+        print("[ERROR] Failed to get initial response from API")
+        return message_history, response_times
+
+    # Start conversation loop
+    while conversationTurnCount < maxTurns:
+        try:
+            # RoleA turn with OpenAI
+            roleA_message, roleA_time = generate_roleA_response(
+                openai_client,
+                roleA_prompt,
+                message_history
+            )
+            message_history.append({"role": "roleA", "content": roleA_message})
+            response_times.append(roleA_time)
+
+            # RoleB turn with API
+            start_time = time.time()
+            api_response = api_client.send_message(roleA_message)
+            end_time = time.time()
+
+            if api_response and "text" in api_response:
+                roleB_message = api_response["text"][0]
+                message_history.append({"role": "roleB", "content": roleB_message})
+                response_times.append(end_time - start_time)
+            else:
+                print("[ERROR] Failed to get response from API")
+                break
+
+            conversationTurnCount += 1
+            print(f"\n=== End of Turn {conversationTurnCount}/{maxTurns} ===")
+            time.sleep(1)
+
+        except Exception as e:
+            print(f"\nError during conversation: {str(e)}")
+            break
+
+    return message_history, response_times

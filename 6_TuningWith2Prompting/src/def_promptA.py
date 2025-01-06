@@ -20,7 +20,7 @@ def generate_roleA_response(client, roleA_prompt, message_history):
     response = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=api_messages,
-        temperature=1,
+        temperature=0,
         max_completion_tokens=2048,
         top_p=1,
         frequency_penalty=0,

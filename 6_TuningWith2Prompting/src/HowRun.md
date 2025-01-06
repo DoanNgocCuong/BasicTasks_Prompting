@@ -36,6 +36,24 @@ Separator	-------------------	0
 
 
 Run V2: 
+
+Trong pandas, khi đọc Excel file bằng `pd.read_excel()`, dòng đầu tiên (header row) mặc định được sử dụng làm tên cột và không được tính vào index của DataFrame.
+
+Ví dụ với file Excel có cấu trúc:
 ```
-python main_v2.py --use-api --rows 2
+roleA_prompt | roleB_prompt | maxTurns  (row 1 - header)
+value1       | value2       | 3         (row 2 - index 0)
+value3       | value4       | 4         (row 3 - index 1)
+value5       | value6       | 5         (row 4 - index 2)
 ```
+
+Nên khi bạn muốn xử lý từ row 3-5 trong Excel (không tính header), bạn sẽ dùng:
+```bash
+python main.py --use-api --start-row 2 --rows 3
+```
+
+Vì:
+- Row 3 trong Excel = index 2 trong DataFrame
+- Row 5 trong Excel = index 4 trong DataFrame
+
+Code hiện tại đã xử lý đúng theo logic này rồi, không cần sửa gì thêm.
