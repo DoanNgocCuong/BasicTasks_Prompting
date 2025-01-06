@@ -17,11 +17,24 @@ def simulate_with_api(row, openai_client, api_client):
     print(f"RoleA Prompt: {roleA_prompt[:100]}..." if roleA_prompt else "RoleA Prompt: None")
     print(f"Max Turns: {maxTurns}")
 
-    # Start with RoleB first (API always starts first with "sẵn sàng")
+    # Get initial message from history
+    initial_message = "sẵn sàng"  # default
+    if not pd.isna(row['initialConversationHistory']):
+        try:
+            history = json.loads(row['initialConversationHistory'])
+            if history and history[0]["role"] == "roleA":
+                initial_message = history[0]["content"]
+                # Add initial roleA message to history
+                message_history.append({"role": "roleA", "content": initial_message})
+                response_times.append(0)  # 0 for initial message
+            print(f"\nUsing initial message: {initial_message}")
+        except json.JSONDecodeError as e:
+            print(f"Error parsing conversation history: {e}")
+
+    # Start with RoleB using the initial message
     start_time = time.time()
-    api_response = api_client.send_message("sẵn sàng")
+    api_response = api_client.send_message(initial_message)
     end_time = time.time()
-    
 
     if api_response and "text" in api_response:
         roleB_message = api_response["text"][0]
