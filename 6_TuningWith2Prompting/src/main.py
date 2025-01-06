@@ -16,14 +16,14 @@ load_dotenv()
 # Get the directory containing the script
 SCRIPT_DIR = Path(__file__).parent
 
-def init_new_conversation(use_api_for_roleB=False):
+def init_new_conversation(use_api=False):
     """Khởi tạo mới hoàn toàn các clients và conversation cho mỗi dòng"""
     # Tạo mới OpenAI client
     openai_client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
     
     # Tạo mới API client nếu dùng API
     api_client = None
-    if use_api_for_roleB:
+    if use_api:
         api_client = AICoachAPI()
         # Khởi tạo conversation mới
         if not api_client.init_conversation():
@@ -32,7 +32,7 @@ def init_new_conversation(use_api_for_roleB=False):
         
     return openai_client, api_client
 
-def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', output_file='result.xlsx', use_api_for_roleB=False):
+def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', output_file='result.xlsx'):
     try:
         # Convert input and output paths to absolute paths
         input_path = SCRIPT_DIR / input_file
@@ -41,7 +41,6 @@ def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', outp
         print(f"\n=== Processing Settings ===")
         print(f"Input file: {input_path}")
         print(f"Output file: {output_path}")
-        print(f"Using API for RoleB: {use_api_for_roleB}")
 
         # Check if input file exists
         if not input_path.exists():
@@ -59,21 +58,27 @@ def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', outp
         for index, row in df.iloc[start_idx:end_idx].iterrows():
             print(f"\n=== Processing Row {index + 1} ===")
             
+            # Determine if using API based on useApiOrPrompt column
+            use_api = str(row['useApiOrPrompt']).lower() == 'api'
+            print(f"Using {'API' if use_api else 'Prompt'} for RoleB")
+            
             # Khởi tạo mới hoàn toàn cho mỗi dòng
-            openai_client, api_client = init_new_conversation(use_api_for_roleB)
-            if use_api_for_roleB and api_client is None:
+            openai_client, api_client = init_new_conversation(use_api)
+            if use_api and api_client is None:
                 print(f"Skipping row {index + 1} due to API initialization failure")
                 continue
             
             # Simulate conversation
             try:
-                if use_api_for_roleB:
+                if use_api:
                     message_history, response_times = simulate_with_api(row, openai_client, api_client)
                 else:
                     message_history, response_times = simulate_with_openai(row, openai_client)
                 
                 # Prepare export data
-                initial_message_count = len(json.loads(row['initialConversationHistory'])) if not pd.isna(row['initialConversationHistory']) else 0
+                initial_message_count = 0
+                if not use_api and not pd.isna(row['initialConversationHistory']):
+                    initial_message_count = len(json.loads(row['initialConversationHistory']))
 
                 for i, msg in enumerate(message_history):
                     response_time = 0
@@ -86,9 +91,10 @@ def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', outp
                         msg['content'],
                         response_time,  # 0 cho initial messages, thời gian thực cho new messages
                         row['roleA_prompt'],
-                        row['roleB_prompt'] if not use_api_for_roleB else "Using API"
+                        row['roleB_prompt'] if not use_api else "Using API",
+                        row['useApiOrPrompt']
                     ])
-                all_messages.append(['Separator', '-------------------', 0, '', ''])
+                all_messages.append(['Separator', '-------------------', 0, '', '', ''])
                 
             except Exception as e:
                 print(f"Error processing row {index + 1}: {str(e)}")
@@ -110,8 +116,7 @@ if __name__ == "__main__":
                         help='Input Excel file name (should be in the same directory as the script)')
     parser.add_argument('--output', type=str, default='result.xlsx',
                         help='Output Excel file name')
-    parser.add_argument('--use-api', action='store_true',
-                        help='Use AICoachAPI for RoleB instead of OpenAI')
     
     args = parser.parse_args()
-    main(args.start_row, args.num_rows, args.input, args.output, args.use_api) 
+    main(args.start_row, args.num_rows, args.input, args.output) 
+    ...
