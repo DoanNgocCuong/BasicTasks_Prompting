@@ -21,6 +21,7 @@ def simulate_with_api(row, openai_client, api_client):
     start_time = time.time()
     api_response = api_client.send_message("sẵn sàng")
     end_time = time.time()
+    
 
     if api_response and "text" in api_response:
         roleB_message = api_response["text"][0]
