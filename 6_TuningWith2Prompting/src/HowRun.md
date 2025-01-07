@@ -20,3 +20,6 @@ STT	roleA_prompt	roleB_prompt	initialConversationHistory	maxTurns
 ```
 
 
+```bash
+python main.py --num-rows 10 --bot-id 20 --input '2PromptingTuning_100Turns.xlsx' --output 'id20.xlsx'
+```

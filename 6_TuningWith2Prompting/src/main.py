@@ -34,15 +34,14 @@ def init_new_conversation(use_api=False, bot_id=31):
 
 def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', output_file='result.xlsx', bot_id=31):
     try:
-        # Convert input and output paths to absolute paths
         input_path = SCRIPT_DIR / input_file
         output_path = SCRIPT_DIR / output_file
 
         print(f"\n=== Processing Settings ===")
         print(f"Input file: {input_path}")
         print(f"Output file: {output_path}")
+        print(f"Bot ID: {bot_id}")
 
-        # Check if input file exists
         if not input_path.exists():
             raise FileNotFoundError(f"Input file not found: {input_path}")
 
@@ -54,54 +53,60 @@ def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', outp
         start_idx = start_row if start_row is not None else 0
         end_idx = min(start_idx + num_rows, total_rows) if num_rows else total_rows
         
-        all_messages = []
-        for index, row in df.iloc[start_idx:end_idx].iterrows():
-            print(f"\n=== Processing Row {index + 1} ===")
+        print(f"Processing rows {start_idx + 1} to {end_idx}")
             
-            # Determine if using API based on useApiOrPrompt column
+        for index, row in df.iloc[start_idx:end_idx].iterrows():
+            print(f"\n=== Processing Row {index + 1}/{end_idx} ===")
+            
             use_api = str(row['useApiOrPrompt']).lower() == 'api'
             print(f"Using {'API' if use_api else 'Prompt'} for RoleB")
             
-            # Khởi tạo mới hoàn toàn cho mỗi dòng
+            # Initialize new conversation for each row
             openai_client, api_client = init_new_conversation(use_api, bot_id)
             if use_api and api_client is None:
                 print(f"Skipping row {index + 1} due to API initialization failure")
                 continue
             
-            # Simulate conversation
             try:
+                # Simulate conversation
                 if use_api:
                     message_history, response_times = simulate_with_api(row, openai_client, api_client)
                 else:
                     message_history, response_times = simulate_with_openai(row, openai_client)
                 
-                # Prepare export data
+                # Prepare current row data
+                current_messages = []
                 initial_message_count = 0
                 if not use_api and not pd.isna(row['initialConversationHistory']):
                     initial_message_count = len(json.loads(row['initialConversationHistory']))
 
                 for i, msg in enumerate(message_history):
                     response_time = 0
-                    if i >= initial_message_count:  # Chỉ tính response time cho new messages
+                    if i >= initial_message_count:
                         response_idx = i - initial_message_count
                         response_time = response_times[response_idx] if response_idx < len(response_times) else 0
                         
-                    all_messages.append([
+                    current_messages.append([
                         msg['role'],
                         msg['content'],
-                        response_time,  # Giữ nguyên response time không làm tròn
+                        response_time,
                         row['roleA_prompt'],
-                        row['roleB_prompt'] if not use_api else "Using API",
+                        row['roleB_prompt'] if not use_api else f"Using API (Bot ID: {bot_id})",
                         row['useApiOrPrompt']
                     ])
-                all_messages.append(['Separator', '-------------------', 0, '', '', ''])
+                
+                # Add separator after each conversation
+                current_messages.append(['Separator', f'--- End of Row {index + 1} ---', 0, '', '', ''])
+                
+                # Export immediately after processing each row
+                export_conversations_to_excel(current_messages, output_path)
+                print(f"Completed row {index + 1}/{end_idx}")
                 
             except Exception as e:
                 print(f"Error processing row {index + 1}: {str(e)}")
                 continue
         
-        # Export results
-        export_conversations_to_excel(all_messages, output_path)
+        print("\n=== Processing Complete ===")
         
     except FileNotFoundError as e:
         print(f"File Error: {str(e)}")

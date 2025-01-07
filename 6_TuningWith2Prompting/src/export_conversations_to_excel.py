@@ -1,15 +1,33 @@
 import pandas as pd
-from utils_export_conversations_to_excel import prepare_export_data, validate_export_path
+import os
 
 def export_conversations_to_excel(messages, output_path):
-    """Export conversations to Excel file"""
-    df = pd.DataFrame(messages, columns=[
+    """Export conversations to Excel file by appending
+    
+    Args:
+        messages: List of conversation messages to append
+        output_path: Path to output Excel file
+    """
+    df_new = pd.DataFrame(messages, columns=[
         'Role', 
         'Content', 
         'Response Time',
         'RoleA Prompt',
         'RoleB Prompt',
-        'useApiOrPrompt'  # Thêm cột useApiOrPrompt
+        'useApiOrPrompt'
     ])
-    df.to_excel(output_path, index=False)
-    print(f"\nExported conversations to: {output_path}") 
+    
+    if not os.path.exists(output_path):
+        # Create new file if doesn't exist
+        df_new.to_excel(output_path, index=False, engine='openpyxl')
+        print(f"\nCreated new export file: {output_path}")
+    else:
+        # Always append to existing file
+        with pd.ExcelWriter(output_path, mode='a', engine='openpyxl', if_sheet_exists='overlay') as writer:
+            # Get the last row in existing file
+            existing_df = pd.read_excel(output_path, engine='openpyxl')
+            start_row = len(existing_df)
+            
+            # Write new data starting from the next row
+            df_new.to_excel(writer, startrow=start_row, index=False, header=False)
+            print(f"\nAppended new conversation data to: {output_path}") 

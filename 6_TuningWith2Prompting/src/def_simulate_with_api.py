@@ -40,6 +40,11 @@ def simulate_with_api(row, openai_client, api_client):
         # Lấy process_time từ API response và làm tròn 6 chữ số
         process_time = round(float(api_response.get("process_time", 0)), 6)
         response_times.append(process_time)
+        
+        # Check for END status in initial response
+        if api_response.get("status") == "END":
+            print("[INFO] Received END status from API. Ending conversation.")
+            return message_history, response_times
     else:
         print("[ERROR] Failed to get initial response from API")
         return message_history, response_times
@@ -66,6 +71,11 @@ def simulate_with_api(row, openai_client, api_client):
                 # Lấy process_time từ API response và làm tròn 6 chữ số
                 process_time = round(float(api_response.get("process_time", 0)), 6)
                 response_times.append(process_time)
+                
+                # Check for END status
+                if api_response.get("status") == "END":
+                    print("[INFO] Received END status from API. Ending conversation.")
+                    break
             else:
                 print("[ERROR] Failed to get response from API")
                 break

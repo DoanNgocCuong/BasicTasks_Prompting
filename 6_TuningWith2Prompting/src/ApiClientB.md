@@ -47,6 +47,21 @@ Output
 }
 ```
 
+```
+{
+  "status": "END",
+  "text": [
+    "Xin lỗi, hiện tại hệ thống đang trong quá trình bảo trì và nâng cấp, anh chị vui lòng liên hệ lại sau"
+  ],
+  "conversation_id": "1736240300709",
+  "msg": "scuccess",
+  "language": null,
+  "process_time": 0.4231572151184082,
+  "SYSTEM_CONTEXT_VARIABLES": {},
+  "task_idx": 1
+}
+```
+
 
 3. Chú ý: 
 - Khi xài trên giao diện UI, bản chất là call 2 API trên. 
