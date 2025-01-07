@@ -4,6 +4,7 @@ import requests
 from openai import OpenAI
 import os
 from utils_convert_roles_for_api import convert_roles_for_api
+import random
 
 
 class AICoachAPI:
@@ -18,7 +19,10 @@ class AICoachAPI:
 
     def init_conversation(self):
         """Khởi tạo cuộc hội thoại mới"""
-        conversation_id = f"conv_{int(time.time())}"
+        timestamp = int(time.time() * 1000)  # Convert to milliseconds
+        random_suffix = str(random.randint(100, 999))
+        conversation_id = f"conv_{timestamp}_{random_suffix}"
+        
         payload = {
             "bot_id": self.bot_id,
             "conversation_id": conversation_id,
