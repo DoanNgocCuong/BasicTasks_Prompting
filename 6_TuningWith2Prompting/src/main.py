@@ -16,7 +16,7 @@ load_dotenv()
 # Get the directory containing the script
 SCRIPT_DIR = Path(__file__).parent
 
-def init_new_conversation(use_api=False):
+def init_new_conversation(use_api=False, bot_id=31):
     """Khởi tạo mới hoàn toàn các clients và conversation cho mỗi dòng"""
     # Tạo mới OpenAI client
     openai_client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
@@ -24,7 +24,7 @@ def init_new_conversation(use_api=False):
     # Tạo mới API client nếu dùng API
     api_client = None
     if use_api:
-        api_client = AICoachAPI()
+        api_client = AICoachAPI(bot_id=bot_id)
         # Khởi tạo conversation mới
         if not api_client.init_conversation():
             print("[ERROR] Failed to initialize API conversation")
@@ -32,7 +32,7 @@ def init_new_conversation(use_api=False):
         
     return openai_client, api_client
 
-def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', output_file='result.xlsx'):
+def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', output_file='result.xlsx', bot_id=31):
     try:
         # Convert input and output paths to absolute paths
         input_path = SCRIPT_DIR / input_file
@@ -63,7 +63,7 @@ def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', outp
             print(f"Using {'API' if use_api else 'Prompt'} for RoleB")
             
             # Khởi tạo mới hoàn toàn cho mỗi dòng
-            openai_client, api_client = init_new_conversation(use_api)
+            openai_client, api_client = init_new_conversation(use_api, bot_id)
             if use_api and api_client is None:
                 print(f"Skipping row {index + 1} due to API initialization failure")
                 continue
@@ -116,7 +116,9 @@ if __name__ == "__main__":
                         help='Input Excel file name (should be in the same directory as the script)')
     parser.add_argument('--output', type=str, default='result.xlsx',
                         help='Output Excel file name')
+    parser.add_argument('--bot-id', type=int, default=31,
+                        help='Bot ID for the API conversation')
     
     args = parser.parse_args()
-    main(args.start_row, args.num_rows, args.input, args.output) 
+    main(args.start_row, args.num_rows, args.input, args.output, args.bot_id) 
     ...

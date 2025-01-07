@@ -7,19 +7,20 @@ from utils_convert_roles_for_api import convert_roles_for_api
 
 
 class AICoachAPI:
-    def __init__(self, base_url="http://103.253.20.13:9400", timeout=30):
+    def __init__(self, base_url="http://103.253.20.13:9400", timeout=30, bot_id=31):
         """Khởi tạo với base URL của API"""
         self.base_url = base_url
         self.init_endpoint = f"{base_url}/personalized-ai-coach/api/v1/bot/initConversation"
         self.webhook_endpoint = f"{base_url}/personalized-ai-coach/api/v1/bot/webhook"
         self.current_conversation_id = None
         self.timeout = timeout
+        self.bot_id = bot_id
 
-    def init_conversation(self, bot_id=29):
+    def init_conversation(self):
         """Khởi tạo cuộc hội thoại mới"""
         conversation_id = f"conv_{int(time.time())}"
         payload = {
-            "bot_id": bot_id,
+            "bot_id": self.bot_id,
             "conversation_id": conversation_id,
             "input_slots": {}
         }
