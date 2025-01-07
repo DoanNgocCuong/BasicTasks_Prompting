@@ -89,7 +89,7 @@ def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', outp
                     all_messages.append([
                         msg['role'],
                         msg['content'],
-                        response_time,  # 0 cho initial messages, thời gian thực cho new messages
+                        response_time,  # Giữ nguyên response time không làm tròn
                         row['roleA_prompt'],
                         row['roleB_prompt'] if not use_api else "Using API",
                         row['useApiOrPrompt']

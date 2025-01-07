@@ -15,7 +15,7 @@ class AICoachAPI:
         self.current_conversation_id = None
         self.timeout = timeout
 
-    def init_conversation(self, bot_id=24):
+    def init_conversation(self, bot_id=29):
         """Khởi tạo cuộc hội thoại mới"""
         conversation_id = f"conv_{int(time.time())}"
         payload = {

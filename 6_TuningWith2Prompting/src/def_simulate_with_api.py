@@ -32,14 +32,14 @@ def simulate_with_api(row, openai_client, api_client):
             print(f"Error parsing conversation history: {e}")
 
     # Start with RoleB using the initial message
-    start_time = time.time()
     api_response = api_client.send_message(initial_message)
-    end_time = time.time()
-
+    
     if api_response and "text" in api_response:
         roleB_message = api_response["text"][0]
         message_history.append({"role": "roleB", "content": roleB_message})
-        response_times.append(end_time - start_time)
+        # Lấy process_time từ API response và làm tròn 6 chữ số
+        process_time = round(float(api_response.get("process_time", 0)), 6)
+        response_times.append(process_time)
     else:
         print("[ERROR] Failed to get initial response from API")
         return message_history, response_times
@@ -54,17 +54,18 @@ def simulate_with_api(row, openai_client, api_client):
                 message_history
             )
             message_history.append({"role": "roleA", "content": roleA_message})
-            response_times.append(roleA_time)
+            # Làm tròn response time của OpenAI
+            response_times.append(round(roleA_time, 6))
 
             # RoleB turn with API
-            start_time = time.time()
             api_response = api_client.send_message(roleA_message)
-            end_time = time.time()
 
             if api_response and "text" in api_response:
                 roleB_message = api_response["text"][0]
                 message_history.append({"role": "roleB", "content": roleB_message})
-                response_times.append(end_time - start_time)
+                # Lấy process_time từ API response và làm tròn 6 chữ số
+                process_time = round(float(api_response.get("process_time", 0)), 6)
+                response_times.append(process_time)
             else:
                 print("[ERROR] Failed to get response from API")
                 break
