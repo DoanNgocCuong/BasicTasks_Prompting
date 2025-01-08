@@ -42,12 +42,20 @@ if not openai_key or not groq_key:
 client = ai.Client()
 
 class ModelConfig:
-    def __init__(self, provider: str, model_name: str, api_key: str, temperature: float = 0, max_tokens: int = 6000):
+    def __init__(self, provider: str, model_name: str, api_key: str, 
+                 temperature: float = 0, 
+                 max_tokens: int = 6000,
+                 top_p: float = 1,
+                 frequency_penalty: float = 0.0,
+                 presence_penalty: float = 0.0):
         self.provider = provider
         self.model_name = model_name
         self.api_key = api_key
         self.temperature = temperature
         self.max_tokens = max_tokens
+        self.top_p = top_p
+        self.frequency_penalty = frequency_penalty
+        self.presence_penalty = presence_penalty
         
     @property
     def full_model_name(self) -> str:
@@ -56,7 +64,7 @@ class ModelConfig:
 # Initialize model configs with both models
 model_configs = [
     ModelConfig("openai", "gpt-4o-mini", api_key=os.getenv('OPENAI_API_KEY')),
-    ModelConfig("groq", "llama-3.3-70b-versatile", api_key=os.getenv('GROQ_API_KEY')),
+    # ModelConfig("groq", "llama-3.3-70b-versatile", api_key=os.getenv('GROQ_API_KEY')),
 ]
 
 def process_conversation(order, base_prompt, inputs, conversation_history=None):
@@ -105,9 +113,12 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
                         messages=chat_messages,
                         temperature=model_config.temperature,
                         max_tokens=model_config.max_tokens,
+                        top_p=model_config.top_p,
+                        frequency_penalty=model_config.frequency_penalty,
+                        presence_penalty=model_config.presence_penalty
                     )
-                    response_content = completion.choices[0].message.content
                     end_time = time.time()
+                    response_content = completion.choices[0].message.content
                     responses.append(response_content)
                     response_times.append(end_time - start_time)
                     
@@ -144,31 +155,73 @@ print(df_input.columns.tolist())
 
 for index, row in df_input.head(num_rows_to_process).iterrows():
     print(f"\n=== Processing Row {index} ===")
+    
+    # Lấy dữ liệu từ row, không lọc NaN
     order = row['order']
     prompt = row['system_prompt']
     conversation_history = row['conversation_history']
-    inputs = [row['user_input']]
+    user_input = row['user_input']
     
+    print(f"Input data validation:")
+    print(f"- Order: {order}")
+    print(f"- Prompt: {prompt}")
+    print(f"- History: {conversation_history}")
+    print(f"- User input: {user_input}")
+    
+    # Nếu user_input là NaN, set responses và times là error message
+    if pd.isna(user_input):
+        print(f"Row {index} has NaN user_input")
+        for model_idx, model_config in enumerate(model_configs):
+            model_info = {
+                "provider": model_config.provider,
+                "model": model_config.model_name,
+                "max_tokens": model_config.max_tokens,
+                "temperature": model_config.temperature,
+                "top_p": model_config.top_p,
+                "frequency_penalty": model_config.frequency_penalty,
+                "presence_penalty": model_config.presence_penalty,
+                "stream": False
+            }
+            
+            output_row = row.copy()
+            output_row['model'] = json.dumps(model_info, indent=2)
+            output_row['assistant_response'] = "Request failed after 2 retries."
+            output_row['response_time'] = -1
+            output_rows.append(output_row)
+        continue
+    
+    inputs = [user_input]
     responses, response_times = process_conversation(
         order, prompt, inputs, conversation_history
     )
 
     for model_idx, model_config in enumerate(model_configs):
         for i, user_input in enumerate(inputs):
-            output_rows.append({
-                'order': order,
-                'model': model_config.full_model_name,
-                'prompt': prompt,
-                'user_input': user_input,
-                'assistant_response': responses[model_idx][i],
-                'response_time': response_times[model_idx][i]
-            })
+            model_info = {
+                "provider": model_config.provider,
+                "model": model_config.model_name,
+                "max_tokens": model_config.max_tokens,
+                "temperature": model_config.temperature,
+                "top_p": model_config.top_p,
+                "frequency_penalty": model_config.frequency_penalty,
+                "presence_penalty": model_config.presence_penalty,
+                "stream": False
+            }
+            
+            # Copy tất cả các cột từ file gốc
+            output_row = row.copy()  # Copy toàn bộ dữ liệu từ row gốc
+            # Thêm các cột mới
+            output_row['model'] = json.dumps(model_info, indent=2)
+            output_row['assistant_response'] = responses[model_idx][i]
+            output_row['response_time'] = response_times[model_idx][i]
+            
+            output_rows.append(output_row)
 
-# Create a DataFrame from the list of output rows
-df_output = pd.DataFrame(output_rows, columns=['order', 'model', 'prompt', 'user_input', 'assistant_response', 'response_time'])
+# Create DataFrame với đúng thứ tự cột
+df_output = pd.DataFrame(output_rows)
 # Save the results to an Excel file
 try:
-    df_output.to_excel('output_data.xlsx', index=False)  # Added .xlsx extension
+    df_output.to_excel('output_data_v3.xlsx', index=False)  # Added .xlsx extension
     print("Data has been successfully saved to 'output_data.xlsx'")
 except PermissionError:
     print("File is open. Please close the file and try again.")
