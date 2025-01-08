@@ -146,7 +146,7 @@ for index, row in df_input.head(num_rows_to_process).iterrows():
 df_output = pd.DataFrame(output_rows, columns=['order', 'prompt', 'user_input', 'assistant_response', 'response_time'])
 # Save the results to an Excel file
 try:
-    df_output.to_excel('output_data.xlsx', index=False)  # Added .xlsx extension
-    print("Data has been successfully saved to 'output_data.xlsx'")
+    df_output.to_excel('output_data_v2.xlsx', index=False)  # Added .xlsx extension
+    print("Data has been successfully saved to 'output_data_v2.xlsx'")
 except PermissionError:
     print("File is open. Please close the file and try again.")

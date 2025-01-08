@@ -15,20 +15,28 @@ from typing import List, Dict, Any
 
 load_dotenv()
 
-# Replace 'your_api_key_here' with your actual OpenAI API key
-openai.api_key = os.getenv('OPENAI_API_KEY')
-print(openai.api_key[:10])
+# Remove OpenAI-specific imports and configurations
+import google.generativeai as genai
+from dotenv import load_dotenv
+import os
 
-# Initialize clients
-client = ai.Client()
-
-# Print last 5 characters of API keys
-print(f"OpenAI API Key (last 5): ...{os.getenv('OPENAI_API_KEY')[-5:]}")
+# Remove OpenAI initialization and only keep Gemini
 print(f"Google API Key (last 5): ...{os.getenv('GOOGLE_API_KEY')[-5:]}")
 
-# Initialize Gemini
+# Update Gemini initialization with generation config
+generation_config = {
+    "temperature": 0,
+    "top_p": 1,
+    "top_k": 40,
+    "max_output_tokens": 8192,
+    "response_mime_type": "text/plain",
+}
+
 genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
-gemini_model = genai.GenerativeModel('gemini-1.5-pro')
+gemini_model = genai.GenerativeModel(
+    model_name='gemini-1.5-flash',
+    generation_config=generation_config
+)
 
 class ModelConfig:
     def __init__(self, provider: str, model_name: str, api_key: str, temperature: float = 0, max_tokens: int = 6000):
@@ -50,61 +58,38 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
     for model_config in model_configs:
         responses = []
         response_times = []
-        chat_messages = []
         
-        # System message
-        chat_messages.append({"role": "system", "content": base_prompt})
+        # Start a new chat session
+        chat_session = gemini_model.start_chat(history=[])
         
-        # History handling
+        # Add system prompt if exists
+        if base_prompt:
+            chat_session.send_message(base_prompt)
+        
+        # Handle conversation history
         if conversation_history and not pd.isna(conversation_history):
             try:
                 history_messages = json.loads(conversation_history)
                 if isinstance(history_messages, list):
                     for msg in history_messages:
-                        if isinstance(msg, dict) and 'role' in msg and 'content' in msg:
-                            chat_messages.append(msg)
+                        if isinstance(msg, dict) and 'content' in msg:
+                            chat_session.send_message(msg['content'])
             except json.JSONDecodeError as e:
                 print(f"Error parsing conversation history: {e}")
         
         for user_input in inputs:
-            chat_messages.append({"role": "user", "content": user_input})
-            
             start_time = time.time()
             try_count = 0
             while try_count < 3:
                 try:
-                    if model_config.provider == "openai":
-                        completion = client.chat.completions.create(
-                            model=model_config.full_model_name,
-                            messages=chat_messages,
-                            temperature=model_config.temperature,
-                            max_tokens=model_config.max_tokens,
-                        )
-                        response_content = completion.choices[0].message.content
+                    if not model_config.api_key:
+                        raise ValueError("Missing Gemini API key")
                     
-                    elif model_config.provider == "gemini":
-                        # Kiểm tra API key
-                        if not model_config.api_key:
-                            raise ValueError("Missing Gemini API key")
-                            
-                        # Cấu hình Gemini với API key
-                        genai.configure(api_key=model_config.api_key)
-                        gemini_model = genai.GenerativeModel('gemini-1.5-pro')
-                        
-                        # Convert chat messages to Gemini format
-                        gemini_messages = []
-                        for msg in chat_messages:
-                            if msg["role"] != "system":  # Gemini doesn't use system messages
-                                gemini_messages.append(msg["content"])
-                        
-                        response = gemini_model.generate_content(gemini_messages[-1])
-                        response_content = response.text
-                    
+                    response = chat_session.send_message(user_input)
                     end_time = time.time()
+                    response_content = response.text
                     responses.append(response_content)
                     response_times.append(end_time - start_time)
-                    
-                    chat_messages.append({"role": "assistant", "content": response_content})
                     break
                     
                 except Exception as e:
@@ -121,9 +106,8 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
     
     return all_responses, all_response_times
 
-# Initialize model configs with API keys
+# Update model configs to only include Gemini
 model_configs = [
-    ModelConfig("openai", "gpt-4o-mini", api_key=os.getenv('OPENAI_API_KEY')),
     ModelConfig("gemini", "gemini-1.5-flash", api_key=os.getenv('GOOGLE_API_KEY'))
 ]
 
