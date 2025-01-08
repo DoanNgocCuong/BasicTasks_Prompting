@@ -12,18 +12,34 @@ from pathlib import Path
 import aisuite as ai
 from typing import List, Dict, Any
 
-load_dotenv()
+# Get the current file's directory
+SCRIPTS_FOLDER = Path(__file__).parent
 
-# Replace 'your_api_key_here' with your actual OpenAI API key
-openai.api_key = os.getenv('OPENAI_API_KEY')
-print(openai.api_key[:10])
+# Load .env file from the correct path
+env_path = SCRIPTS_FOLDER / '.env'
+
+print(f"\nLoading .env from: {env_path.absolute()}")
+load_dotenv(env_path, override=True)
+
+# Print API keys with more details for debugging
+openai_key = os.getenv('OPENAI_API_KEY')
+groq_key = os.getenv('GROQ_API_KEY')
+
+print("\n=== API Keys Verification ===")
+print(f"OpenAI API Key found: {'Yes' if openai_key else 'No'}")
+print(f"OpenAI API Key (last 5): ...{openai_key[-5:] if openai_key else 'NOT FOUND'}")
+print(f"Groq API Key found: {'Yes' if groq_key else 'No'}")
+print(f"Groq API Key (last 5): ...{groq_key[-5:] if groq_key else 'NOT FOUND'}")
+print(f"Groq API Key length: {len(groq_key) if groq_key else 0}")
+print("===========================\n")
+
+# Verify keys are present
+if not openai_key or not groq_key:
+    raise ValueError("Missing API keys. Please check your .env file")
+
 
 # Initialize OpenAI client
 client = ai.Client()
-
-# Print last 5 characters of API keys
-# print(f"OpenAI API Key (last 5): ...{os.getenv('OPENAI_API_KEY')[-5:]}")
-print(f"Groq API Key (last 5): ...{os.getenv('GROQ_API_KEY')[-5:]}")
 
 class ModelConfig:
     def __init__(self, provider: str, model_name: str, api_key: str, temperature: float = 0, max_tokens: int = 6000):
@@ -37,9 +53,9 @@ class ModelConfig:
     def full_model_name(self) -> str:
         return f"{self.provider}:{self.model_name}"
 
-# Initialize model configs with both OpenAI and Groq
+# Initialize model configs with both models
 model_configs = [
-    # ModelConfig("openai", "gpt-4o-mini", api_key=os.getenv('OPENAI_API_KEY')),
+    ModelConfig("openai", "gpt-4o-mini", api_key=os.getenv('OPENAI_API_KEY')),
     ModelConfig("groq", "llama-3.3-70b-versatile", api_key=os.getenv('GROQ_API_KEY')),
 ]
 
@@ -76,14 +92,14 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
             print(f"Max tokens: {model_config.max_tokens}")
             print("\nChat Messages:")
             for msg in chat_messages:
-                print(f"[{msg['role']}]: {msg['content'][:100]}...")  # Print first 100 chars of each message
+                print(f"[{msg['role']}]: {msg['content'][:100]}...")
             print("\nAttempting API call...")
             
             start_time = time.time()
             try_count = 0
             while try_count < 3:
                 try:
-                    print(f"\nAttempt {try_count + 1}/3 to call OpenAI API")
+                    print(f"\nAttempt {try_count + 1}/3 to call {model_config.full_model_name} API")
                     completion = client.chat.completions.create(
                         model=model_config.full_model_name,
                         messages=chat_messages,
@@ -100,7 +116,7 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
                     
                 except Exception as e:
                     try_count += 1
-                    print(f"DEBUG - API Error on attempt {try_count}: {str(e)}")
+                    print(f"DEBUG - {model_config.full_model_name} API Error on attempt {try_count}: {str(e)}")
                     if try_count >= 3:
                         responses.append(f"Request failed after 2 retries: {str(e)}")
                         response_times.append(-1)
@@ -113,9 +129,6 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
     return all_responses, all_response_times
 
 sheet_name = 'TestingPromptOnDataset'
-
-# Define the base paths
-SCRIPTS_FOLDER = Path(__file__).parent
 
 # Load the input Excel file
 df_input = pd.read_excel(SCRIPTS_FOLDER / 'input_data.xlsx', sheet_name=sheet_name)
