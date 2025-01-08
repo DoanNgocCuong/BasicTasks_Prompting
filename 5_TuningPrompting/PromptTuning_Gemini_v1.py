@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 import os
 from pathlib import Path
 import aisuite as ai
+import google.generativeai as genai
 from typing import List, Dict, Any
 
 load_dotenv()
@@ -18,12 +19,16 @@ load_dotenv()
 openai.api_key = os.getenv('OPENAI_API_KEY')
 print(openai.api_key[:10])
 
-# Initialize OpenAI client
+# Initialize clients
 client = ai.Client()
 
 # Print last 5 characters of API keys
-# print(f"OpenAI API Key (last 5): ...{os.getenv('OPENAI_API_KEY')[-5:]}")
-print(f"Groq API Key (last 5): ...{os.getenv('GROQ_API_KEY')[-5:]}")
+print(f"OpenAI API Key (last 5): ...{os.getenv('OPENAI_API_KEY')[-5:]}")
+print(f"Google API Key (last 5): ...{os.getenv('GOOGLE_API_KEY')[-5:]}")
+
+# Initialize Gemini
+genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
+gemini_model = genai.GenerativeModel('gemini-1.5-pro')
 
 class ModelConfig:
     def __init__(self, provider: str, model_name: str, api_key: str, temperature: float = 0, max_tokens: int = 6000):
@@ -37,12 +42,7 @@ class ModelConfig:
     def full_model_name(self) -> str:
         return f"{self.provider}:{self.model_name}"
 
-# Initialize model configs with both OpenAI and Groq
-model_configs = [
-    # ModelConfig("openai", "gpt-4o-mini", api_key=os.getenv('OPENAI_API_KEY')),
-    ModelConfig("groq", "llama-3.3-70b-versatile", api_key=os.getenv('GROQ_API_KEY')),
-]
-
+# @title OPENAI KO CÓ MESSAGE HISTORY
 def process_conversation(order, base_prompt, inputs, conversation_history=None):
     all_responses = []
     all_response_times = []
@@ -69,28 +69,37 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
         for user_input in inputs:
             chat_messages.append({"role": "user", "content": user_input})
             
-            # Add detailed logging before API call
-            print("\n=== Before API Call ===")
-            print(f"Model: {model_config.full_model_name}")
-            print(f"Temperature: {model_config.temperature}")
-            print(f"Max tokens: {model_config.max_tokens}")
-            print("\nChat Messages:")
-            for msg in chat_messages:
-                print(f"[{msg['role']}]: {msg['content'][:100]}...")  # Print first 100 chars of each message
-            print("\nAttempting API call...")
-            
             start_time = time.time()
             try_count = 0
             while try_count < 3:
                 try:
-                    print(f"\nAttempt {try_count + 1}/3 to call OpenAI API")
-                    completion = client.chat.completions.create(
-                        model=model_config.full_model_name,
-                        messages=chat_messages,
-                        temperature=model_config.temperature,
-                        max_tokens=model_config.max_tokens,
-                    )
-                    response_content = completion.choices[0].message.content
+                    if model_config.provider == "openai":
+                        completion = client.chat.completions.create(
+                            model=model_config.full_model_name,
+                            messages=chat_messages,
+                            temperature=model_config.temperature,
+                            max_tokens=model_config.max_tokens,
+                        )
+                        response_content = completion.choices[0].message.content
+                    
+                    elif model_config.provider == "gemini":
+                        # Kiểm tra API key
+                        if not model_config.api_key:
+                            raise ValueError("Missing Gemini API key")
+                            
+                        # Cấu hình Gemini với API key
+                        genai.configure(api_key=model_config.api_key)
+                        gemini_model = genai.GenerativeModel('gemini-1.5-pro')
+                        
+                        # Convert chat messages to Gemini format
+                        gemini_messages = []
+                        for msg in chat_messages:
+                            if msg["role"] != "system":  # Gemini doesn't use system messages
+                                gemini_messages.append(msg["content"])
+                        
+                        response = gemini_model.generate_content(gemini_messages[-1])
+                        response_content = response.text
+                    
                     end_time = time.time()
                     responses.append(response_content)
                     response_times.append(end_time - start_time)
@@ -100,7 +109,7 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
                     
                 except Exception as e:
                     try_count += 1
-                    print(f"DEBUG - API Error on attempt {try_count}: {str(e)}")
+                    print(f"DEBUG - {model_config.provider} API Error on attempt {try_count}: {str(e)}")
                     if try_count >= 3:
                         responses.append(f"Request failed after 2 retries: {str(e)}")
                         response_times.append(-1)
@@ -111,6 +120,12 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
         all_response_times.append(response_times)
     
     return all_responses, all_response_times
+
+# Initialize model configs with API keys
+model_configs = [
+    ModelConfig("openai", "gpt-4o-mini", api_key=os.getenv('OPENAI_API_KEY')),
+    ModelConfig("gemini", "gemini-1.5-flash", api_key=os.getenv('GOOGLE_API_KEY'))
+]
 
 sheet_name = 'TestingPromptOnDataset'
 
