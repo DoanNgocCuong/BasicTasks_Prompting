@@ -9,12 +9,17 @@ from openai import OpenAIError
 from dotenv import load_dotenv
 import os
 from pathlib import Path
+import aisuite as ai
 
 load_dotenv()
 
 # Replace 'your_api_key_here' with your actual OpenAI API key
 openai.api_key = os.getenv('OPENAI_API_KEY')
 print(openai.api_key[:10])
+
+# Replace OpenAI initialization with aisuite
+client = ai.Client()
+
 # @title OPENAI KO CÓ MESSAGE HISTORY
 def process_conversation(order, base_prompt, inputs, conversation_history=None):
     print(f"\n=== Processing Conversation ===")
@@ -63,9 +68,9 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
         try_count = 0
         while try_count < 3:
             try:
-                print(f"DEBUG - Attempt {try_count + 1} to call OpenAI API")
-                completion = openai.chat.completions.create(
-                    model="gpt-4o-mini",
+                print(f"DEBUG - Attempt {try_count + 1} to call AI API")
+                completion = client.chat.completions.create(
+                    model="openai:gpt-4o-mini",  # Update model name to use provider:model format
                     messages=chat_messages,   
                     temperature=0,
                     max_tokens=6000,

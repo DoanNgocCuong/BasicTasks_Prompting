@@ -3,3 +3,4 @@ openai
 openpyxl
 streamlit
 dspy
+aisuite[openai,google,groq]
