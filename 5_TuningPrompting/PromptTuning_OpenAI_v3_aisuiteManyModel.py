@@ -44,7 +44,7 @@ client = ai.Client()
 class ModelConfig:
     def __init__(self, provider: str, model_name: str, api_key: str, 
                  temperature: float = 0, 
-                 max_tokens: int = 6000,
+                 max_tokens: int = 4096,
                  top_p: float = 1,
                  frequency_penalty: float = 0.0,
                  presence_penalty: float = 0.0):
@@ -63,7 +63,8 @@ class ModelConfig:
 
 # Initialize model configs with both models
 model_configs = [
-    ModelConfig("openai", "gpt-4o-mini", api_key=os.getenv('OPENAI_API_KEY')),
+    # ModelConfig("openai", "gpt-4o-mini", api_key=os.getenv('OPENAI_API_KEY')),
+    ModelConfig("openai", "gpt-3.5-turbo", api_key=os.getenv('OPENAI_API_KEY')),
     # ModelConfig("groq", "llama-3.3-70b-versatile", api_key=os.getenv('GROQ_API_KEY')),
 ]
 
@@ -222,6 +223,6 @@ df_output = pd.DataFrame(output_rows)
 # Save the results to an Excel file
 try:
     df_output.to_excel('output_data_v3.xlsx', index=False)  # Added .xlsx extension
-    print("Data has been successfully saved to 'output_data.xlsx'")
+    print("Data has been successfully saved to 'output_data_v3.xlsx'")
 except PermissionError:
     print("File is open. Please close the file and try again.")

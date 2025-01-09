@@ -1,70 +1,50 @@
-# 
-
-# @title OPENAI
 import json
 import pandas as pd
 import time
-import openai
-from openai import OpenAIError
-from dotenv import load_dotenv
 import os
 from pathlib import Path
-import aisuite as ai
-import google.generativeai as genai
-from typing import List, Dict, Any
-
-load_dotenv()
-
-# Remove OpenAI-specific imports and configurations
 import google.generativeai as genai
 from dotenv import load_dotenv
-import os
+import warnings
+warnings.filterwarnings('ignore', category=ResourceWarning)
 
-# Remove OpenAI initialization and only keep Gemini
-print(f"Google API Key (last 5): ...{os.getenv('GOOGLE_API_KEY')[-5:]}")
+def init_gemini():
+    """Initialize Gemini model and config"""
+    load_dotenv()
+    api_key = os.getenv('GEMINI_API_KEY')
+    if not api_key:
+        raise ValueError("Missing Google API Key. Please check your .env file")
+    print(f"Google API Key (last 5): ...{api_key[-5:]}")
 
-# Update Gemini initialization with generation config
-generation_config = {
-    "temperature": 0,
-    "top_p": 1,
-    "top_k": 40,
-    "max_output_tokens": 8192,
-    "response_mime_type": "text/plain",
-}
+    generation_config = {
+        "temperature": 0,
+        "top_p": 0.95,
+        "top_k": 40,
+        "max_output_tokens": 8192,
+        "response_mime_type": "text/plain",
+    }
 
-genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
-gemini_model = genai.GenerativeModel(
-    model_name='gemini-1.5-flash',
-    generation_config=generation_config
-)
+    genai.configure(api_key=api_key)
+    return genai.GenerativeModel(
+        model_name="gemini-1.5-flash",
+        generation_config=generation_config
+    ), generation_config
 
-class ModelConfig:
-    def __init__(self, provider: str, model_name: str, api_key: str, temperature: float = 0, max_tokens: int = 6000):
-        self.provider = provider
-        self.model_name = model_name
-        self.api_key = api_key
-        self.temperature = temperature
-        self.max_tokens = max_tokens
-        
-    @property
-    def full_model_name(self) -> str:
-        return f"{self.provider}:{self.model_name}"
-
-# @title OPENAI KO CÓ MESSAGE HISTORY
-def process_conversation(order, base_prompt, inputs, conversation_history=None):
-    all_responses = []
-    all_response_times = []
+def process_conversation(model, order, base_prompt, inputs, conversation_history=None):
+    """Process a single conversation"""
+    print(f"\n=== Processing Conversation ===")
+    print(f"Order: {order}")
+    print(f"Base Prompt: {base_prompt[:100]}...")
     
-    for model_config in model_configs:
-        responses = []
-        response_times = []
-        
-        # Start a new chat session
-        chat_session = gemini_model.start_chat(history=[])
-        
+    responses = []
+    response_times = []
+    
+    chat = model.start_chat(history=[])
+    
+    try:
         # Add system prompt if exists
-        if base_prompt:
-            chat_session.send_message(base_prompt)
+        if base_prompt and not pd.isna(base_prompt):
+            chat.send_message(base_prompt)
         
         # Handle conversation history
         if conversation_history and not pd.isna(conversation_history):
@@ -73,88 +53,103 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
                 if isinstance(history_messages, list):
                     for msg in history_messages:
                         if isinstance(msg, dict) and 'content' in msg:
-                            chat_session.send_message(msg['content'])
+                            chat.send_message(msg['content'])
             except json.JSONDecodeError as e:
                 print(f"Error parsing conversation history: {e}")
         
+        # Process new inputs
         for user_input in inputs:
+            if pd.isna(user_input):
+                responses.append("Request failed: Empty input")
+                response_times.append(-1)
+                continue
+                
             start_time = time.time()
             try_count = 0
             while try_count < 3:
                 try:
-                    if not model_config.api_key:
-                        raise ValueError("Missing Gemini API key")
-                    
-                    response = chat_session.send_message(user_input)
+                    print(f"\nAttempt {try_count + 1}/3 to call Gemini API")
+                    response = chat.send_message(user_input)
                     end_time = time.time()
-                    response_content = response.text
+                    
+                    response_content = response.text.strip()
                     responses.append(response_content)
                     response_times.append(end_time - start_time)
+                    
+                    print(f"Order {order}, Input: '{user_input}', Response: '{response_content}', Time: {end_time - start_time:.2f}s\n====")
                     break
                     
                 except Exception as e:
                     try_count += 1
-                    print(f"DEBUG - {model_config.provider} API Error on attempt {try_count}: {str(e)}")
+                    print(f"DEBUG - API Error on attempt {try_count}: {str(e)}")
                     if try_count >= 3:
-                        responses.append(f"Request failed after 2 retries: {str(e)}")
+                        responses.append("Request failed after 2 retries.")
                         response_times.append(-1)
                     else:
+                        print("Waiting 3 seconds before retry...")
                         time.sleep(3)
-        
-        all_responses.append(responses)
-        all_response_times.append(response_times)
+    finally:
+        del chat
     
-    return all_responses, all_response_times
+    return responses, response_times
 
-# Update model configs to only include Gemini
-model_configs = [
-    ModelConfig("gemini", "gemini-1.5-flash", api_key=os.getenv('GOOGLE_API_KEY'))
-]
+def save_results(df_output, filename='output_gemini_v2.xlsx'):
+    """Save results to Excel file"""
+    try:
+        df_output.to_excel(filename, index=False)
+        print(f"Data has been successfully saved to '{filename}'")
+    except PermissionError:
+        print("File is open. Please close the file and try again.")
 
-sheet_name = 'TestingPromptOnDataset'
+def main():
+    """Main execution function"""
+    sheet_name = 'TestingPromptOnDataset'
+    SCRIPTS_FOLDER = Path(__file__).parent
+    df_input = pd.read_excel(SCRIPTS_FOLDER / 'input_data.xlsx', sheet_name=sheet_name)
+    df_input['order'] = df_input['order'].fillna(method='ffill')
 
-# Define the base paths
-SCRIPTS_FOLDER = Path(__file__).parent
+    print("\nAvailable columns in DataFrame:")
+    print(df_input.columns.tolist())
 
-# Load the input Excel file
-df_input = pd.read_excel(SCRIPTS_FOLDER / 'input_data.xlsx', sheet_name=sheet_name)
-
-# Set the number of rows to process
-num_rows_to_process = int(input("Enter the number of rows to process: "))
-
-# List to store rows before appending them to the DataFrame
-output_rows = []
-
-print("\nAvailable columns in DataFrame:")
-print(df_input.columns.tolist())
-
-for index, row in df_input.head(num_rows_to_process).iterrows():
-    print(f"\n=== Processing Row {index} ===")
-    order = row['order']
-    prompt = row['system_prompt']
-    conversation_history = row['conversation_history']
-    inputs = [row['user_input']]
+    num_rows_to_process = int(input("Enter the number of rows to process: "))
+    output_rows = []
     
-    responses, response_times = process_conversation(
-        order, prompt, inputs, conversation_history
-    )
+    model, generation_config = init_gemini()
+    
+    try:
+        for index, row in df_input.head(num_rows_to_process).iterrows():
+            print(f"\n=== Processing Row {index} ===")
+            print(f"Row data:")
+            print(f"- Order: {row['order']}")
+            print(f"- Prompt: {row['system_prompt'][:100]}...")
+            print(f"- User Input: {row['user_input']}")
+            
+            responses, response_times = process_conversation(
+                model,
+                row['order'],
+                row['system_prompt'],
+                [row['user_input']],
+                row['conversation_history']
+            )
 
-    for model_idx, model_config in enumerate(model_configs):
-        for i, user_input in enumerate(inputs):
-            output_rows.append({
-                'order': order,
-                'model': model_config.full_model_name,
-                'prompt': prompt,
-                'user_input': user_input,
-                'assistant_response': responses[model_idx][i],
-                'response_time': response_times[model_idx][i]
-            })
+            output_row = row.copy()
+            output_row['model'] = json.dumps({
+                "provider": "gemini",
+                "model": "gemini-1.5-flash",
+                "temperature": generation_config["temperature"],
+                "top_p": generation_config["top_p"],
+                "top_k": generation_config["top_k"],
+                "max_tokens": generation_config["max_output_tokens"],
+                "stream": False
+            }, indent=2)
+            output_row['assistant_response'] = responses[0]
+            output_row['response_time'] = response_times[0]
+            output_rows.append(output_row)
+    finally:
+        del model
 
-# Create a DataFrame from the list of output rows
-df_output = pd.DataFrame(output_rows, columns=['order', 'model', 'prompt', 'user_input', 'assistant_response', 'response_time'])
-# Save the results to an Excel file
-try:
-    df_output.to_excel('output_data.xlsx', index=False)  # Added .xlsx extension
-    print("Data has been successfully saved to 'output_data.xlsx'")
-except PermissionError:
-    print("File is open. Please close the file and try again.")
+    df_output = pd.DataFrame(output_rows)
+    save_results(df_output)
+
+if __name__ == "__main__":
+    main()

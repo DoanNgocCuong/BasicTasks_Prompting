@@ -4,3 +4,4 @@ openpyxl
 streamlit
 dspy
 aisuite[openai,google,groq]
+google.generativeai

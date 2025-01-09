@@ -8,9 +8,15 @@
   },
   "kv_store": {
     "unique_matched_lines_count": 0,
-    "total_repo_line_count": 116854,
+    "total_repo_line_count": 118749,
     "best_prompt_response": null,
     "file_statistics": [
+      {
+        "file": ".env.example",
+        "total_lines": 3,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
       {
         "file": "1_DeepDefine_Scoring_Benchmark_ver1.ipynb",
         "total_lines": 931,
@@ -258,8 +264,26 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "5_TuningPrompting/.env.example",
+        "total_lines": 3,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/Evaluation_manyModels_manyFrameworkAndLibrary/read.md",
+        "total_lines": 57,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "5_TuningPrompting/NOTE.txt",
         "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/PromptTuning_Gemini_v1.py",
+        "total_lines": 161,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -272,6 +296,12 @@
       {
         "file": "5_TuningPrompting/PromptTuning_OpenAI_v2_addMessageHistory.py",
         "total_lines": 153,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/PromptTuning_OpenAI_v3_aisuiteManyModel.py",
+        "total_lines": 229,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -306,20 +336,80 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "5_TuningPrompting/example/[processed]db_app_robot_public_sation_record_history.xlsx",
+        "total_lines": 198,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/example/input_data_v3.xlsx",
+        "total_lines": 64,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/example/input_data_v3_dataKhachHang.xlsx",
+        "total_lines": 162,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/example/input_data_v3_robotPromptDetectIntent.xlsx",
+        "total_lines": 181,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/example/output_data_v3_aisuiteManyModels.xlsx",
+        "total_lines": 53,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "5_TuningPrompting/input_data.xlsx",
+        "total_lines": 181,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/note_DoanCuong/note.ipynb",
+        "total_lines": 151,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/output_data.xlsx",
         "total_lines": 29,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
       {
+        "file": "5_TuningPrompting/output_data_v2.xlsx",
+        "total_lines": 87,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/output_data_v3.xlsx",
+        "total_lines": 26,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "5_TuningPrompting/requirements.txt",
-        "total_lines": 6,
+        "total_lines": 7,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
       {
         "file": "6_TuningWith2Prompting/CKP/GIA LAP 1106.ipynb",
         "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/PERCENTILE.md",
+        "total_lines": 50,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -384,6 +474,24 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "6_TuningWith2Prompting/someOutput/id20.xlsx",
+        "total_lines": 162,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/someOutput/id31.xlsx",
+        "total_lines": 89,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/someOutput/id33.xlsx",
+        "total_lines": 134,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "6_TuningWith2Prompting/src/2PromptingTuning_20Turns.xlsx",
         "total_lines": 268,
         "ai_generated_lines": 0,
@@ -415,7 +523,7 @@
       },
       {
         "file": "6_TuningWith2Prompting/src/HowRun.md",
-        "total_lines": 25,
+        "total_lines": 27,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -528,20 +636,8 @@
         "ai_generated_percentage": 0
       },
       {
-        "file": "6_TuningWith2Prompting/src/id20_test.xlsx",
-        "total_lines": 26,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "6_TuningWith2Prompting/src/id24_test.xlsx",
-        "total_lines": 52,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
         "file": "6_TuningWith2Prompting/src/id32.xlsx",
-        "total_lines": 44,
+        "total_lines": 39,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -578,12 +674,6 @@
       {
         "file": "README.md",
         "total_lines": 1,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "src/utils_export_conversations_to_excel.py",
-        "total_lines": 16,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       }
