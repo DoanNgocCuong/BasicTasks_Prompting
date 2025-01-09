@@ -8,7 +8,7 @@
   },
   "kv_store": {
     "unique_matched_lines_count": 0,
-    "total_repo_line_count": 118749,
+    "total_repo_line_count": 118823,
     "best_prompt_response": null,
     "file_statistics": [
       {
@@ -270,6 +270,12 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "5_TuningPrompting/CHANGLOG.md",
+        "total_lines": 9,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "5_TuningPrompting/Evaluation_manyModels_manyFrameworkAndLibrary/read.md",
         "total_lines": 57,
         "ai_generated_lines": 0,
@@ -283,7 +289,7 @@
       },
       {
         "file": "5_TuningPrompting/PromptTuning_Gemini_v1.py",
-        "total_lines": 161,
+        "total_lines": 155,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -367,7 +373,7 @@
       },
       {
         "file": "5_TuningPrompting/input_data.xlsx",
-        "total_lines": 181,
+        "total_lines": 112,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -391,7 +397,13 @@
       },
       {
         "file": "5_TuningPrompting/output_data_v3.xlsx",
-        "total_lines": 26,
+        "total_lines": 266,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/output_gemini_v2.xlsx",
+        "total_lines": 171,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -480,8 +492,8 @@
         "ai_generated_percentage": 0
       },
       {
-        "file": "6_TuningWith2Prompting/someOutput/id31.xlsx",
-        "total_lines": 89,
+        "file": "6_TuningWith2Prompting/someOutput/id24.xlsx",
+        "total_lines": 101,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -504,12 +516,6 @@
         "ai_generated_percentage": 0
       },
       {
-        "file": "6_TuningWith2Prompting/src/2PromptingTuning_byebyeTestEND.xlsx",
-        "total_lines": 250,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
         "file": "6_TuningWith2Prompting/src/ApiClientB.md",
         "total_lines": 76,
         "ai_generated_lines": 0,
@@ -517,7 +523,7 @@
       },
       {
         "file": "6_TuningWith2Prompting/src/CHANGELOG.md",
-        "total_lines": 3,
+        "total_lines": 9,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -632,12 +638,6 @@
       {
         "file": "6_TuningWith2Prompting/src/format.md",
         "total_lines": 20,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "6_TuningWith2Prompting/src/id32.xlsx",
-        "total_lines": 39,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
