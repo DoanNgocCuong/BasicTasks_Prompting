@@ -1,5 +1,3 @@
-# 
-
 # @title OPENAI
 import json
 import pandas as pd
@@ -20,6 +18,17 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
     print(f"\n=== Processing Conversation ===")
     print(f"Order: {order}")
     print(f"Base Prompt: {base_prompt[:100]}...")
+    
+    # Tạo model config dưới dạng JSON
+    model_config = {
+        "model": "gpt-4o-mini",
+        "temperature": 0,
+        "max_tokens": 6000,
+        "top_p": 1,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0
+    }
+    model_config_json = json.dumps(model_config)
     
     responses = []
     response_times = []
@@ -65,17 +74,16 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
             try:
                 print(f"DEBUG - Attempt {try_count + 1} to call OpenAI API")
                 completion = openai.chat.completions.create(
-                    model="gpt-4o-mini",
+                    model=model_config["model"],
                     messages=chat_messages,   
-                    temperature=0,
-                    max_tokens=6000,
-                    top_p=1,
-                    frequency_penalty=0.0,
-                    presence_penalty=0.0
+                    temperature=model_config["temperature"],
+                    max_tokens=model_config["max_tokens"],
+                    top_p=model_config["top_p"],
+                    frequency_penalty=model_config["frequency_penalty"],
+                    presence_penalty=model_config["presence_penalty"]
                 )
                 end_time = time.time()
                 response_content = completion.choices[0].message.content
-                # Add the assistant's response to the message history
                 chat_messages.append({"role": "assistant", "content": response_content})
 
                 responses.append(response_content)
@@ -97,12 +105,13 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
                     time.sleep(3)
 
     # Reset the message history for the next order
-    return  responses, response_times, chat_messages
+    return  responses, response_times, chat_messages, model_config_json
 
-sheet_name = 'TestingPromptOnDataset'
+sheet_name = 'dang2'
 
 # Define the base paths
 SCRIPTS_FOLDER = Path(__file__).parent
+OUTPUT_FILE = SCRIPTS_FOLDER / 'output_data_v2.xlsx'
 
 # Load the input Excel file
 df_input = pd.read_excel(SCRIPTS_FOLDER / 'input_data.xlsx', sheet_name=sheet_name)
@@ -128,25 +137,32 @@ for index, row in df_input.head(num_rows_to_process).iterrows():
     print(f"- Prompt: {prompt[:100]}...")
     print(f"- User Input: {inputs[0]}")
     
-    responses, response_times, chat_messages = process_conversation(
+    responses, response_times, chat_messages, model_config = process_conversation(
         order, prompt, inputs, conversation_history
     )
 
-    for i, user_input in enumerate(inputs):
-        output_rows.append({
-            'order': order,
-            'prompt': prompt,  # Added column for original prompt
-            'user_input': user_input,
-            'assistant_response': responses[i],
-            'response_time': response_times[i],
+    # Copy all columns from input DataFrame
+    new_row = row.to_dict()
+    
+    # Add new columns
+    new_row.update({
+        'assistant_response': responses[0] if responses else None,
+        'response_time': response_times[0] if response_times else None,
+        'model_config': model_config
+    })
+    
+    output_rows.append(new_row)
 
-        })
+# Create DataFrame with all original columns plus new ones
+df_output = pd.DataFrame(output_rows)
 
-# Create a DataFrame from the list of output rows
-df_output = pd.DataFrame(output_rows, columns=['order', 'prompt', 'user_input', 'assistant_response', 'response_time'])
-# Save the results to an Excel file
+# Reorder columns if needed
+cols_order = list(df_input.columns) + ['assistant_response', 'response_time', 'model_config']
+df_output = df_output[cols_order]
+
+# Save to Excel using pathlib
 try:
-    df_output.to_excel('output_data_v2.xlsx', index=False)  # Added .xlsx extension
-    print("Data has been successfully saved to 'output_data_v2.xlsx'")
+    df_output.to_excel(OUTPUT_FILE, index=False)
+    print(f"Data has been successfully saved to '{OUTPUT_FILE}'")
 except PermissionError:
-    print("File is open. Please close the file and try again.")
+    print(f"File '{OUTPUT_FILE}' is open. Please close the file and try again.")
