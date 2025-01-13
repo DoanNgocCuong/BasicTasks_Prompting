@@ -8,7 +8,7 @@
   },
   "kv_store": {
     "unique_matched_lines_count": 0,
-    "total_repo_line_count": 118823,
+    "total_repo_line_count": 119099,
     "best_prompt_response": null,
     "file_statistics": [
       {
@@ -271,7 +271,7 @@
       },
       {
         "file": "5_TuningPrompting/CHANGLOG.md",
-        "total_lines": 9,
+        "total_lines": 41,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -301,13 +301,19 @@
       },
       {
         "file": "5_TuningPrompting/PromptTuning_OpenAI_v2_addMessageHistory.py",
-        "total_lines": 153,
+        "total_lines": 170,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
       {
         "file": "5_TuningPrompting/PromptTuning_OpenAI_v3_aisuiteManyModel.py",
         "total_lines": 229,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/PromptTuning_OpenAI_v4_v2UpdateParseArguments.py",
+        "total_lines": 192,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -338,6 +344,12 @@
       {
         "file": "5_TuningPrompting/code_aTruc.ipynb",
         "total_lines": 2584,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/custom_output.xlsx",
+        "total_lines": 35,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },

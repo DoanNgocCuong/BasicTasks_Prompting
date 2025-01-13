@@ -7,6 +7,7 @@ from openai import OpenAIError
 from dotenv import load_dotenv
 import os
 from pathlib import Path
+import argparse
 
 load_dotenv()
 
@@ -23,7 +24,7 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
     model_config = {
         "model": "gpt-4o-mini",
         "temperature": 0,
-        "max_tokens": 4096,
+        "max_tokens": 6000,
         "top_p": 1,
         "frequency_penalty": 0.0,
         "presence_penalty": 0.0
@@ -107,63 +108,84 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
     # Reset the message history for the next order
     return  responses, response_times, chat_messages, model_config_json
 
-sheet_name = 'TestingPromptOnDataset'
+sheet_name = 'dang2'
 
-# Define the base paths
-SCRIPTS_FOLDER = Path(__file__).parent
-OUTPUT_FILE = SCRIPTS_FOLDER / 'output_data_v2.xlsx'
+# Add argument parser at the top of the script
+def parse_arguments():
+    parser = argparse.ArgumentParser(description='Process conversations with OpenAI API')
+    parser.add_argument('--num-rows', type=int, default=None,
+                      help='Number of rows to process (default: all rows)')
+    parser.add_argument('--input-file', type=str, default='input_data.xlsx',
+                      help='Input Excel file path (default: input_data.xlsx)')
+    parser.add_argument('--output-file', type=str, default='output_data_v2.xlsx',
+                      help='Output Excel file path (default: output_data_v2.xlsx)')
+    parser.add_argument('--sheet', type=str, default='dang2',
+                      help='Excel sheet name to process (default: dang2)')
+    return parser.parse_args()
 
-# Load the input Excel file
-df_input = pd.read_excel(SCRIPTS_FOLDER / 'input_data.xlsx', sheet_name=sheet_name)
-
-# Set the number of rows to process
-num_rows_to_process = int(input("Enter the number of rows to process: "))
-
-# List to store rows before appending them to the DataFrame
-output_rows = []
-
-print("\nAvailable columns in DataFrame:")
-print(df_input.columns.tolist())
-
-for index, row in df_input.head(num_rows_to_process).iterrows():
-    print(f"\n=== Processing Row {index} ===")
-    order = row['order']
-    prompt = row['system_prompt']
-    conversation_history = row['conversation_history']
-    inputs = [row['user_input']]
+# Replace the file handling section with:
+def main():
+    args = parse_arguments()
     
-    print(f"Row data:")
-    print(f"- Order: {order}")
-    print(f"- Prompt: {prompt[:100]}...")
-    print(f"- User Input: {inputs[0]}")
+    # Define the base paths
+    SCRIPTS_FOLDER = Path(__file__).parent
+    INPUT_FILE = SCRIPTS_FOLDER / args.input_file
+    OUTPUT_FILE = SCRIPTS_FOLDER / args.output_file
+
+    # Use sheet name from arguments instead of hardcoded value
+    df_input = pd.read_excel(INPUT_FILE, sheet_name=args.sheet)
+
+    # Use number of rows from arguments
+    rows_to_process = df_input if args.num_rows is None else df_input.head(args.num_rows)
     
-    responses, response_times, chat_messages, model_config = process_conversation(
-        order, prompt, inputs, conversation_history
-    )
+    # List to store rows before appending them to the DataFrame
+    output_rows = []
 
-    # Copy all columns from input DataFrame
-    new_row = row.to_dict()
-    
-    # Add new columns
-    new_row.update({
-        'assistant_response': responses[0] if responses else None,
-        'response_time': response_times[0] if response_times else None,
-        'model_config': model_config
-    })
-    
-    output_rows.append(new_row)
+    print("\nAvailable columns in DataFrame:")
+    print(df_input.columns.tolist())
 
-# Create DataFrame with all original columns plus new ones
-df_output = pd.DataFrame(output_rows)
+    for index, row in rows_to_process.iterrows():
+        print(f"\n=== Processing Row {index} ===")
+        order = row['order']
+        prompt = row['system_prompt']
+        conversation_history = row['conversation_history']
+        inputs = [row['user_input']]
+        
+        print(f"Row data:")
+        print(f"- Order: {order}")
+        print(f"- Prompt: {prompt[:100]}...")
+        print(f"- User Input: {inputs[0]}")
+        
+        responses, response_times, chat_messages, model_config = process_conversation(
+            order, prompt, inputs, conversation_history
+        )
 
-# Reorder columns if needed
-cols_order = list(df_input.columns) + ['assistant_response', 'response_time', 'model_config']
-df_output = df_output[cols_order]
+        # Copy all columns from input DataFrame
+        new_row = row.to_dict()
+        
+        # Add new columns
+        new_row.update({
+            'assistant_response': responses[0] if responses else None,
+            'response_time': response_times[0] if response_times else None,
+            'model_config': model_config
+        })
+        
+        output_rows.append(new_row)
 
-# Save to Excel using pathlib
-try:
-    df_output.to_excel(OUTPUT_FILE, index=False)
-    print(f"Data has been successfully saved to '{OUTPUT_FILE}'")
-except PermissionError:
-    print(f"File '{OUTPUT_FILE}' is open. Please close the file and try again.")
+    # Create DataFrame with all original columns plus new ones
+    df_output = pd.DataFrame(output_rows)
+
+    # Reorder columns if needed
+    cols_order = list(df_input.columns) + ['assistant_response', 'response_time', 'model_config']
+    df_output = df_output[cols_order]
+
+    # Save to Excel using pathlib
+    try:
+        df_output.to_excel(OUTPUT_FILE, index=False)
+        print(f"Data has been successfully saved to '{OUTPUT_FILE}'")
+    except PermissionError:
+        print(f"File '{OUTPUT_FILE}' is open. Please close the file and try again.")
+
+if __name__ == "__main__":
+    main()
 
