@@ -129,7 +129,9 @@ for index, row in df_input.head(num_rows_to_process).iterrows():
     print(f"\n=== Processing Row {index} ===")
     order = row['order']
     prompt = row['system_prompt']
-    conversation_history = row['conversation_history']
+    
+    # Check if 'conversation_history' exists, if not set to None
+    conversation_history = row['conversation_history'] if 'conversation_history' in df_input.columns else None
     inputs = [row['user_input']]
     
     print(f"Row data:")
