@@ -8,6 +8,12 @@ from dotenv import load_dotenv
 import os
 from pathlib import Path
 import argparse
+import logging
+import re
+
+# Setup logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 load_dotenv()
 
@@ -20,11 +26,15 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
     print(f"Order: {order}")
     print(f"Base Prompt: {base_prompt[:100]}...")
     
+    # Log conversation history
+    if conversation_history:
+        logger.info(f"Conversation history: {conversation_history}")
+
     # Tạo model config dưới dạng JSON
     model_config = {
         "model": "gpt-4o-mini",
         "temperature": 0,
-        "max_tokens": 6000,
+        "max_tokens": 4096,
         "top_p": 1,
         "frequency_penalty": 0.0,
         "presence_penalty": 0.0
@@ -62,6 +72,8 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
         except json.JSONDecodeError as e:
             print(f"Error parsing conversation history: {e}")
             print(f"Raw conversation history: {conversation_history}")
+            logger.error(f"Error parsing conversation history: {e}")
+            logger.error(f"Raw conversation history: {conversation_history}")
     
     # 3. New input
     for user_input in inputs:
@@ -148,9 +160,20 @@ def main():
         print(f"\n=== Processing Row {index} ===")
         order = row['order']
         prompt = row['system_prompt']
-        conversation_history = row['conversation_history']
+        conversation_history = row['conversation_history']   
         inputs = [row['user_input']]
         
+        # Thêm log để kiểm tra giá trị của conversation_history
+        if pd.isna(conversation_history):
+            print(f"Row {index}: 'conversation_history' is NaN")
+            logger.warning(f"Row {index}: 'conversation_history' is NaN")
+        elif not isinstance(conversation_history, str):
+            print(f"Row {index}: 'conversation_history' is not a string")
+            logger.warning(f"Row {index}: 'conversation_history' is not a string")
+        else:
+            print(f"Row {index}: 'conversation_history' = {conversation_history}")
+            logger.info(f"Row {index}: 'conversation_history' = {conversation_history}")
+
         print(f"Row data:")
         print(f"- Order: {order}")
         print(f"- Prompt: {prompt[:100]}...")

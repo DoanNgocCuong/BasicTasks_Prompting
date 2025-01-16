@@ -8,7 +8,7 @@
   },
   "kv_store": {
     "unique_matched_lines_count": 0,
-    "total_repo_line_count": 119099,
+    "total_repo_line_count": 118473,
     "best_prompt_response": null,
     "file_statistics": [
       {
@@ -301,7 +301,7 @@
       },
       {
         "file": "5_TuningPrompting/PromptTuning_OpenAI_v2_addMessageHistory.py",
-        "total_lines": 170,
+        "total_lines": 172,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -385,37 +385,13 @@
       },
       {
         "file": "5_TuningPrompting/input_data.xlsx",
-        "total_lines": 112,
+        "total_lines": 37,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
       {
         "file": "5_TuningPrompting/note_DoanCuong/note.ipynb",
         "total_lines": 151,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "5_TuningPrompting/output_data.xlsx",
-        "total_lines": 29,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "5_TuningPrompting/output_data_v2.xlsx",
-        "total_lines": 87,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "5_TuningPrompting/output_data_v3.xlsx",
-        "total_lines": 266,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "5_TuningPrompting/output_gemini_v2.xlsx",
-        "total_lines": 171,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
