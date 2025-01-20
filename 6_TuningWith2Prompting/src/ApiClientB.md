@@ -73,3 +73,36 @@ Output
 TUY NHIÊN: CÂU AI ASSISTANT GEN ĐẦU TIÊN NÀY ĐÚNG RA LÀ KO TÍNH CÂU: 'sẵn sàng' (init_message) cơ. 
 
 Thế mà qua test mình thấy: INIT_MESSAGE PHẢI TRÙNG NHAU THÌ VỚI first_message_user MỚI CHO KẾT QUẢ TRÙNG NHAU. 
+
+---
+1 api TƯƠNG TỰ: https://documenter.getpostman.com/view/5776947/2sAY55ZxoJ
+
+1. Init Conversation
+```
+curl --location 'http://103.253.20.13:9404/robot-ai-lesson/api/v1/bot/initConversation' \
+--header 'Content-Type: application/json' \
+--data '{
+    "bot_id": 16,
+    "conversation_id": "123456789",
+    "input_slots": {}
+}'
+```
+
+
+```
+{
+    "status": 0,
+    "msg": "Success",
+    "conversation_id": "123456789"
+}
+```
+
+2. Webhook
+
+```
+curl --location 'http://103.253.20.13:9404/robot-ai-lesson/api/v1/bot/webhook' \
+--data '{
+    "conversation_id": "123456789",
+    "message": "wake up"
+}'
+```

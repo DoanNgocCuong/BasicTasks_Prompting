@@ -8,11 +8,13 @@ import random
 
 
 class AICoachAPI:
-    def __init__(self, base_url="http://103.253.20.13:9400", timeout=30, bot_id=31):
+    def __init__(self, base_url="http://103.253.20.13:9404", timeout=30, bot_id=16):
         """Khởi tạo với base URL của API"""
         self.base_url = base_url
-        self.init_endpoint = f"{base_url}/personalized-ai-coach/api/v1/bot/initConversation"
-        self.webhook_endpoint = f"{base_url}/personalized-ai-coach/api/v1/bot/webhook"
+        # self.init_endpoint = f"{base_url}/personalized-ai-coach/api/v1/bot/initConversation"
+        # self.webhook_endpoint = f"{base_url}/personalized-ai-coach/api/v1/bot/webhook"
+        self.init_endpoint = f"{base_url}/robot-ai-lesson/api/v1/bot/initConversation"
+        self.webhook_endpoint = f"{base_url}/robot-ai-lesson/api/v1/bot/webhook"
         self.current_conversation_id = None
         self.timeout = timeout
         self.bot_id = bot_id

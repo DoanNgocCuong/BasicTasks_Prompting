@@ -1,3 +1,10 @@
+xài: 
+```bash
+=PERCENTILE(FILTER(C:C, (A:A="RoleB") * (C:C>0)), 0.5)
+```
+
+
+----
 
 1. Hàm PERCENTILE
 - Hàm PERCENTILE.INC (Bao gồm biên)

@@ -26,7 +26,7 @@ def export_conversations_to_excel(messages, output_path):
         with pd.ExcelWriter(output_path, mode='a', engine='openpyxl', if_sheet_exists='overlay') as writer:
             # Get the last row in existing file
             existing_df = pd.read_excel(output_path, engine='openpyxl')
-            start_row = len(existing_df)
+            start_row = len(existing_df) + 1
             
             # Write new data starting from the next row
             df_new.to_excel(writer, startrow=start_row, index=False, header=False)

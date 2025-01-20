@@ -95,7 +95,7 @@ def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', outp
                         row['useApiOrPrompt']
                     ])
                 
-                # Add separator after each conversation
+                # Add separator after the last message of the current row
                 current_messages.append(['Separator', f'--- End of Row {index + 1} ---', 0, '', '', ''])
                 
                 # Export immediately after processing each row
