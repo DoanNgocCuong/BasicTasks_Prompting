@@ -8,7 +8,7 @@
   },
   "kv_store": {
     "unique_matched_lines_count": 0,
-    "total_repo_line_count": 130789,
+    "total_repo_line_count": 151107,
     "best_prompt_response": null,
     "file_statistics": [
       {
@@ -144,6 +144,12 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/TOFU_ AI_COACH.xlsx",
+        "total_lines": 18289,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "1_SomeRealPrompting_And_Workflow/1.1_Prompt/TOFU_ AI_COACH_DEV.xlsx",
         "total_lines": 17208,
         "ai_generated_lines": 0,
@@ -187,13 +193,7 @@
       },
       {
         "file": "2_PromptCreateTesting/2. PromptCreateTestingLLM_Robot_StepUpEducation/4. Personalize AI Coach - Testing Dataset.xlsx",
-        "total_lines": 3177,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "2_PromptCreateTesting/2. PromptCreateTestingLLM_Robot_StepUpEducation/5. Testing LLM Evaluation.xlsx",
-        "total_lines": 698,
+        "total_lines": 3087,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -204,8 +204,62 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "2_PromptCreateTesting/2. PromptCreateTestingLLM_Robot_StepUpEducation/Difficult.txt",
+        "total_lines": 4,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "2_PromptCreateTesting/2. PromptCreateTestingLLM_Robot_StepUpEducation/id3.xlsx",
+        "total_lines": 83,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "2_PromptCreateTesting/2. PromptCreateTestingLLM_Robot_StepUpEducation/testConversation.md",
         "total_lines": 7,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "2_PromptCreateTesting/2. PromptCreateTestingLLM_Robot_StepUpEducation/toolConvertConversation2HistoryRequest/example/input_SimulationConversation.xlsx",
+        "total_lines": 71,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "2_PromptCreateTesting/2. PromptCreateTestingLLM_Robot_StepUpEducation/toolConvertConversation2HistoryRequest/example/output.xlsx",
+        "total_lines": 88,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "2_PromptCreateTesting/2. PromptCreateTestingLLM_Robot_StepUpEducation/toolConvertConversation2HistoryRequest/input_SimulationConversation.xlsx",
+        "total_lines": 71,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "2_PromptCreateTesting/2. PromptCreateTestingLLM_Robot_StepUpEducation/toolConvertConversation2HistoryRequest/main.ipynb",
+        "total_lines": 648,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "2_PromptCreateTesting/2. PromptCreateTestingLLM_Robot_StepUpEducation/toolConvertConversation2HistoryRequest/main.py",
+        "total_lines": 55,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "2_PromptCreateTesting/2. PromptCreateTestingLLM_Robot_StepUpEducation/toolConvertConversation2HistoryRequest/output_conversation_history.txt",
+        "total_lines": 1095,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "2_PromptCreateTesting/2. PromptCreateTestingLLM_Robot_StepUpEducation/toolConvertConversation2HistoryRequest/readme.md",
+        "total_lines": 62,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -276,7 +330,7 @@
         "ai_generated_percentage": 0
       },
       {
-        "file": "5_TuningPrompting/CHANGLOG.md",
+        "file": "5_TuningPrompting/CHANGLOG_HowRun.md",
         "total_lines": 41,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
@@ -355,7 +409,7 @@
       },
       {
         "file": "5_TuningPrompting/custom_output.xlsx",
-        "total_lines": 35,
+        "total_lines": 36,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -391,7 +445,7 @@
       },
       {
         "file": "5_TuningPrompting/input_data.xlsx",
-        "total_lines": 37,
+        "total_lines": 331,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -506,6 +560,12 @@
       {
         "file": "6_TuningWith2Prompting/src/2PromptingTuning_10Turns.xlsx",
         "total_lines": 651,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/2PromptingTuning_10Turns_new_v3.xlsx",
+        "total_lines": 262,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -644,6 +704,12 @@
       {
         "file": "6_TuningWith2Prompting/src/format.md",
         "total_lines": 20,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/id3.xlsx",
+        "total_lines": 83,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },

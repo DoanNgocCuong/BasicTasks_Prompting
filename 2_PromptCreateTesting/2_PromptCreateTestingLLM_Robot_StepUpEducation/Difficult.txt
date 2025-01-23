@@ -1,0 +1,4 @@
+1. HISTORY : nên add full history. 
+2. 
+- đánh giá response_time theo PERCENTILE: 
+- đánh giá câu output response answer: ? người benchmark
