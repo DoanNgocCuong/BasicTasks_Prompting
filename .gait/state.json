@@ -1,6 +1,45 @@
 {
   "panelChats": [],
-  "inlineChats": [],
+  "inlineChats": [
+    {
+      "inline_chat_id": "9018bc90-0500-4a39-90dd-af9a9981cbc7",
+      "file_diff": [
+        {
+          "file_path": "6_TuningWith2Prompting/src/def_ApiClientB.py",
+          "diffs": [
+            {
+              "count": 11,
+              "added": false,
+              "removed": false,
+              "value": "import time\r\nimport json\r\nimport requests\r\nfrom openai import OpenAI\r\nimport os\r\nfrom utils_convert_roles_for_api import convert_roles_for_api\r\nimport random\r\n\r\n\r\nclass AICoachAPI:\r\n    \"\"\"\r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "    \r\n"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "    Class để gửi tin nhắn tới bot và lấy response từ bot\r\n\r\n"
+            },
+            {
+              "count": 83,
+              "added": false,
+              "removed": false,
+              "value": "    \"\"\"\r\n    def __init__(self, base_url=\"http://103.253.20.13:9404\", timeout=30, bot_id=16):\r\n        \"\"\"Khởi tạo với base URL của API\"\"\"\r\n        self.base_url = base_url\r\n        # self.init_endpoint = f\"{base_url}/personalized-ai-coach/api/v1/bot/initConversation\"\r\n        # self.webhook_endpoint = f\"{base_url}/personalized-ai-coach/api/v1/bot/webhook\"\r\n        self.init_endpoint = f\"{base_url}/robot-ai-lesson/api/v1/bot/initConversation\"\r\n        self.webhook_endpoint = f\"{base_url}/robot-ai-lesson/api/v1/bot/webhook\"\r\n        self.current_conversation_id = None\r\n        self.timeout = timeout\r\n        self.bot_id = bot_id\r\n\r\n    def init_conversation(self):\r\n        \"\"\"Khởi tạo cuộc hội thoại mới\"\"\"\r\n        timestamp = int(time.time() * 1000)  # Convert to milliseconds\r\n        random_suffix = str(random.randint(100, 999))\r\n        conversation_id = f\"conv_{timestamp}_{random_suffix}\"\r\n        \r\n        payload = {\r\n            \"bot_id\": self.bot_id,\r\n            \"conversation_id\": conversation_id,\r\n            \"input_slots\": {}\r\n        }\r\n        \r\n        try:\r\n            print(f\"\\n[AICoachAPI] Initializing conversation...\")\r\n            print(f\"[AICoachAPI] Endpoint: {self.init_endpoint}\")\r\n            print(f\"[AICoachAPI] Payload: {json.dumps(payload, indent=2)}\")\r\n            \r\n            response = requests.post(\r\n                self.init_endpoint,\r\n                headers={'Content-Type': 'application/json'},\r\n                json=payload,\r\n                timeout=self.timeout\r\n            )\r\n            response.raise_for_status()\r\n            \r\n            print(f\"[AICoachAPI] Init successful. Response: {json.dumps(response.json(), indent=2)}\")\r\n            self.current_conversation_id = conversation_id\r\n            return True\r\n            \r\n        except requests.Timeout:\r\n            print(\"[AICoachAPI] Error: Request timed out during initialization\")\r\n            return False\r\n        except requests.RequestException as e:\r\n            print(f\"[AICoachAPI] Error during initialization: {str(e)}\")\r\n            return False\r\n\r\n    def send_message(self, message):\r\n        \"\"\"Gửi tin nhắn tới bot\"\"\"\r\n        if not self.current_conversation_id:\r\n            print(\"[AICoachAPI] Error: No active conversation. Initializing new one...\")\r\n            if not self.init_conversation():\r\n                return None\r\n\r\n        payload = {\r\n            \"conversation_id\": self.current_conversation_id,\r\n            \"message\": message\r\n        }\r\n        \r\n        try:\r\n            print(f\"\\n[AICoachAPI] Sending message...\")\r\n            print(f\"[AICoachAPI] Endpoint: {self.webhook_endpoint}\")\r\n            print(f\"[AICoachAPI] Payload: {json.dumps(payload, indent=2)}\")\r\n            \r\n            response = requests.post(\r\n                self.webhook_endpoint,\r\n                headers={'Content-Type': 'application/json'},\r\n                json=payload,\r\n                timeout=self.timeout\r\n            )\r\n            response.raise_for_status()\r\n            # Trả ra response_data\r\n            response_data = response.json()\r\n            print(f\"[AICoachAPI] Message sent successfully. Response: {json.dumps(response_data, indent=2)}\")\r\n            return response_data\r\n            \r\n        except requests.Timeout:\r\n            print(\"[AICoachAPI] Error: Request timed out while sending message\")\r\n            return None\r\n        except requests.RequestException as e:\r\n            print(f\"[AICoachAPI] Error sending message: {str(e)}\")\r\n            return None\r\n"
+            }
+          ]
+        }
+      ],
+      "selection": null,
+      "timestamp": "2025-02-05T09:06:44.785Z",
+      "prompt": "Viết documents cho class",
+      "parent_inline_chat_id": null
+    }
+  ],
   "schemaVersion": "1.0",
   "deletedChats": {
     "deletedMessageIDs": [],

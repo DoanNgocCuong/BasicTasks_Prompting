@@ -7,6 +7,7 @@ def simulate_with_api(row, openai_client, api_client):
     """Simulate conversation using OpenAI for RoleA and API for RoleB"""
     message_history = []
     response_times = []
+    full_log = []  # Lưu toàn bộ response từ API
     conversationTurnCount = 0
 
     # Extract settings
@@ -26,6 +27,7 @@ def simulate_with_api(row, openai_client, api_client):
                 initial_message = history[0]["content"]
                 # Add initial roleA message to history
                 message_history.append({"role": "roleA", "content": initial_message})
+                full_log.append("")  # Empty log for roleA message
                 response_times.append(0)  # 0 for initial message
             print(f"\nUsing initial message: {initial_message}")
         except json.JSONDecodeError as e:
@@ -37,17 +39,17 @@ def simulate_with_api(row, openai_client, api_client):
     if api_response and "text" in api_response:
         roleB_message = api_response["text"][0]
         message_history.append({"role": "roleB", "content": roleB_message})
-        # Lấy process_time từ API response và làm tròn 6 chữ số
+        # Lưu toàn bộ response
+        full_log.append(json.dumps(api_response, ensure_ascii=False, indent=2))
         process_time = round(float(api_response.get("process_time", 0)), 6)
         response_times.append(process_time)
         
-        # Check for END status in initial response
         if api_response.get("status") == "END":
             print("[INFO] Received END status from API. Ending conversation.")
-            return message_history, response_times
+            return message_history, response_times, full_log
     else:
         print("[ERROR] Failed to get initial response from API")
-        return message_history, response_times
+        return message_history, response_times, full_log
 
     # Start conversation loop
     while conversationTurnCount < maxTurns:
@@ -59,7 +61,7 @@ def simulate_with_api(row, openai_client, api_client):
                 message_history
             )
             message_history.append({"role": "roleA", "content": roleA_message})
-            # Làm tròn response time của OpenAI
+            full_log.append("")  # Empty log for roleA message
             response_times.append(round(roleA_time, 6))
 
             # RoleB turn with API
@@ -68,16 +70,17 @@ def simulate_with_api(row, openai_client, api_client):
             if api_response and "text" in api_response:
                 roleB_message = api_response["text"][0]
                 message_history.append({"role": "roleB", "content": roleB_message})
-                # Lấy process_time từ API response và làm tròn 6 chữ số
+                # Lưu toàn bộ response
+                full_log.append(json.dumps(api_response, ensure_ascii=False, indent=2))
                 process_time = round(float(api_response.get("process_time", 0)), 6)
                 response_times.append(process_time)
                 
-                # Check for END status
                 if api_response.get("status") == "END":
                     print("[INFO] Received END status from API. Ending conversation.")
                     break
             else:
                 print("[ERROR] Failed to get response from API")
+                full_log.append("")  # Empty log for failed API response
                 break
 
             conversationTurnCount += 1
@@ -86,6 +89,7 @@ def simulate_with_api(row, openai_client, api_client):
 
         except Exception as e:
             print(f"\nError during conversation: {str(e)}")
+            full_log.append("")  # Empty log for error case
             break
 
-    return message_history, response_times
+    return message_history, response_times, full_log

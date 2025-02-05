@@ -14,7 +14,8 @@ def export_conversations_to_excel(messages, output_path):
         'Response Time',
         'RoleA Prompt',
         'RoleB Prompt',
-        'useApiOrPrompt'
+        'useApiOrPrompt',
+        'Full Log'
     ])
     
     if not os.path.exists(output_path):

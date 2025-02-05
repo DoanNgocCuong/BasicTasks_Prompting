@@ -8,8 +8,21 @@ import random
 
 
 class AICoachAPI:
+    """
+    AICoachAPI class is used to send messages to a bot and receive responses from it.
+
+    Attributes:
+        base_url (str): The base URL of the API.
+        timeout (int): The timeout for API requests in seconds.
+        bot_id (int): The ID of the bot to interact with.
+        current_conversation_id (str): The ID of the current conversation.
+
+    Methods:
+        init_conversation(): Initializes a new conversation with a unique conversation ID.
+        send_message(message): Sends a message to the bot and returns the response.
+    """
     def __init__(self, base_url="http://103.253.20.13:9404", timeout=30, bot_id=16):
-        """Khởi tạo với base URL của API"""
+        """Initializes the AICoachAPI with the base URL, timeout, and bot ID."""
         self.base_url = base_url
         # self.init_endpoint = f"{base_url}/personalized-ai-coach/api/v1/bot/initConversation"
         # self.webhook_endpoint = f"{base_url}/personalized-ai-coach/api/v1/bot/webhook"
@@ -20,7 +33,7 @@ class AICoachAPI:
         self.bot_id = bot_id
 
     def init_conversation(self):
-        """Khởi tạo cuộc hội thoại mới"""
+        """Initializes a new conversation and generates a unique conversation ID."""
         timestamp = int(time.time() * 1000)  # Convert to milliseconds
         random_suffix = str(random.randint(100, 999))
         conversation_id = f"conv_{timestamp}_{random_suffix}"
@@ -56,7 +69,7 @@ class AICoachAPI:
             return False
 
     def send_message(self, message):
-        """Gửi tin nhắn tới bot"""
+        """Sends a message to the bot and returns the response."""
         if not self.current_conversation_id:
             print("[AICoachAPI] Error: No active conversation. Initializing new one...")
             if not self.init_conversation():
@@ -79,7 +92,7 @@ class AICoachAPI:
                 timeout=self.timeout
             )
             response.raise_for_status()
-            
+            # Trả ra response_data
             response_data = response.json()
             print(f"[AICoachAPI] Message sent successfully. Response: {json.dumps(response_data, indent=2)}")
             return response_data

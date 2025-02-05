@@ -70,9 +70,11 @@ def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', outp
             try:
                 # Simulate conversation
                 if use_api:
-                    message_history, response_times = simulate_with_api(row, openai_client, api_client)
+                    message_history, response_times, full_log = simulate_with_api(row, openai_client, api_client)
                 else:
                     message_history, response_times = simulate_with_openai(row, openai_client)
+                    # Initialize empty full_log for non-API case
+                    full_log = [''] * len(message_history)
                 
                 # Prepare current row data
                 current_messages = []
@@ -85,21 +87,34 @@ def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', outp
                     if i >= initial_message_count:
                         response_idx = i - initial_message_count
                         response_time = response_times[response_idx] if response_idx < len(response_times) else 0
-                        
+                    
+                    # Get full log for the current message
+                    current_full_log = full_log[i] if use_api and i < len(full_log) else ''
+                    
                     current_messages.append([
                         msg['role'],
                         msg['content'],
                         response_time,
                         row['roleA_prompt'],
                         row['roleB_prompt'] if not use_api else f"Using API (Bot ID: {bot_id})",
-                        row['useApiOrPrompt']
+                        row['useApiOrPrompt'],
+                        current_full_log  # Add full log data
                     ])
                 
                 # Add separator after the last message of the current row
-                current_messages.append(['Separator', f'--- End of Row {index + 1} ---', 0, '', '', ''])
+                current_messages.append(['Separator', f'--- End of Row {index + 1} ---', 0, '', '', '', ''])
                 
                 # Export immediately after processing each row
-                export_conversations_to_excel(current_messages, output_path)
+                df_new = pd.DataFrame(current_messages, columns=[
+                    'Role', 
+                    'Content', 
+                    'Response Time',
+                    'RoleA Prompt',
+                    'RoleB Prompt',
+                    'useApiOrPrompt',
+                    'Full Log'
+                ])
+                export_conversations_to_excel(df_new, output_path)
                 print(f"Completed row {index + 1}/{end_idx}")
                 
             except Exception as e:
