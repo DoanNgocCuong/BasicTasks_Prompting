@@ -64,8 +64,8 @@ class ModelConfig:
 # Initialize model configs with both models
 model_configs = [
     # ModelConfig("openai", "gpt-4o-mini", api_key=os.getenv('OPENAI_API_KEY')),
-    ModelConfig("openai", "gpt-3.5-turbo", api_key=os.getenv('OPENAI_API_KEY')),
-    # ModelConfig("groq", "llama-3.3-70b-versatile", api_key=os.getenv('GROQ_API_KEY')),
+    # ModelConfig("openai", "gpt-3.5-turbo", api_key=os.getenv('OPENAI_API_KEY')),
+    ModelConfig("groq", "llama-3.3-70b-versatile", api_key=os.getenv('GROQ_API_KEY')),
 ]
 
 def process_conversation(order, base_prompt, inputs, conversation_history=None):
@@ -140,7 +140,7 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
     
     return all_responses, all_response_times
 
-sheet_name = 'TestingPromptOnDataset'
+sheet_name = 'Trang tính1'
 
 # Load the input Excel file
 df_input = pd.read_excel(SCRIPTS_FOLDER / 'input_data.xlsx', sheet_name=sheet_name)
