@@ -120,7 +120,7 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
     # Reset the message history for the next order
     return  responses, response_times, chat_messages, model_config_json
 
-sheet_name = 'dang2'
+sheet_name = 'Trang tính1'
 
 # Add argument parser at the top of the script
 def parse_arguments():
@@ -131,8 +131,8 @@ def parse_arguments():
                       help='Input Excel file path (default: input_data.xlsx)')
     parser.add_argument('--output-file', type=str, default='output_data_v2.xlsx',
                       help='Output Excel file path (default: output_data_v2.xlsx)')
-    parser.add_argument('--sheet', type=str, default='dang2',
-                      help='Excel sheet name to process (default: dang2)')
+    parser.add_argument('--sheet', type=str, default='Trang tính1',
+                      help='Excel sheet name to process (default: Trang tính1)')
     return parser.parse_args()
 
 # Replace the file handling section with:

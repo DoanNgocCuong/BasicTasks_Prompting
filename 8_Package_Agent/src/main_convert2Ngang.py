@@ -143,8 +143,8 @@ def create_new_excel_file(df, output_file_path):
     output_df.to_excel(output_file_path, index=False)
 
 # Đường dẫn đến file Excel cũ và file mới
-input_file_path = './id24.xlsx'
-output_file_path = './id24_processed.xlsx'
+input_file_path = './id22.xlsx'
+output_file_path = './id22_processed.xlsx'
 
 
 # Đọc dữ liệu từ file cũ
