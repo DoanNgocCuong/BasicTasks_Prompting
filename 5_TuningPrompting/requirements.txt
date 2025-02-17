@@ -5,3 +5,4 @@ streamlit
 dspy
 aisuite[openai,google,groq]
 google.generativeai
+psutil>=5.8.0
