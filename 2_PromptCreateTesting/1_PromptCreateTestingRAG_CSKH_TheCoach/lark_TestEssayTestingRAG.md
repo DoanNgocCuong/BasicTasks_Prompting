@@ -1,1 +1,0 @@
-- Link bài note: https://csg2ej4iz2hz.sg.larksuite.com/wiki/JBbEwcG2siN3vQkW0dAlUDsOgYc?from=from_copylink
