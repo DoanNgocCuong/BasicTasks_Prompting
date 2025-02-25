@@ -19,7 +19,7 @@ def is_json(text):
         return False
 
 def execute_curl(curl_command):
-    """Execute CRUL command and return response"""
+    """Execute CURL command and return response"""
     try:
         # Parse CURL command
         headers = {}
@@ -31,35 +31,50 @@ def execute_curl(curl_command):
         
         # Process first line to get URL
         url_line = parts[0].strip()
-        url_match = re.search(r"curl.*?'(.*?)'|curl.*?\"(.*?)\"", url_line)
+        # New pattern that handles URLs with or without quotes
+        url_match = re.search(r"curl\s+['\"]?(.*?)['\"]?\s*$", url_line)
         if not url_match:
-            return "Error: Could not parse URL from CRUL command"
-        url = url_match.group(1) or url_match.group(2)
+            return "Error: Could not parse URL from CURL command"
+        url = url_match.group(1).strip()
         
         # Process remaining lines for headers and data
+        current_data = []
+        reading_data = False
+        
         for part in parts[1:]:
             part = part.strip()
             if not part:
                 continue
                 
             # Parse headers
-            header_match = re.search(r"--header\s+'(.*?)'|--header\s+\"(.*?)\"", part)
-            if header_match:
-                header_str = header_match.group(1) or header_match.group(2)
-                if ':' in header_str:
-                    key, value = header_str.split(':', 1)
-                    headers[key.strip()] = value.strip()
+            if '-H' in part or '--header' in part:
+                header_match = re.search(r"-H\s+['\"](.+?)['\"]|--header\s+['\"](.+?)['\"]", part)
+                if header_match:
+                    header_str = (header_match.group(1) or header_match.group(2)).replace('""', '"')
+                    if ':' in header_str:
+                        key, value = header_str.split(':', 1)
+                        headers[key.strip()] = value.strip()
                 continue
             
-            # Parse data - keep the data exactly as is without processing
-            data_match = re.search(r"--data\s+'(.*)'|--data\s+\"(.*)\"", part)
-            if data_match:
-                data = data_match.group(1) or data_match.group(2)
-                # Remove any escaped quotes that might be present
-                data = data.replace('\\"', '"').replace("\\'", "'")
-                method = 'POST'
+            # Start collecting data
+            if '-d' in part or '--data' in part:
+                reading_data = True
+                data_part = re.sub(r"^-d\s+['\"]|^--data\s+['\"]", "", part)
+                current_data.append(data_part)
                 continue
+                
+            # Continue collecting data if we're in data mode
+            if reading_data:
+                current_data.append(part)
         
+        # Join and clean data if we collected any
+        if current_data:
+            method = 'POST'
+            data = ''.join(current_data)
+            # Clean up the data
+            data = data.strip("'\"")
+            data = data.replace('""', '"')  # Replace double escaped quotes
+            
         # Make the request
         if method == 'GET':
             response = requests.get(url, headers=headers)
@@ -68,7 +83,7 @@ def execute_curl(curl_command):
             
         return response.text
     except Exception as e:
-        return f"Error executing CRUL: {str(e)}"
+        return f"Error executing CURL: {str(e)}"
 
 def parse_output(output_text):
     """Parse output if it's JSON, otherwise return as is"""

@@ -34,7 +34,7 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
     model_config = {
         "model": "gpt-4o-mini",
         "temperature": 0,
-        "max_tokens": 2048,
+        "max_tokens": 8192,
         "top_p": 1,
         "frequency_penalty": 0.0,
         "presence_penalty": 0.0
