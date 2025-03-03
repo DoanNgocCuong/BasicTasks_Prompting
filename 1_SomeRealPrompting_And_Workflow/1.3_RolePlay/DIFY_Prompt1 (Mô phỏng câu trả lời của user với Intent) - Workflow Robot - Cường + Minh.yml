@@ -1,0 +1,203 @@
+app:
+  description: "{\n  \"pika_question\": \"Chuẩn luôn, cậu giỏi quá. Now, let’s put\
+    \ it all together: Giờ ghép lại nhé: \\\"I enjoy pizza!\\\"\",\n  \"intents\"\
+    : {\n    \"intent_true\": {\n      \"INTENT_DESCRIPTION\": \"Người dùng đồng ý\
+    \ với câu ghép lại và cảm thấy vui vẻ về điều đó.\",\n      \"LOOP_COUNT\": 1,\n\
+    \      \"user_responses\": [\n        \"Yay! I enjoy pizza too! Thích pizza lắm\
+    \ luôn!\"\n      ]\n    },\n    \"intent_false\": {\n      \"INTENT_DESCRIPTION\"\
+    : \"Người dùng không đồng ý với câu ghép lại hoặc không thích pizza.\",\n    \
+    \  \"LOOP_COUNT\": 2,\n      \"user_responses\": [\n        \"Oh no! I don't enjoy\
+    \ pizza. Em không thích pizza đâu!\",\n        \"Huh? I don't like pizza! Em thích\
+    \ bánh mì hơn!\"\n      ]\n    },\n    \"intent_idk\": {\n      \"INTENT_DESCRIPTION\"\
+    : \"Người dùng không chắc chắn về câu ghép lại hoặc không biết.\",\n      \"LOOP_COUNT\"\
+    : 2,\n      \"user_responses\": [\n        \"Hmm, I don't know. Em không biết\
+    \ nữa!\",\n        \"Maybe? I think I like pizza, nhưng không chắc lắm!\"\n  \
+    \    ]\n    },\n    \"fallback\": {\n      \"INTENT_DESCRIPTION\": \"Người dùng\
+    \ không hiểu câu hỏi hoặc không có phản hồi phù hợp.\",\n      \"LOOP_COUNT\"\
+    : 2,\n      \"user_responses\": [\n        \"Hả? Em không hiểu lắm! Can you say\
+    \ again?\",\n        \"Ủa, cái gì vậy? I don't get it!\"\n      ]\n    },\n  \
+    \  \"Silence\": {\n      \"INTENT_DESCRIPTION\": \"Người dùng không trả lời hoặc\
+    \ không có phản hồi.\",\n      \"LOOP_COUNT\": 2,\n      \"user_responses\": [\n\
+    \        \"....\",\n        \".... (im lặng)\"\n      ]\n    }\n  }\n}\n\n=========\n\
+    \ncurl --location 'http://103.253.20.13:5011/v1/workflows/run' \\\n--header 'Authorization:\
+    \ Bearer app-CtAcEPxcQmXAd9r49jcozp6O' \\\n--header 'Content-Type: application/json'\
+    \ \\\n--data '{\n    \"inputs\": {\n        \"JSON_input\": \"{ \\\"pika_question\\\
+    \": \\\"Chuẩn luôn, cậu giỏi quá. Now, let’s put it all together: \\\\\\\"I enjoy\
+    \ pizza!\\\\\\\"\\\", \\\"intents\\\": { \\\"intent_true\\\": 1, \\\"intent_false\\\
+    \": 2, \\\"intent_idk\\\": 2, \\\"fallback\\\": 2, \\\"Silence\\\": 2 } }\"\n\
+    \    },\n    \"response_mode\": \"blocking\",\n    \"user\": \"abc-123\"\n}'\n"
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: Prompt1 (Mô phỏng câu trả lời của user với Intent) - Workflow Robot - Cường
+    + Minh
+  use_icon_as_answer_icon: false
+kind: app
+version: 0.1.2
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: llm
+      id: 1740473479677-source-1740473482205-target
+      source: '1740473479677'
+      sourceHandle: source
+      target: '1740473482205'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: end
+      id: 1740473482205-source-1740473484814-target
+      source: '1740473482205'
+      sourceHandle: source
+      target: '1740473484814'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: Start
+        type: start
+        variables:
+        - label: JSON Input
+          max_length: 10000
+          options: []
+          required: true
+          type: paragraph
+          variable: JSON_input
+      height: 88
+      id: '1740473479677'
+      position:
+        x: 80
+        y: 282
+      positionAbsolute:
+        x: 80
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            max_tokens: 2101
+            response_format: json_object
+            temperature: 0
+          mode: chat
+          name: gpt-4o-2024-08-06
+          provider: openai
+        prompt_template:
+        - id: fdf8c460-241b-415b-9e5c-86eaf394b12b
+          role: system
+          text: "You are a Prompt Builder specialized in generating user responses\
+            \ based on given intents and providing clear intent descriptions.\n\n\
+            You will be given:  \n- **PIKA_QUESTION**: Câu hỏi của Pika.  \n- **INTENTS**:\
+            \ Bộ intent (Set of intents) với các thông tin:  \n  - INTENT_NAME  \n\
+            \  - MAX_LOOP (Tổng số vòng lặp tối đa cho mỗi intent)  \n\nYour task:\
+            \  \n1. **Tạo câu trả lời của người dùng (USER_RESPONSES)** phù hợp với\
+            \ từng intent trong bộ intent đã cho, với:  \n   - **Giọng trẻ con dễ\
+            \ thương**, trình độ **A2**  \n   - Sử dụng **song ngữ Anh - Việt** một\
+            \ cách tự nhiên  \n2. **Giải thích rõ ràng intent** (INTENT_DESCRIPTION)\
+            \ một cách cụ thể, dễ hiểu. PHÂN BIỆT RÕ các INTENT với nhau thông qua\
+            \ INTENT_DESCRIPTION\n3. **Tạo số lượng câu trả lời (USER_RESPONSES)**\
+            \ tương ứng với **MAX_LOOP** cho mỗi intent.  \n4. **Đảm bảo cấu trúc\
+            \ JSON** đúng định dạng bên dưới.  \n5. **LOOP_COUNT** thể hiện thứ tự\
+            \ của từng câu trả lời trong vòng lặp.\n\n============  \n### Instruction:\
+            \  \n- **USER_RESPONSES**: Ngắn gọn, đáng yêu, sử dụng tiếng Anh trình\
+            \ độ A2 xen lẫn tiếng Việt tự nhiên.  \n- Nếu **MAX_LOOP > 1**, cung cấp\
+            \ thêm câu trả lời khác nhau nhưng vẫn đúng cùng một intent.  \n- **TUYỆT\
+            \ ĐỐI** tuân thủ đúng **cấu trúc JSON** dưới đây.  \n- **MAX_LOOP**: Luôn\
+            \ hiển thị tổng số vòng lặp tối đa cho mỗi intent.  \n\n============ \
+            \ \n\n### RESPONSE JSON TEMPLATE (not include other characters, such as\
+            \ ```JSON ):  \n[ { \"PIKA_QUESTION\": \"<Câu hỏi của Pika>\", \"USER_RESPONSE\"\
+            : \"<Câu trả lời (giọng trẻ con, A2, song ngữ)>\", \"INTENT_NAME\": \"\
+            <Tên intent>\", \"INTENT_DESCRIPTION\": \"<Mô tả chi tiết về intent>\"\
+            , \"LOOP_COUNT\": <Số thứ tự câu trả lời trong vòng lặp>, \"MAX_LOOP\"\
+            : <Tổng số vòng lặp tối đa cho intent đó> } ]\n"
+        - id: 08eea820-f9f5-4976-9717-c9925ecd5b1b
+          role: user
+          text: '{{#1740473479677.JSON_input#}}'
+        selected: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: true
+      height: 96
+      id: '1740473482205'
+      position:
+        x: 384.4251473695757
+        y: 282
+      positionAbsolute:
+        x: 384.4251473695757
+        y: 282
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1740473482205'
+          - text
+          variable: output
+        selected: false
+        title: End
+        type: end
+      height: 88
+      id: '1740473484814'
+      position:
+        x: 686
+        y: 282
+      positionAbsolute:
+        x: 686
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    viewport:
+      x: -9.279153930679684
+      y: 213.14091119013997
+      zoom: 0.6810385568449006

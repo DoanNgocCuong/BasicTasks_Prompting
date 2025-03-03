@@ -1,0 +1,260 @@
+app:
+  description: "INPUT SAMPLE: \n\n### \U0001F4E5 **INPUT:**  \n\n1. **TOPIC INFORMATION:**\
+    \  \n```\n\"Khai thác sở thích về chủ đề hàng ngày\n- Thích làm gì sau giờ học?\n\
+    - Thích đi đâu chơi vào cuối tuần?\n- Thích ăn món gì nhất?\"\nEnd: Tớ hiểu rồi,\
+    \ giờ thì tớ muốn hiểu thêm các sở thích của cậu trên trường lớp. \n```\n\n2.\
+    \ **EXAMPLE CONVERSATION:**  \n```\n\"(hỏi chung) Pika: Tuyệt vời! Cậu thích làm\
+    \ gì sau giờ học?\nUser: Tớ thích chơi game và xem YouTube.\n(đào sâu) Pika: Game\
+    \ và YouTube à? Cậu thích chơi game gì nhất? Tớ cũng tò mò lắm đấy!\nUser: Tớ\
+    \ thích chơi game Roblox.\n(đào sâu) Pika: Roblox á? Tớ nghe nói Roblox có rất\
+    \ nhiều trò chơi thú vị. Cậu thích chơi game nào trong Roblox nhất?\nUser: Tớ\
+    \ thích chơi game Bed Wars với bạn bè.\n(chuyển câu khác, hỏi chung) Pika: Trò\
+    \ đó chắc hẳn vui lắm. Tớ cũng rất muốn chơi thử, nhưng chắc phải đợi được nâng\
+    \ cấp để có thể bấm các phím được. Dù sao được nghe cậu kể tớ cũng thấy vui. Thế\
+    \ cậu thích đi chơi ở đâu vào cuối tuần?\n\nUser: Cuối tuần, tớ thích đi dạo phố.\n\
+    (đào sâu) Pika: Nghe thú vị ghê. Ai đưa cậu đi dạo phố vậy?\nUser: Tớ đi với chị\
+    \ gái.\n(đào sâu) Pika: Ra vậy. Chị gái thường đưa cậu đi dạo phố ở đâu thì cậu\
+    \ thích nhất?\nUser: Chị đưa tớ đi tới các quán cafe. Tớ được gọi đồ uống và ăn\
+    \ bánh ngọt.\n\n(chuyển câu khác, hỏi chung) Pika: Nói tới đồ ăn, món ăn cậu thích\
+    \ nhất là gì?\nUser: Tớ thích pizza, gà rán.\n(đào sâu) Pika: Pizza à, tớ cũng\
+    \ thích pizza, đặc biệt là pizza có phô mai kéo sợi. Cậu thì sao, cậu thíh Pizza\
+    \ vị gfi nhất?\nUser: Tớ thích pizza phô mai và xúc xích.\n(đào sâu) Pika: Yummy!\
+    \ Tớ hiểu rồi, giờ thì tớ muốn hiểu thêm về các sở thích của cậu trên trường lớp.\"\
+    \n\"\"\"\n===========\n\n{\n  \"pika_question\": \"Chuẩn luôn, cậu giỏi quá. Now,\
+    \ let’s put it all together: Giờ ghép lại nhé: \\\"I enjoy pizza!\\\"\",\n  \"\
+    intents\": {\n    \"intent_true\": {\n      \"INTENT_DESCRIPTION\": \"Người dùng\
+    \ đồng ý với câu ghép lại và cảm thấy vui vẻ về điều đó.\",\n      \"LOOP_COUNT\"\
+    : 1,\n      \"user_responses\": [\n        \"Yay! I enjoy pizza too! Thích pizza\
+    \ lắm luôn!\"\n      ]\n    },\n    \"intent_false\": {\n      \"INTENT_DESCRIPTION\"\
+    : \"Người dùng không đồng ý với câu ghép lại hoặc không thích pizza.\",\n    \
+    \  \"LOOP_COUNT\": 2,\n      \"user_responses\": [\n        \"Oh no! I don't enjoy\
+    \ pizza. Em không thích pizza đâu!\",\n        \"Huh? I don't like pizza! Em thích\
+    \ bánh mì hơn!\"\n      ]\n    },\n    \"intent_idk\": {\n      \"INTENT_DESCRIPTION\"\
+    : \"Người dùng không chắc chắn về câu ghép lại hoặc không biết.\",\n      \"LOOP_COUNT\"\
+    : 2,\n      \"user_responses\": [\n        \"Hmm, I don't know. Em không biết\
+    \ nữa!\",\n        \"Maybe? I think I like pizza, nhưng không chắc lắm!\"\n  \
+    \    ]\n    },\n    \"fallback\": {\n      \"INTENT_DESCRIPTION\": \"Người dùng\
+    \ không hiểu câu hỏi hoặc không có phản hồi phù hợp.\",\n      \"LOOP_COUNT\"\
+    : 2,\n      \"user_responses\": [\n        \"Hả? Em không hiểu lắm! Can you say\
+    \ again?\",\n        \"Ủa, cái gì vậy? I don't get it!\"\n      ]\n    },\n  \
+    \  \"Silence\": {\n      \"INTENT_DESCRIPTION\": \"Người dùng không trả lời hoặc\
+    \ không có phản hồi.\",\n      \"LOOP_COUNT\": 2,\n      \"user_responses\": [\n\
+    \        \"....\",\n        \".... (im lặng)\"\n      ]\n    }\n  }\n}\n\n=========\n\
+    \ncurl --location 'http://103.253.20.13:5011/v1/workflows/run' \\\n--header 'Authorization:\
+    \ Bearer app-CtAcEPxcQmXAd9r49jcozp6O' \\\n--header 'Content-Type: application/json'\
+    \ \\\n--data '{\n    \"inputs\": {\n        \"JSON_input\": \"{ \\\"pika_question\\\
+    \": \\\"Chuẩn luôn, cậu giỏi quá. Now, let’s put it all together: \\\\\\\"I enjoy\
+    \ pizza!\\\\\\\"\\\", \\\"intents\\\": { \\\"intent_true\\\": 1, \\\"intent_false\\\
+    \": 2, \\\"intent_idk\\\": 2, \\\"fallback\\\": 2, \\\"Silence\\\": 2 } }\"\n\
+    \    },\n    \"response_mode\": \"blocking\",\n    \"user\": \"abc-123\"\n}'\n\
+    \n---------\n### \U0001F4E5 **INPUT:**  \n\n1. **TOPIC INFORMATION:**\n\n\"Khai\
+    \ thác sở thích về chủ đề hàng ngày\n- Thích làm gì sau giờ học?\n- Thích đi đâu\
+    \ chơi vào cuối tuần?\n- Thích ăn món gì nhất?\"\nEnd: Tớ hiểu rồi, giờ thì tớ\
+    \ muốn hiểu thêm các sở thích của cậu trên trường lớp. \n2. **EXAMPLE CONVERSATION:**\n\
+    \n\"(hỏi chung) Pika: Tuyệt vời! Cậu thích làm gì sau giờ học?\nUser: Tớ thích\
+    \ chơi game và xem YouTube.\n(đào sâu) Pika: Game và YouTube à? Cậu thích chơi\
+    \ game gì nhất? Tớ cũng tò mò lắm đấy!\nUser: Tớ thích chơi game Roblox.\n(đào\
+    \ sâu) Pika: Roblox á? Tớ nghe nói Roblox có rất nhiều trò chơi thú vị. Cậu thích\
+    \ chơi game nào trong Roblox nhất?\nUser: Tớ thích chơi game Bed Wars với bạn\
+    \ bè.\n(chuyển câu khác, hỏi chung) Pika: Trò đó chắc hẳn vui lắm. Tớ cũng rất\
+    \ muốn chơi thử, nhưng chắc phải đợi được nâng cấp để có thể bấm các phím được.\
+    \ Dù sao được nghe cậu kể tớ cũng thấy vui. Thế cậu thích đi chơi ở đâu vào cuối\
+    \ tuần?\n\nUser: Cuối tuần, tớ thích đi dạo phố.\n(đào sâu) Pika: Nghe thú vị\
+    \ ghê. Ai đưa cậu đi dạo phố vậy?\nUser: Tớ đi với chị gái.\n(đào sâu) Pika: Ra\
+    \ vậy. Chị gái thường đưa cậu đi dạo phố ở đâu thì cậu thích nhất?\nUser: Chị\
+    \ đưa tớ đi tới các quán cafe. Tớ được gọi đồ uống và ăn bánh ngọt.\n\n(chuyển\
+    \ câu khác, hỏi chung) Pika: Nói tới đồ ăn, món ăn cậu thích nhất là gì?\nUser:\
+    \ Tớ thích pizza, gà rán.\n(đào sâu) Pika: Pizza à, tớ cũng thích pizza, đặc biệt\
+    \ là pizza có phô mai kéo sợi. Cậu thì sao, cậu thíh Pizza vị gfi nhất?\nUser:\
+    \ Tớ thích pizza phô mai và xúc xích.\n(đào sâu) Pika: Yummy! Tớ hiểu rồi, giờ\
+    \ thì tớ muốn hiểu thêm về các sở thích của cậu trên trường lớp.\""
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: Prompt2 (Gen Mô Tả Luồng) - Workflow Robot - Cường + Minh
+  use_icon_as_answer_icon: false
+kind: app
+version: 0.1.2
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+    opening_statement: ''
+    retriever_resource:
+      enabled: false
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: llm
+      id: 1740473479677-source-1740473482205-target
+      source: '1740473479677'
+      sourceHandle: source
+      target: '1740473482205'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: end
+      id: 1740473482205-source-1740473484814-target
+      source: '1740473482205'
+      sourceHandle: source
+      target: '1740473484814'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: Start
+        type: start
+        variables:
+        - label: JSON Input
+          max_length: 10000
+          options: []
+          required: true
+          type: paragraph
+          variable: JSON_input
+      height: 89
+      id: '1740473479677'
+      position:
+        x: 80
+        y: 282
+      positionAbsolute:
+        x: 80
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            max_tokens: 2101
+            temperature: 0
+          mode: chat
+          name: gpt-4o-2024-08-06
+          provider: openai
+        prompt_template:
+        - id: fdf8c460-241b-415b-9e5c-86eaf394b12b
+          role: system
+          text: "You are a conversation scenario formatter that returns two sections:\
+            \  \n1. **INSTRUCTION** for a conversation involving a character named\
+            \ Pika.  \n2. **EXAMPLE CONVERSATION** illustrating a complete sample\
+            \ dialogue based on the given topic.  \n\n**Given:**  \n1. **TOPIC INFORMATION:**\
+            \ The main topic and related sub-questions.  \n2. **EXAMPLE CONVERSATION:**\
+            \ Sample dialogue in Vietnamese corresponding to the topic.  \n3. **CLOSING\
+            \ LINE FROM PIKA:** The exact closing line Pika should say at the end\
+            \ of the conversation.  \n\n---\n\n### \U0001F3AF **Your task:**  \n-\
+            \ **Generate output strictly following the format below:**  \n- The output\
+            \ **must contain both sections:**  \n  - **INSTRUCTION:** Checkpoints\
+            \ based on the given topic (in English).  \n  - **EXAMPLE CONVERSATION:**\
+            \ Full dialogue example where **Pika’s responses are in A2-level English\
+            \ mixed with Vietnamese** (simple expressions, basic grammar, natural\
+            \ flow for children).  \n\n---\n\n### \U0001F4DC **OUTPUT FORMAT (Return\
+            \ INSTRUCTION AND EXAMPLE CONVERSATION):**  \n```\n*INSTRUCTION:*  \n\
+            1. [**Checkpoint 1 - Sub-topic from TOPIC INFORMATION:**]  \n   Pika expresses\
+            \ [emotion/action], \"[A2-level English sentence, friendly, directly related\
+            \ to the sub-topic]\"  \n\n2. [**Checkpoint 2 - Sub-topic from TOPIC INFORMATION:**]\
+            \  \n   Pika [emotion/action], \"[Another simple English sentence with\
+            \ appropriate expressions]\"  \n\n... (Continue for all sub-topics in\
+            \ TOPIC INFORMATION)\n\n10. **WHEN TO END?**  \n    - **End the conversation\
+            \ immediately if:**  \n      1. The user answers all sub-questions related\
+            \ to the topic.  \n      2. The user stops responding or gives irrelevant\
+            \ answers twice in a row.  \n      3. The user requests to stop (e.g.,\
+            \ \"Hết rồi\", \"Tớ không muốn nói nữa\", \"Stop\", \"No more questions\"\
+            ).  \n      4. The predefined number of conversation rounds (if specified)\
+            \ is reached.  \n\n    - **Pika’s closing line (taken exactly from INPUT):**\
+            \  \n      Pika: \"[CLOSING LINE FROM PIKA]\"  \n```\n\n---\n\n*EXAMPLE\
+            \ CONVERSATION:* (Keep example conversation inputed)  \n...\n---\n\n###\
+            \ ⚡ **Detailed Requirements:**  \n- **INSTRUCTION:**  \n  - Must outline\
+            \ all checkpoints based on each sub-topic from **TOPIC INFORMATION**.\
+            \  \n  - All instructions are in **clear English**.  \n- **EXAMPLE CONVERSATION:**\
+            \  \n  - **Pika’s responses** are a **mix of English and Vietnamese**\
+            \ at **A2 proficiency level** (simple grammar, basic vocabulary).  \n\
+            \  - Must reflect Pika’s **curious, friendly, and playful personality**.\
+            \  \n  - All checkpoints from INSTRUCTION must be represented.  \n  -\
+            \ Use **short sentences** and **basic expressions** to ensure accessibility\
+            \ for young learners.  \n- **Closing line from Pika** must be **exactly**\
+            \ as provided in the **CLOSING LINE FROM PIKA** input.  \n- **Do not add\
+            \ unrelated topics** unless explicitly mentioned.  \n- Each sub-topic\
+            \ should have **at least one deep-dive question** for more detailed responses.\
+            \  "
+        - id: 08eea820-f9f5-4976-9717-c9925ecd5b1b
+          role: user
+          text: '{{#1740473479677.JSON_input#}}'
+        selected: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: true
+      height: 97
+      id: '1740473482205'
+      position:
+        x: 384.4251473695757
+        y: 282
+      positionAbsolute:
+        x: 384.4251473695757
+        y: 282
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1740473482205'
+          - text
+          variable: output
+        selected: false
+        title: End
+        type: end
+      height: 89
+      id: '1740473484814'
+      position:
+        x: 686
+        y: 282
+      positionAbsolute:
+        x: 686
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: 192.64698425256233
+      y: 271.7008857819343
+      zoom: 0.5016818199634477
