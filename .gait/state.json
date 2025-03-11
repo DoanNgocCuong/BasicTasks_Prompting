@@ -8,7 +8,7 @@
   },
   "kv_store": {
     "unique_matched_lines_count": 0,
-    "total_repo_line_count": 314463,
+    "total_repo_line_count": 332439,
     "best_prompt_response": null,
     "file_statistics": [
       {
@@ -186,6 +186,42 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "1_SomeRealPrompting_And_Workflow/1.3_RolePlay/CodeGiaiNenZip.py",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.3_RolePlay/note1.1_research.ipynb",
+        "total_lines": 1555,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.3_RolePlay/note1.2_DeepResearch.ipynb",
+        "total_lines": 86,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/1.3_RolePlay/read.md",
+        "total_lines": 25,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/Template_PromptingBuilder1_JSONFormatOutput.md",
+        "total_lines": 110,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "1_SomeRealPrompting_And_Workflow/Template_PromptingBuilder1_RolePlay.md",
+        "total_lines": 30,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "2_PromptCreateDATA_IMPORTANCE/1_PromptCreateTestingRAG_CSKH_TheCoach/lark_TestEssayTestingRAG.md",
         "total_lines": 1,
         "ai_generated_lines": 0,
@@ -204,6 +240,12 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "2_PromptCreateDATA_IMPORTANCE/4_CreateDataASR/Data ASR - EnglishVietnamese.xlsx",
+        "total_lines": 137837,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "2_PromptCreateDATA_IMPORTANCE/4_CreateDataASR/Data.txt",
         "total_lines": 1,
         "ai_generated_lines": 0,
@@ -211,13 +253,7 @@
       },
       {
         "file": "2_PromptCreateDATA_IMPORTANCE/4_CreateDataASR/Dataset_ASR.ipynb",
-        "total_lines": 1308,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "2_PromptCreateDATA_IMPORTANCE/4_CreateDataASR/Dataset_FastResponseIntentRobot vs TTS.xlsx",
-        "total_lines": 120440,
+        "total_lines": 1319,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -516,6 +552,12 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "5_TuningPrompting/output_data_v2.xlsx",
+        "total_lines": 42,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "5_TuningPrompting/requirements.txt",
         "total_lines": 8,
         "ai_generated_lines": 0,
@@ -612,26 +654,8 @@
         "ai_generated_percentage": 0
       },
       {
-        "file": "6_TuningWith2Prompting/src/2PromptingTuning_10Turns.xlsx",
-        "total_lines": 655,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "6_TuningWith2Prompting/src/2PromptingTuning_10Turns_new_v3.xlsx",
-        "total_lines": 658,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "6_TuningWith2Prompting/src/2PromptingTuning_20Turns.xlsx",
-        "total_lines": 268,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
         "file": "6_TuningWith2Prompting/src/2PromptingTuning_40Turns.xlsx",
-        "total_lines": 270,
+        "total_lines": 906,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -768,38 +792,8 @@
         "ai_generated_percentage": 0
       },
       {
-        "file": "6_TuningWith2Prompting/src/id10.xlsx",
-        "total_lines": 172,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "6_TuningWith2Prompting/src/id20.xlsx",
-        "total_lines": 44,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "6_TuningWith2Prompting/src/id21.xlsx",
-        "total_lines": 41,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "6_TuningWith2Prompting/src/id3.xlsx",
-        "total_lines": 83,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
         "file": "6_TuningWith2Prompting/src/main.py",
         "total_lines": 144,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "6_TuningWith2Prompting/src/result.xlsx",
-        "total_lines": 26,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -1160,6 +1154,12 @@
       {
         "file": "MiniProduct1_Input_APICall_OutputJSON_Parser/CKP/PromptTuning_OpenAI_v4_v2UpdateParseArguments.py",
         "total_lines": 215,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "MiniProduct1_Input_APICall_OutputJSON_Parser/FormatJSON.md",
+        "total_lines": 30,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
