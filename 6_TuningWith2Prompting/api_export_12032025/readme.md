@@ -70,5 +70,4 @@ Mà thực ra sau khi run cách 2, 3 mới nhận ra: nó là GEN GIẢ PẬP CO
 - Cách 2: Call API cho 2 con Agents và con Mô tả User = việc run 2 Prompt. 
 => Cho 2 con bắn nói chuyện với nhau - Giống như cách ngày xưa giả lập mình từng làm. 
 
-
 - Cách 2': Call Bot ID Agents và Prompt mô tả user (như trước đó mình run test Agents). 

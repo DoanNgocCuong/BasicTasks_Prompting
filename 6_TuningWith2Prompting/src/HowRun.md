@@ -26,3 +26,5 @@ python main.py --num-rows 10 --bot-id 32 --input '2PromptingTuning_40Turns.xlsx'
 python main.py --num-rows 10 --bot-id 33 --input '2PromptingTuning_40Turns.xlsx' --output 'id33.xlsx'
 python main.py --input '2PrompTune_GiaLapUserTreCon_v1.2_callBotID.xlsx' --output 'id105.xlsx'  --bot-id 105 --start-row 10 --num-rows 10
 ```
+
+Các file này sử dụng: append dòng, nên bạn cứ chạy thoải mái nhá, nó sẽ tự log thêm dòng khi xong 1 row. 
