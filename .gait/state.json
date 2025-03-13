@@ -8,7 +8,7 @@
   },
   "kv_store": {
     "unique_matched_lines_count": 0,
-    "total_repo_line_count": 332439,
+    "total_repo_line_count": 340236,
     "best_prompt_response": null,
     "file_statistics": [
       {
@@ -564,6 +564,24 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "5_TuningPrompting/someOutput/Agents_Llama70BGroqVS4o-mini.xlsx",
+        "total_lines": 1546,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/someOutput/Robot.docx",
+        "total_lines": 20,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/someOutput/Workflow_Llama370B_Gemini_4ominiOpenAI.xlsx",
+        "total_lines": 276,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "6_TuningWith2Prompting/CKP/GIA LAP 1106.ipynb",
         "total_lines": 1,
         "ai_generated_lines": 0,
@@ -572,6 +590,12 @@
       {
         "file": "6_TuningWith2Prompting/PERCENTILE.md",
         "total_lines": 57,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/api_export_12032025/readme.md",
+        "total_lines": 74,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -636,6 +660,12 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "6_TuningWith2Prompting/someOutput/2PromptTuning_GiaLapUserHVAppTheCoach.xlsx",
+        "total_lines": 271,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "6_TuningWith2Prompting/someOutput/id20.xlsx",
         "total_lines": 162,
         "ai_generated_lines": 0,
@@ -650,6 +680,42 @@
       {
         "file": "6_TuningWith2Prompting/someOutput/id33.xlsx",
         "total_lines": 134,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/someOutput/workflow_mece_table.xlsx",
+        "total_lines": 19,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/2PrompTune_GiaLapUserTreCon_v2.xlsx",
+        "total_lines": 264,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/2PromptTune_GiaLapUserHVAppTheCoach_v1.1_promptPTY.xlsx",
+        "total_lines": 669,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/2PromptTune_GiaLapUserHVAppTheCoach_v1.2_Robot.xlsx",
+        "total_lines": 293,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/2PromptTune_GiaLapUserTreCon_v1.1_callBotID.xlsx",
+        "total_lines": 262,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/2PromptTune_GiaLapUserTreCon_v1.2_callBotID.xlsx",
+        "total_lines": 302,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -672,8 +738,32 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "6_TuningWith2Prompting/src/CodeLogicCreateRoleUser/PromptPTY1.md",
+        "total_lines": 106,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/CodeLogicCreateRoleUser/output_gen_prompt.xlsx",
+        "total_lines": 32,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/CodeLogicCreateRoleUser/processing.py",
+        "total_lines": 46,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/CodeLogicCreateRoleUser/workflow_mece_table.xlsx",
+        "total_lines": 24,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "6_TuningWith2Prompting/src/HowRun.md",
-        "total_lines": 27,
+        "total_lines": 30,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -684,14 +774,32 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "6_TuningWith2Prompting/src/__pycache__/def_ApiClientB.cpython-311.pyc",
+        "total_lines": 30,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "6_TuningWith2Prompting/src/__pycache__/def_ApiClientB.cpython-312.pyc",
         "total_lines": 30,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
       {
+        "file": "6_TuningWith2Prompting/src/__pycache__/def_promptA.cpython-311.pyc",
+        "total_lines": 23,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "6_TuningWith2Prompting/src/__pycache__/def_promptA.cpython-312.pyc",
         "total_lines": 16,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/__pycache__/def_promptB.cpython-311.pyc",
+        "total_lines": 23,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -714,8 +822,20 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "6_TuningWith2Prompting/src/__pycache__/def_simulate_with_api.cpython-311.pyc",
+        "total_lines": 36,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "6_TuningWith2Prompting/src/__pycache__/def_simulate_with_api.cpython-312.pyc",
         "total_lines": 27,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/__pycache__/def_simulate_with_openai.cpython-311.pyc",
+        "total_lines": 53,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -726,8 +846,20 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "6_TuningWith2Prompting/src/__pycache__/export_conversations_to_excel.cpython-311.pyc",
+        "total_lines": 14,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "6_TuningWith2Prompting/src/__pycache__/export_conversations_to_excel.cpython-312.pyc",
         "total_lines": 14,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/__pycache__/utils_convert_roles_for_api.cpython-311.pyc",
+        "total_lines": 8,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -792,8 +924,32 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "6_TuningWith2Prompting/src/id105.xlsx",
+        "total_lines": 867,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "6_TuningWith2Prompting/src/main.py",
         "total_lines": 144,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/requirements.txt",
+        "total_lines": 3,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/results.xlsx",
+        "total_lines": 1155,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/results100.xlsx",
+        "total_lines": 1300,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -806,6 +962,12 @@
       {
         "file": "6_TuningWith2Prompting/src/somePromptCreate_roleA.md",
         "total_lines": 73,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/test.xlsx",
+        "total_lines": 78,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },

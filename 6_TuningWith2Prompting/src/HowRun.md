@@ -25,6 +25,15 @@ python main.py --num-rows 10 --bot-id 20 --input '2PromptingTuning_40Turns.xlsx'
 python main.py --num-rows 10 --bot-id 32 --input '2PromptingTuning_40Turns.xlsx' --output 'id32.xlsx'
 python main.py --num-rows 10 --bot-id 33 --input '2PromptingTuning_40Turns.xlsx' --output 'id33.xlsx'
 python main.py --input '2PrompTune_GiaLapUserTreCon_v1.2_callBotID.xlsx' --output 'id105.xlsx'  --bot-id 105 --start-row 10 --num-rows 10
+
+python main.py --input '2PromptTune_GiaLapUserHVAppTheCoach_v1.1_promptPTY.xlsx' --output 'PTY.xlsx' --start-row 10 --num-rows 10
 ```
 
 Các file này sử dụng: append dòng, nên bạn cứ chạy thoải mái nhá, nó sẽ tự log thêm dòng khi xong 1 row. 
+
+========
+
+### Get requirements.txt
+```bash
+pip freeze > requirements.txt
+```

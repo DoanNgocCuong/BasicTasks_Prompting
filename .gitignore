@@ -1,5 +1,6 @@
 .env
 .venv/
+venv/
 .gait/custom-merge-driver.sh
 
 6_TuningWith2Prompting/__pycache__/
