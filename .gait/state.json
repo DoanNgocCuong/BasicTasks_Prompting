@@ -8,7 +8,7 @@
   },
   "kv_store": {
     "unique_matched_lines_count": 0,
-    "total_repo_line_count": 340236,
+    "total_repo_line_count": 336762,
     "best_prompt_response": null,
     "file_statistics": [
       {
@@ -594,12 +594,6 @@
         "ai_generated_percentage": 0
       },
       {
-        "file": "6_TuningWith2Prompting/api_export_12032025/readme.md",
-        "total_lines": 74,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
         "file": "6_TuningWith2Prompting/example/example_input.xlsx",
         "total_lines": 85,
         "ai_generated_lines": 0,
@@ -697,7 +691,7 @@
       },
       {
         "file": "6_TuningWith2Prompting/src/2PromptTune_GiaLapUserHVAppTheCoach_v1.1_promptPTY.xlsx",
-        "total_lines": 669,
+        "total_lines": 488,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -763,7 +757,7 @@
       },
       {
         "file": "6_TuningWith2Prompting/src/HowRun.md",
-        "total_lines": 30,
+        "total_lines": 39,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -924,12 +918,6 @@
         "ai_generated_percentage": 0
       },
       {
-        "file": "6_TuningWith2Prompting/src/id105.xlsx",
-        "total_lines": 867,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
         "file": "6_TuningWith2Prompting/src/main.py",
         "total_lines": 144,
         "ai_generated_lines": 0,
@@ -942,14 +930,8 @@
         "ai_generated_percentage": 0
       },
       {
-        "file": "6_TuningWith2Prompting/src/results.xlsx",
-        "total_lines": 1155,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "6_TuningWith2Prompting/src/results100.xlsx",
-        "total_lines": 1300,
+        "file": "6_TuningWith2Prompting/src/result.xlsx",
+        "total_lines": 172,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -962,12 +944,6 @@
       {
         "file": "6_TuningWith2Prompting/src/somePromptCreate_roleA.md",
         "total_lines": 73,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "6_TuningWith2Prompting/src/test.xlsx",
-        "total_lines": 78,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
