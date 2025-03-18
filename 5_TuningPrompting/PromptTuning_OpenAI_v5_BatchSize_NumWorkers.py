@@ -39,7 +39,7 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
 
     # Tạo model config dưới dạng JSON
     model_config = {
-        "model": "gpt-4o",
+        "model": "gpt-4o-mini",
         "temperature": 0,
         "max_tokens": 2048,
         "top_p": 1,
@@ -149,9 +149,10 @@ def parse_arguments():
 def process_batch(batch_rows: List[Dict]):
     output_rows = []
     for row in batch_rows:
-        order = row['order']
+        order = row.get('order', 'default_order')  # Gán giá trị mặc định nếu không có cột 'order'
         prompt = row['system_prompt']
-        conversation_history = row['conversation_history']
+        # Kiểm tra xem cột 'conversation_history' có tồn tại không
+        conversation_history = row.get('conversation_history', None)  # Gán None nếu không có cột 'conversation_history'
         inputs = [row['user_input']]
         
         logger.info(f"Processing order {order}")
