@@ -9,6 +9,7 @@ from def_ApiClientB import AICoachAPI
 from export_conversations_to_excel import export_conversations_to_excel
 from def_simulate_with_openai import simulate_with_openai
 from def_simulate_with_api import simulate_with_api
+from def_promptB import check_exit_condition  # Import the exit condition check
 
 # Load environment variables
 load_dotenv()
@@ -76,6 +77,14 @@ def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', outp
                     # Initialize empty full_log for non-API case
                     full_log = [''] * len(message_history)
                 
+                # Check for exit condition in the last message if it's from roleB
+                should_exit = False
+                if message_history and message_history[-1]['role'] == 'assistant':
+                    last_message = message_history[-1]['content']
+                    should_exit = check_exit_condition(last_message)
+                    if should_exit:
+                        print("Exit condition detected in roleB's response. Ending conversation.")
+                
                 # Prepare current row data
                 current_messages = []
                 initial_message_count = 0
@@ -116,6 +125,11 @@ def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', outp
                 ])
                 export_conversations_to_excel(df_new, output_path)
                 print(f"Completed row {index + 1}/{end_idx}")
+                
+                # If exit condition was detected, break the loop
+                if should_exit:
+                    print(f"Stopping further processing due to exit condition in row {index + 1}")
+                    break
                 
             except Exception as e:
                 print(f"Error processing row {index + 1}: {str(e)}")

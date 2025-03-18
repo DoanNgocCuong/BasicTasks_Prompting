@@ -1,6 +1,39 @@
 {
   "panelChats": [],
-  "inlineChats": [],
+  "inlineChats": [
+    {
+      "inline_chat_id": "5c06e330-f490-4440-be6b-362136524e11",
+      "file_diff": [
+        {
+          "file_path": "5_TuningPrompting/requirements.txt",
+          "diffs": [
+            {
+              "count": 7,
+              "added": false,
+              "removed": true,
+              "value": "pandas\r\nopenai\r\nopenpyxl\r\nstreamlit\r\ndspy\r\naisuite[openai,google,groq]\r\ngoogle.generativeai\r\n"
+            },
+            {
+              "count": 7,
+              "added": true,
+              "removed": false,
+              "value": "pandas>=2.2.0\r\nopenai>=1.12.0\r\nopenpyxl>=3.1.2\r\nstreamlit>=1.31.0\r\ndspy>=2.3.3\r\naisuite[openai,google,groq]>=0.5.0\r\ngoogle.generativeai>=0.3.2\r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "psutil>=5.8.0"
+            }
+          ]
+        }
+      ],
+      "selection": null,
+      "timestamp": "2025-03-18T10:38:25.634Z",
+      "prompt": "thêm version vào đi ",
+      "parent_inline_chat_id": null
+    }
+  ],
   "schemaVersion": "1.0",
   "deletedChats": {
     "deletedMessageIDs": [],
@@ -8,7 +41,7 @@
   },
   "kv_store": {
     "unique_matched_lines_count": 0,
-    "total_repo_line_count": 336762,
+    "total_repo_line_count": 337132,
     "best_prompt_response": null,
     "file_statistics": [
       {
@@ -691,7 +724,7 @@
       },
       {
         "file": "6_TuningWith2Prompting/src/2PromptTune_GiaLapUserHVAppTheCoach_v1.1_promptPTY.xlsx",
-        "total_lines": 488,
+        "total_lines": 344,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -709,7 +742,7 @@
       },
       {
         "file": "6_TuningWith2Prompting/src/2PromptTune_GiaLapUserTreCon_v1.2_callBotID.xlsx",
-        "total_lines": 302,
+        "total_lines": 55,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -764,6 +797,12 @@
       {
         "file": "6_TuningWith2Prompting/src/Motivation.md",
         "total_lines": 22,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/PTY.xlsx",
+        "total_lines": 761,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },

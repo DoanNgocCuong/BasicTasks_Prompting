@@ -3,4 +3,15 @@
 venv/
 .gait/custom-merge-driver.sh
 
+# Python cache
 6_TuningWith2Prompting/__pycache__/
+__pycache__/
+*/__pycache__/
+**/__pycache__/
+
+# Virtual environments
+myvenv/
+myenv/
+6_TuningWith2Prompting/src/myenv/
+**/myenv/
+**/venv/

@@ -27,6 +27,11 @@ python main.py --num-rows 10 --bot-id 33 --input '2PromptingTuning_40Turns.xlsx'
 python main.py --input '2PrompTune_GiaLapUserTreCon_v1.2_callBotID.xlsx' --output 'id105.xlsx'  --bot-id 105 --start-row 10 --num-rows 10
 
 python main.py --input '2PromptTune_GiaLapUserHVAppTheCoach_v1.1_promptPTY.xlsx' --output 'PTY.xlsx' --start-row 10 --num-rows 10
+
+python main.py --input '2PromptTune_GiaLapUserTreCon_v1.3_100PikaLesson.xlsx' --output '100Pika.xlsx' --num-rows 10
+
+main_withMaxWorkers.py --start-row 0 --num-rows 10 --input gen_nhanh.xlsx --output 68.xlsx --bot-id 68 --max-workers 4       
+
 ```
 
 Các file này sử dụng: append dòng, nên bạn cứ chạy thoải mái nhá, nó sẽ tự log thêm dòng khi xong 1 row. 

@@ -9,7 +9,7 @@ logging.basicConfig(
 )
 
 # Đường dẫn file Excel đầu vào
-input_file = "results.xlsx"
+input_file = "output_data_v2.xlsx"
 logging.info(f"Đang đọc file input: {input_file}")
 
 # Đọc file Excel
@@ -54,7 +54,7 @@ df_output = pd.DataFrame(phrases, columns=["Phrase"])
 logging.debug("DataFrame đầu ra đã được tạo với cột 'Phrase'.")
 
 # Đường dẫn file Excel đầu ra
-output_file = "output.xlsx"
+output_file = "output_data_v2_output.xlsx"
 try:
     df_output.to_excel(output_file, index=False)
     logging.info(f"Đã tạo file Excel '{output_file}' thành công với {len(df_output)} dòng.")
