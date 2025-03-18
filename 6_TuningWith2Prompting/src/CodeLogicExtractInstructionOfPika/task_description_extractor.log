@@ -1,0 +1,462 @@
+2025-03-18 14:13:40,123 - INFO - Starting task description extraction process
+2025-03-18 14:13:40,988 - INFO - Processing sheet: 'Agent-Coach'
+2025-03-18 14:13:41,678 - INFO - Sheet 'Agent-Coach' has 10 columns: bot_id, name, description, sheet_task_chain, generation_params, provider_name, system_prompt, format_output, status, response
+2025-03-18 14:13:41,679 - WARNING - No 'SYSTEM_TASK_DESCRIPTION' column found in sheet 'Agent-Coach'. Skipping this sheet.
+2025-03-18 14:13:41,679 - INFO - Processing sheet: 'Favorite Character - Elsa'
+2025-03-18 14:13:42,342 - INFO - Sheet 'Favorite Character - Elsa' has 9 columns:  , start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, SYSTEM_EXTRACTION_PROFILE, session_id
+2025-03-18 14:13:42,343 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Favorite Character - Elsa'
+2025-03-18 14:13:42,344 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:42,345 - WARNING - No 'Task Description' keyword found in sheet 'Favorite Character - Elsa'. Skipping this sheet.
+2025-03-18 14:13:42,345 - INFO - Processing sheet: 'Favorite character - 123'
+2025-03-18 14:13:43,031 - INFO - Sheet 'Favorite character - 123' has 9 columns:  , start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, SYSTEM_EXTRACTION_PROFILE, session_id
+2025-03-18 14:13:43,031 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Favorite character - 123'
+2025-03-18 14:13:43,032 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:43,032 - WARNING - No 'Task Description' keyword found in sheet 'Favorite character - 123'. Skipping this sheet.
+2025-03-18 14:13:43,033 - INFO - Processing sheet: 'Teach i like'
+2025-03-18 14:13:43,649 - INFO - Sheet 'Teach i like' has 9 columns:  , start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, SYSTEM_EXTRACTION_PROFILE, session_id
+2025-03-18 14:13:43,649 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Teach i like'
+2025-03-18 14:13:43,650 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:43,650 - WARNING - No 'Task Description' keyword found in sheet 'Teach i like'. Skipping this sheet.
+2025-03-18 14:13:43,650 - INFO - Processing sheet: 'Present 1.1'
+2025-03-18 14:13:44,233 - INFO - Sheet 'Present 1.1' has 9 columns:  , start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, SYSTEM_EXTRACTION_PROFILE, session_id
+2025-03-18 14:13:44,234 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Present 1.1'
+2025-03-18 14:13:44,234 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:44,235 - WARNING - No 'Task Description' keyword found in sheet 'Present 1.1'. Skipping this sheet.
+2025-03-18 14:13:44,235 - INFO - Processing sheet: 'Present 1.2'
+2025-03-18 14:13:44,836 - INFO - Sheet 'Present 1.2' has 9 columns:  , start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, SYSTEM_EXTRACTION_PROFILE, session_id
+2025-03-18 14:13:44,836 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Present 1.2'
+2025-03-18 14:13:44,837 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:44,837 - WARNING - No 'Task Description' keyword found in sheet 'Present 1.2'. Skipping this sheet.
+2025-03-18 14:13:44,837 - INFO - Processing sheet: 'ChânDungPIKA_DCuog'
+2025-03-18 14:13:45,494 - WARNING - No 'SYSTEM_TASK_DESCRIPTION' column found in sheet 'ChânDungPIKA_DCuog'. Skipping this sheet.
+2025-03-18 14:13:45,495 - INFO - Processing sheet: 'Test personalized in'
+2025-03-18 14:13:46,151 - INFO - Sheet 'Test personalized in' has 9 columns:  , start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, SYSTEM_EXTRACTION_PROFILE, session_id
+2025-03-18 14:13:46,151 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Test personalized in'
+2025-03-18 14:13:46,152 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:46,152 - WARNING - No 'Task Description' keyword found in sheet 'Test personalized in'. Skipping this sheet.
+2025-03-18 14:13:46,152 - INFO - Processing sheet: 'Step 1 - 43'
+2025-03-18 14:13:46,766 - INFO - Sheet 'Step 1 - 43' has 11 columns:  , start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, SYSTEM_EXTRACTION_PROFILE, session_id, Unnamed: 9, Unnamed: 10
+2025-03-18 14:13:46,766 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Step 1 - 43'
+2025-03-18 14:13:46,767 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:46,767 - WARNING - No 'Task Description' keyword found in sheet 'Step 1 - 43'. Skipping this sheet.
+2025-03-18 14:13:46,768 - INFO - Processing sheet: 'Step 2 - 43'
+2025-03-18 14:13:47,339 - INFO - Sheet 'Step 2 - 43' has 9 columns:  , start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, SYSTEM_EXTRACTION_PROFILE, session_id
+2025-03-18 14:13:47,340 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Step 2 - 43'
+2025-03-18 14:13:47,340 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:47,341 - WARNING - No 'Task Description' keyword found in sheet 'Step 2 - 43'. Skipping this sheet.
+2025-03-18 14:13:47,341 - INFO - Processing sheet: 'Step 3 - 43'
+2025-03-18 14:13:47,947 - INFO - Sheet 'Step 3 - 43' has 9 columns:  , start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, SYSTEM_EXTRACTION_PROFILE, session_id
+2025-03-18 14:13:47,947 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Step 3 - 43'
+2025-03-18 14:13:47,948 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:47,948 - WARNING - No 'Task Description' keyword found in sheet 'Step 3 - 43'. Skipping this sheet.
+2025-03-18 14:13:47,948 - INFO - Processing sheet: 'Step 6.1 - 43'
+2025-03-18 14:13:48,561 - INFO - Sheet 'Step 6.1 - 43' has 9 columns:  , start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, SYSTEM_EXTRACTION_PROFILE, session_id
+2025-03-18 14:13:48,561 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Step 6.1 - 43'
+2025-03-18 14:13:48,562 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:48,562 - WARNING - No 'Task Description' keyword found in sheet 'Step 6.1 - 43'. Skipping this sheet.
+2025-03-18 14:13:48,563 - INFO - Processing sheet: 'Step 6.2 - 43'
+2025-03-18 14:13:49,180 - INFO - Sheet 'Step 6.2 - 43' has 9 columns:  , start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, SYSTEM_EXTRACTION_PROFILE, session_id
+2025-03-18 14:13:49,180 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Step 6.2 - 43'
+2025-03-18 14:13:49,181 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:49,181 - WARNING - No 'Task Description' keyword found in sheet 'Step 6.2 - 43'. Skipping this sheet.
+2025-03-18 14:13:49,182 - INFO - Processing sheet: 'Step 6.3 - 43'
+2025-03-18 14:13:49,786 - INFO - Sheet 'Step 6.3 - 43' has 9 columns:  , start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, SYSTEM_EXTRACTION_PROFILE, session_id
+2025-03-18 14:13:49,787 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Step 6.3 - 43'
+2025-03-18 14:13:49,787 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:49,787 - WARNING - No 'Task Description' keyword found in sheet 'Step 6.3 - 43'. Skipping this sheet.
+2025-03-18 14:13:49,788 - INFO - Processing sheet: 'Step 6.4 - 43'
+2025-03-18 14:13:50,354 - INFO - Sheet 'Step 6.4 - 43' has 9 columns:  , start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, SYSTEM_EXTRACTION_PROFILE, session_id
+2025-03-18 14:13:50,355 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Step 6.4 - 43'
+2025-03-18 14:13:50,355 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:50,355 - WARNING - No 'Task Description' keyword found in sheet 'Step 6.4 - 43'. Skipping this sheet.
+2025-03-18 14:13:50,356 - INFO - Processing sheet: 'Guess Hobby'
+2025-03-18 14:13:50,982 - INFO - Sheet 'Guess Hobby' has 9 columns:  , start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, SYSTEM_EXTRACTION_PROFILE, session_id
+2025-03-18 14:13:50,983 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Guess Hobby'
+2025-03-18 14:13:50,984 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:50,984 - WARNING - No 'Task Description' keyword found in sheet 'Guess Hobby'. Skipping this sheet.
+2025-03-18 14:13:50,985 - INFO - Processing sheet: 'Guess Hobby_2'
+2025-03-18 14:13:51,644 - INFO - Sheet 'Guess Hobby_2' has 9 columns:  , start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, SYSTEM_EXTRACTION_PROFILE, session_id
+2025-03-18 14:13:51,645 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Guess Hobby_2'
+2025-03-18 14:13:51,645 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:51,645 - WARNING - No 'Task Description' keyword found in sheet 'Guess Hobby_2'. Skipping this sheet.
+2025-03-18 14:13:51,646 - INFO - Processing sheet: 'Learning - S1 - new'
+2025-03-18 14:13:52,246 - INFO - Sheet 'Learning - S1 - new' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:13:52,246 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Learning - S1 - new'
+2025-03-18 14:13:52,247 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:52,247 - WARNING - No 'Task Description' keyword found in sheet 'Learning - S1 - new'. Skipping this sheet.
+2025-03-18 14:13:52,248 - INFO - Processing sheet: 'Learning - S10'
+2025-03-18 14:13:52,850 - INFO - Sheet 'Learning - S10' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:13:52,850 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Learning - S10'
+2025-03-18 14:13:52,851 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:52,851 - WARNING - No 'Task Description' keyword found in sheet 'Learning - S10'. Skipping this sheet.
+2025-03-18 14:13:52,851 - INFO - Processing sheet: 'HDSD'
+2025-03-18 14:13:53,468 - INFO - Sheet 'HDSD' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:13:53,468 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'HDSD'
+2025-03-18 14:13:53,469 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:53,470 - WARNING - No 'Task Description' keyword found in sheet 'HDSD'. Skipping this sheet.
+2025-03-18 14:13:53,471 - INFO - Processing sheet: 'Learning - S1'
+2025-03-18 14:13:54,098 - INFO - Sheet 'Learning - S1' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:13:54,099 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Learning - S1'
+2025-03-18 14:13:54,099 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:54,099 - WARNING - No 'Task Description' keyword found in sheet 'Learning - S1'. Skipping this sheet.
+2025-03-18 14:13:54,100 - INFO - Processing sheet: 'LS - Lesson 3.1'
+2025-03-18 14:13:54,751 - INFO - Sheet 'LS - Lesson 3.1' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:13:54,751 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'LS - Lesson 3.1'
+2025-03-18 14:13:54,752 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:54,752 - WARNING - No 'Task Description' keyword found in sheet 'LS - Lesson 3.1'. Skipping this sheet.
+2025-03-18 14:13:54,752 - INFO - Processing sheet: 'Daily talk 1'
+2025-03-18 14:13:55,362 - INFO - Sheet 'Daily talk 1' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:13:55,362 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Daily talk 1'
+2025-03-18 14:13:55,363 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:55,363 - WARNING - No 'Task Description' keyword found in sheet 'Daily talk 1'. Skipping this sheet.
+2025-03-18 14:13:55,364 - INFO - Processing sheet: 'Daily Talk 2'
+2025-03-18 14:13:55,965 - INFO - Sheet 'Daily Talk 2' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:13:55,965 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Daily Talk 2'
+2025-03-18 14:13:55,966 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:55,966 - WARNING - No 'Task Description' keyword found in sheet 'Daily Talk 2'. Skipping this sheet.
+2025-03-18 14:13:55,966 - INFO - Processing sheet: 'Daily Talk 3'
+2025-03-18 14:13:56,598 - INFO - Sheet 'Daily Talk 3' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:13:56,598 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Daily Talk 3'
+2025-03-18 14:13:56,599 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:56,599 - WARNING - No 'Task Description' keyword found in sheet 'Daily Talk 3'. Skipping this sheet.
+2025-03-18 14:13:56,599 - INFO - Processing sheet: 'Collect information Copy'
+2025-03-18 14:13:57,268 - INFO - Sheet 'Collect information Copy' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:13:57,269 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Collect information Copy'
+2025-03-18 14:13:57,269 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:57,269 - WARNING - No 'Task Description' keyword found in sheet 'Collect information Copy'. Skipping this sheet.
+2025-03-18 14:13:57,270 - INFO - Processing sheet: 'Level test'
+2025-03-18 14:13:57,944 - INFO - Sheet 'Level test' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:13:57,944 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Level test'
+2025-03-18 14:13:57,945 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:57,945 - WARNING - No 'Task Description' keyword found in sheet 'Level test'. Skipping this sheet.
+2025-03-18 14:13:57,946 - INFO - Processing sheet: 'Nonstop'
+2025-03-18 14:13:58,603 - INFO - Sheet 'Nonstop' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:13:58,604 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Nonstop'
+2025-03-18 14:13:58,604 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:58,605 - WARNING - No 'Task Description' keyword found in sheet 'Nonstop'. Skipping this sheet.
+2025-03-18 14:13:58,605 - INFO - Processing sheet: 'Learning - S7'
+2025-03-18 14:13:59,198 - INFO - Sheet 'Learning - S7' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:13:59,199 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Learning - S7'
+2025-03-18 14:13:59,199 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:59,200 - WARNING - No 'Task Description' keyword found in sheet 'Learning - S7'. Skipping this sheet.
+2025-03-18 14:13:59,200 - INFO - Processing sheet: 'Learning - S8'
+2025-03-18 14:13:59,821 - INFO - Sheet 'Learning - S8' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:13:59,822 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Learning - S8'
+2025-03-18 14:13:59,822 - INFO - Found first non-empty value in row 2
+2025-03-18 14:13:59,823 - WARNING - No 'Task Description' keyword found in sheet 'Learning - S8'. Skipping this sheet.
+2025-03-18 14:13:59,823 - INFO - Processing sheet: 'Learning - S9'
+2025-03-18 14:14:00,467 - INFO - Sheet 'Learning - S9' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:00,468 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Learning - S9'
+2025-03-18 14:14:00,468 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:00,469 - WARNING - No 'Task Description' keyword found in sheet 'Learning - S9'. Skipping this sheet.
+2025-03-18 14:14:00,469 - INFO - Processing sheet: 'Learning - S3'
+2025-03-18 14:14:01,094 - INFO - Sheet 'Learning - S3' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:01,095 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Learning - S3'
+2025-03-18 14:14:01,095 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:01,096 - WARNING - No 'Task Description' keyword found in sheet 'Learning - S3'. Skipping this sheet.
+2025-03-18 14:14:01,096 - INFO - Processing sheet: 'Learning - S5'
+2025-03-18 14:14:01,703 - INFO - Sheet 'Learning - S5' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:01,704 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Learning - S5'
+2025-03-18 14:14:01,704 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:01,704 - WARNING - No 'Task Description' keyword found in sheet 'Learning - S5'. Skipping this sheet.
+2025-03-18 14:14:01,705 - INFO - Processing sheet: 'Learning - S6.1'
+2025-03-18 14:14:02,286 - INFO - Sheet 'Learning - S6.1' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:02,287 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Learning - S6.1'
+2025-03-18 14:14:02,287 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:02,287 - WARNING - No 'Task Description' keyword found in sheet 'Learning - S6.1'. Skipping this sheet.
+2025-03-18 14:14:02,288 - INFO - Processing sheet: 'Learning - S6.2'
+2025-03-18 14:14:02,876 - INFO - Sheet 'Learning - S6.2' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:02,877 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Learning - S6.2'
+2025-03-18 14:14:02,877 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:02,879 - WARNING - No 'Task Description' keyword found in sheet 'Learning - S6.2'. Skipping this sheet.
+2025-03-18 14:14:02,879 - INFO - Processing sheet: 'Greeting - All'
+2025-03-18 14:14:03,559 - INFO - Sheet 'Greeting - All' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:03,559 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Greeting - All'
+2025-03-18 14:14:03,560 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:03,560 - WARNING - No 'Task Description' keyword found in sheet 'Greeting - All'. Skipping this sheet.
+2025-03-18 14:14:03,560 - INFO - Processing sheet: 'Greeting - S1'
+2025-03-18 14:14:04,232 - INFO - Sheet 'Greeting - S1' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:04,232 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Greeting - S1'
+2025-03-18 14:14:04,233 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:04,233 - WARNING - No 'Task Description' keyword found in sheet 'Greeting - S1'. Skipping this sheet.
+2025-03-18 14:14:04,234 - INFO - Processing sheet: 'Greeting - S3'
+2025-03-18 14:14:04,887 - INFO - Sheet 'Greeting - S3' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:04,887 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Greeting - S3'
+2025-03-18 14:14:04,888 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:04,888 - WARNING - No 'Task Description' keyword found in sheet 'Greeting - S3'. Skipping this sheet.
+2025-03-18 14:14:04,889 - INFO - Processing sheet: 'Greeting - S2'
+2025-03-18 14:14:05,559 - INFO - Sheet 'Greeting - S2' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:05,560 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Greeting - S2'
+2025-03-18 14:14:05,560 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:05,561 - WARNING - No 'Task Description' keyword found in sheet 'Greeting - S2'. Skipping this sheet.
+2025-03-18 14:14:05,561 - INFO - Processing sheet: 'Demo Personalize 1'
+2025-03-18 14:14:06,269 - INFO - Sheet 'Demo Personalize 1' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:06,270 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Demo Personalize 1'
+2025-03-18 14:14:06,270 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:06,271 - WARNING - No 'Task Description' keyword found in sheet 'Demo Personalize 1'. Skipping this sheet.
+2025-03-18 14:14:06,271 - INFO - Processing sheet: 'Teacher Assistant'
+2025-03-18 14:14:06,949 - INFO - Sheet 'Teacher Assistant' has 6 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, tools, Context, session_id
+2025-03-18 14:14:06,950 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Teacher Assistant'
+2025-03-18 14:14:06,951 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:06,951 - WARNING - No 'Task Description' keyword found in sheet 'Teacher Assistant'. Skipping this sheet.
+2025-03-18 14:14:06,951 - INFO - Processing sheet: 'Warm-up 1'
+2025-03-18 14:14:07,630 - INFO - Sheet 'Warm-up 1' has 4 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:07,631 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Warm-up 1'
+2025-03-18 14:14:07,631 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:07,632 - WARNING - No 'Task Description' keyword found in sheet 'Warm-up 1'. Skipping this sheet.
+2025-03-18 14:14:07,632 - INFO - Processing sheet: 'Warm-up 2'
+2025-03-18 14:14:08,263 - INFO - Sheet 'Warm-up 2' has 4 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:08,263 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Warm-up 2'
+2025-03-18 14:14:08,264 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:08,264 - WARNING - No 'Task Description' keyword found in sheet 'Warm-up 2'. Skipping this sheet.
+2025-03-18 14:14:08,264 - INFO - Processing sheet: 'Warm-up 3'
+2025-03-18 14:14:08,873 - INFO - Sheet 'Warm-up 3' has 4 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:08,873 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Warm-up 3'
+2025-03-18 14:14:08,874 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:08,874 - WARNING - No 'Task Description' keyword found in sheet 'Warm-up 3'. Skipping this sheet.
+2025-03-18 14:14:08,875 - INFO - Processing sheet: 'Warm-up 4'
+2025-03-18 14:14:09,631 - INFO - Sheet 'Warm-up 4' has 5 columns: task, language, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:09,632 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Warm-up 4'
+2025-03-18 14:14:09,632 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:09,633 - WARNING - No 'Task Description' keyword found in sheet 'Warm-up 4'. Skipping this sheet.
+2025-03-18 14:14:09,633 - INFO - Processing sheet: 'Friend-like 1'
+2025-03-18 14:14:10,335 - INFO - Sheet 'Friend-like 1' has 5 columns: task, language, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:10,336 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Friend-like 1'
+2025-03-18 14:14:10,336 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:10,337 - INFO - Found 'Task Description' keyword at position 36
+2025-03-18 14:14:10,337 - INFO - Added task description from sheet 'Friend-like 1' to results
+2025-03-18 14:14:10,337 - INFO - Processing sheet: 'Friend-like 1 - Groq'
+2025-03-18 14:14:10,942 - INFO - Sheet 'Friend-like 1 - Groq' has 5 columns: task, language, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:10,942 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Friend-like 1 - Groq'
+2025-03-18 14:14:10,943 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:10,943 - WARNING - No 'Task Description' keyword found in sheet 'Friend-like 1 - Groq'. Skipping this sheet.
+2025-03-18 14:14:10,944 - INFO - Processing sheet: 'Friend-like 2'
+2025-03-18 14:14:11,569 - INFO - Sheet 'Friend-like 2' has 5 columns: task, language, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:11,569 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Friend-like 2'
+2025-03-18 14:14:11,570 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:11,570 - INFO - Found 'Task Description' keyword at position 42
+2025-03-18 14:14:11,571 - INFO - Added task description from sheet 'Friend-like 2' to results
+2025-03-18 14:14:11,571 - INFO - Processing sheet: 'Friend-like 3'
+2025-03-18 14:14:12,247 - INFO - Sheet 'Friend-like 3' has 5 columns: task, language, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:12,247 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Friend-like 3'
+2025-03-18 14:14:12,248 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:12,249 - INFO - Found 'Task Description' keyword at position 45
+2025-03-18 14:14:12,249 - INFO - Added task description from sheet 'Friend-like 3' to results
+2025-03-18 14:14:12,249 - INFO - Processing sheet: 'Friend-like 3 - Groq'
+2025-03-18 14:14:12,974 - INFO - Sheet 'Friend-like 3 - Groq' has 5 columns: task, language, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:12,974 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Friend-like 3 - Groq'
+2025-03-18 14:14:12,975 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:12,975 - INFO - Found 'Task Description' keyword at position 45
+2025-03-18 14:14:12,976 - INFO - Added task description from sheet 'Friend-like 3 - Groq' to results
+2025-03-18 14:14:12,976 - INFO - Processing sheet: 'Friend-like 4'
+2025-03-18 14:14:13,630 - INFO - Sheet 'Friend-like 4' has 5 columns: task, language, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:13,630 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Friend-like 4'
+2025-03-18 14:14:13,631 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:13,631 - INFO - Found 'Task Description' keyword at position 42
+2025-03-18 14:14:13,632 - INFO - Added task description from sheet 'Friend-like 4' to results
+2025-03-18 14:14:13,632 - INFO - Processing sheet: 'Friend-like 4 - Groq'
+2025-03-18 14:14:14,226 - INFO - Sheet 'Friend-like 4 - Groq' has 5 columns: task, language, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:14,227 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Friend-like 4 - Groq'
+2025-03-18 14:14:14,227 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:14,227 - INFO - Found 'Task Description' keyword at position 42
+2025-03-18 14:14:14,228 - INFO - Added task description from sheet 'Friend-like 4 - Groq' to results
+2025-03-18 14:14:14,228 - INFO - Processing sheet: 'Friend-like 5'
+2025-03-18 14:14:14,871 - INFO - Sheet 'Friend-like 5' has 5 columns: task, language, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:14,872 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Friend-like 5'
+2025-03-18 14:14:14,872 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:14,873 - INFO - Found 'Task Description' keyword at position 40
+2025-03-18 14:14:14,873 - INFO - Added task description from sheet 'Friend-like 5' to results
+2025-03-18 14:14:14,873 - INFO - Processing sheet: 'Demo lesson plan'
+2025-03-18 14:14:15,523 - INFO - Sheet 'Demo lesson plan' has 3 columns: task, start_message, SYSTEM_TASK_DESCRIPTION
+2025-03-18 14:14:15,524 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Demo lesson plan'
+2025-03-18 14:14:15,524 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:15,525 - WARNING - No 'Task Description' keyword found in sheet 'Demo lesson plan'. Skipping this sheet.
+2025-03-18 14:14:15,525 - INFO - Processing sheet: 'Friend-like 6'
+2025-03-18 14:14:16,202 - INFO - Sheet 'Friend-like 6' has 5 columns: task, language, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:16,202 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Friend-like 6'
+2025-03-18 14:14:16,203 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:16,203 - INFO - Found 'Task Description' keyword at position 44
+2025-03-18 14:14:16,203 - INFO - Added task description from sheet 'Friend-like 6' to results
+2025-03-18 14:14:16,204 - INFO - Processing sheet: 'Friend-like 7'
+2025-03-18 14:14:16,823 - INFO - Sheet 'Friend-like 7' has 5 columns: task, language, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:16,824 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Friend-like 7'
+2025-03-18 14:14:16,824 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:16,825 - WARNING - No 'Task Description' keyword found in sheet 'Friend-like 7'. Skipping this sheet.
+2025-03-18 14:14:16,825 - INFO - Processing sheet: 'Lesson 1'
+2025-03-18 14:14:17,439 - INFO - Sheet 'Lesson 1' has 5 columns: task, language, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:17,439 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Lesson 1'
+2025-03-18 14:14:17,439 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:17,440 - WARNING - No 'Task Description' keyword found in sheet 'Lesson 1'. Skipping this sheet.
+2025-03-18 14:14:17,440 - INFO - Processing sheet: 'Lesson 2'
+2025-03-18 14:14:18,025 - INFO - Sheet 'Lesson 2' has 5 columns: task, language, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:18,025 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Lesson 2'
+2025-03-18 14:14:18,026 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:18,026 - WARNING - No 'Task Description' keyword found in sheet 'Lesson 2'. Skipping this sheet.
+2025-03-18 14:14:18,027 - INFO - Processing sheet: 'Wrap-up 1'
+2025-03-18 14:14:18,695 - INFO - Sheet 'Wrap-up 1' has 4 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:18,696 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Wrap-up 1'
+2025-03-18 14:14:18,696 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:18,697 - WARNING - No 'Task Description' keyword found in sheet 'Wrap-up 1'. Skipping this sheet.
+2025-03-18 14:14:18,697 - INFO - Processing sheet: 'Testing'
+2025-03-18 14:14:19,359 - INFO - Sheet 'Testing' has 11 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, SYSTEM_EXTRACTION_PROFILE, MOOD, IMAGE, session_id
+2025-03-18 14:14:19,359 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Testing'
+2025-03-18 14:14:19,360 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:19,360 - WARNING - No 'Task Description' keyword found in sheet 'Testing'. Skipping this sheet.
+2025-03-18 14:14:19,361 - INFO - Processing sheet: 'Lesson 2(New)'
+2025-03-18 14:14:20,005 - INFO - Sheet 'Lesson 2(New)' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:20,006 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Lesson 2(New)'
+2025-03-18 14:14:20,006 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:20,007 - WARNING - No 'Task Description' keyword found in sheet 'Lesson 2(New)'. Skipping this sheet.
+2025-03-18 14:14:20,007 - INFO - Processing sheet: 'LS - Lesson 2(New)'
+2025-03-18 14:14:20,657 - INFO - Sheet 'LS - Lesson 2(New)' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:20,658 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'LS - Lesson 2(New)'
+2025-03-18 14:14:20,658 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:20,658 - WARNING - No 'Task Description' keyword found in sheet 'LS - Lesson 2(New)'. Skipping this sheet.
+2025-03-18 14:14:20,658 - INFO - Processing sheet: 'Lesson 2(New)-Json'
+2025-03-18 14:14:21,307 - INFO - Sheet 'Lesson 2(New)-Json' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:21,308 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Lesson 2(New)-Json'
+2025-03-18 14:14:21,308 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:21,309 - WARNING - No 'Task Description' keyword found in sheet 'Lesson 2(New)-Json'. Skipping this sheet.
+2025-03-18 14:14:22,003 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:22,005 - INFO - Processing sheet: 'Lesson 3'
+2025-03-18 14:14:22,604 - INFO - Sheet 'Lesson 3' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:22,604 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Lesson 3'
+2025-03-18 14:14:22,605 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:22,605 - WARNING - No 'Task Description' keyword found in sheet 'Lesson 3'. Skipping this sheet.
+2025-03-18 14:14:22,606 - INFO - Processing sheet: 'Demo Personalized 1'
+2025-03-18 14:14:23,211 - INFO - Sheet 'Demo Personalized 1' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:23,211 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Demo Personalized 1'
+2025-03-18 14:14:23,212 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:23,212 - WARNING - No 'Task Description' keyword found in sheet 'Demo Personalized 1'. Skipping this sheet.
+2025-03-18 14:14:23,213 - INFO - Processing sheet: 'Lesson 3-Json'
+2025-03-18 14:14:23,793 - INFO - Sheet 'Lesson 3-Json' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:23,793 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Lesson 3-Json'
+2025-03-18 14:14:23,794 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:23,794 - WARNING - No 'Task Description' keyword found in sheet 'Lesson 3-Json'. Skipping this sheet.
+2025-03-18 14:14:23,795 - INFO - Processing sheet: 'Lesson 4'
+2025-03-18 14:14:24,439 - INFO - Sheet 'Lesson 4' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:24,440 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Lesson 4'
+2025-03-18 14:14:24,440 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:24,441 - WARNING - No 'Task Description' keyword found in sheet 'Lesson 4'. Skipping this sheet.
+2025-03-18 14:14:24,441 - INFO - Processing sheet: 'Lesson 5'
+2025-03-18 14:14:25,108 - INFO - Sheet 'Lesson 5' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:25,108 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Lesson 5'
+2025-03-18 14:14:25,109 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:25,109 - WARNING - No 'Task Description' keyword found in sheet 'Lesson 5'. Skipping this sheet.
+2025-03-18 14:14:25,109 - INFO - Processing sheet: 'Lesson 6'
+2025-03-18 14:14:25,736 - INFO - Sheet 'Lesson 6' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:25,736 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Lesson 6'
+2025-03-18 14:14:25,737 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:25,737 - WARNING - No 'Task Description' keyword found in sheet 'Lesson 6'. Skipping this sheet.
+2025-03-18 14:14:25,738 - INFO - Processing sheet: 'LS - Lesson 6.2'
+2025-03-18 14:14:26,363 - INFO - Sheet 'LS - Lesson 6.2' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:26,363 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'LS - Lesson 6.2'
+2025-03-18 14:14:26,364 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:26,364 - WARNING - No 'Task Description' keyword found in sheet 'LS - Lesson 6.2'. Skipping this sheet.
+2025-03-18 14:14:26,365 - INFO - Processing sheet: 'LS - Lesson 6.5'
+2025-03-18 14:14:26,972 - INFO - Sheet 'LS - Lesson 6.5' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:26,973 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'LS - Lesson 6.5'
+2025-03-18 14:14:26,973 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:26,974 - WARNING - No 'Task Description' keyword found in sheet 'LS - Lesson 6.5'. Skipping this sheet.
+2025-03-18 14:14:26,974 - INFO - Processing sheet: 'LS - Lesson 6.8'
+2025-03-18 14:14:27,647 - INFO - Sheet 'LS - Lesson 6.8' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:27,647 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'LS - Lesson 6.8'
+2025-03-18 14:14:27,648 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:27,648 - WARNING - No 'Task Description' keyword found in sheet 'LS - Lesson 6.8'. Skipping this sheet.
+2025-03-18 14:14:27,649 - INFO - Processing sheet: 'Lesson 7'
+2025-03-18 14:14:28,273 - INFO - Sheet 'Lesson 7' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:28,273 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Lesson 7'
+2025-03-18 14:14:28,274 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:28,274 - WARNING - No 'Task Description' keyword found in sheet 'Lesson 7'. Skipping this sheet.
+2025-03-18 14:14:28,275 - INFO - Processing sheet: 'Fluency 2'
+2025-03-18 14:14:28,899 - INFO - Sheet 'Fluency 2' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:28,899 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Fluency 2'
+2025-03-18 14:14:28,899 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:28,900 - WARNING - No 'Task Description' keyword found in sheet 'Fluency 2'. Skipping this sheet.
+2025-03-18 14:14:28,900 - INFO - Processing sheet: 'Reflection 1'
+2025-03-18 14:14:29,563 - INFO - Sheet 'Reflection 1' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:29,563 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Reflection 1'
+2025-03-18 14:14:29,564 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:29,564 - WARNING - No 'Task Description' keyword found in sheet 'Reflection 1'. Skipping this sheet.
+2025-03-18 14:14:29,564 - INFO - Processing sheet: 'LS - Favorite toy 1'
+2025-03-18 14:14:30,279 - INFO - Sheet 'LS - Favorite toy 1' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:30,279 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'LS - Favorite toy 1'
+2025-03-18 14:14:30,280 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:30,280 - WARNING - No 'Task Description' keyword found in sheet 'LS - Favorite toy 1'. Skipping this sheet.
+2025-03-18 14:14:30,281 - INFO - Processing sheet: 'LS - Favorite toy 2'
+2025-03-18 14:14:30,973 - INFO - Sheet 'LS - Favorite toy 2' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:30,973 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'LS - Favorite toy 2'
+2025-03-18 14:14:30,974 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:30,974 - WARNING - No 'Task Description' keyword found in sheet 'LS - Favorite toy 2'. Skipping this sheet.
+2025-03-18 14:14:30,975 - INFO - Processing sheet: 'Guessing game'
+2025-03-18 14:14:31,615 - INFO - Sheet 'Guessing game' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:31,616 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Guessing game'
+2025-03-18 14:14:31,617 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:31,617 - WARNING - No 'Task Description' keyword found in sheet 'Guessing game'. Skipping this sheet.
+2025-03-18 14:14:31,617 - INFO - Processing sheet: 'Test 3'
+2025-03-18 14:14:32,241 - INFO - Sheet 'Test 3' has 5 columns: task, language, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:32,242 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Test 3'
+2025-03-18 14:14:32,242 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:32,242 - WARNING - No 'Task Description' keyword found in sheet 'Test 3'. Skipping this sheet.
+2025-03-18 14:14:32,243 - INFO - Processing sheet: 'CuongTest1.1'
+2025-03-18 14:14:32,942 - INFO - Sheet 'CuongTest1.1' has 5 columns: task, language, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:32,943 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'CuongTest1.1'
+2025-03-18 14:14:32,943 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:32,944 - WARNING - No 'Task Description' keyword found in sheet 'CuongTest1.1'. Skipping this sheet.
+2025-03-18 14:14:32,944 - INFO - Processing sheet: 'CuongTest1.2'
+2025-03-18 14:14:33,715 - INFO - Sheet 'CuongTest1.2' has 5 columns: task, language, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:33,716 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'CuongTest1.2'
+2025-03-18 14:14:33,716 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:33,717 - WARNING - No 'Task Description' keyword found in sheet 'CuongTest1.2'. Skipping this sheet.
+2025-03-18 14:14:33,717 - INFO - Processing sheet: 'CuongTest1.3'
+2025-03-18 14:14:34,459 - INFO - Sheet 'CuongTest1.3' has 5 columns: task, language, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:34,459 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'CuongTest1.3'
+2025-03-18 14:14:34,459 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:34,460 - WARNING - No 'Task Description' keyword found in sheet 'CuongTest1.3'. Skipping this sheet.
+2025-03-18 14:14:34,460 - INFO - Processing sheet: 'CuongTest1.4'
+2025-03-18 14:14:35,199 - INFO - Sheet 'CuongTest1.4' has 5 columns: task, language, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:35,199 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'CuongTest1.4'
+2025-03-18 14:14:35,200 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:35,200 - WARNING - No 'Task Description' keyword found in sheet 'CuongTest1.4'. Skipping this sheet.
+2025-03-18 14:14:35,200 - INFO - Processing sheet: 'CuongTest1.5'
+2025-03-18 14:14:35,935 - INFO - Sheet 'CuongTest1.5' has 5 columns: task, language, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:35,935 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'CuongTest1.5'
+2025-03-18 14:14:35,936 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:35,936 - WARNING - No 'Task Description' keyword found in sheet 'CuongTest1.5'. Skipping this sheet.
+2025-03-18 14:14:35,936 - INFO - Processing sheet: 'CuongTest1.6'
+2025-03-18 14:14:36,704 - INFO - Sheet 'CuongTest1.6' has 5 columns: task, language, start_message, SYSTEM_TASK_DESCRIPTION, tools
+2025-03-18 14:14:36,705 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'CuongTest1.6'
+2025-03-18 14:14:36,705 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:36,705 - WARNING - No 'Task Description' keyword found in sheet 'CuongTest1.6'. Skipping this sheet.
+2025-03-18 14:14:36,706 - INFO - Processing sheet: 'Test - Extract, generate variab'
+2025-03-18 14:14:37,332 - INFO - Sheet 'Test - Extract, generate variab' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:37,333 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Test - Extract, generate variab'
+2025-03-18 14:14:37,333 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:37,334 - WARNING - No 'Task Description' keyword found in sheet 'Test - Extract, generate variab'. Skipping this sheet.
+2025-03-18 14:14:37,334 - INFO - Processing sheet: 'Trang tính15'
+2025-03-18 14:14:37,945 - INFO - Sheet 'Trang tính15' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:37,946 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Trang tính15'
+2025-03-18 14:14:37,946 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:37,947 - WARNING - No 'Task Description' keyword found in sheet 'Trang tính15'. Skipping this sheet.
+2025-03-18 14:14:37,947 - INFO - Processing sheet: 'Test - Set variable'
+2025-03-18 14:14:38,529 - INFO - Sheet 'Test - Set variable' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:38,530 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Test - Set variable'
+2025-03-18 14:14:38,530 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:38,531 - WARNING - No 'Task Description' keyword found in sheet 'Test - Set variable'. Skipping this sheet.
+2025-03-18 14:14:38,531 - INFO - Processing sheet: 'Test - User profile'
+2025-03-18 14:14:39,161 - INFO - Sheet 'Test - User profile' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:39,162 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Test - User profile'
+2025-03-18 14:14:39,162 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:39,163 - WARNING - No 'Task Description' keyword found in sheet 'Test - User profile'. Skipping this sheet.
+2025-03-18 14:14:39,163 - INFO - Processing sheet: 'Test - User profile 2'
+2025-03-18 14:14:39,809 - INFO - Sheet 'Test - User profile 2' has 8 columns: task, start_message, SYSTEM_TASK_DESCRIPTION, language, tools, SYSTEM_EXTRACTION_VARIABLES, SYSTEM_PROMPT_GENERATION, session_id
+2025-03-18 14:14:39,809 - INFO - Found 'SYSTEM_TASK_DESCRIPTION' column in sheet 'Test - User profile 2'
+2025-03-18 14:14:39,810 - INFO - Found first non-empty value in row 2
+2025-03-18 14:14:39,810 - WARNING - No 'Task Description' keyword found in sheet 'Test - User profile 2'. Skipping this sheet.
+2025-03-18 14:14:39,832 - INFO - Results saved to 'Extracted_TaskDescriptions.xlsx' with 8 task descriptions
+2025-03-18 14:14:39,833 - INFO - 
+Extraction Summary:
+2025-03-18 14:14:39,833 - INFO - Total sheets processed: 91
+2025-03-18 14:14:39,833 - INFO - Sheets with task descriptions found: 8
+2025-03-18 14:14:39,833 - INFO - Sheets skipped: 83
+2025-03-18 14:14:39,834 - INFO - Extraction process completed
