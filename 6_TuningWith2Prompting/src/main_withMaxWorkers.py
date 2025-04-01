@@ -42,7 +42,7 @@ def process_row(row, bot_id):
     openai_client, api_client = init_new_conversation(use_api, bot_id)
     
     if use_api and api_client is None:
-        return None, None, True  # Indicate failure to initialize API
+        return None, None, True, use_api  # Indicate failure to initialize API and return use_api
     
     try:
         if use_api:
@@ -59,11 +59,18 @@ def process_row(row, bot_id):
             if should_exit:
                 print("Exit condition detected in roleB's response. Ending conversation.")
         
-        return message_history, response_times, should_exit
+        return message_history, response_times, should_exit, use_api  # Return use_api
     
     except Exception as e:
         print(f"Error processing row: {str(e)}")
-        return None, None, False  # Indicate processing error
+        return None, None, False, use_api  # Indicate processing error and return use_api
+
+# Add this function to optimize batch parameters
+def optimize_batch_parameters(total_rows, max_workers):
+    """Optimize batch size based on total rows and max workers."""
+    # Example logic to determine batch size
+    batch_size = max(1, total_rows // max_workers)
+    return batch_size
 
 def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', output_file='result.xlsx', bot_id=31, max_workers=4):
     try:
@@ -92,12 +99,16 @@ def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', outp
         rows_to_process = df.iloc[start_idx:end_idx].to_dict('records')
         should_exit = False
         
+        # Optimize batch size
+        batch_size = optimize_batch_parameters(len(rows_to_process), max_workers)
+        batches = [rows_to_process[i:i + batch_size] for i in range(0, len(rows_to_process), batch_size)]
+        
         with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
             futures = {executor.submit(process_row, row, bot_id): row for row in rows_to_process}
             for future in concurrent.futures.as_completed(futures):
                 row = futures[future]
                 try:
-                    message_history, response_times, exit_condition = future.result()
+                    message_history, response_times, exit_condition, use_api = future.result()
                     if exit_condition:
                         should_exit = True
                         break
@@ -131,9 +142,9 @@ def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', outp
                     ])
                     export_conversations_to_excel(df_new, output_path)
                     print(f"Completed row {row['order']}")
-                    
+                
                 except Exception as e:
-                    print(f"Error processing row: {str(e)}")
+                    print(f"Error processing batch: {str(e)}")
         
         if should_exit:
             print("Stopping further processing due to exit condition.")

@@ -50,6 +50,10 @@ def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', outp
         df = pd.read_excel(input_path)
         total_rows = len(df)
         
+        # Kiểm tra xem cột 'order' có tồn tại không
+        if 'order' not in df.columns:
+            print("Warning: 'order' column not found in the input data. It will be set to None.")
+        
         # Calculate rows to process
         start_idx = start_row if start_row is not None else 0
         end_idx = min(start_idx + num_rows, total_rows) if num_rows else total_rows
@@ -74,8 +78,7 @@ def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', outp
                     message_history, response_times, full_log = simulate_with_api(row, openai_client, api_client)
                 else:
                     message_history, response_times = simulate_with_openai(row, openai_client)
-                    # Initialize empty full_log for non-API case
-                    full_log = [''] * len(message_history)
+                    full_log = [''] * len(message_history)  # Initialize empty full_log for non-API case
                 
                 # Check for exit condition in the last message if it's from roleB
                 should_exit = False
@@ -100,6 +103,9 @@ def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', outp
                     # Get full log for the current message
                     current_full_log = full_log[i] if use_api and i < len(full_log) else ''
                     
+                    # Lấy giá trị của cột 'order' nếu nó tồn tại
+                    order_value = row['order'] if 'order' in row else None
+                    
                     current_messages.append([
                         msg['role'],
                         msg['content'],
@@ -107,11 +113,12 @@ def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', outp
                         row['roleA_prompt'],
                         row['roleB_prompt'] if not use_api else f"Using API (Bot ID: {bot_id})",
                         row['useApiOrPrompt'],
-                        current_full_log  # Add full log data
+                        current_full_log,  # Add full log data
+                        order_value  # Add order value if it exists
                     ])
                 
                 # Add separator after the last message of the current row
-                current_messages.append(['Separator', f'--- End of Row {index + 1} ---', 0, '', '', '', ''])
+                current_messages.append(['Separator', f'--- End of Row {index + 1} ---', 0, '', '', '', '', ''])
                 
                 # Export immediately after processing each row
                 df_new = pd.DataFrame(current_messages, columns=[
@@ -121,7 +128,8 @@ def main(start_row=None, num_rows=None, input_file='2PromptingTuning.xlsx', outp
                     'RoleA Prompt',
                     'RoleB Prompt',
                     'useApiOrPrompt',
-                    'Full Log'
+                    'Full Log',
+                    'Order'  # Add column for order
                 ])
                 export_conversations_to_excel(df_new, output_path)
                 print(f"Completed row {index + 1}/{end_idx}")

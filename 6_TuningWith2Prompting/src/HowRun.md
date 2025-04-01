@@ -30,7 +30,9 @@ python main.py --input '2PromptTune_GiaLapUserHVAppTheCoach_v1.1_promptPTY.xlsx'
 
 python main.py --input '2PromptTune_GiaLapUserTreCon_v1.3_100PikaLesson.xlsx' --output '100Pika.xlsx' --num-rows 10
 
-main_withMaxWorkers.py --start-row 0 --num-rows 10 --input gen_nhanh.xlsx --output 68.xlsx --bot-id 68 --max-workers 4       
+main_withMaxWorkers.py --start-row 0 --num-rows 10 --input gen_nhanh.xlsx --output 68.xlsx --bot-id 68 --max-workers 4  
+
+python main_withMaxWorkers.py --input '2PromptTune_GiaLapUserTreCon_v1.3_100PikaLesson.xlsx' --output '100Pika.xlsx' --num-rows 10
 
 ```
 

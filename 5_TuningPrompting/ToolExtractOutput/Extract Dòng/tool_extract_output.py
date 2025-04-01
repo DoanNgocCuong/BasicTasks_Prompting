@@ -26,11 +26,10 @@ if 'assistant_response' not in df_input.columns:
     raise KeyError("Cột 'assistant_response' không tồn tại trong file Excel!")
 
 # Biểu thức chính quy để parse cụm từ:
-# - \d+\.: khớp với số thứ tự và dấu chấm (ví dụ "1.")
-# - \s*: bỏ qua khoảng trắng sau dấu chấm
-# - (.*?): nhóm chứa nội dung cụm từ (non-greedy)
-# - \s*(?=\d+\.|$): dừng lại khi gặp số thứ tự mới hoặc hết dòng
-pattern = r'\d+\.\s*(.*?)\s*(?=\d+\.|$)'
+# Pattern 1: Cho dạng số 1. 2. 3.
+# Pattern 2: Cho dạng xuống dòng bình thường
+pattern_numbered = r'\d+\.\s*(.*?)\s*(?=\d+\.|$)'
+pattern_newline = r'([^\n]+)'
 
 phrases = []
 
@@ -38,12 +37,22 @@ phrases = []
 for idx, text in enumerate(df_input['assistant_response']):
     logging.debug(f"Xử lý dòng {idx}: {text}")
     if isinstance(text, str):
-        matches = re.findall(pattern, text)
-        if matches:
-            logging.debug(f"Dòng {idx}: Tìm thấy {len(matches)} cụm từ.")
-            phrases.extend(matches)
+        # Thử tìm matches với pattern số
+        matches_numbered = re.findall(pattern_numbered, text)
+        
+        if matches_numbered:
+            logging.debug(f"Dòng {idx}: Tìm thấy {len(matches_numbered)} cụm từ dạng số.")
+            phrases.extend(matches_numbered)
         else:
-            logging.warning(f"Dòng {idx}: Không tìm thấy cụm từ nào với pattern đã cho.")
+            # Nếu không tìm thấy dạng số, thử tìm theo dòng
+            matches_newline = re.findall(pattern_newline, text)
+            if matches_newline:
+                logging.debug(f"Dòng {idx}: Tìm thấy {len(matches_newline)} cụm từ dạng dòng.")
+                # Lọc bỏ các dòng trống
+                valid_matches = [match.strip() for match in matches_newline if match.strip()]
+                phrases.extend(valid_matches)
+            else:
+                logging.warning(f"Dòng {idx}: Không tìm thấy cụm từ nào.")
     else:
         logging.warning(f"Dòng {idx}: Giá trị không phải chuỗi. Giá trị: {text}")
 

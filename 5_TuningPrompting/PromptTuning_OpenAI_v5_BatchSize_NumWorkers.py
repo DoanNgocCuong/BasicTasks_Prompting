@@ -39,9 +39,9 @@ def process_conversation(order, base_prompt, inputs, conversation_history=None):
 
     # Tạo model config dưới dạng JSON
     model_config = {
-        "model": "gpt-4o-mini",
-        "temperature": 0,
-        "max_tokens": 2048,
+        "model": "gpt-4o",
+        "temperature": 0.3,
+        "max_tokens": 4096,
         "top_p": 1,
         "frequency_penalty": 0.0,
         "presence_penalty": 0.0

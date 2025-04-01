@@ -8,6 +8,10 @@ def export_conversations_to_excel(messages, output_path):
         messages: List of conversation messages to append
         output_path: Path to output Excel file
     """
+    # Kiểm tra xem có cột 'order' trong messages không
+    if 'Order' not in messages[0]:
+        print("Warning: 'Order' column not found in messages. It will be excluded from the export.")
+    
     df_new = pd.DataFrame(messages, columns=[
         'Role', 
         'Content', 
