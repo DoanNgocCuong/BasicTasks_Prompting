@@ -35,7 +35,7 @@
   },
   "kv_store": {
     "unique_matched_lines_count": 18,
-    "total_repo_line_count": 352226,
+    "total_repo_line_count": 360086,
     "best_prompt_response": null,
     "file_statistics": [
       {
@@ -561,6 +561,42 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "5_TuningPrompting/ToolExtractOutput/Tool_LoaiBo_DongCoTu/input_data.xlsx",
+        "total_lines": 329,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/ToolExtractOutput/Tool_LoaiBo_DongCoTu/output_data.xlsx",
+        "total_lines": 125,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/ToolExtractOutput/Tool_LoaiBo_DongCoTu/output_data_removed.xlsx",
+        "total_lines": 255,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/ToolExtractOutput/Tool_LoaiBo_DongCoTu/processing_remove_word.py",
+        "total_lines": 77,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/ToolExtractOutput/Tool_LoaiBo_DongCoTu/readme.md",
+        "total_lines": 101,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/ToolExtractOutput/Tool_LoaiBo_DongCoTu/word.txt",
+        "total_lines": 98,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "5_TuningPrompting/UI_DuKien.txt",
         "total_lines": 3,
         "ai_generated_lines": 0,
@@ -604,7 +640,7 @@
       },
       {
         "file": "5_TuningPrompting/input_data.xlsx",
-        "total_lines": 4741,
+        "total_lines": 5831,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -616,7 +652,7 @@
       },
       {
         "file": "5_TuningPrompting/output_data_v2.xlsx",
-        "total_lines": 130,
+        "total_lines": 5831,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -857,6 +893,12 @@
       {
         "file": "6_TuningWith2Prompting/src/def_ApiClientB.py",
         "total_lines": 106,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "6_TuningWith2Prompting/src/def_MaxWorkers.py",
+        "total_lines": 84,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
