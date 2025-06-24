@@ -1,0 +1,176 @@
+{
+  "status": 200,
+  "message": "Success",
+  "data": [
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Chào cậu! Bữa nay thầy giáo robot trên sao HỎA dạy tớ cách luyện nói theo nhịp như… hát rap đó! Mỗi cụm từ giống như một đoạn nhạc nhỏ, có nhịp điệu riêng.",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/0a0b35aa99e5f3bfc699b0a51caf5bbb_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Cứ theo nhịp là nói được tiếng Anh hay hơn liền! Giờ tụi mình thử cùng luyện nha. Cậu đã sẵn sàng chưa?",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/6b92bb8e61da77039645d5b5f6bb320c_3_1.0.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "[NEXT]",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250623/b98b6d56-fd9a-45bc-8d6f-9ad258b5cf14_1750685990821.wav"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Yên tâm nha! Cậu không học một mình đâu, Pika luôn bên cạnh nè! chúng mình sẽ học nói tiếng Anh theo nhịp giống như hát nha! Bài hát này có nhiều cụm từ rất quen mà cũng rất vui. Bài đầu tiên nha. Đầu tiên, cậu hãy nghe thử cả bài nhé, đừng hát theo vội. Mình chỉ cần cảm nhịp thôi. ",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/a0a3323b854420b9495b67eed6fb78e5_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "",
+      "audio": "https://smedia.stepup.edu.vn/thecoach/all_files/cum1.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Giờ mình cùng lặp lại đoạn đầu tiên nha, câu chào cực kỳ thân thiện luôn nè.",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/587c89ddd9ce2b9657ac0be762462268_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "",
+      "audio": "https://smedia.stepup.edu.vn/thecoach/all_files/cum1_seg1_006_016.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Cậu nói lại cùng tớ nha.",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/939911ac84de48b14fd37c1e7d147fa6_3_1.0.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "Hello, hello, hello, how are you? Hello, hello, hello, how are you?",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250623/b98b6d56-fd9a-45bc-8d6f-9ad258b5cf14_1750686128504.wav"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Nice! You did it! Tiếp theo là khi mình cảm thấy thật tuyệt, cùng nói theo nhịp nha! ",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/e4ff2f1d2ec0f5942badd6aae65bab15_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "",
+      "audio": "https://smedia.stepup.edu.vn/thecoach/all_files/cum1_seg2_016_030.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Nào, nói lại với tớ!",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/f671a3ac844fd47cbf1a9355f2aa2347_3_1.0.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "I'm good. I'm rich. I'm wonderful.",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250623/b98b6d56-fd9a-45bc-8d6f-9ad258b5cf14_1750686174527.wav"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Awesome! Cậu nói theo nhịp rất tốt! Câu chào quen thuộc quay lại nè! Mình cùng nói lại một lần nữa nhé!",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/15144dc82330a72363d23ef6f8c9dc38_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "",
+      "audio": "https://smedia.stepup.edu.vn/thecoach/all_files/cum1_seg1_006_016.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Cậu nhớ nhịp rồi đúng không? Cùng nói nào!",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/a85f1ebe64efa01ecf095adffa77866f_3_1.0.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "Hello! Hello!",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250623/b98b6d56-fd9a-45bc-8d6f-9ad258b5cf14_1750686217195.wav"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Good job! Cậu nhớ rất giỏi! Đôi khi mình cũng cảm thấy hơi mệt hoặc đói. Vậy thì mình sẽ nói thế này nè",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/4bc001da4fab1fe5e9048be86d5a1649_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "",
+      "audio": "https://smedia.stepup.edu.vn/thecoach/all_files/cum1_seg3_041_056.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": " Giờ thì cậu nhại theo tớ nha!",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/6b706a4f43a1da0475e287f7b0c86e93_3_1.0.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "I'm tired I'm hungry I'm not so good I'm tired",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250623/b98b6d56-fd9a-45bc-8d6f-9ad258b5cf14_1750686264073.wav"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Great! Bây giờ mình cùng nói câu chào cuối nhé! Và cuối cùng, bài hát kết thúc bằng câu chào quen thuộc một lần nữa. Nói lại lần cuối nha! ",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/58ca0f02df44570b49176e1f11f3f792_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "",
+      "audio": "https://smedia.stepup.edu.vn/thecoach/all_files/cum1_seg1_006_016.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Cùng nói lại với tớ nào!",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/1d70d759593120327339149f898105d6_3_1.0.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "Hello, hello, hello, how are you?",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250623/b98b6d56-fd9a-45bc-8d6f-9ad258b5cf14_1750686297449.wav"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Well done! Giờ thì mình cùng hát lại từ đầu đến cuối bài hát này nhé, lần này cậu có thể vừa hát vừa nhún nhảy cho vui luôn nha! ",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/cf6e82fcf0dda6bc5e6adea221e9c65a_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "",
+      "audio": "https://smedia.stepup.edu.vn/thecoach/all_files/cum1.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Tiếp theo, hãy tưởng tượng mình sẽ bắt đầu một ngày mới thật vui bằng một bài hát tiếng Anh siêu rộn ràng nha. Cậu sẽ được luyện các câu chào buổi sáng theo nhịp. Vừa học, vừa hát, vừa nhảy cũng được luôn! Cậu sẵn sàng chưa?",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/6ced5fb95948f54b9aac992c2a5e2752_3_1.0.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "I'm ready.",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250623/b98b6d56-fd9a-45bc-8d6f-9ad258b5cf14_1750686407930.wav"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Great! Let's start! Đầu tiên, mình nghe trọn bài hát để quen với nhịp, giai điệu và các cụm từ hay dùng vào buổi sáng nha! ",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/1ef9037ef8f3fb7b03c145be70f27112_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "",
+      "audio": "https://smedia.stepup.edu.vn/thecoach/all_files/cum2.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Mình bắt đầu với câu chào buổi sáng nha, thật tươi lên nào! ",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/6c88ae90cc948697431fcc05aae1ce0e_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "",
+      "audio": "https://smedia.stepup.edu.vn/thecoach/all_files/cum2_seg1_018_025.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Nào, lặp lại cùng tớ nhé!",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/0bfbb2b113242b204366f991eb0ae82f_3_1.0.mp3"
+    }
+  ]
+}

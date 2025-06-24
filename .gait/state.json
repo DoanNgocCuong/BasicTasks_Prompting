@@ -35,7 +35,7 @@
   },
   "kv_store": {
     "unique_matched_lines_count": 18,
-    "total_repo_line_count": 360086,
+    "total_repo_line_count": 359515,
     "best_prompt_response": null,
     "file_statistics": [
       {
@@ -286,7 +286,7 @@
       },
       {
         "file": "2_PromptCreateDATA_IMPORTANCE/5_GiaLapPikaDataset_forTEXT2SPEECH/2PromptTune_GiaLapUserTreCon_v1.3_100PikaLesson.xlsx",
-        "total_lines": 5939,
+        "total_lines": 8942,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -329,6 +329,12 @@
       {
         "file": "2_PromptCreateDATA_IMPORTANCE/5_GiaLapPikaDataset_forTEXT2SPEECH/CodeLogicExtractInstructionOfPika/task_description_extractor.log",
         "total_lines": 463,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "2_PromptCreateDATA_IMPORTANCE/5_GiaLapPikaDataset_forTEXT2SPEECH/send_Data_Pika_Text2Speech.xlsx",
+        "total_lines": 2099,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -640,7 +646,7 @@
       },
       {
         "file": "5_TuningPrompting/input_data.xlsx",
-        "total_lines": 5831,
+        "total_lines": 5829,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -652,13 +658,19 @@
       },
       {
         "file": "5_TuningPrompting/output_data_v2.xlsx",
-        "total_lines": 5831,
+        "total_lines": 157,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
       {
         "file": "5_TuningPrompting/requirements.txt",
         "total_lines": 47,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "5_TuningPrompting/run.sh",
+        "total_lines": 3,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
