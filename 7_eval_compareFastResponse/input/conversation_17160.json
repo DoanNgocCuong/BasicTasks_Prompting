@@ -1,0 +1,56 @@
+{
+  "status": 200,
+  "message": "Success",
+  "data": [
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Cậu ơi, hôm nay tụi mình sẽ luyện 2 âm cực kỳ thú vị, một âm rít như con rắn, và một âm trượt như cầu tuột luôn á! Nhưng trước khi học chi tiết, tụi mình sẽ kiểm tra nhanh xem cậu đã từng nghe hoặc nói được mấy từ này chưa nha! Are you ready?",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/34c688e4969d663d50e475b48e42dbc0_3_1.0.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "Are you ready?",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250617/8e271b3a-dd70-d57f-438c-f2b53a5b714e_1750130801786.wav"
+    },
+    {
+      "character": "FAST_RESPONSE",
+      "content": "Pika sẽ soi kỹ câu này một chút nha!",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/427119876a997131634fe60c62cb13f8_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Awesome! Pika is ready! Let’s learn! Cậu thử đọc to những từ này nha! Tớ sẽ hiện chữ và hình, cậu cứ đoán to lên nha, không cần đúng hết đâu! ",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/b2078a234a779e50dadda4b6e815dcb4_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Đây là gì trong tiếng Anh ta?",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/32d0181530b2859bf775c4af534feebd_3_1.0.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "Sun. Sun. Sun. Sun. Sun. Sun. Sun. Sun.",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250617/8e271b3a-dd70-d57f-438c-f2b53a5b714e_1750130833668.wav"
+    },
+    {
+      "character": "FAST_RESPONSE",
+      "content": "Hmm... this looks good! Let me confirm!",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/1a523301a03ea0b7497f41eac176868a_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "",
+      "audio": "https://smedia.stepup.edu.vn/thecoach/all_files/+5.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Yay! You got it right! ",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/049bcc5e7fce80e3bd338d0ba5ee2bca_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Tiếp nha, Cái này là gì trong tiếng Anh nhỉ?",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/5e24f7df7179731e49a98b985e0f2ad5_3_1.0.mp3"
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "status": 200,
+  "message": "Success",
+  "data": [
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Cậu ơi, hôm nay tụi mình sẽ luyện 2 âm cực kỳ thú vị, một âm rít như con rắn, và một âm trượt như cầu tuột luôn á! Nhưng trước khi học chi tiết, tụi mình sẽ kiểm tra nhanh xem cậu đã từng nghe hoặc nói được mấy từ này chưa nha! Are you ready?",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/34c688e4969d663d50e475b48e42dbc0_3_1.0.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "[NEXT]",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250623/ab5263d8-7181-dff3-bd58-2b6d84cce7b5_1750682889162.wav"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Pika biết bài này hơi khó xíu, nhưng mình sẽ làm cùng nhau! Cậu thử đọc to những từ này nha! Tớ sẽ hiện chữ và hình, cậu cứ đoán to lên nha, không cần đúng hết đâu! ",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/504f923b5a939c207a6266f76efdecaa_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Đây là gì trong tiếng Anh ta?",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/32d0181530b2859bf775c4af534feebd_3_1.0.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "Shan Shan Shan",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250623/ab5263d8-7181-dff3-bd58-2b6d84cce7b5_1750682916206.wav"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Chưa biết cũng không sao, tụi mình sẽ tìm hiểu sau.",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/3373080d3b5330b9e7a79c2d621a2001_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Cái này là gì trong tiếng Anh nhỉ?",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/dbedffef0e4f8bc7874a189ec4f9b743_3_1.0.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "Uh. Shh. Shh. Shh. Shh. Shh. Shh. Shh. Shh.",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250623/ab5263d8-7181-dff3-bd58-2b6d84cce7b5_1750682940504.wav"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Khó cũng không sao đâu, tụi mình sẽ học ngay bây giờ thôi",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/7c39e835c66d33ec9a5ef794a9d3bb36_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Tiếp theo, Cậu gọi con vật này trong tiếng Anh như thế nào?",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/e963b4b57181cc40ba9f4d931875a2e3_3_1.0.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "[NEXT]",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250623/ab5263d8-7181-dff3-bd58-2b6d84cce7b5_1750682958726.wav"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Chưa biết cũng không sao cả, quan trọng là cậu đã rất mạnh dạn đoán luôn.",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/6024c51b60c21050464c23c952ca3861_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Cùng Pika đoán tiếp nhé, Món đồ chơi này trong tiếng Anh nói sao cậu ơi?",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/c463a1b72e08325bb5fc8243c5dff4ca_3_1.0.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "kite",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250623/ab5263d8-7181-dff3-bd58-2b6d84cce7b5_1750682985857.wav"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "",
+      "audio": "https://smedia.stepup.edu.vn/thecoach/all_files/+5.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Well done! ",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/45c0435aebe45a2d1a1a69e4d77f5d2b_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Từ tiếp nha, Xe này gọi là gì trong tiếng Anh ta?",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/35f3d502022a44c1345e516ce0e17404_3_1.0.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "Mike Mike Mike Mike Mike Mike Mike Mike",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250623/ab5263d8-7181-dff3-bd58-2b6d84cce7b5_1750683015319.wav"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Hmm, chưa đúng rồi. Nhưng Pika sẽ chỉ ngay cho cậu nè. Bây giờ tụi mình cùng nhau học kỹ từng âm của mấy từ này nha!",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/74ca977d742d3238bed1b351b3e738ff_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Âm s nghe như tiếng con rắn đang rít. Mình dùng âm này trong các từ như sun, snake, sock nữa đó! ",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/648d4fb4acd15b7b3f45f62cd3216b8d_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Nghe và lặp lại theo tớ nha",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/bb55cc5e19b315eb22937945c492fa59_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "",
+      "audio": "https://smedia.stepup.edu.vn/thecoach/all_files/New-Recording-31.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "She",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250623/ab5263d8-7181-dff3-bd58-2b6d84cce7b5_1750683049754.wav"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Great, bây giờ tụi mình cùng luyện phát âm các từ có âm s nhé",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/704ea296b3b3614abc4b4b1f6b7b4e2e_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Sun, mặt trời sáng rực rỡ nè! ",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/f7793bb9ce83ff332ac0b7939520eb1b_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Cậu nói theo tớ nha: Sun!",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/142983f286d6f144214d1bda73924454_3_1.0.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "Shan Shan Shan",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250623/ab5263d8-7181-dff3-bd58-2b6d84cce7b5_1750683071482.wav"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Cậu phát âm nghiêm túc ghê! Pika nhìn là thấy siêu nỗ lực luôn á!",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/e7d86f9ace1c27869b2efa75be4e3f50_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Tiếp nè, Snake, con rắn siêu dài, siêu trườn. Lặp lại cùng tớ nào: Snake!",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/b9e50e0d7b72aed6e3f269ff2a6a59da_3_1.0.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "Snake! Snake! Snake!",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250623/ab5263d8-7181-dff3-bd58-2b6d84cce7b5_1750683090081.wav"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Tuyệt vời! Sss chuẩn luôn! Con rắn này sợ giọng cậu quá nên trốn mất tiêu rồi! ",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/5d6f927cfde5b7850deb4c1388c3ed0b_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Từ tiếp nha, Sock, cái vớ ấm áp mùa đông nè! Nói thử nha: Sock!",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/0ce9bf860113e5f2892237ee2f81ab3a_3_1.0.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "So",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250623/ab5263d8-7181-dff3-bd58-2b6d84cce7b5_1750683125509.wav"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Pika tặng huy chương vàng cho tinh thần luyện phát âm siêu bền bỉ của cậu!",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/5b1a86e6dc599bbeb97f427093b165a1_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Tới lượt phần khác rồi nè! Âm giữa trong từ kite giống như mình nói “ai da!” rồi trượt sang “i ngắn” nhẹ, miệng mở rồi khép lại. ",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/870919e00a665b83dac8f788cb0fb737_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Âm này nằm trong mấy từ quen lắm luôn! Kite, cánh diều bay cao.",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/2e5f48e176712eaea0bf2949bb1b779b_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Nghe và nói âm này cùng tớ nha",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/9c1f539f4af5272677b31b5c484a6768_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "",
+      "audio": "https://smedia.stepup.edu.vn/thecoach/all_files/New-Recording-32.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "Aye!",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250623/ab5263d8-7181-dff3-bd58-2b6d84cce7b5_1750683170336.wav"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Great job, bây giờ nói các từ chứa âm này nha. Nghe và nói lại với tớ nha: Kite!",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/091170f4e5bc32108b5ef2340e358cb6_3_1.0.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "kite kite kite kite kite kite kite",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250623/ab5263d8-7181-dff3-bd58-2b6d84cce7b5_1750683195928.wav"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Cậu nói giỏi lắm! Cánh diều bay vút lên trời luôn rồi nhờ giọng của cậu đó! ",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/76ae09a7bf23c7681759a0bd0b8c0ee5_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Từ tiếp nào, Bike, xe đạp 2 bánh! Cùng đạp một vòng Âm giữa trong từ kite nha: Bike!",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/42a4f8a7bcb253d76dea33f910b22f40_3_1.0.mp3"
+    },
+    {
+      "character": "USER",
+      "content": "Mike Mike Mike Mike Mike Mike Mike Mike",
+      "audio": "https://sufile.stepup.edu.vn/storage/robot/audio/user/250623/ab5263d8-7181-dff3-bd58-2b6d84cce7b5_1750683225525.wav"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Cậu luyện nói hết mình luôn đó! Tớ tự hào về cậu lắm!",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/68e6f4038ee15dfe0f05626cfbf97eb1_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": " Hôm nay tụi mình đã học 2 âm rất quan trọng. s – rít như rắn, dùng trong sun, sock, snake.aɪ – âm trượt trong kite, bike, slide. ",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/2e32c98f0d696229ede6ab64a9c625fe_3_1.0.mp3"
+    },
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Cậu ơi, sau khi chơi hoạt động vừa rồi, đâu là bức ảnh mô tả đúng nhất tâm trạng của cậu lúc này. Number 1, number 2 or number 3. Nói cho tớ biết nhé",
+      "audio": "http://tts-file-mgc-42.hacknao.edu.vn/data/tts_female_linh_v1/8d503adba7d9e69062b5c5eea1b515bf_3_1.0.mp3"
+    }
+  ]
+}

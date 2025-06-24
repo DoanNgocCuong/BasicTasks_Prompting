@@ -204,6 +204,264 @@
       "timestamp": "2025-06-24T04:34:00.125Z",
       "prompt": "def extract_conversations(self, data: Dict[Any, Any]) -> List[Dict[str, Any]]:\n    \"\"\"\n    Trích xuất và tổ chức dữ liệu conversation\n    \"\"\"\n    if 'data' not in data:\n        print(\"❌ Không tìm thấy key 'data' trong JSON\")\n        return []\n    \n    conversations = []\n    current_conversation = []\n    \n    for item in data['data']:\n        character = item.get('character', '')\n        content = item.get('content', '').strip()\n        \n        # Bỏ qua nếu content rỗng\n        if not content:\n            continue\n            \n        if character == 'BOT_RESPONSE_CONVERSATION':\n            current_conversation.append({\"role\": \"assistant\", \"content\": content})\n            \n        elif character == 'USER':\n            current_conversation.append({\"role\": \"user\", \"content\": content})\n            \n            # Khi gặp USER, tạo một conversation entry\n            conversations.append({\n                'conversation': current_conversation.copy(),\n                'next_fast_response': '',\n                'next_bot_response': ''\n            })\n    \n    # Cập nhật next_fast_response và next_bot_response\n    for i, item in enumerate(data['data']):\n        if item.get('character') == 'FAST_RESPONSE':\n            # Tìm conversation tương ứng để cập nhật\n            for conv in conversations:\n                if not conv['next_fast_response']:  # Cập nhật cho conversation chưa có fast_response\n                    conv['next_fast_response'] = item.get('content', '')\n                    break\n        elif item.get('character') == 'BOT_RESPONSE_CONVERSATION' and item.get('content', '').strip():\n            # Tìm conversation tương ứng để cập nhật next_bot_response\n            for conv in conversations:\n                if not conv['next_bot_response']:  # Cập nhật cho conversation chưa có bot_response\n                    conv['next_bot_response'] = item.get('content', '')\n                    break\n    \n    return conversations\n",
       "parent_inline_chat_id": null
+    },
+    {
+      "inline_chat_id": "a6eb339b-8a9f-4144-9cbd-b321e5c54751",
+      "file_diff": [
+        {
+          "file_path": "7_eval_compareFastResponse/run_eval_api_fast_response.py",
+          "diffs": [
+            {
+              "count": 16,
+              "added": false,
+              "removed": false,
+              "value": "import pandas as pd\r\nimport requests\r\nimport json\r\nimport time\r\nfrom typing import Dict, List, Any\r\nimport os\r\nimport time\r\n\r\nclass FastResponseEvaluator:\r\n    def __init__(self):\r\n        self.api_url = \"http://103.253.20.30:8990/fast_response/generate\"\r\n        self.headers = {\r\n            'accept': 'application/json',\r\n            'Content-Type': 'application/json'\r\n        }\r\n    \r\n"
+            },
+            {
+              "count": 17,
+              "added": false,
+              "removed": true,
+              "value": "def call_fast_response_api(self, conversations: List[Dict[str, str]]) -> tuple:\r\n    \"\"\"\r\n    Gọi API fast response và đo thời gian\r\n    \"\"\"\r\n    start_time = time.time()  # ← THÊM DÒNG NÀY\r\n    \r\n    payload = {\r\n        \"conversations\": conversations,\r\n        \"system_prompt\": \"You are QuickReact: detect the emotion in the latest message and reply instantly in its same language (English or Vietnamese) using 1-8 words (≤60 chars), keep it short enough with a friendly informal tone that mirrors and empathizes with that feeling (sad → soothe, happy → cheer, worried → reassure; emojis/!/? welcome); output only that text—never answer the question, just buy time until the main reply arrives.\",\r\n        \"model_name\": \"Qwen/Qwen3-4B\",\r\n        \"temperature\": 0.8,\r\n        \"top_p\": 1\r\n    }\r\n    \r\n    try:\r\n        response = requests.post(self.api_url, headers=self.headers, json=payload, timeout=30)\r\n        response.raise_for_status()\r\n"
+            },
+            {
+              "count": 5,
+              "added": true,
+              "removed": false,
+              "value": "    def call_fast_response_api(self, conversations: List[Dict[str, str]]) -> tuple:\r\n        \"\"\"\r\n        Gọi API fast response và đo thời gian\r\n        \"\"\"\r\n        start_time = time.time()  # ← THÊM DÒNG NÀY\r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "        \r\n"
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": true,
+              "value": "        end_time = time.time()  # ← THÊM DÒNG NÀY\r\n        response_time = round((end_time - start_time) * 1000, 2)  # ← THÊM DÒNG NÀY (milliseconds)\r\n"
+            },
+            {
+              "count": 7,
+              "added": true,
+              "removed": false,
+              "value": "        payload = {\r\n            \"conversations\": conversations,\r\n            \"system_prompt\": \"You are QuickReact: detect the emotion in the latest message and reply instantly in its same language (English or Vietnamese) using 1-8 words (≤60 chars), keep it short enough with a friendly informal tone that mirrors and empathizes with that feeling (sad → soothe, happy → cheer, worried → reassure; emojis/!/? welcome); output only that text—never answer the question, just buy time until the main reply arrives.\",\r\n            \"model_name\": \"Qwen/Qwen3-4B\",\r\n            \"temperature\": 0.8,\r\n            \"top_p\": 1\r\n        }\r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "        \r\n"
+            },
+            {
+              "count": 20,
+              "added": false,
+              "removed": true,
+              "value": "        result = response.json()\r\n        if isinstance(result, dict):\r\n            return result.get('response', result.get('content', str(result))), response_time  # ← SỬA DÒNG NÀY\r\n        return str(result), response_time  # ← SỬA DÒNG NÀY\r\n        \r\n    except requests.exceptions.Timeout:\r\n        end_time = time.time()  # ← THÊM DÒNG NÀY\r\n        response_time = round((end_time - start_time) * 1000, 2)  # ← THÊM DÒNG NÀY\r\n        print(\"⏰ API timeout\")\r\n        return \"API_TIMEOUT\", response_time  # ← SỬA DÒNG NÀY\r\n    except requests.exceptions.RequestException as e:\r\n        end_time = time.time()  # ← THÊM DÒNG NÀY\r\n        response_time = round((end_time - start_time) * 1000, 2)  # ← THÊM DÒNG NÀY\r\n        print(f\"❌ API Error: {e}\")\r\n        return f\"API_ERROR: {str(e)}\", response_time  # ← SỬA DÒNG NÀY\r\n    except Exception as e:\r\n        end_time = time.time()  # ← THÊM DÒNG NÀY\r\n        response_time = round((end_time - start_time) * 1000, 2)  # ← THÊM DÒNG NÀY\r\n        print(f\"❌ Unexpected error: {e}\")\r\n        return f\"ERROR: {str(e)}\", response_time  # ← SỬA DÒNG NÀY\r\n"
+            },
+            {
+              "count": 27,
+              "added": true,
+              "removed": false,
+              "value": "        try:\r\n            response = requests.post(self.api_url, headers=self.headers, json=payload, timeout=30)\r\n            response.raise_for_status()\r\n            \r\n            end_time = time.time()  # ← THÊM DÒNG NÀY\r\n            response_time = round((end_time - start_time) * 1000, 2)  # ← THÊM DÒNG NÀY (milliseconds)\r\n            \r\n            result = response.json()\r\n            if isinstance(result, dict):\r\n                return result.get('response', result.get('content', str(result))), response_time  # ← SỬA DÒNG NÀY\r\n            return str(result), response_time  # ← SỬA DÒNG NÀY\r\n            \r\n        except requests.exceptions.Timeout:\r\n            end_time = time.time()  # ← THÊM DÒNG NÀY\r\n            response_time = round((end_time - start_time) * 1000, 2)  # ← THÊM DÒNG NÀY\r\n            print(\"⏰ API timeout\")\r\n            return \"API_TIMEOUT\", response_time  # ← SỬA DÒNG NÀY\r\n        except requests.exceptions.RequestException as e:\r\n            end_time = time.time()  # ← THÊM DÒNG NÀY\r\n            response_time = round((end_time - start_time) * 1000, 2)  # ← THÊM DÒNG NÀY\r\n            print(f\"❌ API Error: {e}\")\r\n            return f\"API_ERROR: {str(e)}\", response_time  # ← SỬA DÒNG NÀY\r\n        except Exception as e:\r\n            end_time = time.time()  # ← THÊM DÒNG NÀY\r\n            response_time = round((end_time - start_time) * 1000, 2)  # ← THÊM DÒNG NÀY\r\n            print(f\"❌ Unexpected error: {e}\")\r\n            return f\"ERROR: {str(e)}\", response_time  # ← SỬA DÒNG NÀY\r\n"
+            },
+            {
+              "count": 78,
+              "added": false,
+              "removed": false,
+              "value": "    \r\n    def parse_conversation_string(self, conv_str: str) -> List[Dict[str, str]]:\r\n        \"\"\"\r\n        Parse conversation string thành list\r\n        \"\"\"\r\n        try:\r\n            return json.loads(conv_str)\r\n        except json.JSONDecodeError:\r\n            print(f\"❌ Lỗi parse conversation: {conv_str[:100]}...\")\r\n            return []\r\n    \r\n    def evaluate_excel_file(self, input_filepath: str, output_filepath: str) -> bool:\r\n        \"\"\"\r\n        Đánh giá file Excel và tạo file output\r\n        \"\"\"\r\n        try:\r\n            # Đọc file Excel\r\n            df = pd.read_excel(input_filepath)\r\n            print(f\"📊 Đã đọc {len(df)} rows từ {input_filepath}\")\r\n            \r\n            # Thêm cột generated_ai\r\n            df['generated_ai'] = ''\r\n            \r\n            # Xử lý từng row\r\n            for index, row in df.iterrows():\r\n                print(f\"🔄 Đang xử lý row {index + 1}/{len(df)}\")\r\n                \r\n                conv_str = row['BOT_RESPONSE_CONVERSATION_with_USER']\r\n                conversations = self.parse_conversation_string(conv_str)\r\n                \r\n                if conversations:\r\n                    # Gọi API\r\n                    generated_response = self.call_fast_response_api(conversations)\r\n                    df.at[index, 'generated_ai'] = generated_response\r\n                    \r\n                    # Delay để tránh spam API\r\n                    time.sleep(0.5)\r\n                else:\r\n                    df.at[index, 'generated_ai'] = \"PARSE_ERROR\"\r\n                \r\n                # In progress mỗi 10 rows\r\n                if (index + 1) % 10 == 0:\r\n                    print(f\"✅ Đã hoàn thành {index + 1}/{len(df)} rows\")\r\n            \r\n            # Lưu file output\r\n            df.to_excel(output_filepath, index=False, engine='openpyxl')\r\n            print(f\"✅ Đã lưu kết quả ra: {output_filepath}\")\r\n            \r\n            return True\r\n            \r\n        except Exception as e:\r\n            print(f\"❌ Lỗi khi đánh giá file: {e}\")\r\n            return False\r\n    \r\n    def evaluate_all_processed_files(self):\r\n        \"\"\"\r\n        Đánh giá tất cả file processed trong folder output\r\n        \"\"\"\r\n        if not os.path.exists('output'):\r\n            print(\"❌ Folder 'output' không tồn tại\")\r\n            return\r\n        \r\n        # Tạo folder eval nếu chưa có\r\n        if not os.path.exists('eval'):\r\n            os.makedirs('eval')\r\n        \r\n        for filename in os.listdir('output'):\r\n            if filename.endswith('_processed.xlsx'):\r\n                input_path = os.path.join('output', filename)\r\n                output_filename = filename.replace('_processed.xlsx', '_output_eval.xlsx')\r\n                output_path = os.path.join('eval', output_filename)\r\n                \r\n                print(f\"\\n🔄 Đang đánh giá: {filename}\")\r\n                self.evaluate_excel_file(input_path, output_path)\r\n\r\nif __name__ == \"__main__\":\r\n    evaluator = FastResponseEvaluator()\r\n    evaluator.evaluate_all_processed_files()\r\n"
+            }
+          ]
+        }
+      ],
+      "selection": null,
+      "timestamp": "2025-06-24T05:03:44.815Z",
+      "prompt": "# Thêm cột response_time\ndf['generated_ai'] = ''\ndf['response_time'] = ''  # ← THÊM DÒNG NÀY\n\n# Xử lý từng row\nfor index, row in df.iterrows():\n    print(f\"🔄 Đang xử lý row {index + 1}/{len(df)}\")\n    \n    conv_str = row['BOT_RESPONSE_CONVERSATION_with_USER']\n    conversations = self.parse_conversation_string(conv_str)\n    \n    if conversations:\n        # Gọi API\n        generated_response, response_time = self.call_fast_response_api(conversations)  # ← SỬA DÒNG NÀY\n        df.at[index, 'generated_ai'] = generated_response\n        df.at[index, 'response_time'] = response_time  # ← THÊM DÒNG NÀY\n        \n        # Delay để tránh spam API\n        time.sleep(0.5)\n    else:\n        df.at[index, 'generated_ai'] = \"PARSE_ERROR\"\n        df.at[index, 'response_time'] = 0  # ← THÊM DÒNG NÀY\n",
+      "parent_inline_chat_id": null
+    },
+    {
+      "inline_chat_id": "d9a5d837-2160-4556-baf5-de8a61d8ee64",
+      "file_diff": [
+        {
+          "file_path": "7_eval_compareFastResponse/run_eval_api_fast_response.py",
+          "diffs": [
+            {
+              "count": 77,
+              "added": false,
+              "removed": false,
+              "value": "import pandas as pd\r\nimport requests\r\nimport json\r\nimport time\r\nfrom typing import Dict, List, Any\r\nimport os\r\nimport time\r\n\r\nclass FastResponseEvaluator:\r\n    def __init__(self):\r\n        self.api_url = \"http://103.253.20.30:8990/fast_response/generate\"\r\n        self.headers = {\r\n            'accept': 'application/json',\r\n            'Content-Type': 'application/json'\r\n        }\r\n    \r\n    def call_fast_response_api(self, conversations: List[Dict[str, str]]) -> tuple:\r\n        \"\"\"\r\n        Gọi API fast response và đo thời gian\r\n        \"\"\"\r\n        start_time = time.time()  # ← THÊM DÒNG NÀY\r\n        \r\n        payload = {\r\n            \"conversations\": conversations,\r\n            \"system_prompt\": \"You are QuickReact: detect the emotion in the latest message and reply instantly in its same language (English or Vietnamese) using 1-8 words (≤60 chars), keep it short enough with a friendly informal tone that mirrors and empathizes with that feeling (sad → soothe, happy → cheer, worried → reassure; emojis/!/? welcome); output only that text—never answer the question, just buy time until the main reply arrives.\",\r\n            \"model_name\": \"Qwen/Qwen3-4B\",\r\n            \"temperature\": 0.8,\r\n            \"top_p\": 1\r\n        }\r\n        \r\n        try:\r\n            response = requests.post(self.api_url, headers=self.headers, json=payload, timeout=30)\r\n            response.raise_for_status()\r\n            \r\n            end_time = time.time()  # ← THÊM DÒNG NÀY\r\n            response_time = round((end_time - start_time) * 1000, 2)  # ← THÊM DÒNG NÀY (milliseconds)\r\n            \r\n            result = response.json()\r\n            if isinstance(result, dict):\r\n                return result.get('response', result.get('content', str(result))), response_time  # ← SỬA DÒNG NÀY\r\n            return str(result), response_time  # ← SỬA DÒNG NÀY\r\n            \r\n        except requests.exceptions.Timeout:\r\n            end_time = time.time()  # ← THÊM DÒNG NÀY\r\n            response_time = round((end_time - start_time) * 1000, 2)  # ← THÊM DÒNG NÀY\r\n            print(\"⏰ API timeout\")\r\n            return \"API_TIMEOUT\", response_time  # ← SỬA DÒNG NÀY\r\n        except requests.exceptions.RequestException as e:\r\n            end_time = time.time()  # ← THÊM DÒNG NÀY\r\n            response_time = round((end_time - start_time) * 1000, 2)  # ← THÊM DÒNG NÀY\r\n            print(f\"❌ API Error: {e}\")\r\n            return f\"API_ERROR: {str(e)}\", response_time  # ← SỬA DÒNG NÀY\r\n        except Exception as e:\r\n            end_time = time.time()  # ← THÊM DÒNG NÀY\r\n            response_time = round((end_time - start_time) * 1000, 2)  # ← THÊM DÒNG NÀY\r\n            print(f\"❌ Unexpected error: {e}\")\r\n            return f\"ERROR: {str(e)}\", response_time  # ← SỬA DÒNG NÀY\r\n    \r\n    def parse_conversation_string(self, conv_str: str) -> List[Dict[str, str]]:\r\n        \"\"\"\r\n        Parse conversation string thành list\r\n        \"\"\"\r\n        try:\r\n            return json.loads(conv_str)\r\n        except json.JSONDecodeError:\r\n            print(f\"❌ Lỗi parse conversation: {conv_str[:100]}...\")\r\n            return []\r\n    \r\n    def evaluate_excel_file(self, input_filepath: str, output_filepath: str) -> bool:\r\n        \"\"\"\r\n        Đánh giá file Excel và tạo file output\r\n        \"\"\"\r\n        try:\r\n            # Đọc file Excel\r\n            df = pd.read_excel(input_filepath)\r\n            print(f\"📊 Đã đọc {len(df)} rows từ {input_filepath}\")\r\n            \r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "            # Thêm cột generated_ai và response_time\r\n"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "            # Thêm cột generated_ai\r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "            df['generated_ai'] = ''\r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "            df['response_time'] = ''  # ← THÊM DÒNG NÀY\r\n"
+            },
+            {
+              "count": 10,
+              "added": false,
+              "removed": false,
+              "value": "            \r\n            # Xử lý từng row\r\n            for index, row in df.iterrows():\r\n                print(f\"🔄 Đang xử lý row {index + 1}/{len(df)}\")\r\n                \r\n                conv_str = row['BOT_RESPONSE_CONVERSATION_with_USER']\r\n                conversations = self.parse_conversation_string(conv_str)\r\n                \r\n                if conversations:\r\n                    # Gọi API\r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "                    generated_response, response_time = self.call_fast_response_api(conversations)  # ← SỬA DÒNG NÀY\r\n"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "                    generated_response = self.call_fast_response_api(conversations)\r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "                    df.at[index, 'generated_ai'] = generated_response\r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "                    df.at[index, 'response_time'] = response_time  # ← THÊM DÒNG NÀY\r\n"
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": "                    \r\n                    # Delay để tránh spam API\r\n                    time.sleep(0.5)\r\n                else:\r\n                    df.at[index, 'generated_ai'] = \"PARSE_ERROR\"\r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "                    df.at[index, 'response_time'] = 0  # ← THÊM DÒNG NÀY\r\n"
+            },
+            {
+              "count": 39,
+              "added": false,
+              "removed": false,
+              "value": "                \r\n                # In progress mỗi 10 rows\r\n                if (index + 1) % 10 == 0:\r\n                    print(f\"✅ Đã hoàn thành {index + 1}/{len(df)} rows\")\r\n            \r\n            # Lưu file output\r\n            df.to_excel(output_filepath, index=False, engine='openpyxl')\r\n            print(f\"✅ Đã lưu kết quả ra: {output_filepath}\")\r\n            \r\n            return True\r\n            \r\n        except Exception as e:\r\n            print(f\"❌ Lỗi khi đánh giá file: {e}\")\r\n            return False\r\n    \r\n    def evaluate_all_processed_files(self):\r\n        \"\"\"\r\n        Đánh giá tất cả file processed trong folder output\r\n        \"\"\"\r\n        if not os.path.exists('output'):\r\n            print(\"❌ Folder 'output' không tồn tại\")\r\n            return\r\n        \r\n        # Tạo folder eval nếu chưa có\r\n        if not os.path.exists('eval'):\r\n            os.makedirs('eval')\r\n        \r\n        for filename in os.listdir('output'):\r\n            if filename.endswith('_processed.xlsx'):\r\n                input_path = os.path.join('output', filename)\r\n                output_filename = filename.replace('_processed.xlsx', '_output_eval.xlsx')\r\n                output_path = os.path.join('eval', output_filename)\r\n                \r\n                print(f\"\\n🔄 Đang đánh giá: {filename}\")\r\n                self.evaluate_excel_file(input_path, output_path)\r\n\r\nif __name__ == \"__main__\":\r\n    evaluator = FastResponseEvaluator()\r\n    evaluator.evaluate_all_processed_files()\r\n"
+            }
+          ]
+        }
+      ],
+      "selection": null,
+      "timestamp": "2025-06-24T05:04:14.600Z",
+      "prompt": "# Thêm cột response_time\ndf['generated_ai'] = ''\ndf['response_time'] = ''  # ← THÊM DÒNG NÀY\n\n# Xử lý từng row\nfor index, row in df.iterrows():\n    print(f\"🔄 Đang xử lý row {index + 1}/{len(df)}\")\n    \n    conv_str = row['BOT_RESPONSE_CONVERSATION_with_USER']\n    conversations = self.parse_conversation_string(conv_str)\n    \n    if conversations:\n        # Gọi API\n        generated_response, response_time = self.call_fast_response_api(conversations)  # ← SỬA DÒNG NÀY\n        df.at[index, 'generated_ai'] = generated_response\n        df.at[index, 'response_time'] = response_time  # ← THÊM DÒNG NÀY\n        \n        # Delay để tránh spam API\n        time.sleep(0.5)\n    else:\n        df.at[index, 'generated_ai'] = \"PARSE_ERROR\"\n        df.at[index, 'response_time'] = 0  # ← THÊM DÒNG NÀY",
+      "parent_inline_chat_id": null
+    },
+    {
+      "inline_chat_id": "08ed8a0d-e3af-4f96-94ac-c8ea2c7ebb21",
+      "file_diff": [
+        {
+          "file_path": "7_eval_compareFastResponse/run_eval_api_fast_response.py",
+          "diffs": [
+            {
+              "count": 77,
+              "added": false,
+              "removed": false,
+              "value": "import pandas as pd\r\nimport requests\r\nimport json\r\nimport time\r\nfrom typing import Dict, List, Any\r\nimport os\r\nimport time\r\n\r\nclass FastResponseEvaluator:\r\n    def __init__(self):\r\n        self.api_url = \"http://103.253.20.30:8990/fast_response/generate\"\r\n        self.headers = {\r\n            'accept': 'application/json',\r\n            'Content-Type': 'application/json'\r\n        }\r\n    \r\n    def call_fast_response_api(self, conversations: List[Dict[str, str]]) -> tuple:\r\n        \"\"\"\r\n        Gọi API fast response và đo thời gian\r\n        \"\"\"\r\n        start_time = time.time()  # ← THÊM DÒNG NÀY\r\n        \r\n        payload = {\r\n            \"conversations\": conversations,\r\n            \"system_prompt\": \"You are QuickReact: detect the emotion in the latest message and reply instantly in its same language (English or Vietnamese) using 1-8 words (≤60 chars), keep it short enough with a friendly informal tone that mirrors and empathizes with that feeling (sad → soothe, happy → cheer, worried → reassure; emojis/!/? welcome); output only that text—never answer the question, just buy time until the main reply arrives.\",\r\n            \"model_name\": \"Qwen/Qwen3-4B\",\r\n            \"temperature\": 0.8,\r\n            \"top_p\": 1\r\n        }\r\n        \r\n        try:\r\n            response = requests.post(self.api_url, headers=self.headers, json=payload, timeout=30)\r\n            response.raise_for_status()\r\n            \r\n            end_time = time.time()  # ← THÊM DÒNG NÀY\r\n            response_time = round((end_time - start_time) * 1000, 2)  # ← THÊM DÒNG NÀY (milliseconds)\r\n            \r\n            result = response.json()\r\n            if isinstance(result, dict):\r\n                return result.get('response', result.get('content', str(result))), response_time  # ← SỬA DÒNG NÀY\r\n            return str(result), response_time  # ← SỬA DÒNG NÀY\r\n            \r\n        except requests.exceptions.Timeout:\r\n            end_time = time.time()  # ← THÊM DÒNG NÀY\r\n            response_time = round((end_time - start_time) * 1000, 2)  # ← THÊM DÒNG NÀY\r\n            print(\"⏰ API timeout\")\r\n            return \"API_TIMEOUT\", response_time  # ← SỬA DÒNG NÀY\r\n        except requests.exceptions.RequestException as e:\r\n            end_time = time.time()  # ← THÊM DÒNG NÀY\r\n            response_time = round((end_time - start_time) * 1000, 2)  # ← THÊM DÒNG NÀY\r\n            print(f\"❌ API Error: {e}\")\r\n            return f\"API_ERROR: {str(e)}\", response_time  # ← SỬA DÒNG NÀY\r\n        except Exception as e:\r\n            end_time = time.time()  # ← THÊM DÒNG NÀY\r\n            response_time = round((end_time - start_time) * 1000, 2)  # ← THÊM DÒNG NÀY\r\n            print(f\"❌ Unexpected error: {e}\")\r\n            return f\"ERROR: {str(e)}\", response_time  # ← SỬA DÒNG NÀY\r\n    \r\n    def parse_conversation_string(self, conv_str: str) -> List[Dict[str, str]]:\r\n        \"\"\"\r\n        Parse conversation string thành list\r\n        \"\"\"\r\n        try:\r\n            return json.loads(conv_str)\r\n        except json.JSONDecodeError:\r\n            print(f\"❌ Lỗi parse conversation: {conv_str[:100]}...\")\r\n            return []\r\n    \r\n    def evaluate_excel_file(self, input_filepath: str, output_filepath: str) -> bool:\r\n        \"\"\"\r\n        Đánh giá file Excel và tạo file output\r\n        \"\"\"\r\n        try:\r\n            # Đọc file Excel\r\n            df = pd.read_excel(input_filepath)\r\n            print(f\"📊 Đã đọc {len(df)} rows từ {input_filepath}\")\r\n            \r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "            # Thêm cột generated_ai\r\n"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "            # Thêm cột generated_ai và response_time\r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "            df['generated_ai'] = ''\r\n"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "            df['response_time'] = ''  # ← THÊM DÒNG NÀY\r\n"
+            },
+            {
+              "count": 10,
+              "added": false,
+              "removed": false,
+              "value": "            \r\n            # Xử lý từng row\r\n            for index, row in df.iterrows():\r\n                print(f\"🔄 Đang xử lý row {index + 1}/{len(df)}\")\r\n                \r\n                conv_str = row['BOT_RESPONSE_CONVERSATION_with_USER']\r\n                conversations = self.parse_conversation_string(conv_str)\r\n                \r\n                if conversations:\r\n                    # Gọi API\r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "                    generated_response = self.call_fast_response_api(conversations)\r\n"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "                    generated_response, response_time = self.call_fast_response_api(conversations)  # ← SỬA DÒNG NÀY\r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "                    df.at[index, 'generated_ai'] = generated_response\r\n"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "                    df.at[index, 'response_time'] = response_time  # ← THÊM DÒNG NÀY\r\n"
+            },
+            {
+              "count": 5,
+              "added": false,
+              "removed": false,
+              "value": "                    \r\n                    # Delay để tránh spam API\r\n                    time.sleep(0.5)\r\n                else:\r\n                    df.at[index, 'generated_ai'] = \"PARSE_ERROR\"\r\n"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "                    df.at[index, 'response_time'] = 0  # ← THÊM DÒNG NÀY\r\n"
+            },
+            {
+              "count": 39,
+              "added": false,
+              "removed": false,
+              "value": "                \r\n                # In progress mỗi 10 rows\r\n                if (index + 1) % 10 == 0:\r\n                    print(f\"✅ Đã hoàn thành {index + 1}/{len(df)} rows\")\r\n            \r\n            # Lưu file output\r\n            df.to_excel(output_filepath, index=False, engine='openpyxl')\r\n            print(f\"✅ Đã lưu kết quả ra: {output_filepath}\")\r\n            \r\n            return True\r\n            \r\n        except Exception as e:\r\n            print(f\"❌ Lỗi khi đánh giá file: {e}\")\r\n            return False\r\n    \r\n    def evaluate_all_processed_files(self):\r\n        \"\"\"\r\n        Đánh giá tất cả file processed trong folder output\r\n        \"\"\"\r\n        if not os.path.exists('output'):\r\n            print(\"❌ Folder 'output' không tồn tại\")\r\n            return\r\n        \r\n        # Tạo folder eval nếu chưa có\r\n        if not os.path.exists('eval'):\r\n            os.makedirs('eval')\r\n        \r\n        for filename in os.listdir('output'):\r\n            if filename.endswith('_processed.xlsx'):\r\n                input_path = os.path.join('output', filename)\r\n                output_filename = filename.replace('_processed.xlsx', '_output_eval.xlsx')\r\n                output_path = os.path.join('eval', output_filename)\r\n                \r\n                print(f\"\\n🔄 Đang đánh giá: {filename}\")\r\n                self.evaluate_excel_file(input_path, output_path)\r\n\r\nif __name__ == \"__main__\":\r\n    evaluator = FastResponseEvaluator()\r\n    evaluator.evaluate_all_processed_files()\r\n"
+            }
+          ]
+        }
+      ],
+      "selection": null,
+      "timestamp": "2025-06-24T05:05:06.394Z",
+      "prompt": "summary_data.append({\n    'ID': result['id'],\n    'Fetch Status': result['fetch_status'],\n    'Process Status': result['process_status'],\n    'Eval Status': result['eval_status'],\n    'Input File': result['input_file'],\n    'Processed File': result['processed_file'],\n    'Eval File': result['eval_file'],\n    'Avg Response Time (ms)': self.calculate_avg_response_time(result['eval_file']) if result['eval_status'] == 'SUCCESS' else 0  # ← THÊM DÒNG NÀY (optional)\n})",
+      "parent_inline_chat_id": null
     }
   ],
   "schemaVersion": "1.0",
@@ -212,8 +470,8 @@
     "deletedPanelChatIDs": []
   },
   "kv_store": {
-    "unique_matched_lines_count": 18,
-    "total_repo_line_count": 359515,
+    "unique_matched_lines_count": 98,
+    "total_repo_line_count": 362902,
     "best_prompt_response": null,
     "file_statistics": [
       {
@@ -1175,6 +1433,204 @@
         "total_lines": 35,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/.md",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/README.md",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/cmd_run.sh",
+        "total_lines": 7,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/docs_processed.md",
+        "total_lines": 451,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/docs_requirements_.md",
+        "total_lines": 196,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/eval/conversation_17485_output_eval.xlsx",
+        "total_lines": 38,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/eval/conversation_17486_output_eval.xlsx",
+        "total_lines": 23,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/eval/conversation_17487_output_eval.xlsx",
+        "total_lines": 25,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/eval/conversation_17488_output_eval.xlsx",
+        "total_lines": 31,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/eval/conversation_17489_output_eval.xlsx",
+        "total_lines": 33,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/example_output/eval/conversation_8532_output_eval.xlsx",
+        "total_lines": 23,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/example_output/fast_response_evaluation_20250624_113822.xlsx",
+        "total_lines": 72,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/example_output/final/fast_response_evaluation_20250624_113349.xlsx",
+        "total_lines": 31,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/example_output/input/conversation_8532.json",
+        "total_lines": 106,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/example_output/output/conversation_8532_processed.xlsx",
+        "total_lines": 25,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/final/fast_response_evaluation_20250624_113822.xlsx",
+        "total_lines": 72,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/get_data_conversation.py",
+        "total_lines": 75,
+        "ai_generated_lines": 3,
+        "ai_generated_percentage": 4
+      },
+      {
+        "file": "7_eval_compareFastResponse/ids.example",
+        "total_lines": 3,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/ids.txt",
+        "total_lines": 5,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/input/conversation_17485.json",
+        "total_lines": 176,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/input/conversation_17486.json",
+        "total_lines": 146,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/input/conversation_17487.json",
+        "total_lines": 46,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/input/conversation_17488.json",
+        "total_lines": 176,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/input/conversation_17489.json",
+        "total_lines": 301,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/main.py",
+        "total_lines": 229,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/output/conversation_17485_processed.xlsx",
+        "total_lines": 27,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/output/conversation_17486_processed.xlsx",
+        "total_lines": 26,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/output/conversation_17487_processed.xlsx",
+        "total_lines": 21,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/output/conversation_17488_processed.xlsx",
+        "total_lines": 27,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/output/conversation_17489_processed.xlsx",
+        "total_lines": 31,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/processed.py",
+        "total_lines": 154,
+        "ai_generated_lines": 11,
+        "ai_generated_percentage": 7.142857142857142
+      },
+      {
+        "file": "7_eval_compareFastResponse/run_eval_api_fast_response.py",
+        "total_lines": 139,
+        "ai_generated_lines": 41,
+        "ai_generated_percentage": 29.496402877697843
+      },
+      {
+        "file": "7_eval_compareFastResponse/v1.1_genspark.md",
+        "total_lines": 670,
+        "ai_generated_lines": 25,
+        "ai_generated_percentage": 3.731343283582089
       },
       {
         "file": "8_Package_Agent/ApiClientB.md",

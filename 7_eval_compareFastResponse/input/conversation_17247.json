@@ -1,0 +1,11 @@
+{
+  "status": 200,
+  "message": "Success",
+  "data": [
+    {
+      "character": "BOT_RESPONSE_CONVERSATION",
+      "content": "Cậu ơi, hôm nay tụi mình sẽ luyện 2 âm cực kỳ thú vị, một âm rít như con rắn, và một âm trượt như cầu tuột luôn á! Nhưng trước khi học chi tiết, tụi mình sẽ kiểm tra nhanh xem cậu đã từng nghe hoặc nói được mấy từ này chưa nha! Are you ready?",
+      "audio": "http://tts-file-mgc-52.hacknao.edu.vn/data/tts_female_linh_v1/34c688e4969d663d50e475b48e42dbc0_3_1.0.mp3"
+    }
+  ]
+}
