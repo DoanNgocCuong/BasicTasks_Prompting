@@ -26,6 +26,184 @@
       "timestamp": "2025-03-18T23:54:24.676Z",
       "prompt": "def parse_arguments():\n    parser = argparse.ArgumentParser(description='Process conversations with OpenAI API')\n    parser.add_argument('--num-rows', type=int, default=None,\n                      help='Number of rows to process (default: all rows)')\n    parser.add_argument('--input-file', type=str, default='input_data.xlsx',\n                      help='Input Excel file path (default: input_data.xlsx)')\n    parser.add_argument('--output-file', type=str, default='output_data_v2.xlsx',\n                      help='Output Excel file path (default: output_data_v2.xlsx)')\n    parser.add_argument('--sheet', type=str, default='Trang tính1',\n                      help='Excel sheet name to process (default: Trang tính1)')\n    parser.add_argument('--batch-size', type=int, default=4,\n                      help='Number of items to process in each batch (default: 4)')\n    parser.add_argument('--max-workers', type=int, default=4,\n                      help='Maximum number of worker threads (default: 4)')\n    return parser.parse_args()\n\n\nupdate các kiểu run ",
       "parent_inline_chat_id": null
+    },
+    {
+      "inline_chat_id": "78ad52cf-6415-4683-b2ac-9bbd02556b93",
+      "file_diff": [
+        {
+          "file_path": "7_eval_compareFastResponse/processed.py",
+          "diffs": [
+            {
+              "count": 36,
+              "added": false,
+              "removed": false,
+              "value": "import json\r\nimport pandas as pd\r\nimport os\r\nfrom typing import List, Dict, Any\r\n\r\nclass ConversationProcessor:\r\n    def __init__(self):\r\n        pass\r\n    \r\n    def load_json_data(self, filepath: str) -> Dict[Any, Any]:\r\n        \"\"\"\r\n        Load dữ liệu từ file JSON\r\n        \"\"\"\r\n        try:\r\n            with open(filepath, 'r', encoding='utf-8') as f:\r\n                data = json.load(f)\r\n            return data\r\n        except Exception as e:\r\n            print(f\"❌ Lỗi khi đọc file {filepath}: {e}\")\r\n            return {}\r\n    \r\n    def extract_conversations(self, data: Dict[Any, Any]) -> List[Dict[str, Any]]:\r\n        \"\"\"\r\n        Trích xuất và tổ chức dữ liệu conversation\r\n        \"\"\"\r\n        if 'data' not in data:\r\n            print(\"❌ Không tìm thấy key 'data' trong JSON\")\r\n            return []\r\n        \r\n        conversations = []\r\n        current_conversation = []\r\n        \r\n        for item in data['data']:\r\n            character = item.get('character', '')\r\n            content = item.get('content', '')\r\n            \r\n"
+            },
+            {
+              "count": 4,
+              "added": true,
+              "removed": false,
+              "value": "            # Bỏ qua nếu content rỗng\r\n            if not content.strip():\r\n                continue\r\n                \r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "            if character == 'BOT_RESPONSE_CONVERSATION':\r\n"
+            },
+            {
+              "count": 7,
+              "added": false,
+              "removed": true,
+              "value": "                if current_conversation:\r\n                    # Kết thúc conversation hiện tại\r\n                    conversations.append({\r\n                        'conversation': current_conversation.copy(),\r\n                        'next_fast_response': '',\r\n                        'next_bot_response': content\r\n                    })\r\n"
+            },
+            {
+              "count": 7,
+              "added": true,
+              "removed": false,
+              "value": "                current_conversation.append({\"role\": \"assistant\", \"content\": content})\r\n                # Lưu conversation hiện tại\r\n                conversations.append({\r\n                    'conversation': current_conversation.copy(),\r\n                    'next_fast_response': '',\r\n                    'next_bot_response': ''\r\n                })\r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "                \r\n"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": true,
+              "value": "                # Bắt đầu conversation mới\r\n                current_conversation = [{\"role\": \"assistant\", \"content\": content}]\r\n                \r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": false,
+              "value": "            elif character == 'USER':\r\n"
+            },
+            {
+              "count": 7,
+              "added": false,
+              "removed": true,
+              "value": "                if content != '-':  # Bỏ qua user input rỗng\r\n                    current_conversation.append({\"role\": \"user\", \"content\": content})\r\n                    \r\n            elif character == 'FAST_RESPONSE':\r\n                # Cập nhật fast response cho conversation gần nhất\r\n                if conversations:\r\n                    conversations[-1]['next_fast_response'] = content\r\n"
+            },
+            {
+              "count": 7,
+              "added": true,
+              "removed": false,
+              "value": "                current_conversation.append({\"role\": \"user\", \"content\": content})\r\n                # Lưu conversation hiện tại sau khi có user input\r\n                conversations.append({\r\n                    'conversation': current_conversation.copy(),\r\n                    'next_fast_response': '',\r\n                    'next_bot_response': ''\r\n                })\r\n"
+            },
+            {
+              "count": 80,
+              "added": false,
+              "removed": false,
+              "value": "        \r\n        return conversations\r\n    \r\n    def format_conversation_column(self, conversation: List[Dict[str, str]]) -> str:\r\n        \"\"\"\r\n        Format conversation thành string JSON\r\n        \"\"\"\r\n        return json.dumps(conversation, ensure_ascii=False)\r\n    \r\n    def process_to_dataframe(self, conversations: List[Dict[str, Any]]) -> pd.DataFrame:\r\n        \"\"\"\r\n        Chuyển đổi conversations thành DataFrame\r\n        \"\"\"\r\n        processed_data = []\r\n        \r\n        for conv in conversations:\r\n            processed_data.append({\r\n                'BOT_RESPONSE_CONVERSATION_with_USER': self.format_conversation_column(conv['conversation']),\r\n                'FAST_RESPONSE_next': conv['next_fast_response'],\r\n                'BOT_RESPONSE_CONVERSATION_next': conv['next_bot_response']\r\n            })\r\n        \r\n        return pd.DataFrame(processed_data)\r\n    \r\n    def process_file(self, input_filepath: str, output_filepath: str) -> bool:\r\n        \"\"\"\r\n        Xử lý file JSON và xuất ra Excel\r\n        \"\"\"\r\n        try:\r\n            # Load dữ liệu\r\n            data = self.load_json_data(input_filepath)\r\n            if not data:\r\n                return False\r\n            \r\n            # Trích xuất conversations\r\n            conversations = self.extract_conversations(data)\r\n            if not conversations:\r\n                print(\"❌ Không tìm thấy conversation nào\")\r\n                return False\r\n            \r\n            # Tạo DataFrame\r\n            df = self.process_to_dataframe(conversations)\r\n            \r\n            # Xuất ra Excel\r\n            df.to_excel(output_filepath, index=False, engine='openpyxl')\r\n            print(f\"✅ Đã xuất dữ liệu ra: {output_filepath}\")\r\n            print(f\"📊 Số lượng conversations: {len(conversations)}\")\r\n            \r\n            return True\r\n            \r\n        except Exception as e:\r\n            print(f\"❌ Lỗi khi xử lý file: {e}\")\r\n            return False\r\n\r\ndef process_all_input_files():\r\n    \"\"\"\r\n    Xử lý tất cả file trong folder input\r\n    \"\"\"\r\n    processor = ConversationProcessor()\r\n    \r\n    if not os.path.exists('input'):\r\n        print(\"❌ Folder 'input' không tồn tại\")\r\n        return\r\n    \r\n    # Tạo folder output nếu chưa có\r\n    if not os.path.exists('output'):\r\n        os.makedirs('output')\r\n    \r\n    # Xử lý từng file JSON trong folder input\r\n    for filename in os.listdir('input'):\r\n        if filename.endswith('.json'):\r\n            input_path = os.path.join('input', filename)\r\n            output_filename = filename.replace('.json', '_processed.xlsx')\r\n            output_path = os.path.join('output', output_filename)\r\n            \r\n            print(f\"\\n🔄 Đang xử lý: {filename}\")\r\n            processor.process_file(input_path, output_path)\r\n\r\nif __name__ == \"__main__\":\r\n    process_all_input_files()\r\n"
+            }
+          ]
+        }
+      ],
+      "selection": null,
+      "timestamp": "2025-06-24T04:31:41.821Z",
+      "prompt": "def extract_conversations(self, data: Dict[Any, Any]) -> List[Dict[str, Any]]:\n    \"\"\"\n    Trích xuất và tổ chức dữ liệu conversation\n    \"\"\"\n    if 'data' not in data:\n        print(\"❌ Không tìm thấy key 'data' trong JSON\")\n        return []\n    \n    conversations = []\n    current_conversation = []\n    \n    for item in data['data']:\n        character = item.get('character', '')\n        content = item.get('content', '')\n        \n        # Bỏ qua nếu content rỗng\n        if not content.strip():\n            continue\n            \n        if character == 'BOT_RESPONSE_CONVERSATION':\n            current_conversation.append({\"role\": \"assistant\", \"content\": content})\n            # Lưu conversation hiện tại\n            conversations.append({\n                'conversation': current_conversation.copy(),\n                'next_fast_response': '',\n                'next_bot_response': ''\n            })\n            \n        elif character == 'USER':\n            current_conversation.append({\"role\": \"user\", \"content\": content})\n            # Lưu conversation hiện tại sau khi có user input\n            conversations.append({\n                'conversation': current_conversation.copy(),\n                'next_fast_response': '',\n                'next_bot_response': ''\n            })\n    \n    return conversations",
+      "parent_inline_chat_id": null
+    },
+    {
+      "inline_chat_id": "79bff3ea-3f1b-498c-9a24-848164384869",
+      "file_diff": [
+        {
+          "file_path": "7_eval_compareFastResponse/processed.py",
+          "diffs": [
+            {
+              "count": 34,
+              "added": false,
+              "removed": false,
+              "value": "import json\r\nimport pandas as pd\r\nimport os\r\nfrom typing import List, Dict, Any\r\n\r\nclass ConversationProcessor:\r\n    def __init__(self):\r\n        pass\r\n    \r\n    def load_json_data(self, filepath: str) -> Dict[Any, Any]:\r\n        \"\"\"\r\n        Load dữ liệu từ file JSON\r\n        \"\"\"\r\n        try:\r\n            with open(filepath, 'r', encoding='utf-8') as f:\r\n                data = json.load(f)\r\n            return data\r\n        except Exception as e:\r\n            print(f\"❌ Lỗi khi đọc file {filepath}: {e}\")\r\n            return {}\r\n    \r\n    def extract_conversations(self, data: Dict[Any, Any]) -> List[Dict[str, Any]]:\r\n        \"\"\"\r\n        Trích xuất và tổ chức dữ liệu conversation\r\n        \"\"\"\r\n        if 'data' not in data:\r\n            print(\"❌ Không tìm thấy key 'data' trong JSON\")\r\n            return []\r\n        \r\n        conversations = []\r\n        current_conversation = []\r\n        \r\n        for item in data['data']:\r\n            character = item.get('character', '')\r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "            content = item.get('content', '')\r\n"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "            content = item.get('content', '').strip()\r\n"
+            },
+            {
+              "count": 2,
+              "added": false,
+              "removed": false,
+              "value": "            \r\n            # Bỏ qua nếu content rỗng\r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "            if not content.strip():\r\n"
+            },
+            {
+              "count": 1,
+              "added": true,
+              "removed": false,
+              "value": "            if not content:\r\n"
+            },
+            {
+              "count": 4,
+              "added": false,
+              "removed": false,
+              "value": "                continue\r\n                \r\n            if character == 'BOT_RESPONSE_CONVERSATION':\r\n                current_conversation.append({\"role\": \"assistant\", \"content\": content})\r\n"
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": true,
+              "value": "                # Lưu conversation hiện tại\r\n                conversations.append({\r\n                    'conversation': current_conversation.copy(),\r\n                    'next_fast_response': '',\r\n                    'next_bot_response': ''\r\n                })\r\n"
+            },
+            {
+              "count": 3,
+              "added": false,
+              "removed": false,
+              "value": "                \r\n            elif character == 'USER':\r\n                current_conversation.append({\"role\": \"user\", \"content\": content})\r\n"
+            },
+            {
+              "count": 1,
+              "added": false,
+              "removed": true,
+              "value": "                # Lưu conversation hiện tại sau khi có user input\r\n"
+            },
+            {
+              "count": 2,
+              "added": true,
+              "removed": false,
+              "value": "                \r\n                # Khi gặp USER, tạo một conversation entry\r\n"
+            },
+            {
+              "count": 6,
+              "added": false,
+              "removed": false,
+              "value": "                conversations.append({\r\n                    'conversation': current_conversation.copy(),\r\n                    'next_fast_response': '',\r\n                    'next_bot_response': ''\r\n                })\r\n        \r\n"
+            },
+            {
+              "count": 15,
+              "added": true,
+              "removed": false,
+              "value": "        # Cập nhật next_fast_response và next_bot_response\r\n        for i, item in enumerate(data['data']):\r\n            if item.get('character') == 'FAST_RESPONSE':\r\n                # Tìm conversation tương ứng để cập nhật\r\n                for conv in conversations:\r\n                    if not conv['next_fast_response']:  # Cập nhật cho conversation chưa có fast_response\r\n                        conv['next_fast_response'] = item.get('content', '')\r\n                        break\r\n            elif item.get('character') == 'BOT_RESPONSE_CONVERSATION' and item.get('content', '').strip():\r\n                # Tìm conversation tương ứng để cập nhật next_bot_response\r\n                for conv in conversations:\r\n                    if not conv['next_bot_response']:  # Cập nhật cho conversation chưa có bot_response\r\n                        conv['next_bot_response'] = item.get('content', '')\r\n                        break\r\n        \r\n"
+            },
+            {
+              "count": 79,
+              "added": false,
+              "removed": false,
+              "value": "        return conversations\r\n    \r\n    def format_conversation_column(self, conversation: List[Dict[str, str]]) -> str:\r\n        \"\"\"\r\n        Format conversation thành string JSON\r\n        \"\"\"\r\n        return json.dumps(conversation, ensure_ascii=False)\r\n    \r\n    def process_to_dataframe(self, conversations: List[Dict[str, Any]]) -> pd.DataFrame:\r\n        \"\"\"\r\n        Chuyển đổi conversations thành DataFrame\r\n        \"\"\"\r\n        processed_data = []\r\n        \r\n        for conv in conversations:\r\n            processed_data.append({\r\n                'BOT_RESPONSE_CONVERSATION_with_USER': self.format_conversation_column(conv['conversation']),\r\n                'FAST_RESPONSE_next': conv['next_fast_response'],\r\n                'BOT_RESPONSE_CONVERSATION_next': conv['next_bot_response']\r\n            })\r\n        \r\n        return pd.DataFrame(processed_data)\r\n    \r\n    def process_file(self, input_filepath: str, output_filepath: str) -> bool:\r\n        \"\"\"\r\n        Xử lý file JSON và xuất ra Excel\r\n        \"\"\"\r\n        try:\r\n            # Load dữ liệu\r\n            data = self.load_json_data(input_filepath)\r\n            if not data:\r\n                return False\r\n            \r\n            # Trích xuất conversations\r\n            conversations = self.extract_conversations(data)\r\n            if not conversations:\r\n                print(\"❌ Không tìm thấy conversation nào\")\r\n                return False\r\n            \r\n            # Tạo DataFrame\r\n            df = self.process_to_dataframe(conversations)\r\n            \r\n            # Xuất ra Excel\r\n            df.to_excel(output_filepath, index=False, engine='openpyxl')\r\n            print(f\"✅ Đã xuất dữ liệu ra: {output_filepath}\")\r\n            print(f\"📊 Số lượng conversations: {len(conversations)}\")\r\n            \r\n            return True\r\n            \r\n        except Exception as e:\r\n            print(f\"❌ Lỗi khi xử lý file: {e}\")\r\n            return False\r\n\r\ndef process_all_input_files():\r\n    \"\"\"\r\n    Xử lý tất cả file trong folder input\r\n    \"\"\"\r\n    processor = ConversationProcessor()\r\n    \r\n    if not os.path.exists('input'):\r\n        print(\"❌ Folder 'input' không tồn tại\")\r\n        return\r\n    \r\n    # Tạo folder output nếu chưa có\r\n    if not os.path.exists('output'):\r\n        os.makedirs('output')\r\n    \r\n    # Xử lý từng file JSON trong folder input\r\n    for filename in os.listdir('input'):\r\n        if filename.endswith('.json'):\r\n            input_path = os.path.join('input', filename)\r\n            output_filename = filename.replace('.json', '_processed.xlsx')\r\n            output_path = os.path.join('output', output_filename)\r\n            \r\n            print(f\"\\n🔄 Đang xử lý: {filename}\")\r\n            processor.process_file(input_path, output_path)\r\n\r\nif __name__ == \"__main__\":\r\n    process_all_input_files()\r\n"
+            }
+          ]
+        }
+      ],
+      "selection": null,
+      "timestamp": "2025-06-24T04:34:00.125Z",
+      "prompt": "def extract_conversations(self, data: Dict[Any, Any]) -> List[Dict[str, Any]]:\n    \"\"\"\n    Trích xuất và tổ chức dữ liệu conversation\n    \"\"\"\n    if 'data' not in data:\n        print(\"❌ Không tìm thấy key 'data' trong JSON\")\n        return []\n    \n    conversations = []\n    current_conversation = []\n    \n    for item in data['data']:\n        character = item.get('character', '')\n        content = item.get('content', '').strip()\n        \n        # Bỏ qua nếu content rỗng\n        if not content:\n            continue\n            \n        if character == 'BOT_RESPONSE_CONVERSATION':\n            current_conversation.append({\"role\": \"assistant\", \"content\": content})\n            \n        elif character == 'USER':\n            current_conversation.append({\"role\": \"user\", \"content\": content})\n            \n            # Khi gặp USER, tạo một conversation entry\n            conversations.append({\n                'conversation': current_conversation.copy(),\n                'next_fast_response': '',\n                'next_bot_response': ''\n            })\n    \n    # Cập nhật next_fast_response và next_bot_response\n    for i, item in enumerate(data['data']):\n        if item.get('character') == 'FAST_RESPONSE':\n            # Tìm conversation tương ứng để cập nhật\n            for conv in conversations:\n                if not conv['next_fast_response']:  # Cập nhật cho conversation chưa có fast_response\n                    conv['next_fast_response'] = item.get('content', '')\n                    break\n        elif item.get('character') == 'BOT_RESPONSE_CONVERSATION' and item.get('content', '').strip():\n            # Tìm conversation tương ứng để cập nhật next_bot_response\n            for conv in conversations:\n                if not conv['next_bot_response']:  # Cập nhật cho conversation chưa có bot_response\n                    conv['next_bot_response'] = item.get('content', '')\n                    break\n    \n    return conversations\n",
+      "parent_inline_chat_id": null
     }
   ],
   "schemaVersion": "1.0",
