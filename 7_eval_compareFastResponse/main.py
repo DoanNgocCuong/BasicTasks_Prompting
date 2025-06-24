@@ -69,51 +69,102 @@ class FastResponsePipeline:
         print(f"✅ Hoàn thành xử lý ID: {conversation_id}")
         return results
     
+    def calculate_avg_response_time(self, eval_file_path: str) -> float:
+        """
+        Tính response time trung bình từ file eval
+        """
+        try:
+            if not os.path.exists(eval_file_path):
+                return 0.0
+                
+            df = pd.read_excel(eval_file_path)
+            
+            # Kiểm tra xem có cột response_time không
+            if 'response_time' not in df.columns:
+                return 0.0
+            
+            # Xử lý response_time, thay thế empty string bằng 0
+            response_times = df['response_time'].replace('', 0).replace(None, 0)
+            
+            # Convert to numeric, errors='coerce' sẽ chuyển invalid values thành NaN
+            response_times = pd.to_numeric(response_times, errors='coerce').fillna(0)
+            
+            # Tính trung bình, bỏ qua các giá trị 0
+            valid_times = response_times[response_times > 0]
+            if len(valid_times) > 0:
+                return round(valid_times.mean(), 2)
+            else:
+                return 0.0
+                
+        except Exception as e:
+            print(f"⚠️ Lỗi khi tính avg response time cho {eval_file_path}: {e}")
+            return 0.0
+
     def create_final_excel(self, results: list, output_file: str):
         """
         Tạo file Excel cuối cùng với mỗi ID là một sheet
         """
         print(f"\n📊 Tạo file Excel tổng hợp: {output_file}")
         
+        # Tạo summary data trước (để có thể dùng trong exception)
+        summary_data = []
+        for result in results:
+            summary_data.append({
+                'ID': result['id'],
+                'Fetch Status': result['fetch_status'],
+                'Process Status': result['process_status'],
+                'Eval Status': result['eval_status'],
+                'Input File': result['input_file'],
+                'Processed File': result['processed_file'],
+                'Eval File': result['eval_file'],
+                'Avg Response Time (ms)': self.calculate_avg_response_time(result['eval_file']) if result['eval_status'] == 'SUCCESS' else 0
+            })
+        
         try:
             with pd.ExcelWriter(output_file, engine='openpyxl') as writer:
                 # Tạo sheet tổng quan
-                summary_data = []
-                for result in results:
-                    summary_data.append({
-                        'ID': result['id'],
-                        'Fetch Status': result['fetch_status'],
-                        'Process Status': result['process_status'],
-                        'Eval Status': result['eval_status'],
-                        'Input File': result['input_file'],
-                        'Processed File': result['processed_file'],
-                        'Eval File': result['eval_file'],
-                        'Avg Response Time (ms)': self.calculate_avg_response_time(result['eval_file']) if result['eval_status'] == 'SUCCESS' else 0
-                    })
-                
                 summary_df = pd.DataFrame(summary_data)
                 summary_df.to_excel(writer, sheet_name='Summary', index=False)
+                print(f"✅ Đã tạo sheet Summary")
                 
                 # Tạo sheet cho từng ID
+                successful_sheets = 0
                 for result in results:
                     if result['eval_status'] == 'SUCCESS' and os.path.exists(result['eval_file']):
                         try:
                             df = pd.read_excel(result['eval_file'])
                             sheet_name = f"ID_{result['id']}"
+                            
+                            # Kiểm tra độ dài tên sheet (Excel limit 31 chars)
+                            if len(sheet_name) > 31:
+                                sheet_name = sheet_name[:31]
+                            
                             df.to_excel(writer, sheet_name=sheet_name, index=False)
                             print(f"✅ Đã thêm sheet: {sheet_name}")
+                            successful_sheets += 1
+                            
                         except Exception as e:
                             print(f"❌ Lỗi khi thêm sheet cho ID {result['id']}: {e}")
+                    else:
+                        if result['eval_status'] == 'SUCCESS':
+                            print(f"⚠️ File không tồn tại: {result['eval_file']}")
+                
+                print(f"📊 Tổng cộng: {successful_sheets + 1} sheets")
             
             print(f"✅ Đã tạo file tổng hợp: {output_file}")
             
         except Exception as e:
             print(f"❌ Lỗi khi tạo file Excel tổng hợp: {e}")
+            print(f"🔍 Loại lỗi: {type(e).__name__}")
+            
             # Tạo file backup đơn giản
-            backup_file = output_file.replace('.xlsx', '_backup.csv')
-            summary_df = pd.DataFrame(summary_data)
-            summary_df.to_csv(backup_file, index=False, encoding='utf-8')
-            print(f"📄 Đã tạo file backup CSV: {backup_file}")
+            try:
+                backup_file = output_file.replace('.xlsx', '_backup.csv')
+                summary_df = pd.DataFrame(summary_data)
+                summary_df.to_csv(backup_file, index=False, encoding='utf-8')
+                print(f"📄 Đã tạo file backup CSV: {backup_file}")
+            except Exception as backup_error:
+                print(f"❌ Không thể tạo backup: {backup_error}")
     
     def run_pipeline(self, conversation_ids: list):
         """
@@ -160,7 +211,8 @@ class FastResponsePipeline:
         print(f"\n📋 Chi tiết từng ID:")
         for result in results:
             status_icon = "✅" if result['eval_status'] == 'SUCCESS' else "❌"
-            print(f"{status_icon} ID {result['id']}: {result['eval_status']}")
+            avg_time = self.calculate_avg_response_time(result['eval_file']) if result['eval_status'] == 'SUCCESS' else 0
+            print(f"{status_icon} ID {result['id']}: {result['eval_status']} (Avg: {avg_time}ms)")
         
         # Files được tạo
         print(f"\n📁 Files được tạo:")
