@@ -4,6 +4,7 @@ import json
 import time
 from typing import Dict, List, Any
 import os
+import time
 
 class FastResponseEvaluator:
     def __init__(self):
@@ -13,10 +14,12 @@ class FastResponseEvaluator:
             'Content-Type': 'application/json'
         }
     
-    def call_fast_response_api(self, conversations: List[Dict[str, str]]) -> str:
+    def call_fast_response_api(self, conversations: List[Dict[str, str]]) -> tuple:
         """
-        Gọi API fast response
+        Gọi API fast response và đo thời gian
         """
+        start_time = time.time()  # ← THÊM DÒNG NÀY
+        
         payload = {
             "conversations": conversations,
             "system_prompt": "You are QuickReact: detect the emotion in the latest message and reply instantly in its same language (English or Vietnamese) using 1-8 words (≤60 chars), keep it short enough with a friendly informal tone that mirrors and empathizes with that feeling (sad → soothe, happy → cheer, worried → reassure; emojis/!/? welcome); output only that text—never answer the question, just buy time until the main reply arrives.",
@@ -29,21 +32,29 @@ class FastResponseEvaluator:
             response = requests.post(self.api_url, headers=self.headers, json=payload, timeout=30)
             response.raise_for_status()
             
+            end_time = time.time()  # ← THÊM DÒNG NÀY
+            response_time = round((end_time - start_time) * 1000, 2)  # ← THÊM DÒNG NÀY (milliseconds)
+            
             result = response.json()
-            # Giả sử API trả về response trong field 'content' hoặc tương tự
             if isinstance(result, dict):
-                return result.get('response', result.get('content', str(result)))
-            return str(result)
+                return result.get('response', result.get('content', str(result))), response_time  # ← SỬA DÒNG NÀY
+            return str(result), response_time  # ← SỬA DÒNG NÀY
             
         except requests.exceptions.Timeout:
+            end_time = time.time()  # ← THÊM DÒNG NÀY
+            response_time = round((end_time - start_time) * 1000, 2)  # ← THÊM DÒNG NÀY
             print("⏰ API timeout")
-            return "API_TIMEOUT"
+            return "API_TIMEOUT", response_time  # ← SỬA DÒNG NÀY
         except requests.exceptions.RequestException as e:
+            end_time = time.time()  # ← THÊM DÒNG NÀY
+            response_time = round((end_time - start_time) * 1000, 2)  # ← THÊM DÒNG NÀY
             print(f"❌ API Error: {e}")
-            return f"API_ERROR: {str(e)}"
+            return f"API_ERROR: {str(e)}", response_time  # ← SỬA DÒNG NÀY
         except Exception as e:
+            end_time = time.time()  # ← THÊM DÒNG NÀY
+            response_time = round((end_time - start_time) * 1000, 2)  # ← THÊM DÒNG NÀY
             print(f"❌ Unexpected error: {e}")
-            return f"ERROR: {str(e)}"
+            return f"ERROR: {str(e)}", response_time  # ← SỬA DÒNG NÀY
     
     def parse_conversation_string(self, conv_str: str) -> List[Dict[str, str]]:
         """
@@ -64,8 +75,9 @@ class FastResponseEvaluator:
             df = pd.read_excel(input_filepath)
             print(f"📊 Đã đọc {len(df)} rows từ {input_filepath}")
             
-            # Thêm cột generated_ai
+            # Thêm cột generated_ai và response_time
             df['generated_ai'] = ''
+            df['response_time'] = ''  # ← THÊM DÒNG NÀY
             
             # Xử lý từng row
             for index, row in df.iterrows():
@@ -76,13 +88,15 @@ class FastResponseEvaluator:
                 
                 if conversations:
                     # Gọi API
-                    generated_response = self.call_fast_response_api(conversations)
+                    generated_response, response_time = self.call_fast_response_api(conversations)  # ← SỬA DÒNG NÀY
                     df.at[index, 'generated_ai'] = generated_response
+                    df.at[index, 'response_time'] = response_time  # ← THÊM DÒNG NÀY
                     
                     # Delay để tránh spam API
                     time.sleep(0.5)
                 else:
                     df.at[index, 'generated_ai'] = "PARSE_ERROR"
+                    df.at[index, 'response_time'] = 0  # ← THÊM DÒNG NÀY
                 
                 # In progress mỗi 10 rows
                 if (index + 1) % 10 == 0:

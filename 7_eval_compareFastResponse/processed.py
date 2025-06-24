@@ -89,7 +89,8 @@ class ConversationProcessor:
             processed_data.append({
                 'BOT_RESPONSE_CONVERSATION_with_USER': self.format_conversation_column(conv['conversation']),
                 'FAST_RESPONSE_next': conv['next_fast_response'],
-                'BOT_RESPONSE_CONVERSATION_next': conv['next_bot_response']
+                'BOT_RESPONSE_CONVERSATION_next': conv['next_bot_response'], 
+                'response_time': ''  # ← THÊM DÒNG NÀY
             })
         
         return pd.DataFrame(processed_data)

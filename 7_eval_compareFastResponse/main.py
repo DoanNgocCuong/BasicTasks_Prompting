@@ -87,7 +87,8 @@ class FastResponsePipeline:
                         'Eval Status': result['eval_status'],
                         'Input File': result['input_file'],
                         'Processed File': result['processed_file'],
-                        'Eval File': result['eval_file']
+                        'Eval File': result['eval_file'],
+                        'Avg Response Time (ms)': self.calculate_avg_response_time(result['eval_file']) if result['eval_status'] == 'SUCCESS' else 0
                     })
                 
                 summary_df = pd.DataFrame(summary_data)
