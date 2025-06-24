@@ -30,7 +30,7 @@ class ConversationProcessor:
         conversations = []
         current_conversation = []
         
-        for item in data['data']:
+        for i, item in enumerate(data['data']):
             character = item.get('character', '')
             content = item.get('content', '').strip()
             
@@ -44,30 +44,35 @@ class ConversationProcessor:
             elif character == 'USER':
                 current_conversation.append({"role": "user", "content": content})
                 
-                # Khi gặp USER, tạo một conversation entry
+                # Tìm BOT_RESPONSE_CONVERSATION tiếp theo sau USER này
+                next_bot_response = ""
+                for j in range(i + 1, len(data['data'])):
+                    next_item = data['data'][j]
+                    if next_item.get('character') == 'BOT_RESPONSE_CONVERSATION':
+                        next_content = next_item.get('content', '').strip()
+                        if next_content:  # Chỉ lấy nếu có nội dung
+                            next_bot_response = next_content
+                            break
+                
+                # Tạo conversation entry
                 conversations.append({
                     'conversation': current_conversation.copy(),
-                    'next_fast_response': '',
-                    'next_bot_response': ''
+                    'next_fast_response': '',  # Sẽ cập nhật sau
+                    'next_bot_response': next_bot_response
                 })
-        
-        # Cập nhật next_fast_response và next_bot_response
+            
+        # Cập nhật next_fast_response
         for i, item in enumerate(data['data']):
             if item.get('character') == 'FAST_RESPONSE':
-                # Tìm conversation tương ứng để cập nhật
-                for conv in conversations:
-                    if not conv['next_fast_response']:  # Cập nhật cho conversation chưa có fast_response
-                        conv['next_fast_response'] = item.get('content', '')
-                        break
-            elif item.get('character') == 'BOT_RESPONSE_CONVERSATION' and item.get('content', '').strip():
-                # Tìm conversation tương ứng để cập nhật next_bot_response
-                for conv in conversations:
-                    if not conv['next_bot_response']:  # Cập nhật cho conversation chưa có bot_response
-                        conv['next_bot_response'] = item.get('content', '')
-                        break
+                fast_content = item.get('content', '').strip()
+                if fast_content:
+                    # Tìm conversation gần nhất chưa có fast_response
+                    for conv in reversed(conversations):
+                        if not conv['next_fast_response']:
+                            conv['next_fast_response'] = fast_content
+                            break
         
         return conversations
-    
     def format_conversation_column(self, conversation: List[Dict[str, str]]) -> str:
         """
         Format conversation thành string JSON
