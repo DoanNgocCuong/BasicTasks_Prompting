@@ -15,3 +15,9 @@ myenv/
 6_TuningWith2Prompting/src/myenv/
 **/myenv/
 **/venv/
+
+7_eval_compareFastResponse/eval/
+
+7_eval_compareFastResponse/final/
+
+7_eval_compareFastResponse/input/

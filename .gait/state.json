@@ -470,8 +470,8 @@
     "deletedPanelChatIDs": []
   },
   "kv_store": {
-    "unique_matched_lines_count": 98,
-    "total_repo_line_count": 362902,
+    "unique_matched_lines_count": 128,
+    "total_repo_line_count": 365992,
     "best_prompt_response": null,
     "file_statistics": [
       {
@@ -1435,14 +1435,8 @@
         "ai_generated_percentage": 0
       },
       {
-        "file": "7_eval_compareFastResponse/.md",
-        "total_lines": 1,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
         "file": "7_eval_compareFastResponse/README.md",
-        "total_lines": 1,
+        "total_lines": 143,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -1453,56 +1447,38 @@
         "ai_generated_percentage": 0
       },
       {
-        "file": "7_eval_compareFastResponse/docs_processed.md",
-        "total_lines": 451,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "7_eval_compareFastResponse/docs_requirements_.md",
-        "total_lines": 196,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "7_eval_compareFastResponse/eval/conversation_17485_output_eval.xlsx",
+        "file": "7_eval_compareFastResponse/docs/docs_Prompting.md",
         "total_lines": 38,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
       {
-        "file": "7_eval_compareFastResponse/eval/conversation_17486_output_eval.xlsx",
-        "total_lines": 23,
+        "file": "7_eval_compareFastResponse/docs/docs_processed.md",
+        "total_lines": 451,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
       {
-        "file": "7_eval_compareFastResponse/eval/conversation_17487_output_eval.xlsx",
-        "total_lines": 25,
+        "file": "7_eval_compareFastResponse/docs/docs_report.md",
+        "total_lines": 59,
+        "ai_generated_lines": 11,
+        "ai_generated_percentage": 18.64406779661017
+      },
+      {
+        "file": "7_eval_compareFastResponse/docs/docs_requirements_.md",
+        "total_lines": 196,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
       {
-        "file": "7_eval_compareFastResponse/eval/conversation_17488_output_eval.xlsx",
-        "total_lines": 31,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "7_eval_compareFastResponse/eval/conversation_17489_output_eval.xlsx",
-        "total_lines": 33,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
+        "file": "7_eval_compareFastResponse/docs/v1.1_genspark.md",
+        "total_lines": 670,
+        "ai_generated_lines": 25,
+        "ai_generated_percentage": 3.731343283582089
       },
       {
         "file": "7_eval_compareFastResponse/example_output/eval/conversation_8532_output_eval.xlsx",
         "total_lines": 23,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "7_eval_compareFastResponse/example_output/fast_response_evaluation_20250624_113822.xlsx",
-        "total_lines": 72,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -1525,8 +1501,26 @@
         "ai_generated_percentage": 0
       },
       {
-        "file": "7_eval_compareFastResponse/final/fast_response_evaluation_20250624_113822.xlsx",
-        "total_lines": 72,
+        "file": "7_eval_compareFastResponse/example_output/v0.1_fast_response_evaluation_20250624_142532.xlsx",
+        "total_lines": 117,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/example_output/v0.2_fast_response_evaluation_20250624_113822.xlsx",
+        "total_lines": 98,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/example_output/v1Prompt_fast_response_evaluation_20250624_142532.xlsx",
+        "total_lines": 1224,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/example_output/v2Prompt_fast_response_evaluation_20250624_150701.xlsx",
+        "total_lines": 2279,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -1544,93 +1538,51 @@
       },
       {
         "file": "7_eval_compareFastResponse/ids.txt",
-        "total_lines": 5,
+        "total_lines": 2,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
       {
-        "file": "7_eval_compareFastResponse/input/conversation_17485.json",
-        "total_lines": 176,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "7_eval_compareFastResponse/input/conversation_17486.json",
-        "total_lines": 146,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "7_eval_compareFastResponse/input/conversation_17487.json",
-        "total_lines": 46,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "7_eval_compareFastResponse/input/conversation_17488.json",
-        "total_lines": 176,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "7_eval_compareFastResponse/input/conversation_17489.json",
-        "total_lines": 301,
+        "file": "7_eval_compareFastResponse/ids_run1.txt",
+        "total_lines": 10,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
       {
         "file": "7_eval_compareFastResponse/main.py",
-        "total_lines": 229,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "7_eval_compareFastResponse/output/conversation_17485_processed.xlsx",
-        "total_lines": 27,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "7_eval_compareFastResponse/output/conversation_17486_processed.xlsx",
-        "total_lines": 26,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "7_eval_compareFastResponse/output/conversation_17487_processed.xlsx",
-        "total_lines": 21,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "7_eval_compareFastResponse/output/conversation_17488_processed.xlsx",
-        "total_lines": 27,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "7_eval_compareFastResponse/output/conversation_17489_processed.xlsx",
-        "total_lines": 31,
+        "total_lines": 281,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
       {
         "file": "7_eval_compareFastResponse/processed.py",
+        "total_lines": 159,
+        "ai_generated_lines": 5,
+        "ai_generated_percentage": 3.1446540880503147
+      },
+      {
+        "file": "7_eval_compareFastResponse/processed_v1_1History.py",
         "total_lines": 154,
         "ai_generated_lines": 11,
         "ai_generated_percentage": 7.142857142857142
       },
       {
-        "file": "7_eval_compareFastResponse/run_eval_api_fast_response.py",
-        "total_lines": 139,
-        "ai_generated_lines": 41,
-        "ai_generated_percentage": 29.496402877697843
+        "file": "7_eval_compareFastResponse/processed_v2_fullHistory_CKP.py",
+        "total_lines": 154,
+        "ai_generated_lines": 11,
+        "ai_generated_percentage": 7.142857142857142
       },
       {
-        "file": "7_eval_compareFastResponse/v1.1_genspark.md",
-        "total_lines": 670,
-        "ai_generated_lines": 25,
-        "ai_generated_percentage": 3.731343283582089
+        "file": "7_eval_compareFastResponse/prompt/prompt.md",
+        "total_lines": 33,
+        "ai_generated_lines": 6,
+        "ai_generated_percentage": 18.181818181818183
+      },
+      {
+        "file": "7_eval_compareFastResponse/run_eval_api_fast_response.py",
+        "total_lines": 139,
+        "ai_generated_lines": 38,
+        "ai_generated_percentage": 27.33812949640288
       },
       {
         "file": "8_Package_Agent/ApiClientB.md",

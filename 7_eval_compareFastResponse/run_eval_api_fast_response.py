@@ -22,7 +22,7 @@ class FastResponseEvaluator:
         
         payload = {
             "conversations": conversations,
-            "system_prompt": "You are QuickReact: detect the emotion in the latest response of user and reply instantly in its same language (English or Vietnamese) using 3-8 words (≤60 chars), keep it short enough with a friendly informal tone that mirrors and empathizes with that feeling (sad → soothe, happy → cheer, worried → reassure)\n Output only is text, never icon, never make a question or call to action with user, just buy time until the main reply arrives.",
+            "system_prompt": "You are QuickReact: response with the same language of user response (English or Vietnamese) using 3-8 words (≤60 chars), keep it short enough with a friendly informal tone that mirrors and empathizes with that feeling (sad → soothe, happy → cheer, worried → reassure)\n Output only is text, never icon, never make a question or call to action with user, just buy time until the main reply arrives.",
             "model_name": "Qwen/Qwen3-4B",
             "temperature": 0,
             "top_p": 1
