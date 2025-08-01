@@ -471,7 +471,7 @@
   },
   "kv_store": {
     "unique_matched_lines_count": 128,
-    "total_repo_line_count": 369796,
+    "total_repo_line_count": 373772,
     "best_prompt_response": null,
     "file_statistics": [
       {
@@ -925,6 +925,12 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "5_TuningPrompting/PromptTuning_OpenAI_v5_BatchSize_NumWorkers.md",
+        "total_lines": 90,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "5_TuningPrompting/PromptTuning_OpenAI_v5_BatchSize_NumWorkers.py",
         "total_lines": 401,
         "ai_generated_lines": 0,
@@ -1082,7 +1088,7 @@
       },
       {
         "file": "5_TuningPrompting/fastResponse_v3_demo.xlsx",
-        "total_lines": 396,
+        "total_lines": 471,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -1448,7 +1454,37 @@
       },
       {
         "file": "7_eval_compareFastResponse/cmd_run.sh",
-        "total_lines": 7,
+        "total_lines": 13,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/debug_args.py",
+        "total_lines": 75,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/docs/2.2_BugThuTuBOT_USER_inConversationJSON.md",
+        "total_lines": 257,
+        "ai_generated_lines": 2,
+        "ai_generated_percentage": 0.7782101167315175
+      },
+      {
+        "file": "7_eval_compareFastResponse/docs/2.3_ReportHardBUG_PowerShell_Token_Argument_Parsing_Issue.md",
+        "total_lines": 193,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/docs/2.4_API_DOWN_QwenModel.md",
+        "total_lines": 117,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/docs/2_API.md",
+        "total_lines": 1,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -1531,6 +1567,30 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "7_eval_compareFastResponse/genDataFastResponseDemo/.md",
+        "total_lines": 151,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/genDataFastResponseDemo/1000ConversationID/dataemcuong.xlsx",
+        "total_lines": 43,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/genDataFastResponseDemo/1000ConversationID/ids.txt",
+        "total_lines": 1229,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "7_eval_compareFastResponse/genDataFastResponseDemo/1000ConversationID/ids.txt.example",
+        "total_lines": 10,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "7_eval_compareFastResponse/genDataFastResponseDemo/CHANGELOG.md",
         "total_lines": 7,
         "ai_generated_lines": 0,
@@ -1556,13 +1616,13 @@
       },
       {
         "file": "7_eval_compareFastResponse/ids.example",
-        "total_lines": 3,
+        "total_lines": 15,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
       {
         "file": "7_eval_compareFastResponse/ids.txt",
-        "total_lines": 10,
+        "total_lines": 1229,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -1574,27 +1634,33 @@
       },
       {
         "file": "7_eval_compareFastResponse/main.py",
-        "total_lines": 281,
+        "total_lines": 337,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
       {
         "file": "7_eval_compareFastResponse/processed.py",
-        "total_lines": 159,
+        "total_lines": 273,
         "ai_generated_lines": 5,
-        "ai_generated_percentage": 3.1446540880503147
+        "ai_generated_percentage": 1.8315018315018317
       },
       {
         "file": "7_eval_compareFastResponse/processed_v1_1History.py",
-        "total_lines": 154,
-        "ai_generated_lines": 11,
-        "ai_generated_percentage": 7.142857142857142
+        "total_lines": 209,
+        "ai_generated_lines": 4,
+        "ai_generated_percentage": 1.9138755980861244
       },
       {
         "file": "7_eval_compareFastResponse/processed_v2_fullHistory_CKP.py",
         "total_lines": 154,
         "ai_generated_lines": 11,
         "ai_generated_percentage": 7.142857142857142
+      },
+      {
+        "file": "7_eval_compareFastResponse/processed_v3_3TurnsHistory_CKP.py",
+        "total_lines": 273,
+        "ai_generated_lines": 5,
+        "ai_generated_percentage": 1.8315018315018317
       },
       {
         "file": "7_eval_compareFastResponse/prompt/prompt.md",
