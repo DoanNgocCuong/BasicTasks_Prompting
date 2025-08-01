@@ -34,7 +34,7 @@ class ConversationProcessor:
         MAX_TURNS = 3  # Tối đa 3 turns (3 pairs = 6 messages)
         
         # Step 1: Extract all BOT-USER pairs in chronological order
-        current_bot = None
+        current_bot_messages = []  # Store consecutive BOT messages
         original_data = data['data']
         
         for i, item in enumerate(original_data):
@@ -45,10 +45,14 @@ class ConversationProcessor:
                 continue
                 
             if character == 'BOT_RESPONSE_CONVERSATION':
-                current_bot = content
+                # Collect consecutive BOT messages
+                current_bot_messages.append(content)
             elif character == 'USER':
-                # Create pair when we have both BOT and USER
-                if current_bot:
+                # Create pair when we have BOT messages and USER
+                if current_bot_messages:
+                    # Combine all consecutive BOT messages with space separation
+                    combined_bot = ' '.join(current_bot_messages)
+                    
                     # Find next responses after this USER
                     next_fast_response = ""
                     next_bot_response = ""
@@ -73,25 +77,31 @@ class ConversationProcessor:
                     
                     # Create pair and add to pairs list
                     pair = {
-                        'bot': current_bot,
+                        'bot': combined_bot,
                         'user': content,
                         'next_fast_response': next_fast_response,
                         'next_bot_response': next_bot_response
                     }
                     pairs.append(pair)
-                    current_bot = None  # Reset for next pair
+                    current_bot_messages = []  # Reset for next pair
                 else:
                     # USER without preceding BOT - try to find BOT after
-                    next_bot = None
+                    next_bot_messages = []
+                    
+                    # Collect all consecutive BOT messages after this USER
                     for j in range(i+1, len(original_data)):
                         next_item = original_data[j]
                         if next_item.get('character') == 'BOT_RESPONSE_CONVERSATION':
                             next_content = next_item.get('content', '').strip()
                             if next_content:
-                                next_bot = next_content
-                                break
+                                next_bot_messages.append(next_content)
+                        elif next_item.get('character') == 'USER':
+                            # Stop collecting when we hit another USER
+                            break
                     
-                    if next_bot:
+                    if next_bot_messages:
+                        combined_next_bot = ' '.join(next_bot_messages)
+                        
                         # Find responses after this USER
                         next_fast_response = ""
                         next_bot_response = ""
@@ -104,19 +114,21 @@ class ConversationProcessor:
                                     next_fast_response = next_content
                                     break
                         
-                        # Find BOT_RESPONSE after the immediate next_bot
+                        # Find BOT_RESPONSE after the collected next_bot_messages
+                        bot_found_count = 0
                         for j in range(i+1, len(original_data)):
                             next_item = original_data[j]
                             if next_item.get('character') == 'BOT_RESPONSE_CONVERSATION':
-                                if next_item.get('content', '').strip() == next_bot:
-                                    continue  # Skip the BOT we're using as assistant
-                                next_content = next_item.get('content', '').strip()
-                                if next_content:
-                                    next_bot_response = next_content
-                                    break
+                                bot_found_count += 1
+                                if bot_found_count > len(next_bot_messages):
+                                    # This is a BOT after our collected messages
+                                    next_content = next_item.get('content', '').strip()
+                                    if next_content:
+                                        next_bot_response = next_content
+                                        break
                         
                         pair = {
-                            'bot': next_bot,  # BOT after USER
+                            'bot': combined_next_bot,  # Combined BOT messages after USER
                             'user': content,
                             'next_fast_response': next_fast_response,
                             'next_bot_response': next_bot_response

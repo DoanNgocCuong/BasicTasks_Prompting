@@ -1,0 +1,2082 @@
+15612
+14941
+16546
+15523
+17192
+15638
+15007
+15756
+15635
+15636
+15637
+15768
+15771
+18902
+17225
+15781
+15608
+15526
+15042
+15525
+15780
+17600
+15783
+17187
+15782
+16533
+16527
+16528
+16968
+15786
+15790
+15792
+15793
+15795
+19795
+15524
+17636
+16016
+15758
+15706
+16997
+16118
+16056
+16057
+16802
+16066
+16087
+15709
+17629
+14841
+16301
+16312
+16317
+16935
+15770
+16936
+14631
+14632
+14686
+14690
+14693
+14697
+14695
+15769
+15639
+14728
+16407
+16404
+14767
+16409
+14775
+14779
+14785
+15707
+14805
+14825
+14826
+14828
+14839
+14840
+14847
+15318
+15620
+15319
+14933
+16055
+14938
+14937
+15746
+15437
+15755
+15926
+15757
+15747
+15752
+15750
+15155
+15156
+15759
+15198
+15226
+15749
+15748
+15760
+17128
+16803
+17123
+15731
+17130
+15950
+15732
+19794
+15742
+15733
+15730
+15761
+17129
+17125
+16664
+16283
+15951
+16282
+19793
+17132
+17131
+15735
+15762
+15744
+16844
+15734
+15737
+16841
+16843
+16831
+16842
+16832
+17133
+16276
+16840
+16839
+16824
+16826
+16837
+16275
+16279
+16827
+16828
+16499
+16829
+16833
+16281
+16836
+16830
+16280
+16822
+16838
+16821
+16662
+16834
+16274
+19792
+16835
+16823
+16663
+17117
+17467
+16950
+19789
+17245
+16953
+19791
+16965
+16980
+16979
+16943
+16940
+16949
+16952
+17466
+16944
+16981
+17469
+16938
+19790
+16982
+16937
+16660
+19397
+19285
+16887
+15201
+19284
+19283
+19372
+16154
+16153
+16145
+16879
+18971
+18970
+18890
+16144
+16141
+14920
+18773
+16868
+16849
+19125
+17279
+14832
+14838
+16302
+17055
+14830
+14916
+15017
+19209
+14917
+15016
+14836
+20465
+14837
+14874
+14834
+14835
+14936
+15024
+14925
+14934
+14943
+18433
+14948
+15025
+15029
+15019
+18432
+15008
+15009
+15020
+15015
+15010
+15013
+15014
+15018
+15021
+15022
+15023
+15026
+15027
+15032
+15033
+15036
+15037
+15038
+15102
+16496
+16498
+15190
+15207
+19743
+15158
+15159
+18869
+18870
+15189
+15187
+15188
+17647
+15186
+15191
+15202
+15203
+15204
+17022
+19470
+19294
+18429
+18413
+19435
+18414
+17604
+18412
+16977
+17017
+19415
+19405
+17607
+15416
+17011
+17671
+17795
+19200
+17498
+17796
+19201
+15562
+16983
+16984
+19569
+18415
+16978
+15563
+18891
+15564
+19447
+17932
+19370
+17869
+18900
+15569
+14945
+15208
+16855
+16856
+16853
+18901
+18132
+15175
+15205
+16870
+15200
+18163
+15566
+14947
+14946
+15565
+15176
+15199
+16874
+15174
+15568
+15567
+15172
+15309
+15458
+18045
+17628
+15303
+18861
+17608
+17025
+15459
+17497
+17016
+18859
+17014
+17635
+18742
+17794
+18746
+16871
+17087
+17010
+18765
+18768
+18299
+18860
+16988
+18767
+18857
+18858
+15628
+15065
+15059
+15058
+15054
+15052
+15053
+17021
+15051
+15028
+17281
+17623
+18048
+15302
+17603
+18041
+19124
+14918
+17625
+15340
+17784
+15457
+19044
+17023
+17058
+18889
+14915
+15034
+17945
+20379
+18052
+15030
+15627
+15012
+18049
+18868
+15177
+16515
+18226
+19249
+16878
+16890
+15192
+15194
+16985
+15085
+15084
+16986
+15083
+15082
+15209
+15080
+15180
+18969
+15077
+15068
+15067
+18865
+14944
+17009
+17005
+18867
+16872
+19199
+14919
+18888
+15736
+15222
+20239
+15162
+15221
+16859
+16857
+20238
+15173
+17206
+15433
+20456
+15740
+15219
+15434
+20237
+16873
+15739
+20234
+15132
+15193
+15743
+15741
+15125
+15139
+15126
+15122
+15152
+15738
+15124
+15123
+15220
+17610
+17605
+17282
+20517
+15150
+15006
+15157
+15149
+15154
+15164
+15185
+15224
+15197
+15223
+15225
+15227
+15228
+15229
+15314
+20405
+20404
+20402
+20401
+15435
+15436
+18229
+20381
+20383
+20362
+18227
+18228
+16989
+16990
+17797
+15745
+17012
+17018
+17627
+19950
+16860
+16875
+19837
+19828
+19823
+19674
+15440
+16143
+18100
+15389
+15413
+15442
+15448
+15446
+15438
+15763
+15937
+15444
+15447
+15936
+15938
+15310
+15396
+15751
+15439
+15764
+15395
+15385
+15231
+15387
+15217
+15218
+15392
+15441
+15345
+15313
+16248
+15917
+15916
+16249
+15377
+15919
+15210
+15230
+15445
+15390
+15382
+15443
+16205
+15235
+15236
+15232
+15215
+15765
+16197
+16198
+16202
+16206
+16208
+16252
+15920
+15923
+15925
+15766
+15929
+15939
+15753
+15754
+15415
+15206
+15211
+15237
+16256
+16191
+16117
+15234
+15214
+16194
+15420
+15213
+16190
+15216
+16121
+15233
+16123
+16119
+16115
+15767
+16049
+16114
+15934
+16116
+15933
+15930
+15212
+16876
+15947
+15948
+15503
+15423
+15422
+15932
+15430
+15504
+16126
+15431
+16124
+16192
+16277
+16125
+16127
+16122
+16135
+15507
+15508
+15429
+15428
+15935
+16128
+16129
+15426
+15949
+15425
+15424
+16146
+15427
+15432
+15311
+16134
+16138
+16136
+16142
+16148
+16291
+16289
+15893
+15895
+15868
+15892
+15887
+15898
+15940
+16286
+15897
+16297
+16296
+16295
+16288
+16290
+16292
+15865
+16298
+16132
+16133
+15941
+16903
+16140
+16902
+16149
+15922
+15921
+15903
+15899
+15870
+15881
+16137
+16299
+16147
+15886
+15942
+15924
+15864
+15928
+15946
+15927
+16300
+15943
+16139
+16150
+15944
+15915
+16059
+15931
+15918
+15945
+16106
+16285
+16185
+16187
+16189
+16253
+16254
+16164
+16210
+16211
+16209
+16183
+16184
+16182
+16199
+16186
+16632
+16180
+16672
+16807
+16201
+16200
+16607
+16733
+16667
+16673
+16590
+16589
+16675
+16165
+16738
+16669
+16255
+16765
+16809
+16293
+16634
+16665
+16179
+16195
+16193
+16196
+16204
+16203
+16212
+16175
+16176
+16810
+16258
+16278
+16174
+16287
+16592
+16207
+16177
+16257
+17060
+16178
+16213
+16181
+16783
+16812
+16813
+16814
+16610
+16604
+19594
+16603
+16602
+16600
+16595
+16757
+16644
+16581
+16897
+16899
+19595
+16898
+16611
+16811
+16645
+16643
+16642
+16641
+16640
+16619
+16616
+16615
+16613
+16583
+16580
+16578
+16896
+16972
+19597
+16948
+16947
+16848
+16847
+16914
+16756
+16755
+16900
+19596
+16904
+16951
+19598
+17284
+16808
+16817
+16819
+16818
+16901
+19599
+16816
+16915
+16976
+16973
+16906
+16975
+16974
+16905
+16820
+16815
+16825
+16911
+16646
+16658
+16655
+16654
+16656
+16653
+16652
+16657
+16907
+17244
+16908
+16910
+16666
+16909
+16913
+16912
+16651
+16650
+16649
+16648
+16647
+17243
+17406
+17325
+17238
+17370
+17380
+17324
+17408
+17373
+17242
+17326
+17367
+17237
+17381
+17233
+16895
+17301
+17383
+17311
+17308
+17297
+17234
+17387
+17302
+17304
+17384
+17235
+17303
+17372
+17388
+17374
+17241
+17389
+17395
+17397
+17391
+17236
+17390
+17392
+17393
+17394
+17239
+17318
+17317
+17240
+17396
+17405
+17329
+17316
+17320
+17315
+17375
+17376
+17377
+17379
+17378
+17382
+17319
+17399
+17398
+17427
+17314
+17313
+17411
+17409
+17322
+17321
+17419
+17420
+17312
+17309
+17307
+17289
+17305
+17371
+17369
+17368
+17366
+17361
+17288
+17287
+17463
+17464
+17290
+17362
+17557
+17556
+17537
+17539
+17558
+17741
+17542
+17553
+17541
+17535
+17567
+17544
+17545
+17540
+17734
+17743
+17818
+17830
+17876
+17827
+17816
+17735
+17742
+17744
+17815
+17721
+17875
+17881
+17826
+17829
+17831
+17832
+17833
+17836
+17837
+17834
+17835
+17839
+17846
+17843
+17845
+17421
+17422
+17465
+17428
+17727
+17722
+17723
+17724
+17725
+17730
+17732
+17745
+17747
+17880
+17879
+17877
+17817
+17819
+17847
+17828
+17764
+17872
+17814
+17810
+17805
+17761
+17765
+17491
+17804
+17807
+17766
+17769
+17768
+17820
+17774
+17751
+17906
+17821
+17490
+17762
+17763
+17681
+17679
+17677
+17676
+17674
+17675
+17878
+17750
+17822
+17824
+17874
+17873
+17770
+17811
+17812
+17801
+17813
+17678
+17823
+17697
+17696
+17686
+17684
+17688
+17825
+17838
+17726
+17683
+17682
+17680
+17773
+17802
+17803
+17699
+17513
+17430
+17418
+17429
+17972
+17997
+17407
+17416
+17415
+17431
+17426
+17425
+17414
+17424
+17423
+17870
+17417
+17840
+17293
+17306
+17310
+17291
+17292
+17323
+17299
+17294
+17296
+17337
+17336
+17338
+17295
+17300
+17298
+17339
+17385
+17386
+17731
+17740
+17400
+17565
+17533
+17534
+17536
+17538
+17543
+17549
+17550
+17551
+18235
+17728
+17729
+17547
+17841
+17974
+18161
+17998
+18094
+18096
+18095
+18097
+18119
+18102
+18204
+18098
+18120
+18207
+18130
+18131
+18284
+18221
+18133
+18143
+18157
+18154
+18153
+18155
+18159
+18158
+18156
+18160
+18166
+18195
+18200
+18216
+17593
+17573
+17572
+18250
+18252
+18273
+17571
+18274
+18276
+18292
+17555
+17554
+17552
+18351
+19195
+17546
+17570
+17569
+19292
+19286
+17568
+19842
+17548
+18372
+17592
+17591
+18117
+19193
+19198
+19764
+19341
+17871
+17575
+17842
+17576
+18242
+18241
+17991
+17844
+17978
+17980
+17981
+17982
+17984
+17986
+18001
+17574
+17596
+17754
+17752
+18136
+18135
+19715
+17884
+17749
+17748
+18380
+19855
+19713
+19720
+19574
+19710
+20240
+19718
+19714
+19576
+19712
+19711
+19868
+18107
+17746
+17673
+17808
+17806
+18240
+19566
+19565
+17698
+17753
+17703
+17700
+17711
+18640
+17706
+17701
+17685
+17853
+17756
+17755
+17885
+17758
+17736
+17733
+17757
+17760
+17759
+18108
+17767
+18381
+17710
+17709
+18074
+17702
+17809
+18137
+18138
+18139
+18141
+18140
+18142
+17850
+17852
+17852
+
+
+
+----
+
+
+⌂62.33 θ78° 3d [ubuntu@mgc-dev2-3090:~/hoailb/ … /MiniProd_NLP2_IntentClassification_MappingFastResp
+onse_ver2_T8_2025_StepUpEducation/ … /eval]└4 <base> main* ± python count_file.py 
+=== THỐNG KÊ FILE XLSX ===
+Folder hiện tại: /home/ubuntu/hoailb/wait_response/MiniProd_NLP2_IntentClassification_MappingFastResponse_ver2_T8_2025_StepUpEducation/dataProcessing/7_eval_compareFastResponse/eval
+Số file .xlsx: 836
+
+Danh sách file .xlsx:
+  1. conversation_16176_output_eval.xlsx (5,983 bytes)
+  2. conversation_17311_output_eval.xlsx (6,771 bytes)
+  3. conversation_16825_output_eval.xlsx (7,360 bytes)
+  4. conversation_17533_output_eval.xlsx (6,625 bytes)
+  5. conversation_16615_output_eval.xlsx (6,193 bytes)
+  6. conversation_18372_output_eval.xlsx (6,712 bytes)
+  7. conversation_17206_output_eval.xlsx (6,040 bytes)
+  8. conversation_17371_output_eval.xlsx (6,847 bytes)
+  9. conversation_17803_output_eval.xlsx (6,403 bytes)
+  10. conversation_16653_output_eval.xlsx (5,614 bytes)
+  11. conversation_16124_output_eval.xlsx (8,377 bytes)
+  12. conversation_17308_output_eval.xlsx (6,707 bytes)
+  13. conversation_17876_output_eval.xlsx (6,376 bytes)
+  14. conversation_18095_output_eval.xlsx (6,539 bytes)
+  15. conversation_17830_output_eval.xlsx (6,404 bytes)
+  16. conversation_15224_output_eval.xlsx (7,148 bytes)
+  17. conversation_16404_output_eval.xlsx (6,949 bytes)
+  18. conversation_15010_output_eval.xlsx (5,668 bytes)
+  19. conversation_15748_output_eval.xlsx (7,991 bytes)
+  20. conversation_17735_output_eval.xlsx (5,776 bytes)
+  21. conversation_18158_output_eval.xlsx (5,549 bytes)
+  22. conversation_17825_output_eval.xlsx (5,409 bytes)
+  23. conversation_15761_output_eval.xlsx (6,951 bytes)
+  24. conversation_16146_output_eval.xlsx (5,984 bytes)
+  25. conversation_17055_output_eval.xlsx (7,817 bytes)
+  26. conversation_18888_output_eval.xlsx (6,833 bytes)
+  27. conversation_18351_output_eval.xlsx (5,508 bytes)
+  28. conversation_17722_output_eval.xlsx (5,428 bytes)
+  29. conversation_18861_output_eval.xlsx (6,569 bytes)
+  30. conversation_18890_output_eval.xlsx (7,623 bytes)
+  31. conversation_17821_output_eval.xlsx (5,398 bytes)
+  32. conversation_14838_output_eval.xlsx (9,856 bytes)
+  33. conversation_16184_output_eval.xlsx (5,926 bytes)
+  34. conversation_17697_output_eval.xlsx (5,483 bytes)
+  35. conversation_17820_output_eval.xlsx (6,862 bytes)
+  36. conversation_17329_output_eval.xlsx (6,716 bytes)
+  37. conversation_16673_output_eval.xlsx (6,814 bytes)
+  38. conversation_16296_output_eval.xlsx (7,257 bytes)
+  39. conversation_17011_output_eval.xlsx (7,626 bytes)
+  40. conversation_19594_output_eval.xlsx (5,707 bytes)
+  41. conversation_17769_output_eval.xlsx (5,351 bytes)
+  42. conversation_15187_output_eval.xlsx (6,115 bytes)
+  43. conversation_16816_output_eval.xlsx (5,644 bytes)
+  44. conversation_16981_output_eval.xlsx (5,627 bytes)
+  45. conversation_17770_output_eval.xlsx (5,463 bytes)
+  46. conversation_17242_output_eval.xlsx (6,750 bytes)
+  47. conversation_16901_output_eval.xlsx (7,769 bytes)
+  48. conversation_17974_output_eval.xlsx (6,616 bytes)
+  49. conversation_15156_output_eval.xlsx (7,783 bytes)
+  50. conversation_18240_output_eval.xlsx (6,051 bytes)
+  51. conversation_15870_output_eval.xlsx (7,578 bytes)
+  52. conversation_17568_output_eval.xlsx (6,445 bytes)
+  53. conversation_17374_output_eval.xlsx (6,975 bytes)
+  54. conversation_16138_output_eval.xlsx (7,292 bytes)
+  55. conversation_17575_output_eval.xlsx (5,659 bytes)
+  56. conversation_15786_output_eval.xlsx (5,630 bytes)
+  57. conversation_19868_output_eval.xlsx (7,471 bytes)
+  58. conversation_17801_output_eval.xlsx (5,894 bytes)
+  59. conversation_17467_output_eval.xlsx (5,852 bytes)
+  60. conversation_17874_output_eval.xlsx (6,821 bytes)
+  61. conversation_19764_output_eval.xlsx (6,376 bytes)
+  62. conversation_15199_output_eval.xlsx (5,996 bytes)
+  63. conversation_15942_output_eval.xlsx (7,586 bytes)
+  64. conversation_17117_output_eval.xlsx (7,150 bytes)
+  65. conversation_19284_output_eval.xlsx (5,437 bytes)
+  66. conversation_17730_output_eval.xlsx (5,684 bytes)
+  67. conversation_15437_output_eval.xlsx (7,845 bytes)
+  68. conversation_15917_output_eval.xlsx (6,991 bytes)
+  69. conversation_18381_output_eval.xlsx (8,066 bytes)
+  70. conversation_17297_output_eval.xlsx (8,737 bytes)
+  71. conversation_16578_output_eval.xlsx (5,521 bytes)
+  72. conversation_17367_output_eval.xlsx (8,297 bytes)
+  73. conversation_16141_output_eval.xlsx (6,971 bytes)
+  74. conversation_15124_output_eval.xlsx (5,648 bytes)
+  75. conversation_18163_output_eval.xlsx (5,911 bytes)
+  76. conversation_16645_output_eval.xlsx (7,349 bytes)
+  77. conversation_17425_output_eval.xlsx (6,189 bytes)
+  78. conversation_16985_output_eval.xlsx (6,498 bytes)
+  79. conversation_17576_output_eval.xlsx (7,245 bytes)
+  80. conversation_15757_output_eval.xlsx (6,464 bytes)
+  81. conversation_16868_output_eval.xlsx (10,211 bytes)
+  82. conversation_18108_output_eval.xlsx (7,946 bytes)
+  83. conversation_16951_output_eval.xlsx (7,418 bytes)
+  84. conversation_19597_output_eval.xlsx (7,225 bytes)
+  85. conversation_16515_output_eval.xlsx (8,000 bytes)
+  86. conversation_15935_output_eval.xlsx (7,127 bytes)
+  87. conversation_19714_output_eval.xlsx (5,620 bytes)
+  88. conversation_18132_output_eval.xlsx (6,859 bytes)
+  89. conversation_18153_output_eval.xlsx (5,843 bytes)
+  90. conversation_17731_output_eval.xlsx (6,691 bytes)
+  91. conversation_15227_output_eval.xlsx (5,957 bytes)
+  92. conversation_20362_output_eval.xlsx (5,649 bytes)
+  93. conversation_16840_output_eval.xlsx (6,570 bytes)
+  94. conversation_17490_output_eval.xlsx (7,779 bytes)
+  95. conversation_19199_output_eval.xlsx (6,882 bytes)
+  96. conversation_14631_output_eval.xlsx (7,659 bytes)
+  97. conversation_15751_output_eval.xlsx (6,683 bytes)
+  98. conversation_15734_output_eval.xlsx (7,152 bytes)
+  99. conversation_16196_output_eval.xlsx (5,710 bytes)
+  100. conversation_16289_output_eval.xlsx (6,283 bytes)
+  101. conversation_15225_output_eval.xlsx (7,763 bytes)
+  102. conversation_17409_output_eval.xlsx (7,098 bytes)
+  103. conversation_17628_output_eval.xlsx (6,080 bytes)
+  104. conversation_15157_output_eval.xlsx (7,313 bytes)
+  105. conversation_17625_output_eval.xlsx (7,097 bytes)
+  106. conversation_16580_output_eval.xlsx (6,644 bytes)
+  107. conversation_18041_output_eval.xlsx (5,567 bytes)
+  108. conversation_17303_output_eval.xlsx (8,004 bytes)
+  109. conversation_18120_output_eval.xlsx (7,290 bytes)
+  110. conversation_16407_output_eval.xlsx (5,670 bytes)
+  111. conversation_16607_output_eval.xlsx (6,891 bytes)
+  112. conversation_16803_output_eval.xlsx (6,905 bytes)
+  113. conversation_17703_output_eval.xlsx (6,831 bytes)
+  114. conversation_14837_output_eval.xlsx (9,075 bytes)
+  115. conversation_15432_output_eval.xlsx (6,485 bytes)
+  116. conversation_16890_output_eval.xlsx (8,378 bytes)
+  117. conversation_17607_output_eval.xlsx (7,847 bytes)
+  118. conversation_17338_output_eval.xlsx (5,902 bytes)
+  119. conversation_16913_output_eval.xlsx (6,838 bytes)
+  120. conversation_16600_output_eval.xlsx (5,543 bytes)
+  121. conversation_15123_output_eval.xlsx (5,637 bytes)
+  122. conversation_17838_output_eval.xlsx (7,342 bytes)
+  123. conversation_17556_output_eval.xlsx (5,453 bytes)
+  124. conversation_14775_output_eval.xlsx (6,139 bytes)
+  125. conversation_15024_output_eval.xlsx (5,681 bytes)
+  126. conversation_16181_output_eval.xlsx (6,374 bytes)
+  127. conversation_17369_output_eval.xlsx (6,571 bytes)
+  128. conversation_16527_output_eval.xlsx (7,676 bytes)
+  129. conversation_16281_output_eval.xlsx (7,521 bytes)
+  130. conversation_16117_output_eval.xlsx (7,007 bytes)
+  131. conversation_16817_output_eval.xlsx (7,406 bytes)
+  132. conversation_17945_output_eval.xlsx (6,299 bytes)
+  133. conversation_16839_output_eval.xlsx (6,708 bytes)
+  134. conversation_17555_output_eval.xlsx (5,967 bytes)
+  135. conversation_14874_output_eval.xlsx (8,946 bytes)
+  136. conversation_15222_output_eval.xlsx (8,389 bytes)
+  137. conversation_17307_output_eval.xlsx (6,633 bytes)
+  138. conversation_17279_output_eval.xlsx (7,944 bytes)
+  139. conversation_17765_output_eval.xlsx (5,354 bytes)
+  140. conversation_17870_output_eval.xlsx (6,471 bytes)
+  141. conversation_14945_output_eval.xlsx (7,357 bytes)
+  142. conversation_17725_output_eval.xlsx (6,281 bytes)
+  143. conversation_17554_output_eval.xlsx (5,738 bytes)
+  144. conversation_17431_output_eval.xlsx (6,168 bytes)
+  145. conversation_16672_output_eval.xlsx (6,941 bytes)
+  146. conversation_16859_output_eval.xlsx (7,213 bytes)
+  147. conversation_15023_output_eval.xlsx (6,121 bytes)
+  148. conversation_15077_output_eval.xlsx (6,215 bytes)
+  149. conversation_18161_output_eval.xlsx (5,894 bytes)
+  150. conversation_15770_output_eval.xlsx (6,305 bytes)
+  151. conversation_16300_output_eval.xlsx (6,936 bytes)
+  152. conversation_16814_output_eval.xlsx (7,312 bytes)
+  153. conversation_16948_output_eval.xlsx (7,497 bytes)
+  154. conversation_17540_output_eval.xlsx (5,361 bytes)
+  155. conversation_20402_output_eval.xlsx (6,292 bytes)
+  156. conversation_17535_output_eval.xlsx (5,370 bytes)
+  157. conversation_20379_output_eval.xlsx (7,188 bytes)
+  158. conversation_17706_output_eval.xlsx (6,110 bytes)
+  159. conversation_16821_output_eval.xlsx (6,433 bytes)
+  160. conversation_17753_output_eval.xlsx (5,444 bytes)
+  161. conversation_15760_output_eval.xlsx (7,140 bytes)
+  162. conversation_16179_output_eval.xlsx (6,603 bytes)
+  163. conversation_16900_output_eval.xlsx (7,890 bytes)
+  164. conversation_18098_output_eval.xlsx (7,635 bytes)
+  165. conversation_17760_output_eval.xlsx (7,967 bytes)
+  166. conversation_16249_output_eval.xlsx (6,960 bytes)
+  167. conversation_16498_output_eval.xlsx (6,730 bytes)
+  168. conversation_17828_output_eval.xlsx (5,739 bytes)
+  169. conversation_16248_output_eval.xlsx (5,791 bytes)
+  170. conversation_14947_output_eval.xlsx (8,332 bytes)
+  171. conversation_16811_output_eval.xlsx (6,973 bytes)
+  172. conversation_15434_output_eval.xlsx (8,181 bytes)
+  173. conversation_15766_output_eval.xlsx (8,325 bytes)
+  174. conversation_15730_output_eval.xlsx (7,031 bytes)
+  175. conversation_14697_output_eval.xlsx (6,229 bytes)
+  176. conversation_20383_output_eval.xlsx (6,523 bytes)
+  177. conversation_16194_output_eval.xlsx (6,418 bytes)
+  178. conversation_17557_output_eval.xlsx (5,587 bytes)
+  179. conversation_16119_output_eval.xlsx (6,648 bytes)
+  180. conversation_18139_output_eval.xlsx (5,847 bytes)
+  181. conversation_19720_output_eval.xlsx (6,920 bytes)
+  182. conversation_17326_output_eval.xlsx (6,805 bytes)
+  183. conversation_15924_output_eval.xlsx (7,436 bytes)
+  184. conversation_16666_output_eval.xlsx (6,240 bytes)
+  185. conversation_17541_output_eval.xlsx (6,185 bytes)
+  186. conversation_18969_output_eval.xlsx (7,015 bytes)
+  187. conversation_14835_output_eval.xlsx (7,565 bytes)
+  188. conversation_16116_output_eval.xlsx (5,527 bytes)
+  189. conversation_17733_output_eval.xlsx (5,846 bytes)
+  190. conversation_14948_output_eval.xlsx (9,502 bytes)
+  191. conversation_17382_output_eval.xlsx (6,880 bytes)
+  192. conversation_15309_output_eval.xlsx (6,290 bytes)
+  193. conversation_17386_output_eval.xlsx (6,602 bytes)
+  194. conversation_17123_output_eval.xlsx (6,225 bytes)
+  195. conversation_16641_output_eval.xlsx (6,228 bytes)
+  196. conversation_17422_output_eval.xlsx (8,085 bytes)
+  197. conversation_19341_output_eval.xlsx (5,533 bytes)
+  198. conversation_14805_output_eval.xlsx (8,006 bytes)
+  199. conversation_16983_output_eval.xlsx (7,105 bytes)
+  200. conversation_16288_output_eval.xlsx (6,151 bytes)
+  201. conversation_15314_output_eval.xlsx (6,363 bytes)
+  202. conversation_17932_output_eval.xlsx (7,452 bytes)
+  203. conversation_15211_output_eval.xlsx (8,324 bytes)
+  204. conversation_15030_output_eval.xlsx (8,050 bytes)
+  205. conversation_17565_output_eval.xlsx (6,664 bytes)
+  206. conversation_17574_output_eval.xlsx (5,968 bytes)
+  207. conversation_16642_output_eval.xlsx (7,431 bytes)
+  208. conversation_19435_output_eval.xlsx (5,787 bytes)
+  209. conversation_15122_output_eval.xlsx (5,659 bytes)
+  210. conversation_17129_output_eval.xlsx (5,615 bytes)
+  211. conversation_15934_output_eval.xlsx (5,726 bytes)
+  212. conversation_18157_output_eval.xlsx (5,764 bytes)
+  213. conversation_15303_output_eval.xlsx (6,260 bytes)
+  214. conversation_16204_output_eval.xlsx (5,439 bytes)
+  215. conversation_14847_output_eval.xlsx (7,852 bytes)
+  216. conversation_16256_output_eval.xlsx (6,950 bytes)
+  217. conversation_15864_output_eval.xlsx (5,576 bytes)
+  218. conversation_17305_output_eval.xlsx (6,744 bytes)
+  219. conversation_15903_output_eval.xlsx (7,297 bytes)
+  220. conversation_16879_output_eval.xlsx (6,705 bytes)
+  221. conversation_15567_output_eval.xlsx (7,341 bytes)
+  222. conversation_15940_output_eval.xlsx (6,996 bytes)
+  223. conversation_15208_output_eval.xlsx (7,312 bytes)
+  224. conversation_15920_output_eval.xlsx (6,383 bytes)
+  225. conversation_15205_output_eval.xlsx (8,494 bytes)
+  226. conversation_17408_output_eval.xlsx (6,803 bytes)
+  227. conversation_19124_output_eval.xlsx (6,499 bytes)
+  228. conversation_16136_output_eval.xlsx (7,112 bytes)
+  229. conversation_18432_output_eval.xlsx (5,421 bytes)
+  230. conversation_14767_output_eval.xlsx (6,137 bytes)
+  231. conversation_15385_output_eval.xlsx (6,428 bytes)
+  232. conversation_15524_output_eval.xlsx (5,937 bytes)
+  233. conversation_17627_output_eval.xlsx (6,543 bytes)
+  234. conversation_14690_output_eval.xlsx (6,159 bytes)
+  235. conversation_16317_output_eval.xlsx (5,758 bytes)
+  236. conversation_16874_output_eval.xlsx (5,913 bytes)
+  237. conversation_17310_output_eval.xlsx (7,340 bytes)
+  238. conversation_15020_output_eval.xlsx (7,653 bytes)
+  239. conversation_17814_output_eval.xlsx (6,594 bytes)
+  240. conversation_16663_output_eval.xlsx (8,016 bytes)
+  241. conversation_17698_output_eval.xlsx (6,834 bytes)
+  242. conversation_15008_output_eval.xlsx (5,671 bytes)
+  243. conversation_15318_output_eval.xlsx (5,725 bytes)
+  244. conversation_17428_output_eval.xlsx (6,485 bytes)
+  245. conversation_17417_output_eval.xlsx (6,195 bytes)
+  246. conversation_17817_output_eval.xlsx (7,907 bytes)
+  247. conversation_15568_output_eval.xlsx (8,624 bytes)
+  248. conversation_15755_output_eval.xlsx (5,584 bytes)
+  249. conversation_18380_output_eval.xlsx (6,540 bytes)
+  250. conversation_15459_output_eval.xlsx (6,067 bytes)
+  251. conversation_18136_output_eval.xlsx (7,140 bytes)
+  252. conversation_20517_output_eval.xlsx (6,536 bytes)
+  253. conversation_19711_output_eval.xlsx (6,169 bytes)
+  254. conversation_16293_output_eval.xlsx (6,441 bytes)
+  255. conversation_16657_output_eval.xlsx (6,299 bytes)
+  256. conversation_18858_output_eval.xlsx (5,548 bytes)
+  257. conversation_17291_output_eval.xlsx (7,106 bytes)
+  258. conversation_19044_output_eval.xlsx (6,071 bytes)
+  259. conversation_16878_output_eval.xlsx (6,094 bytes)
+  260. conversation_16915_output_eval.xlsx (7,519 bytes)
+  261. conversation_16049_output_eval.xlsx (6,031 bytes)
+  262. conversation_16897_output_eval.xlsx (5,539 bytes)
+  263. conversation_17702_output_eval.xlsx (6,122 bytes)
+  264. conversation_15229_output_eval.xlsx (7,113 bytes)
+  265. conversation_16644_output_eval.xlsx (7,100 bytes)
+  266. conversation_14943_output_eval.xlsx (9,451 bytes)
+  267. conversation_14841_output_eval.xlsx (7,779 bytes)
+  268. conversation_16135_output_eval.xlsx (5,655 bytes)
+  269. conversation_17300_output_eval.xlsx (6,827 bytes)
+  270. conversation_17378_output_eval.xlsx (5,454 bytes)
+  271. conversation_15433_output_eval.xlsx (6,415 bytes)
+  272. conversation_17298_output_eval.xlsx (7,469 bytes)
+  273. conversation_15750_output_eval.xlsx (7,340 bytes)
+  274. conversation_15525_output_eval.xlsx (6,174 bytes)
+  275. conversation_16813_output_eval.xlsx (7,150 bytes)
+  276. conversation_17023_output_eval.xlsx (7,232 bytes)
+  277. conversation_17805_output_eval.xlsx (6,538 bytes)
+  278. conversation_19249_output_eval.xlsx (6,139 bytes)
+  279. conversation_18900_output_eval.xlsx (7,721 bytes)
+  280. conversation_15051_output_eval.xlsx (7,754 bytes)
+  281. conversation_14779_output_eval.xlsx (6,164 bytes)
+  282. conversation_15764_output_eval.xlsx (7,115 bytes)
+  283. conversation_15523_output_eval.xlsx (6,127 bytes)
+  284. conversation_19370_output_eval.xlsx (6,837 bytes)
+  285. conversation_17768_output_eval.xlsx (5,354 bytes)
+  286. conversation_17843_output_eval.xlsx (7,063 bytes)
+  287. conversation_17877_output_eval.xlsx (6,148 bytes)
+  288. conversation_17610_output_eval.xlsx (6,537 bytes)
+  289. conversation_17243_output_eval.xlsx (6,478 bytes)
+  290. conversation_16174_output_eval.xlsx (5,528 bytes)
+  291. conversation_18902_output_eval.xlsx (7,753 bytes)
+  292. conversation_15638_output_eval.xlsx (5,955 bytes)
+  293. conversation_16968_output_eval.xlsx (6,543 bytes)
+  294. conversation_16528_output_eval.xlsx (6,327 bytes)
+  295. conversation_18096_output_eval.xlsx (5,699 bytes)
+  296. conversation_18869_output_eval.xlsx (6,641 bytes)
+  297. conversation_16298_output_eval.xlsx (7,508 bytes)
+  298. conversation_16903_output_eval.xlsx (5,593 bytes)
+  299. conversation_17810_output_eval.xlsx (6,540 bytes)
+  300. conversation_17812_output_eval.xlsx (6,273 bytes)
+  301. conversation_16199_output_eval.xlsx (7,027 bytes)
+  302. conversation_17683_output_eval.xlsx (5,994 bytes)
+  303. conversation_14826_output_eval.xlsx (5,712 bytes)
+  304. conversation_16192_output_eval.xlsx (5,629 bytes)
+  305. conversation_17238_output_eval.xlsx (6,728 bytes)
+  306. conversation_15745_output_eval.xlsx (7,643 bytes)
+  307. conversation_16191_output_eval.xlsx (5,540 bytes)
+  308. conversation_16274_output_eval.xlsx (5,574 bytes)
+  309. conversation_17235_output_eval.xlsx (5,604 bytes)
+  310. conversation_17060_output_eval.xlsx (6,167 bytes)
+  311. conversation_16812_output_eval.xlsx (7,249 bytes)
+  312. conversation_17836_output_eval.xlsx (6,796 bytes)
+  313. conversation_19828_output_eval.xlsx (6,575 bytes)
+  314. conversation_17362_output_eval.xlsx (6,269 bytes)
+  315. conversation_16066_output_eval.xlsx (6,566 bytes)
+  316. conversation_16115_output_eval.xlsx (5,862 bytes)
+  317. conversation_15230_output_eval.xlsx (7,188 bytes)
+  318. conversation_17306_output_eval.xlsx (12,761 bytes)
+  319. conversation_15028_output_eval.xlsx (8,110 bytes)
+  320. conversation_14941_output_eval.xlsx (7,959 bytes)
+  321. conversation_17424_output_eval.xlsx (6,191 bytes)
+  322. conversation_17225_output_eval.xlsx (7,471 bytes)
+  323. conversation_15939_output_eval.xlsx (5,839 bytes)
+  324. conversation_15932_output_eval.xlsx (8,086 bytes)
+  325. conversation_17087_output_eval.xlsx (6,901 bytes)
+  326. conversation_16756_output_eval.xlsx (7,322 bytes)
+  327. conversation_16280_output_eval.xlsx (7,583 bytes)
+  328. conversation_17240_output_eval.xlsx (6,783 bytes)
+  329. conversation_16197_output_eval.xlsx (5,515 bytes)
+  330. conversation_16255_output_eval.xlsx (6,810 bytes)
+  331. conversation_17543_output_eval.xlsx (8,282 bytes)
+  332. conversation_16660_output_eval.xlsx (7,172 bytes)
+  333. conversation_14693_output_eval.xlsx (6,179 bytes)
+  334. conversation_18415_output_eval.xlsx (6,695 bytes)
+  335. conversation_17058_output_eval.xlsx (6,831 bytes)
+  336. conversation_15416_output_eval.xlsx (9,673 bytes)
+  337. conversation_15234_output_eval.xlsx (7,193 bytes)
+  338. conversation_16178_output_eval.xlsx (7,071 bytes)
+  339. conversation_17998_output_eval.xlsx (6,821 bytes)
+  340. conversation_15019_output_eval.xlsx (5,710 bytes)
+  341. conversation_15218_output_eval.xlsx (5,836 bytes)
+  342. conversation_19855_output_eval.xlsx (5,755 bytes)
+  343. conversation_16896_output_eval.xlsx (5,703 bytes)
+  344. conversation_16602_output_eval.xlsx (5,549 bytes)
+  345. conversation_16140_output_eval.xlsx (7,600 bytes)
+  346. conversation_17379_output_eval.xlsx (7,270 bytes)
+  347. conversation_15428_output_eval.xlsx (6,033 bytes)
+  348. conversation_16275_output_eval.xlsx (7,555 bytes)
+  349. conversation_15198_output_eval.xlsx (7,821 bytes)
+  350. conversation_17296_output_eval.xlsx (7,362 bytes)
+  351. conversation_17850_output_eval.xlsx (5,480 bytes)
+  352. conversation_16581_output_eval.xlsx (6,376 bytes)
+  353. conversation_15429_output_eval.xlsx (6,218 bytes)
+  354. conversation_16986_output_eval.xlsx (6,135 bytes)
+  355. conversation_16783_output_eval.xlsx (6,815 bytes)
+  356. conversation_14916_output_eval.xlsx (6,573 bytes)
+  357. conversation_15938_output_eval.xlsx (6,173 bytes)
+  358. conversation_16409_output_eval.xlsx (5,825 bytes)
+  359. conversation_17372_output_eval.xlsx (5,626 bytes)
+  360. conversation_16667_output_eval.xlsx (6,921 bytes)
+  361. conversation_14828_output_eval.xlsx (5,626 bytes)
+  362. conversation_17187_output_eval.xlsx (6,866 bytes)
+  363. conversation_15302_output_eval.xlsx (6,412 bytes)
+  364. conversation_17290_output_eval.xlsx (6,637 bytes)
+  365. conversation_17128_output_eval.xlsx (6,322 bytes)
+  366. conversation_17885_output_eval.xlsx (7,961 bytes)
+  367. conversation_15737_output_eval.xlsx (6,073 bytes)
+  368. conversation_16914_output_eval.xlsx (7,294 bytes)
+  369. conversation_15736_output_eval.xlsx (6,959 bytes)
+  370. conversation_16860_output_eval.xlsx (7,534 bytes)
+  371. conversation_17822_output_eval.xlsx (5,385 bytes)
+  372. conversation_17636_output_eval.xlsx (6,962 bytes)
+  373. conversation_18284_output_eval.xlsx (5,956 bytes)
+  374. conversation_17244_output_eval.xlsx (6,385 bytes)
+  375. conversation_16898_output_eval.xlsx (6,495 bytes)
+  376. conversation_14920_output_eval.xlsx (9,162 bytes)
+  377. conversation_17567_output_eval.xlsx (9,010 bytes)
+  378. conversation_16802_output_eval.xlsx (7,695 bytes)
+  379. conversation_15943_output_eval.xlsx (7,046 bytes)
+  380. conversation_15172_output_eval.xlsx (5,654 bytes)
+  381. conversation_15125_output_eval.xlsx (6,178 bytes)
+  382. conversation_19566_output_eval.xlsx (5,767 bytes)
+  383. conversation_16201_output_eval.xlsx (7,047 bytes)
+  384. conversation_16137_output_eval.xlsx (7,454 bytes)
+  385. conversation_17465_output_eval.xlsx (7,538 bytes)
+  386. conversation_16658_output_eval.xlsx (6,271 bytes)
+  387. conversation_16207_output_eval.xlsx (6,998 bytes)
+  388. conversation_18107_output_eval.xlsx (7,474 bytes)
+  389. conversation_15620_output_eval.xlsx (5,625 bytes)
+  390. conversation_16875_output_eval.xlsx (7,358 bytes)
+  391. conversation_19718_output_eval.xlsx (6,208 bytes)
+  392. conversation_19372_output_eval.xlsx (8,000 bytes)
+  393. conversation_15436_output_eval.xlsx (7,710 bytes)
+  394. conversation_17728_output_eval.xlsx (6,687 bytes)
+  395. conversation_15765_output_eval.xlsx (5,980 bytes)
+  396. conversation_17571_output_eval.xlsx (6,311 bytes)
+  397. conversation_19286_output_eval.xlsx (5,523 bytes)
+  398. conversation_17241_output_eval.xlsx (6,731 bytes)
+  399. conversation_16820_output_eval.xlsx (5,970 bytes)
+  400. conversation_15232_output_eval.xlsx (7,572 bytes)
+  401. conversation_17302_output_eval.xlsx (5,695 bytes)
+  402. conversation_17827_output_eval.xlsx (5,604 bytes)
+  403. conversation_17569_output_eval.xlsx (7,112 bytes)
+  404. conversation_17245_output_eval.xlsx (7,122 bytes)
+  405. conversation_17405_output_eval.xlsx (6,800 bytes)
+  406. conversation_15754_output_eval.xlsx (8,468 bytes)
+  407. conversation_17762_output_eval.xlsx (5,366 bytes)
+  408. conversation_15769_output_eval.xlsx (6,110 bytes)
+  409. conversation_16123_output_eval.xlsx (7,073 bytes)
+  410. conversation_17591_output_eval.xlsx (5,888 bytes)
+  411. conversation_18433_output_eval.xlsx (5,477 bytes)
+  412. conversation_18100_output_eval.xlsx (6,443 bytes)
+  413. conversation_18273_output_eval.xlsx (6,373 bytes)
+  414. conversation_14785_output_eval.xlsx (7,667 bytes)
+  415. conversation_16887_output_eval.xlsx (9,845 bytes)
+  416. conversation_17741_output_eval.xlsx (9,469 bytes)
+  417. conversation_16187_output_eval.xlsx (5,781 bytes)
+  418. conversation_19565_output_eval.xlsx (5,897 bytes)
+  419. conversation_16849_output_eval.xlsx (8,507 bytes)
+  420. conversation_15944_output_eval.xlsx (6,979 bytes)
+  421. conversation_18130_output_eval.xlsx (5,530 bytes)
+  422. conversation_18052_output_eval.xlsx (6,295 bytes)
+  423. conversation_16190_output_eval.xlsx (7,040 bytes)
+  424. conversation_14686_output_eval.xlsx (6,191 bytes)
+  425. conversation_15216_output_eval.xlsx (5,717 bytes)
+  426. conversation_15566_output_eval.xlsx (6,211 bytes)
+  427. conversation_16185_output_eval.xlsx (7,002 bytes)
+  428. conversation_17809_output_eval.xlsx (7,763 bytes)
+  429. conversation_17498_output_eval.xlsx (5,937 bytes)
+  430. conversation_16209_output_eval.xlsx (6,758 bytes)
+  431. conversation_16997_output_eval.xlsx (7,572 bytes)
+  432. conversation_15235_output_eval.xlsx (7,339 bytes)
+  433. conversation_16838_output_eval.xlsx (7,384 bytes)
+  434. conversation_17547_output_eval.xlsx (5,517 bytes)
+  435. conversation_17313_output_eval.xlsx (6,765 bytes)
+  436. conversation_15767_output_eval.xlsx (6,865 bytes)
+  437. conversation_17740_output_eval.xlsx (6,957 bytes)
+  438. conversation_19576_output_eval.xlsx (5,737 bytes)
+  439. conversation_16213_output_eval.xlsx (6,924 bytes)
+  440. conversation_15865_output_eval.xlsx (5,536 bytes)
+  441. conversation_18216_output_eval.xlsx (5,566 bytes)
+  442. conversation_17415_output_eval.xlsx (6,199 bytes)
+  443. conversation_17629_output_eval.xlsx (7,773 bytes)
+  444. conversation_16990_output_eval.xlsx (6,530 bytes)
+  445. conversation_14834_output_eval.xlsx (10,094 bytes)
+  446. conversation_15310_output_eval.xlsx (6,818 bytes)
+  447. conversation_15012_output_eval.xlsx (6,503 bytes)
+  448. conversation_16125_output_eval.xlsx (8,026 bytes)
+  449. conversation_16595_output_eval.xlsx (5,869 bytes)
+  450. conversation_17534_output_eval.xlsx (6,854 bytes)
+  451. conversation_15413_output_eval.xlsx (6,711 bytes)
+  452. conversation_17390_output_eval.xlsx (6,693 bytes)
+  453. conversation_17745_output_eval.xlsx (5,453 bytes)
+  454. conversation_17289_output_eval.xlsx (5,709 bytes)
+  455. conversation_16643_output_eval.xlsx (6,387 bytes)
+  456. conversation_17774_output_eval.xlsx (5,371 bytes)
+  457. conversation_17592_output_eval.xlsx (5,741 bytes)
+  458. conversation_17832_output_eval.xlsx (6,679 bytes)
+  459. conversation_15504_output_eval.xlsx (8,112 bytes)
+  460. conversation_15219_output_eval.xlsx (6,796 bytes)
+  461. conversation_15639_output_eval.xlsx (5,627 bytes)
+  462. conversation_17869_output_eval.xlsx (5,735 bytes)
+  463. conversation_15016_output_eval.xlsx (5,652 bytes)
+  464. conversation_17312_output_eval.xlsx (5,819 bytes)
+  465. conversation_15762_output_eval.xlsx (7,216 bytes)
+  466. conversation_20240_output_eval.xlsx (8,118 bytes)
+  467. conversation_16823_output_eval.xlsx (5,886 bytes)
+  468. conversation_15569_output_eval.xlsx (7,930 bytes)
+  469. conversation_17688_output_eval.xlsx (7,772 bytes)
+  470. conversation_18119_output_eval.xlsx (7,626 bytes)
+  471. conversation_15193_output_eval.xlsx (7,309 bytes)
+  472. conversation_17539_output_eval.xlsx (5,388 bytes)
+  473. conversation_15189_output_eval.xlsx (6,121 bytes)
+  474. conversation_15941_output_eval.xlsx (7,516 bytes)
+  475. conversation_17872_output_eval.xlsx (6,988 bytes)
+  476. conversation_15747_output_eval.xlsx (6,233 bytes)
+  477. conversation_19950_output_eval.xlsx (6,458 bytes)
+  478. conversation_16965_output_eval.xlsx (7,153 bytes)
+  479. conversation_16189_output_eval.xlsx (7,726 bytes)
+  480. conversation_15897_output_eval.xlsx (6,959 bytes)
+  481. conversation_15430_output_eval.xlsx (5,932 bytes)
+  482. conversation_15562_output_eval.xlsx (10,121 bytes)
+  483. conversation_16978_output_eval.xlsx (7,471 bytes)
+  484. conversation_16150_output_eval.xlsx (7,062 bytes)
+  485. conversation_16844_output_eval.xlsx (6,953 bytes)
+  486. conversation_17709_output_eval.xlsx (5,407 bytes)
+  487. conversation_16297_output_eval.xlsx (7,742 bytes)
+  488. conversation_17414_output_eval.xlsx (5,726 bytes)
+  489. conversation_17711_output_eval.xlsx (6,114 bytes)
+  490. conversation_17804_output_eval.xlsx (5,407 bytes)
+  491. conversation_17880_output_eval.xlsx (6,030 bytes)
+  492. conversation_16143_output_eval.xlsx (5,844 bytes)
+  493. conversation_16738_output_eval.xlsx (6,780 bytes)
+  494. conversation_17755_output_eval.xlsx (5,492 bytes)
+  495. conversation_16656_output_eval.xlsx (6,284 bytes)
+  496. conversation_18252_output_eval.xlsx (5,765 bytes)
+  497. conversation_17320_output_eval.xlsx (6,634 bytes)
+  498. conversation_14919_output_eval.xlsx (8,260 bytes)
+  499. conversation_15150_output_eval.xlsx (5,969 bytes)
+  500. conversation_17383_output_eval.xlsx (5,510 bytes)
+  501. conversation_15731_output_eval.xlsx (7,257 bytes)
+  502. conversation_18200_output_eval.xlsx (5,550 bytes)
+  503. conversation_15422_output_eval.xlsx (8,192 bytes)
+  504. conversation_17323_output_eval.xlsx (7,166 bytes)
+  505. conversation_17734_output_eval.xlsx (8,822 bytes)
+  506. conversation_15950_output_eval.xlsx (6,994 bytes)
+  507. conversation_16145_output_eval.xlsx (9,772 bytes)
+  508. conversation_17430_output_eval.xlsx (6,198 bytes)
+  509. conversation_17608_output_eval.xlsx (6,884 bytes)
+  510. conversation_17802_output_eval.xlsx (7,851 bytes)
+  511. conversation_17593_output_eval.xlsx (7,215 bytes)
+  512. conversation_15392_output_eval.xlsx (6,710 bytes)
+  513. conversation_15377_output_eval.xlsx (6,815 bytes)
+  514. conversation_19447_output_eval.xlsx (5,464 bytes)
+  515. conversation_15793_output_eval.xlsx (6,084 bytes)
+  516. conversation_15921_output_eval.xlsx (5,704 bytes)
+  517. conversation_20405_output_eval.xlsx (6,258 bytes)
+  518. conversation_15951_output_eval.xlsx (7,092 bytes)
+  519. conversation_17819_output_eval.xlsx (7,050 bytes)
+  520. conversation_17573_output_eval.xlsx (6,785 bytes)
+  521. conversation_18901_output_eval.xlsx (8,509 bytes)
+  522. conversation_17396_output_eval.xlsx (5,970 bytes)
+  523. conversation_17724_output_eval.xlsx (7,957 bytes)
+  524. conversation_15949_output_eval.xlsx (6,415 bytes)
+  525. conversation_16669_output_eval.xlsx (6,837 bytes)
+  526. conversation_15210_output_eval.xlsx (6,611 bytes)
+  527. conversation_15209_output_eval.xlsx (7,437 bytes)
+  528. conversation_15886_output_eval.xlsx (5,442 bytes)
+  529. conversation_17005_output_eval.xlsx (5,559 bytes)
+  530. conversation_16177_output_eval.xlsx (6,582 bytes)
+  531. conversation_15895_output_eval.xlsx (7,662 bytes)
+  532. conversation_18155_output_eval.xlsx (5,912 bytes)
+  533. conversation_15744_output_eval.xlsx (7,106 bytes)
+  534. conversation_15155_output_eval.xlsx (5,774 bytes)
+  535. conversation_16872_output_eval.xlsx (5,743 bytes)
+  536. conversation_15204_output_eval.xlsx (9,992 bytes)
+  537. conversation_15382_output_eval.xlsx (6,951 bytes)
+  538. conversation_15102_output_eval.xlsx (6,482 bytes)
+  539. conversation_14836_output_eval.xlsx (9,683 bytes)
+  540. conversation_16944_output_eval.xlsx (6,912 bytes)
+  541. conversation_17986_output_eval.xlsx (7,034 bytes)
+  542. conversation_17192_output_eval.xlsx (7,618 bytes)
+  543. conversation_14830_output_eval.xlsx (8,719 bytes)
+  544. conversation_15733_output_eval.xlsx (6,319 bytes)
+  545. conversation_17884_output_eval.xlsx (6,746 bytes)
+  546. conversation_16212_output_eval.xlsx (6,350 bytes)
+  547. conversation_15758_output_eval.xlsx (7,836 bytes)
+  548. conversation_14915_output_eval.xlsx (8,736 bytes)
+  549. conversation_16127_output_eval.xlsx (5,646 bytes)
+  550. conversation_18142_output_eval.xlsx (8,053 bytes)
+  551. conversation_16870_output_eval.xlsx (8,389 bytes)
+  552. conversation_16496_output_eval.xlsx (6,393 bytes)
+  553. conversation_16611_output_eval.xlsx (5,851 bytes)
+  554. conversation_15458_output_eval.xlsx (6,216 bytes)
+  555. conversation_15922_output_eval.xlsx (7,349 bytes)
+  556. conversation_15948_output_eval.xlsx (8,001 bytes)
+  557. conversation_17981_output_eval.xlsx (5,823 bytes)
+  558. conversation_16278_output_eval.xlsx (7,013 bytes)
+  559. conversation_17319_output_eval.xlsx (6,732 bytes)
+  560. conversation_16533_output_eval.xlsx (7,621 bytes)
+  561. conversation_16972_output_eval.xlsx (7,525 bytes)
+  562. conversation_18001_output_eval.xlsx (7,211 bytes)
+  563. conversation_15743_output_eval.xlsx (8,144 bytes)
+  564. conversation_16279_output_eval.xlsx (5,826 bytes)
+  565. conversation_15006_output_eval.xlsx (5,714 bytes)
+  566. conversation_17418_output_eval.xlsx (6,271 bytes)
+  567. conversation_15735_output_eval.xlsx (7,124 bytes)
+  568. conversation_16857_output_eval.xlsx (6,015 bytes)
+  569. conversation_15925_output_eval.xlsx (5,513 bytes)
+  570. conversation_17309_output_eval.xlsx (6,647 bytes)
+  571. conversation_15426_output_eval.xlsx (6,625 bytes)
+  572. conversation_18971_output_eval.xlsx (6,603 bytes)
+  573. conversation_16975_output_eval.xlsx (5,442 bytes)
+  574. conversation_17881_output_eval.xlsx (6,178 bytes)
+  575. conversation_17399_output_eval.xlsx (6,965 bytes)
+  576. conversation_18235_output_eval.xlsx (5,707 bytes)
+  577. conversation_16950_output_eval.xlsx (7,151 bytes)
+  578. conversation_17831_output_eval.xlsx (7,825 bytes)
+  579. conversation_17744_output_eval.xlsx (6,170 bytes)
+  580. conversation_16148_output_eval.xlsx (5,449 bytes)
+  581. conversation_17558_output_eval.xlsx (7,584 bytes)
+  582. conversation_15753_output_eval.xlsx (7,285 bytes)
+  583. conversation_16988_output_eval.xlsx (6,942 bytes)
+  584. conversation_19596_output_eval.xlsx (5,543 bytes)
+  585. conversation_15034_output_eval.xlsx (6,348 bytes)
+  586. conversation_17381_output_eval.xlsx (6,881 bytes)
+  587. conversation_16198_output_eval.xlsx (8,720 bytes)
+  588. conversation_17878_output_eval.xlsx (6,186 bytes)
+  589. conversation_15507_output_eval.xlsx (6,754 bytes)
+  590. conversation_17373_output_eval.xlsx (7,705 bytes)
+  591. conversation_15018_output_eval.xlsx (5,650 bytes)
+  592. conversation_14918_output_eval.xlsx (8,230 bytes)
+  593. conversation_15212_output_eval.xlsx (7,097 bytes)
+  594. conversation_15752_output_eval.xlsx (5,742 bytes)
+  595. conversation_17871_output_eval.xlsx (6,894 bytes)
+  596. conversation_17339_output_eval.xlsx (6,798 bytes)
+  597. conversation_16210_output_eval.xlsx (6,139 bytes)
+  598. conversation_18868_output_eval.xlsx (6,949 bytes)
+  599. conversation_16133_output_eval.xlsx (7,465 bytes)
+  600. conversation_16833_output_eval.xlsx (5,734 bytes)
+  601. conversation_15311_output_eval.xlsx (6,009 bytes)
+  602. conversation_17284_output_eval.xlsx (7,998 bytes)
+  603. conversation_16876_output_eval.xlsx (5,714 bytes)
+  604. conversation_16205_output_eval.xlsx (5,536 bytes)
+  605. conversation_16610_output_eval.xlsx (5,951 bytes)
+  606. conversation_17281_output_eval.xlsx (6,819 bytes)
+  607. conversation_17406_output_eval.xlsx (6,805 bytes)
+  608. conversation_14944_output_eval.xlsx (8,501 bytes)
+  609. conversation_18160_output_eval.xlsx (6,125 bytes)
+  610. conversation_15191_output_eval.xlsx (10,179 bytes)
+  611. conversation_17839_output_eval.xlsx (7,497 bytes)
+  612. conversation_15915_output_eval.xlsx (6,984 bytes)
+  613. conversation_14946_output_eval.xlsx (8,749 bytes)
+  614. conversation_16257_output_eval.xlsx (6,246 bytes)
+  615. conversation_15526_output_eval.xlsx (6,200 bytes)
+  616. conversation_15053_output_eval.xlsx (6,283 bytes)
+  617. conversation_17366_output_eval.xlsx (5,595 bytes)
+  618. conversation_16843_output_eval.xlsx (6,692 bytes)
+  619. conversation_19125_output_eval.xlsx (7,711 bytes)
+  620. conversation_15933_output_eval.xlsx (7,316 bytes)
+  621. conversation_16829_output_eval.xlsx (5,957 bytes)
+  622. conversation_17022_output_eval.xlsx (5,438 bytes)
+  623. conversation_16139_output_eval.xlsx (6,830 bytes)
+  624. conversation_15759_output_eval.xlsx (6,822 bytes)
+  625. conversation_16980_output_eval.xlsx (5,489 bytes)
+  626. conversation_18970_output_eval.xlsx (7,566 bytes)
+  627. conversation_15742_output_eval.xlsx (7,058 bytes)
+  628. conversation_16619_output_eval.xlsx (5,559 bytes)
+  629. conversation_17818_output_eval.xlsx (6,422 bytes)
+  630. conversation_16208_output_eval.xlsx (8,458 bytes)
+  631. conversation_19292_output_eval.xlsx (6,302 bytes)
+  632. conversation_18133_output_eval.xlsx (5,884 bytes)
+  633. conversation_16282_output_eval.xlsx (7,139 bytes)
+  634. conversation_17282_output_eval.xlsx (6,498 bytes)
+  635. conversation_17600_output_eval.xlsx (5,636 bytes)
+  636. conversation_17553_output_eval.xlsx (7,384 bytes)
+  637. conversation_16733_output_eval.xlsx (6,543 bytes)
+  638. conversation_19715_output_eval.xlsx (9,155 bytes)
+  639. conversation_18138_output_eval.xlsx (6,255 bytes)
+  640. conversation_17811_output_eval.xlsx (8,347 bytes)
+  641. conversation_17701_output_eval.xlsx (6,134 bytes)
+  642. conversation_17806_output_eval.xlsx (6,774 bytes)
+  643. conversation_17426_output_eval.xlsx (6,204 bytes)
+  644. conversation_17841_output_eval.xlsx (7,120 bytes)
+  645. conversation_16646_output_eval.xlsx (6,315 bytes)
+  646. conversation_16287_output_eval.xlsx (6,950 bytes)
+  647. conversation_15226_output_eval.xlsx (7,805 bytes)
+  648. conversation_17813_output_eval.xlsx (5,399 bytes)
+  649. conversation_17824_output_eval.xlsx (5,430 bytes)
+  650. conversation_16583_output_eval.xlsx (5,878 bytes)
+  651. conversation_18195_output_eval.xlsx (5,565 bytes)
+  652. conversation_17550_output_eval.xlsx (5,924 bytes)
+  653. conversation_15936_output_eval.xlsx (6,153 bytes)
+  654. conversation_15635_output_eval.xlsx (6,202 bytes)
+  655. conversation_19200_output_eval.xlsx (5,688 bytes)
+  656. conversation_15340_output_eval.xlsx (6,495 bytes)
+  657. conversation_17237_output_eval.xlsx (6,341 bytes)
+  658. conversation_17466_output_eval.xlsx (5,454 bytes)
+  659. conversation_17796_output_eval.xlsx (7,575 bytes)
+  660. conversation_15015_output_eval.xlsx (5,649 bytes)
+  661. conversation_19595_output_eval.xlsx (6,406 bytes)
+  662. conversation_15929_output_eval.xlsx (8,776 bytes)
+  663. conversation_15732_output_eval.xlsx (7,110 bytes)
+  664. conversation_17537_output_eval.xlsx (5,393 bytes)
+  665. conversation_17299_output_eval.xlsx (6,860 bytes)
+  666. conversation_16807_output_eval.xlsx (6,811 bytes)
+  667. conversation_16616_output_eval.xlsx (5,549 bytes)
+  668. conversation_16654_output_eval.xlsx (6,300 bytes)
+  669. conversation_17972_output_eval.xlsx (6,436 bytes)
+  670. conversation_16016_output_eval.xlsx (5,863 bytes)
+  671. conversation_17807_output_eval.xlsx (5,396 bytes)
+  672. conversation_15627_output_eval.xlsx (5,845 bytes)
+  673. conversation_16952_output_eval.xlsx (5,617 bytes)
+  674. conversation_18045_output_eval.xlsx (6,252 bytes)
+  675. conversation_18131_output_eval.xlsx (5,535 bytes)
+  676. conversation_17548_output_eval.xlsx (6,991 bytes)
+  677. conversation_16175_output_eval.xlsx (5,686 bytes)
+  678. conversation_17997_output_eval.xlsx (6,404 bytes)
+  679. conversation_16186_output_eval.xlsx (6,418 bytes)
+  680. conversation_15207_output_eval.xlsx (9,972 bytes)
+  681. conversation_18207_output_eval.xlsx (5,519 bytes)
+  682. conversation_17130_output_eval.xlsx (7,222 bytes)
+  683. conversation_15202_output_eval.xlsx (7,858 bytes)
+  684. conversation_15132_output_eval.xlsx (8,135 bytes)
+  685. conversation_15026_output_eval.xlsx (8,666 bytes)
+  686. conversation_17416_output_eval.xlsx (6,222 bytes)
+  687. conversation_15025_output_eval.xlsx (8,683 bytes)
+  688. conversation_15415_output_eval.xlsx (8,632 bytes)
+  689. conversation_15881_output_eval.xlsx (7,335 bytes)
+  690. conversation_17544_output_eval.xlsx (6,222 bytes)
+  691. conversation_17397_output_eval.xlsx (7,750 bytes)
+  692. conversation_16832_output_eval.xlsx (5,540 bytes)
+  693. conversation_15431_output_eval.xlsx (7,957 bytes)
+  694. conversation_17010_output_eval.xlsx (6,758 bytes)
+  695. conversation_17133_output_eval.xlsx (7,475 bytes)
+  696. conversation_18250_output_eval.xlsx (5,975 bytes)
+  697. conversation_16129_output_eval.xlsx (6,438 bytes)
+  698. conversation_15563_output_eval.xlsx (7,990 bytes)
+  699. conversation_16299_output_eval.xlsx (7,574 bytes)
+  700. conversation_16211_output_eval.xlsx (7,220 bytes)
+  701. conversation_15928_output_eval.xlsx (7,276 bytes)
+  702. conversation_15771_output_eval.xlsx (6,336 bytes)
+  703. conversation_15188_output_eval.xlsx (6,042 bytes)
+  704. conversation_18274_output_eval.xlsx (5,517 bytes)
+  705. conversation_16283_output_eval.xlsx (7,143 bytes)
+  706. conversation_17846_output_eval.xlsx (6,074 bytes)
+  707. conversation_17293_output_eval.xlsx (7,002 bytes)
+  708. conversation_19710_output_eval.xlsx (6,077 bytes)
+  709. conversation_17368_output_eval.xlsx (6,723 bytes)
+  710. conversation_20381_output_eval.xlsx (6,451 bytes)
+  711. conversation_17761_output_eval.xlsx (5,399 bytes)
+  712. conversation_15017_output_eval.xlsx (5,952 bytes)
+  713. conversation_18742_output_eval.xlsx (5,797 bytes)
+  714. conversation_15628_output_eval.xlsx (6,225 bytes)
+  715. conversation_15013_output_eval.xlsx (5,691 bytes)
+  716. conversation_16830_output_eval.xlsx (7,228 bytes)
+  717. conversation_16312_output_eval.xlsx (6,195 bytes)
+  718. conversation_18242_output_eval.xlsx (6,388 bytes)
+  719. conversation_15899_output_eval.xlsx (7,605 bytes)
+  720. conversation_14925_output_eval.xlsx (8,635 bytes)
+  721. conversation_15185_output_eval.xlsx (5,696 bytes)
+  722. conversation_15893_output_eval.xlsx (5,948 bytes)
+  723. conversation_14695_output_eval.xlsx (6,236 bytes)
+  724. conversation_15228_output_eval.xlsx (6,339 bytes)
+  725. conversation_16285_output_eval.xlsx (7,043 bytes)
+  726. conversation_15021_output_eval.xlsx (5,795 bytes)
+  727. conversation_17546_output_eval.xlsx (5,517 bytes)
+  728. conversation_15457_output_eval.xlsx (5,833 bytes)
+  729. conversation_14832_output_eval.xlsx (5,688 bytes)
+  730. conversation_16292_output_eval.xlsx (10,661 bytes)
+  731. conversation_17816_output_eval.xlsx (6,403 bytes)
+  732. conversation_17742_output_eval.xlsx (5,585 bytes)
+  733. conversation_18276_output_eval.xlsx (5,720 bytes)
+  734. conversation_17009_output_eval.xlsx (6,666 bytes)
+  735. conversation_17684_output_eval.xlsx (7,694 bytes)
+  736. conversation_16989_output_eval.xlsx (6,535 bytes)
+  737. conversation_15790_output_eval.xlsx (5,739 bytes)
+  738. conversation_17400_output_eval.xlsx (5,469 bytes)
+  739. conversation_15206_output_eval.xlsx (8,353 bytes)
+  740. conversation_15126_output_eval.xlsx (5,638 bytes)
+  741. conversation_17236_output_eval.xlsx (5,607 bytes)
+  742. conversation_14917_output_eval.xlsx (5,908 bytes)
+  743. conversation_15007_output_eval.xlsx (5,589 bytes)
+  744. conversation_17325_output_eval.xlsx (6,487 bytes)
+  745. conversation_17321_output_eval.xlsx (5,966 bytes)
+  746. conversation_17721_output_eval.xlsx (6,095 bytes)
+  747. conversation_19201_output_eval.xlsx (7,628 bytes)
+  748. conversation_17747_output_eval.xlsx (7,481 bytes)
+  749. conversation_16675_output_eval.xlsx (6,817 bytes)
+  750. conversation_15197_output_eval.xlsx (7,608 bytes)
+  751. conversation_17873_output_eval.xlsx (5,415 bytes)
+  752. conversation_16276_output_eval.xlsx (6,822 bytes)
+  753. conversation_15009_output_eval.xlsx (5,655 bytes)
+  754. conversation_16853_output_eval.xlsx (7,699 bytes)
+  755. conversation_16824_output_eval.xlsx (6,502 bytes)
+  756. conversation_16984_output_eval.xlsx (6,549 bytes)
+  757. conversation_17647_output_eval.xlsx (5,442 bytes)
+  758. conversation_17545_output_eval.xlsx (6,266 bytes)
+  759. conversation_17875_output_eval.xlsx (5,604 bytes)
+  760. conversation_16827_output_eval.xlsx (5,608 bytes)
+  761. conversation_17012_output_eval.xlsx (5,739 bytes)
+  762. conversation_16632_output_eval.xlsx (6,727 bytes)
+  763. conversation_16810_output_eval.xlsx (7,158 bytes)
+  764. conversation_18156_output_eval.xlsx (5,754 bytes)
+  765. conversation_15887_output_eval.xlsx (6,551 bytes)
+  766. conversation_17840_output_eval.xlsx (6,406 bytes)
+  767. conversation_15190_output_eval.xlsx (6,151 bytes)
+  768. conversation_16206_output_eval.xlsx (5,517 bytes)
+  769. conversation_16165_output_eval.xlsx (6,874 bytes)
+  770. conversation_15396_output_eval.xlsx (6,819 bytes)
+  771. conversation_17710_output_eval.xlsx (6,061 bytes)
+  772. conversation_17393_output_eval.xlsx (7,085 bytes)
+  773. conversation_15220_output_eval.xlsx (5,676 bytes)
+  774. conversation_16651_output_eval.xlsx (5,589 bytes)
+  775. conversation_15345_output_eval.xlsx (6,612 bytes)
+  776. conversation_16757_output_eval.xlsx (7,375 bytes)
+  777. conversation_17764_output_eval.xlsx (5,358 bytes)
+  778. conversation_16254_output_eval.xlsx (6,813 bytes)
+  779. conversation_14933_output_eval.xlsx (7,251 bytes)
+  780. conversation_16252_output_eval.xlsx (8,718 bytes)
+  781. conversation_15930_output_eval.xlsx (7,421 bytes)
+  782. conversation_15945_output_eval.xlsx (6,925 bytes)
+  783. conversation_14938_output_eval.xlsx (7,694 bytes)
+  784. conversation_17635_output_eval.xlsx (7,097 bytes)
+  785. conversation_16976_output_eval.xlsx (6,873 bytes)
+  786. conversation_16953_output_eval.xlsx (7,158 bytes)
+  787. conversation_15746_output_eval.xlsx (8,192 bytes)
+  788. conversation_16603_output_eval.xlsx (5,554 bytes)
+  789. conversation_20234_output_eval.xlsx (7,418 bytes)
+  790. conversation_15029_output_eval.xlsx (10,168 bytes)
+  791. conversation_15319_output_eval.xlsx (6,924 bytes)
+  792. conversation_17773_output_eval.xlsx (5,609 bytes)
+  793. conversation_17847_output_eval.xlsx (8,103 bytes)
+  794. conversation_16938_output_eval.xlsx (7,218 bytes)
+  795. conversation_17125_output_eval.xlsx (5,815 bytes)
+  796. conversation_17552_output_eval.xlsx (5,519 bytes)
+  797. conversation_17766_output_eval.xlsx (5,322 bytes)
+  798. conversation_16982_output_eval.xlsx (7,021 bytes)
+  799. conversation_17551_output_eval.xlsx (5,926 bytes)
+  800. conversation_15918_output_eval.xlsx (6,486 bytes)
+  801. conversation_16106_output_eval.xlsx (7,150 bytes)
+  802. conversation_17549_output_eval.xlsx (6,076 bytes)
+  803. conversation_19837_output_eval.xlsx (6,530 bytes)
+  804. conversation_17794_output_eval.xlsx (6,650 bytes)
+  805. conversation_15898_output_eval.xlsx (7,575 bytes)
+  806. conversation_17469_output_eval.xlsx (7,114 bytes)
+  807. conversation_15420_output_eval.xlsx (7,173 bytes)
+  808. conversation_17978_output_eval.xlsx (6,126 bytes)
+  809. conversation_16873_output_eval.xlsx (7,407 bytes)
+  810. conversation_19574_output_eval.xlsx (5,771 bytes)
+  811. conversation_18414_output_eval.xlsx (5,431 bytes)
+  812. conversation_17723_output_eval.xlsx (6,043 bytes)
+  813. conversation_15180_output_eval.xlsx (5,833 bytes)
+  814. conversation_17542_output_eval.xlsx (8,661 bytes)
+  815. conversation_17991_output_eval.xlsx (7,214 bytes)
+  816. conversation_18229_output_eval.xlsx (5,864 bytes)
+  817. conversation_14632_output_eval.xlsx (5,628 bytes)
+  818. conversation_17596_output_eval.xlsx (7,256 bytes)
+  819. conversation_16604_output_eval.xlsx (5,552 bytes)
+  820. conversation_16819_output_eval.xlsx (7,456 bytes)
+  821. conversation_16180_output_eval.xlsx (6,312 bytes)
+  822. conversation_17685_output_eval.xlsx (6,247 bytes)
+  823. conversation_17700_output_eval.xlsx (6,817 bytes)
+  824. conversation_15608_output_eval.xlsx (7,183 bytes)
+  825. conversation_16808_output_eval.xlsx (7,437 bytes)
+  826. conversation_16815_output_eval.xlsx (6,349 bytes)
+  827. conversation_15217_output_eval.xlsx (5,986 bytes)
+  828. conversation_19285_output_eval.xlsx (6,950 bytes)
+  829. conversation_18413_output_eval.xlsx (5,785 bytes)
+  830. conversation_16634_output_eval.xlsx (6,610 bytes)
+  831. conversation_17835_output_eval.xlsx (5,458 bytes)
+  832. conversation_18102_output_eval.xlsx (6,098 bytes)
+  833. conversation_16652_output_eval.xlsx (5,577 bytes)
+  834. conversation_17844_output_eval.xlsx (7,222 bytes)
+  835. conversation_16126_output_eval.xlsx (8,123 bytes)
+  836. conversation_15923_output_eval.xlsx (8,922 bytes)
+
+=== KẾT QUẢ ===
+Tổng cộng: 836 file .xlsx
+⌂62.06 θ77° 3d [ubuntu@mgc-dev2-3090:~/hoailb/ … /MiniProd_NLP2_IntentClassification_MappingFastResp
+onse_ver2_T8_2025_StepUpEducation/ … /eval]└4 <base> main* ± 
