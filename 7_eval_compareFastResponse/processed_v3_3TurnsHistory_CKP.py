@@ -22,88 +22,134 @@ class ConversationProcessor:
     def extract_conversations(self, data: Dict[Any, Any]) -> List[Dict[str, Any]]:
         """
         Trích xuất conversation với 3 turns history (sliding window).
-        Mỗi conversation chứa tối đa 3 cặp USER-BOT gần nhất (6 messages).
-        Handle cả 2 orders: BOT→USER và USER→BOT
+        Mỗi conversation chứa tối đa 3 cặp BOT-USER gần nhất (6 messages).
+        Sliding window theo PAIRS để maintain proper chronology.
         """
         if 'data' not in data:
             print("❌ Không tìm thấy key 'data' trong JSON")
             return []
 
         conversations = []
-        current_conversation = []
-        MAX_TURNS = 3  # Tối đa 3 turns (6 messages)
+        pairs = []  # Store completed BOT-USER pairs
+        MAX_TURNS = 3  # Tối đa 3 turns (3 pairs = 6 messages)
         
-        # Collect all valid messages first
-        messages = []
-        for item in data['data']:
+        # Step 1: Extract all BOT-USER pairs in chronological order
+        current_bot = None
+        original_data = data['data']
+        
+        for i, item in enumerate(original_data):
             character = item.get('character', '')
             content = item.get('content', '').strip()
-            if content and character in ['BOT_RESPONSE_CONVERSATION', 'USER']:
-                messages.append({
-                    'character': character,
-                    'content': content,
-                    'original_index': len(messages)
-                })
-        
-        # Build conversation progressively
-        for i, msg in enumerate(messages):
-            if msg['character'] == 'BOT_RESPONSE_CONVERSATION':
-                current_conversation.append({"role": "assistant", "content": msg['content']})
-            elif msg['character'] == 'USER':
-                current_conversation.append({"role": "user", "content": msg['content']})
+            
+            if not content:
+                continue
                 
-                # Apply sliding window - keep only last 3 turns (6 messages)
-                if len(current_conversation) > MAX_TURNS * 2:
-                    current_conversation = current_conversation[-(MAX_TURNS * 2):]
-                
-                # Ensure conversation starts with assistant (reorder if needed)
-                formatted_conversation = self._ensure_assistant_first(current_conversation.copy())
-                
-                if formatted_conversation:
-                    # Find next responses after current USER
+            if character == 'BOT_RESPONSE_CONVERSATION':
+                current_bot = content
+            elif character == 'USER':
+                # Create pair when we have both BOT and USER
+                if current_bot:
+                    # Find next responses after this USER
                     next_fast_response = ""
                     next_bot_response = ""
                     
-                    # Look for responses in original data after current position
-                    original_data = data['data']
-                    user_found = False
-                    
-                    for j, item in enumerate(original_data):
-                        if item.get('content', '').strip() == msg['content'] and item.get('character') == 'USER':
-                            if not user_found:
-                                user_found = True
-                                # Find FAST_RESPONSE after this USER
-                                for k in range(j+1, len(original_data)):
-                                    next_item = original_data[k]
-                                    if next_item.get('character') == 'FAST_RESPONSE':
-                                        next_content = next_item.get('content', '').strip()
-                                        if next_content:
-                                            next_fast_response = next_content
-                                            break
-                                
-                                # Find next BOT_RESPONSE_CONVERSATION
-                                for k in range(j+1, len(original_data)):
-                                    next_item = original_data[k]
-                                    if next_item.get('character') == 'BOT_RESPONSE_CONVERSATION':
-                                        next_content = next_item.get('content', '').strip()
-                                        if next_content:
-                                            next_bot_response = next_content
-                                            break
+                    # Find FAST_RESPONSE after this USER
+                    for j in range(i+1, len(original_data)):
+                        next_item = original_data[j]
+                        if next_item.get('character') == 'FAST_RESPONSE':
+                            next_content = next_item.get('content', '').strip()
+                            if next_content:
+                                next_fast_response = next_content
                                 break
                     
-                    conversations.append({
-                        'conversation': formatted_conversation,
+                    # Find next BOT_RESPONSE_CONVERSATION
+                    for j in range(i+1, len(original_data)):
+                        next_item = original_data[j]
+                        if next_item.get('character') == 'BOT_RESPONSE_CONVERSATION':
+                            next_content = next_item.get('content', '').strip()
+                            if next_content:
+                                next_bot_response = next_content
+                                break
+                    
+                    # Create pair and add to pairs list
+                    pair = {
+                        'bot': current_bot,
+                        'user': content,
                         'next_fast_response': next_fast_response,
-                        'next_bot_response': next_bot_response,
-                        'context_length': len(formatted_conversation)  # Debug info
-                    })
+                        'next_bot_response': next_bot_response
+                    }
+                    pairs.append(pair)
+                    current_bot = None  # Reset for next pair
+                else:
+                    # USER without preceding BOT - try to find BOT after
+                    next_bot = None
+                    for j in range(i+1, len(original_data)):
+                        next_item = original_data[j]
+                        if next_item.get('character') == 'BOT_RESPONSE_CONVERSATION':
+                            next_content = next_item.get('content', '').strip()
+                            if next_content:
+                                next_bot = next_content
+                                break
+                    
+                    if next_bot:
+                        # Find responses after this USER
+                        next_fast_response = ""
+                        next_bot_response = ""
+                        
+                        for j in range(i+1, len(original_data)):
+                            next_item = original_data[j]
+                            if next_item.get('character') == 'FAST_RESPONSE':
+                                next_content = next_item.get('content', '').strip()
+                                if next_content:
+                                    next_fast_response = next_content
+                                    break
+                        
+                        # Find BOT_RESPONSE after the immediate next_bot
+                        for j in range(i+1, len(original_data)):
+                            next_item = original_data[j]
+                            if next_item.get('character') == 'BOT_RESPONSE_CONVERSATION':
+                                if next_item.get('content', '').strip() == next_bot:
+                                    continue  # Skip the BOT we're using as assistant
+                                next_content = next_item.get('content', '').strip()
+                                if next_content:
+                                    next_bot_response = next_content
+                                    break
+                        
+                        pair = {
+                            'bot': next_bot,  # BOT after USER
+                            'user': content,
+                            'next_fast_response': next_fast_response,
+                            'next_bot_response': next_bot_response
+                        }
+                        pairs.append(pair)
+        
+        # Step 2: Build conversations with sliding window of pairs
+        for i in range(len(pairs)):
+            # Get sliding window of pairs (max MAX_TURNS pairs)
+            start_idx = max(0, i - MAX_TURNS + 1)
+            window_pairs = pairs[start_idx:i+1]
+            
+            # Convert pairs to conversation format
+            conversation = []
+            for pair in window_pairs:
+                conversation.append({"role": "assistant", "content": pair['bot']})
+                conversation.append({"role": "user", "content": pair['user']})
+            
+            # Use the last pair's response info
+            last_pair = pairs[i]
+            conversations.append({
+                'conversation': conversation,
+                'next_fast_response': last_pair['next_fast_response'],
+                'next_bot_response': last_pair['next_bot_response'],
+                'context_length': len(conversation)
+            })
         
         return conversations
     
     def _ensure_assistant_first(self, conversation: List[Dict[str, str]]) -> List[Dict[str, str]]:
         """
         Ensure conversation starts with assistant message.
-        If it starts with user, try to find a BOT message to pair with.
+        Maintain exact chronological order, just reorder if needed.
         """
         if not conversation:
             return []
@@ -112,19 +158,29 @@ class ConversationProcessor:
         if conversation[0]['role'] == 'assistant':
             return conversation
         
-        # If starts with user, we need to find an assistant message
-        # For sliding window, we might lose the pairing, so we'll try to reconstruct
+        # If starts with user, we need to move first assistant to front
         assistant_msgs = [msg for msg in conversation if msg['role'] == 'assistant']
-        user_msgs = [msg for msg in conversation if msg['role'] == 'user']
         
         if not assistant_msgs:
             return []  # Can't create valid conversation without assistant
         
-        # Rebuild conversation maintaining chronological order but ensuring assistant-first pairs
-        result = []
-        for i in range(min(len(assistant_msgs), len(user_msgs))):
-            result.append(assistant_msgs[i])
-            result.append(user_msgs[i])
+        # Strategy: Keep chronological order but ensure assistant-first
+        # Find the first assistant and move it to front if needed
+        result = conversation.copy()
+        
+        # If conversation starts with user, try to reorder smartly
+        if result[0]['role'] == 'user':
+            # Find first assistant
+            first_assistant_idx = -1
+            for i, msg in enumerate(result):
+                if msg['role'] == 'assistant':
+                    first_assistant_idx = i
+                    break
+            
+            if first_assistant_idx > 0:
+                # Move first assistant to front
+                assistant_msg = result.pop(first_assistant_idx)
+                result.insert(0, assistant_msg)
         
         return result
     
