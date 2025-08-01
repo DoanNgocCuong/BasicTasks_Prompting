@@ -224,6 +224,9 @@ def parse_arguments():
     """
     Parse command line arguments
     """
+    print("🔍 DEBUG: Parsing command line arguments...")
+    print(f"🔍 DEBUG: sys.argv = {sys.argv}")
+    
     parser = argparse.ArgumentParser(description='Fast Response Evaluation Pipeline')
     
     group = parser.add_mutually_exclusive_group(required=True)
@@ -233,7 +236,16 @@ def parse_arguments():
     parser.add_argument('--token', type=str, default='{{token}}', 
                        help='API token (default: {{token}})')
     
-    return parser.parse_args()
+    args = parser.parse_args()
+    
+    # Debug thông tin arguments
+    print(f"🔍 DEBUG: Parsed arguments:")
+    print(f"🔍 DEBUG: args.ids = {getattr(args, 'ids', None)}")
+    print(f"🔍 DEBUG: args.id_file = {getattr(args, 'id_file', None)}")
+    print(f"🔍 DEBUG: args.token = '{args.token}'")
+    print(f"🔍 DEBUG: len(args.token) = {len(args.token) if args.token else 0}")
+    
+    return args
 
 def read_ids_from_file(filepath: str) -> list:
     """
@@ -251,23 +263,67 @@ def main():
     """
     Hàm main
     """
-    args = parse_arguments()
+    print("🚀 DEBUG: Starting main function...")
+    
+    try:
+        args = parse_arguments()
+    except SystemExit as e:
+        print(f"❌ DEBUG: SystemExit caught during argument parsing: {e}")
+        print(f"🔍 DEBUG: Exit code: {e.code}")
+        raise
+    except Exception as e:
+        print(f"❌ DEBUG: Exception during argument parsing: {e}")
+        print(f"🔍 DEBUG: Exception type: {type(e).__name__}")
+        raise
+    
+    print("✅ DEBUG: Arguments parsed successfully")
+    
+    # Validate token
+    print("🔍 DEBUG: Validating token...")
+    if not args.token:
+        print("❌ ERROR: Token is None or empty")
+        sys.exit(1)
+    elif args.token == '{{token}}':
+        print("⚠️ WARNING: Token appears to be a placeholder '{{token}}'")
+        print("   This should be replaced with your actual API token")
+        print("   Examples:")
+        print("   - python main.py --ids 8532 --token your_actual_token_here")
+        print("   - export TOKEN=your_token && python main.py --ids 8532 --token $TOKEN")
+        # Continue anyway for testing - you may want to change this behavior
+        print("   Continuing with placeholder token for debugging...")
+    elif args.token.strip() == '':
+        print("❌ ERROR: Token is empty or contains only whitespace")
+        sys.exit(1)
+    else:
+        print(f"✅ DEBUG: Token appears valid (length: {len(args.token)})")
     
     # Lấy danh sách IDs
+    print("🔍 DEBUG: Processing conversation IDs...")
     if args.ids:
         conversation_ids = args.ids
+        print(f"✅ DEBUG: Using IDs from command line: {conversation_ids}")
     elif args.id_file:
         conversation_ids = read_ids_from_file(args.id_file)
         if not conversation_ids:
             print("❌ Không thể đọc IDs từ file")
             sys.exit(1)
+        print(f"✅ DEBUG: Using IDs from file: {conversation_ids}")
     else:
         print("❌ Cần cung cấp --ids hoặc --id_file")
         sys.exit(1)
     
     # Khởi tạo và chạy pipeline
-    pipeline = FastResponsePipeline(args.token)
-    pipeline.run_pipeline(conversation_ids)
+    print("🔍 DEBUG: Initializing pipeline...")
+    try:
+        pipeline = FastResponsePipeline(args.token)
+        print("✅ DEBUG: Pipeline initialized successfully")
+        pipeline.run_pipeline(conversation_ids)
+    except Exception as e:
+        print(f"❌ DEBUG: Error in pipeline: {e}")
+        print(f"🔍 DEBUG: Exception type: {type(e).__name__}")
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)
 
 if __name__ == "__main__":
     # Nếu chạy trực tiếp mà không có args, dùng test IDs
